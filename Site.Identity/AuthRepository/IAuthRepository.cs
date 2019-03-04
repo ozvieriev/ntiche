@@ -12,10 +12,11 @@ namespace Site.Identity
 
         /*******************************************Account*************************************************/
         Task<Account> AccountGetAsync(Guid accountId);
-        Task<Account> AccountGetAsync(string email);
-        Task<Account> AccountGetAsync(string email, string password);
+        Task<Account> AccountGetAsync(string userName);
+        Task<Account> AccountGetAsync(string userName, string password);
         Task AccountActivateAsync(Guid accountId);
 
+        Task<IdentityResult> AccountCreateAsync(Account account, string password);
         Task<IdentityResult> AccountChangePasswordAsync(Guid accountId, string oldPassword, string newPassword);
 
         /*******************************************SessionToken********************************************/

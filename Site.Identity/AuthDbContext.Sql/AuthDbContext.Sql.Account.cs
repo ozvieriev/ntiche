@@ -18,15 +18,22 @@ namespace Site.Identity
 
             return await ExecuteReaderAsync<Account>("[oauth].[pAccountGetById]", sqlParams);
         }
-        internal async Task<Account> AccountGetAsync(string email)
+        internal async Task<Account> AccountGetAsync(string userName)
+        {
+            var sqlParams = new SqlParameter[] { userName.ToSql("userName") };
+
+            return await ExecuteReaderAsync<Account>("[oauth].[pAccountGetByUserName]", sqlParams);
+        }
+
+        internal async Task<Account> AccountGetByEmailAsync(string email)
         {
             var sqlParams = new SqlParameter[] { email.ToSql("email") };
 
             return await ExecuteReaderAsync<Account>("[oauth].[pAccountGetByEmail]", sqlParams);
         }
-        internal async Task<Account> AccountGetAsync(string email, string password)
+        internal async Task<Account> AccountGetAsync(string userName, string password)
         {
-            var account = await AccountGetAsync(email);
+            var account = await AccountGetAsync(userName);
 
             if (!object.Equals(account, null) && !PasswordIsEqual(account.Password, password))
                 account = null;

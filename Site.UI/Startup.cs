@@ -9,6 +9,7 @@ namespace Site.UI
         public void Configuration(IAppBuilder app)
         {
             Oauth(app);
+            AutoMapper(app);
         }
     }
 }

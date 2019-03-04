@@ -11,19 +11,23 @@ namespace Site.Identity
         {
             return await _context.AccountGetAsync(accountId);
         }
-        public async Task<Account> AccountGetAsync(string email)
+        public async Task<Account> AccountGetAsync(string userName)
         {
-            return await _context.AccountGetAsync(email);
+            return await _context.AccountGetAsync(userName);
         }
-        public async Task<Account> AccountGetAsync(string email, string password)
+        public async Task<Account> AccountGetAsync(string userName, string password)
         {
-            return await _context.AccountGetAsync(email, password);
+            return await _context.AccountGetAsync(userName, password);
         }
         public async Task AccountActivateAsync(Guid accountId)
         {
             await _context.AccountActivateAsync(accountId);
         }
 
+        public async Task<IdentityResult> AccountCreateAsync(Account account, string password)
+        {
+            return await _userManager.CreateAsync(account, password);
+        }
         public async Task<IdentityResult> AccountChangePasswordAsync(Guid accountId, string oldPassword, string newPassword)
         {
             return await _userManager.ChangePasswordAsync(accountId, oldPassword, newPassword);

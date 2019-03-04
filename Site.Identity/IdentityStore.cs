@@ -32,19 +32,18 @@ namespace Site.Identity
             throw new NotImplementedException();
         }
 
-        public async Task<TUser> FindByIdAsync(Guid id)
+        public async Task<TUser> FindByIdAsync(Guid accountId)
         {
-            return (TUser)(await _context.AccountGetAsync(id));
+            return (TUser)(await _context.AccountGetAsync(accountId));
         }
         public async Task<TUser> FindByEmailAsync(string email)
         {
-            return (TUser)(await _context.AccountGetAsync(email));
+            return (TUser)(await _context.AccountGetByEmailAsync(email));
         }
         public Task<TUser> FindByEmailAsync(string email, string password)
         {
             throw new NotImplementedException();
         }
-
         public async Task<TUser> FindByNameAsync(string userName)
         {
             return (TUser)(await _context.AccountGetAsync(userName));
