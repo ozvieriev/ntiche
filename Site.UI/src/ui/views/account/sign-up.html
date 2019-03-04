@@ -1,0 +1,82 @@
+<h3 class="text-center ">Sign Up</h3>
+<div class="mt-5 row justify-content-center">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">Sign Up</div>
+      <div class="card-body">
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="firstName">First Name</label>
+              <input type="text" class="form-control" id="firstName" placeholder="First Name" />
+            </div>
+            <div class="form-group col-md-6"> <label for="lastName">Last Name</label>
+              <input type="text" class="form-control" id="lastName" placeholder="Last Name" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="email">Your Email</label>
+              <input type="text" class="form-control" id="email" placeholder="Your Email" />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="login">Username</label>
+              <input type="text" class="form-control" id="login" placeholder="Username" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="specialty">Your Specialty</label>
+              <input type="text" class="form-control" id="specialty" placeholder="Your Specialty" />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="country">Country</label>
+              <select class="form-control" id="country">
+                <option>Canada</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="province">Province</label>
+              <select class="form-control" id="province">
+                <option value="AB">Alberta</option>
+                <option value="BC">British Columbia</option>
+                <option value="MB">Manitoba</option>
+                <option value="NB">New Brunswick</option>
+                <option value="NL">Newfoundland and Labrador</option>
+                <option value="NS">Nova Scotia</option>
+                <option value="ON">Ontario</option>
+                <option value="PE">Prince Edward Island</option>
+                <option value="QC">Quebec</option>
+                <option value="SK">Saskatchewan</option>
+                <option value="NT">Northwest Territories</option>
+                <option value="NU">Nunavut</option>
+                <option value="YT">Yukon</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="city">City</label>
+              <input type="text" class="form-control" id="city" placeholder="City" />
+            </div>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="optin">
+            <label class="form-check-label" for="optin">
+              I agree to receive email notifications related to the content of this program. <a ui-sref="privacy">Privacy
+                Policy</a>
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="disclaimer">
+            <label class="form-check-label" for="disclaimer">
+              I have read and understood this website’s. <a ui-sref="disclaimer">Disclaimer</a>
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary">Sign up</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

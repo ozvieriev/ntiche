@@ -1,0 +1,39 @@
+{
+  "name": "cp",
+  "version": "1.0.0",
+  "main": "gulp.js",
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "angular": "^1.7.5",
+    "angular-translate": "2.18.1",
+    "angular-ui-router": "^1.0.20",
+    "bootstrap": "^4.2.1",
+    "font-awesome-5-css": "5.4.1",
+    "browser-sync": "2.26.3",
+    "del": "^3.0.0",
+    "fs": "0.0.1-security",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-change": "^1.0.2",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-flatmap": "^1.0.2",
+    "gulp-fn": "0.0.3",
+    "gulp-gzip": "^1.4.2",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-minify": "^3.1.0",
+    "jquery": "3.3.1",
+    "path": "^0.12.7",
+    "popper.js": "^1.14.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ozvieriev",
+  "license": "ISC",
+  "description": ""
+}

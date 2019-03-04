@@ -1,0 +1,33 @@
+<h3 class="text-center ">Sign In</h3>
+<div class="mt-5 row justify-content-center">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header">Sign In</div>
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <label for="login">Username</label>
+            <input type="text" class="form-control" id="login" placeholder="Username" />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password" />
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="remember">
+            <label class="form-check-label" for="remember">
+              Remember me</a>
+            </label>
+          </div>
+          <div class="form-group">
+            <a ui-sref="account/recover-password">Lost your password?</a>
+          </div>
+          <div class="form-group">
+            <a ui-sref="account/sign-up">Don't have an account? Sign up!</a>
+          </div>
+          <button type="submit" class="btn btn-primary" data-ng-click="signIn()">Sign in</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
