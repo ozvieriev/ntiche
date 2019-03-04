@@ -51,6 +51,8 @@ begin
 	delete from oauth.sessionToken where id = @id
 end
 
+go
+
 create procedure [oauth].[pSessionTokenInsert]
 	@id uniqueidentifier,
 	@accountId uniqueidentifier,
@@ -65,6 +67,8 @@ begin
 		(@id, @accountId, @issuedUtc, @expiresUtc, @protectedTicket)
 end
 
+go
+
 create procedure [oauth].[pAccountGetById]
 	@id uniqueidentifier
 as
@@ -73,6 +77,8 @@ begin
 	from [oauth].[account]
 	where [id] = @id
 end
+
+go
 
 create procedure [oauth].[pAccountGetByUserName]
 	@userName nvarchar(300)
@@ -83,6 +89,8 @@ begin
 	where [userName] = @userName
 end
 
+go
+
 create procedure [oauth].[pAccountGetByEmail]
 	@email nvarchar(330)
 as
@@ -91,6 +99,8 @@ begin
 	from [oauth].[account]
 	where [email] = @email
 end
+
+go
 
 create procedure [oauth].[pAccountActivate]
 	@id uniqueidentifier

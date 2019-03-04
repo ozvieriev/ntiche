@@ -36,10 +36,11 @@ namespace Site.Identity
         public async Task<Uri> GenerateEmailConfirmationTokenLinkAsync(Account account, Uri uri)
         {
             var uriBuilder = new UriBuilder(uri);
-            var token = await _userManager.GenerateEmailConfirmationTokenAsync(account.Id);
+            var emailConfirmationToken = await _userManager.GenerateEmailConfirmationTokenAsync(account.Id);
 
             var query = HttpUtility.ParseQueryString(uriBuilder.Query);
-            query.Add("token", token);
+            query.Add("emailConfirmationToken", emailConfirmationToken);
+            query.Add("accountId", account.Id.ToString("N"));
 
             uriBuilder.Query = query.ToString();
 

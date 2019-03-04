@@ -1,5 +1,15 @@
+body>.container {
+  padding: 60px 15px 0
+}
 
-body > .container
-{
-  padding:60px 15px 0
+[ng-cloak], [data-ng-cloak] {
+  visibility: hidden !important;
+}
+
+.ng-hide {
+  display: none !important;
+}
+
+.ng-show {
+  display: block !important;
 }

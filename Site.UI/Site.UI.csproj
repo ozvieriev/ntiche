@@ -303,7 +303,9 @@
     <Content Include="ui\webfonts\fa-brands-400.svg" />
     <Content Include="ui\webfonts\fa-regular-400.svg" />
     <Content Include="ui\webfonts\fa-solid-900.svg" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

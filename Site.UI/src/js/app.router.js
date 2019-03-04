@@ -44,6 +44,7 @@ angular.module('app')
             $stateProvider.state(json.name, state);
         };
 
+        _state({ url: 'account/email-confirmation', controller: 'accountEmailConfirmation' });
         _state({ url: 'account/recover-password', controller: 'recoverPassword' });
         _state({ url: 'account/sign-in', controller: 'accountSignIn', params: { returnUrl: null } });
         _state({ url: 'account/sign-up', controller: 'accountSignUp' });
