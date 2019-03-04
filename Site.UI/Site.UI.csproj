@@ -150,6 +150,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\RegisterViewModel.cs" />
     <Compile Include="Oauth\ClaimsIdentityHelper.cs" />
     <Compile Include="Oauth\RefreshTokenProvider.cs" />
     <Compile Include="Oauth\ServerProvider.cs" />
@@ -242,9 +243,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="package.json" />
     <None Include="package-lock.json" />
