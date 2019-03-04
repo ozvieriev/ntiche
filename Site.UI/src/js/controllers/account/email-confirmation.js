@@ -1,5 +1,5 @@
 angular.module('app.controllers')
-    .controller('accountEmailConfirmationController', ['$scope', '$utils', ($scope, $utils) => {
+    .controller('accountEmailConfirmationController', ['$scope', '$auth', '$utils', ($scope, $auth, $utils) => {
 
         $scope.status = null;
         $scope.isBusy = false;
@@ -9,4 +9,6 @@ angular.module('app.controllers')
         if (!query.accountid || !query.emailconfirmationtoken)
             return ($scope.status = 404);
 
+            debugger
+        $auth.emailConfirmation(query.emailconfirmationtoken, query.accountid);
     }]);

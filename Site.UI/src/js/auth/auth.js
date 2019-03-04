@@ -1,8 +1,8 @@
 angular.module('app.auth')
-    .factory('$auth', ['$q', '$state', '$injector', '$authStorage', ($q, $state, $injector, $authStorage) => {
+    .factory('$auth', ['$state', '$injector', '$authStorage', ($state, $injector, $authStorage) => {
 
 
-        var _apiHeaders = { 'Content-Type': 'application/x-www-form-urlencoded' };
+        let _apiHeaders = { 'Content-Type': 'application/x-www-form-urlencoded' };
         var service = {};
 
         var _isAuthenticated = false;
@@ -19,6 +19,22 @@ angular.module('app.auth')
                 $state.go($state.params.returnUrl);
             else
                 $state.go('index');
+        };
+        service.emailConfirmation = (emailConfirmationToken, accountId) => {
+
+            let data = {
+                grant_type: 'password',
+                emailConfirmationToken: emailConfirmationToken,
+                accountId: accountId
+            };
+
+            debugger   
+            let $http = $injector.get("$http");
+
+            $http.post(_uri('api/token'),
+                $.param(data), {
+                    headers: _apiHeaders
+                });
         };
 
         return service;
