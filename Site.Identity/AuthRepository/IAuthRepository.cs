@@ -9,6 +9,7 @@ namespace Site.Identity
     public interface IAuthRepository : IDisposable
     {
         void SetDataProtectorProvider(IDataProtectionProvider dataProtectorProvider);
+        Task<Uri> GenerateEmailConfirmationTokenLinkAsync(Account account, Uri uri);
 
         /*******************************************Account*************************************************/
         Task<Account> AccountGetAsync(Guid accountId);
@@ -18,6 +19,7 @@ namespace Site.Identity
 
         Task<IdentityResult> AccountCreateAsync(Account account, string password);
         Task<IdentityResult> AccountChangePasswordAsync(Guid accountId, string oldPassword, string newPassword);
+        Task<IdentityResult> AccountConfirmEmailAsync(Guid accountId, string emailConfirmationToken);
 
         /*******************************************SessionToken********************************************/
         //Task<SessionToken> SessionTokenGetAsync(Guid id);

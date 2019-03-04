@@ -32,5 +32,9 @@ namespace Site.Identity
         {
             return await _userManager.ChangePasswordAsync(accountId, oldPassword, newPassword);
         }
+        public async Task<IdentityResult> AccountConfirmEmailAsync(Guid accountId, string emailConfirmationToken)
+        {
+            return await _userManager.ConfirmEmailAsync(accountId, emailConfirmationToken);
+        }
     }
 }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Site.UI.Oauth
 {
-    public  class ServerProvider : OAuthAuthorizationServerProvider
+    public class ServerProvider : OAuthAuthorizationServerProvider
     {
         public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
@@ -19,10 +19,37 @@ namespace Site.UI.Oauth
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
+            var emailConfirmationToken = string.Empty;
+            var emailConfirmationAccountId = Guid.Empty;
+
+            var formCollection = await context.Request.ReadFormAsync();
+            if (!object.Equals(formCollection, null))
+            {
+                emailConfirmationToken = formCollection["email_confirmation_token"];
+                Guid.TryParse(formCollection["email_confirmation_accountId"], out emailConfirmationAccountId);
+            }
             Account account = null;
             using (var auth = new AuthRepository())
-                account = await auth.AccountGetAsync(context.UserName, context.Password);
+            {
+                if (string.IsNullOrEmpty(emailConfirmationToken))
+                    account = await auth.AccountGetAsync(context.UserName, context.Password);
+                else
+                {
+                    account = await auth.AccountGetAsync(emailConfirmationAccountId);
 
+                    if (!object.Equals(account, null))
+                    {
+                        auth.SetDataProtectorProvider(Startup.DataProtectionProvider);
+                        var identityResult = await auth.AccountConfirmEmailAsync(emailConfirmationAccountId, emailConfirmationToken);
+
+                        if (!identityResult.Succeeded)
+                        {
+                            context.SetError("invalid_grant", "Email confirmation link is incorrect.");
+                            return;
+                        }
+                    }
+                }
+            }
             if (object.Equals(account, null))
             {
                 context.SetError("invalid_grant", "Your email or password is incorrect.");

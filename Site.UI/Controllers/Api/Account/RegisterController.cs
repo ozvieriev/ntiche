@@ -14,10 +14,14 @@ namespace Site.UI.Controllers.Api
     public class RegisterController : ApiController
     {
         private IAuthRepository _auth;
+        private IAppSettings _appSettings;
 
-        public RegisterController(IAuthRepository auth)
+        public RegisterController(IAuthRepository auth, IAppSettings appSettings)
         {
             _auth = auth;
+            _auth.SetDataProtectorProvider(Startup.DataProtectionProvider);
+
+            _appSettings = appSettings;
         }
 
         [HttpPost, Route("register"), ValidateNullModel, ValidateModel]
@@ -32,11 +36,13 @@ namespace Site.UI.Controllers.Api
             if (!identityResult.Validate(ref identityResultException))
                 return Request.HttpExceptionResult(identityResultException);
 
+            var emailConfirmationLink = await _auth.GenerateEmailConfirmationTokenLinkAsync(account, _appSettings.Oauth.EmailConfirmation);
+
             Sender.Send(model.Email, EmailTemplate.EmailConfirmation, new Notification(new
             {
                 model.FirstName,
                 model.LastName,
-                confirmationLink = "https://google.com"
+                confirmationLink = emailConfirmationLink
             }));
 
             return Ok();
