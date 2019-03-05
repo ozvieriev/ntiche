@@ -4,28 +4,44 @@
     <div class="card">
       <div class="card-header">Sign In</div>
       <div class="card-body">
-        <form>
+        <form name="signInForm" class="needs-validation" novalidate data-ng-submit="submit(signInForm)"
+          data-ng-class="{'was-validated': signInForm.$submitted}" data-ng-loading-form>
           <div class="form-group">
-            <label for="login">Username</label>
-            <input type="text" class="form-control" id="login" placeholder="Username" />
+            <label for="userName">Username</label>
+            <input type="text" class="form-control" name="userName" placeholder="Username"
+              data-ng-model="model.userName" maxlength="300" required autofocus />
+
+            <div class="invalid-feedback"
+              data-ng-if="signInForm.userName.$touched && signInForm.userName.$error.required">
+              User name is required.
+            </div>
+
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Password" />
+            <input type="password" class="form-control" name="password" placeholder="Password"
+              data-ng-model="model.password" maxlength="300" required />
+
+            <div class="invalid-feedback"
+              data-ng-if="signInForm.password.$touched && signInForm.password.$error.required">
+              Password is required.
+            </div>
           </div>
-          <div class="form-check">
+          <!-- <div class="form-check">
             <input class="form-check-input" type="checkbox" id="remember">
             <label class="form-check-label" for="remember">
               Remember me</a>
             </label>
-          </div>
+          </div> -->
           <div class="form-group">
             <a ui-sref="account/recover-password">Lost your password?</a>
           </div>
           <div class="form-group">
             <a ui-sref="account/sign-up">Don't have an account? Sign up!</a>
           </div>
-          <button type="submit" class="btn btn-primary" data-ng-click="signIn()">Sign in</button>
+
+          <div class="alert alert-danger" role="alert" data-ng-bind="model.error" data-ng-if="model.error"></div>
+          <button type="submit">Sign in</button>
         </form>
       </div>
     </div>

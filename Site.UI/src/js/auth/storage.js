@@ -1,12 +1,12 @@
 angular.module('app.auth')
     .factory('$authStorage', ['$window', ($window) => {
 
-        var _localStorage = {};
+        let _localStorage = {};
 
-        var _getItem = (key) => {
+        let _getItem = (key) => {
 
-            var json = _localStorage[key];
-            var value = json ? JSON.parse(json) : null;
+            let json = _localStorage[key];
+            let value = json ? JSON.parse(json) : null;
 
             _localStorage[key] = json;
 
@@ -18,37 +18,35 @@ angular.module('app.auth')
 
             return value;
         };
-        var _setItem = (key, value) => {
+        let _setItem = (key, value) => {
 
-            var json = JSON.stringify(value);
+            let json = JSON.stringify(value);
 
             _localStorage[key] = json;
 
             try { $window.localStorage.setItem(key, json); }
             catch (error) { console.error(error); }
         };
-        var _removeItem = (key) => {
+        let _removeItem = (key) => {
 
             delete _localStorage[key];
 
             try { $window.localStorage.removeItem(key); }
             catch (error) { console.error(error); }
-
         };
 
-        var service = {};
+        let service = {};
+        service.getItem = () => {
 
-        service.getItem = (brandIso) => {
-
-            return _getItem(`auth:${brandIso}`);
+            return _getItem('auth');
         };
-        service.setItem = (brandIso, json) => {
+        service.setItem = (json) => {
 
-            _setItem(`auth:${brandIso}`, json);
+            _setItem('auth', json);
         };
-        service.removeItem = (brandIso) => {
+        service.removeItem = () => {
 
-            _removeItem(`auth:${brandIso}`);
+            _removeItem('auth');
         };
 
         return service;

@@ -52,7 +52,7 @@ namespace Site.UI.Oauth
             }
             if (object.Equals(account, null))
             {
-                context.SetError("invalid_grant", "Your email or password is incorrect.");
+                context.SetError("invalid_grant", "Your user name or password is incorrect.");
                 return;
             }
 

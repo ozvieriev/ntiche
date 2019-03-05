@@ -1,24 +1,49 @@
 angular.module('app.auth')
-    .factory('$auth', ['$state', '$injector', '$authStorage', ($state, $injector, $authStorage) => {
+    .factory('$auth', ['$q', '$state', '$injector', '$authStorage', ($q, $state, $injector, $authStorage) => {
 
 
         let _apiHeaders = { 'Content-Type': 'application/x-www-form-urlencoded' };
-        var service = {};
+        let _uri = (method) => {
 
-        var _isAuthenticated = false;
+            return `http://localhost:37321/${method}`;
+        };
+
+        let service = {};
 
         service.isAuthenticated = () => {
 
-            return _isAuthenticated;
+            return !!$authStorage.getItem();
         };
-        service.signIn = () => {
+        service.signIn = (userName, password) => {
 
-            _isAuthenticated = true;
+            let data = {
+                grant_type: 'password',
+                userName: userName,
+                password: password
+            };
 
-            if ($state.params.returnUrl)
-                $state.go($state.params.returnUrl);
-            else
-                $state.go('index');
+            let deferred = $q.defer();
+            let $http = $injector.get("$http");
+            
+            $http.post(_uri('api/token'), $.param(data), { headers: _apiHeaders, asJson: true })
+                .then((json) => {
+
+                    $authStorage.setItem(json);
+                    deferred.resolve(json);
+
+                }, (error) => {
+                    deferred.reject(error.data);
+                });
+
+            return deferred.promise;
+        };
+        service.accountGet = (params) => {
+
+            let $http = $injector.get("$http");
+            return $http.get(_uri('api/account'), {
+                params: params,
+                asJson: true
+            });
         };
         service.emailConfirmation = (emailConfirmationToken, accountId) => {
 
@@ -28,13 +53,20 @@ angular.module('app.auth')
                 accountId: accountId
             };
 
-            debugger   
             let $http = $injector.get("$http");
 
             $http.post(_uri('api/token'),
                 $.param(data), {
                     headers: _apiHeaders
                 });
+        };
+        service.recoverPassword = (params)=>{
+
+            let $http = $injector.get("$http");
+            return $http.get(_uri('api/account/recover-password'), {
+                params: params,
+                asJson: true
+            });
         };
 
         return service;

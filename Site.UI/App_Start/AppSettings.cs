@@ -16,7 +16,8 @@ namespace Site.UI
         {
             Oauth = new AppSettingsOauth
             {
-                EmailConfirmation = new Uri(Setting<string>("oauth:emailConfirmationLink"))
+                EmailConfirmationLink = new Uri(Setting<string>("oauth:emailConfirmationLink")),
+                RecoverPasswordLink = new Uri(Setting<string>("oauth:recoverPasswordLink"))
             };
         }
 
@@ -32,6 +33,7 @@ namespace Site.UI
 
     public class AppSettingsOauth
     {
-        public Uri EmailConfirmation;
+        public Uri EmailConfirmationLink;
+        public Uri RecoverPasswordLink;
     }
 }

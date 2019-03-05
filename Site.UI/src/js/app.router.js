@@ -44,8 +44,9 @@ angular.module('app')
             $stateProvider.state(json.name, state);
         };
 
+        _state({ url: 'account/index', controller: 'accountIndex', isProtected: true });
         _state({ url: 'account/email-confirmation', controller: 'accountEmailConfirmation' });
-        _state({ url: 'account/recover-password', controller: 'recoverPassword' });
+        _state({ url: 'account/recover-password', controller: 'accountRecoverPassword' });
         _state({ url: 'account/sign-in', controller: 'accountSignIn', params: { returnUrl: null } });
         _state({ url: 'account/sign-up', controller: 'accountSignUp' });
 
@@ -59,6 +60,7 @@ angular.module('app')
         _state({ url: 'about' });
         _state({ url: 'contact-us' });
         _state({ url: 'disclaimer' });
+        _state({ url: 'error' });
         _state({ url: 'index', controller: 'index' });
         _state({ url: 'privacy' });
         _state({ url: 'resources' });

@@ -3,6 +3,7 @@
     public enum EmailTemplate
     {
         EmailConfirmation,
-        Layout
+        Layout,
+        RecoverPassword
     }
 }

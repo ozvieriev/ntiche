@@ -20,8 +20,6 @@ namespace Site.Identity
             _userManager = new UserManager<Account, Guid>(new IdentityStore<Account>(_context));
             _userManager.UserValidator = new AccountValidator<Account>(_userManager);
             _userManager.PasswordHasher = new PasswordHasher();
-
-
         }
 
         public void SetDataProtectorProvider(IDataProtectionProvider dataProtectorProvider)
@@ -40,6 +38,19 @@ namespace Site.Identity
 
             var query = HttpUtility.ParseQueryString(uriBuilder.Query);
             query.Add("emailConfirmationToken", emailConfirmationToken);
+            query.Add("accountId", account.Id.ToString("N"));
+
+            uriBuilder.Query = query.ToString();
+
+            return uriBuilder.Uri;
+        }
+        public async Task<Uri> GenerateRecoverPasswordTokenLinkAsync(Account account, Uri uri)
+        {
+            var uriBuilder = new UriBuilder(uri);
+            var recoverPasswordToken = await _userManager.GeneratePasswordResetTokenAsync(account.Id);
+
+            var query = HttpUtility.ParseQueryString(uriBuilder.Query);
+            query.Add("recoverPasswordToken", recoverPasswordToken);
             query.Add("accountId", account.Id.ToString("N"));
 
             uriBuilder.Query = query.ToString();

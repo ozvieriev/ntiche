@@ -194,6 +194,8 @@
     <Compile Include="App_Start\Startup.Oauth.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Api\Account\IndexController.cs" />
+    <Compile Include="Controllers\Api\Account\RecoverPasswordController.cs" />
     <Compile Include="Controllers\Api\Account\RegisterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Core\HttpExceptionResult.cs" />
@@ -202,6 +204,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\RecoverPasswordViewModel.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />
     <Compile Include="Models\ValidateModel.cs" />
     <Compile Include="Models\ValidateNullModel.cs" />

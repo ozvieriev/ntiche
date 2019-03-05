@@ -19,6 +19,11 @@ namespace Site.Identity
         {
             return await _context.AccountGetAsync(userName, password);
         }
+        public async Task<Account> AccountGetByEmailAsync(string email)
+        {
+            return await _context.AccountGetByEmailAsync(email);
+        }
+
         public async Task AccountActivateAsync(Guid accountId)
         {
             await _context.AccountActivateAsync(accountId);

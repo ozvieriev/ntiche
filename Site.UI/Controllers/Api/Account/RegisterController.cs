@@ -36,13 +36,13 @@ namespace Site.UI.Controllers.Api
             if (!identityResult.Validate(ref identityResultException))
                 return Request.HttpExceptionResult(identityResultException);
 
-            var emailConfirmationLink = await _auth.GenerateEmailConfirmationTokenLinkAsync(account, _appSettings.Oauth.EmailConfirmation);
+            var emailConfirmationLink = await _auth.GenerateEmailConfirmationTokenLinkAsync(account, _appSettings.Oauth.EmailConfirmationLink);
 
             Sender.Send(model.Email, EmailTemplate.EmailConfirmation, new Notification(new
             {
                 model.FirstName,
                 model.LastName,
-                confirmationLink = emailConfirmationLink
+                emailConfirmationLink
             }));
 
             return Ok();
