@@ -6,9 +6,8 @@ angular.module('app.controllers')
 
         let query = $utils.query();
 
-        if (!query.accountid || !query.emailconfirmationtoken)
+        if (!query.token || !query.account)
             return ($scope.status = 404);
 
-            debugger
-        $auth.emailConfirmation(query.emailconfirmationtoken, query.accountid);
+        $auth.emailConfirmation(query.token, query.account);
     }]);

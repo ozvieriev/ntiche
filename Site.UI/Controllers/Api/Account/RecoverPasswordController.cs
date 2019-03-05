@@ -36,7 +36,7 @@ namespace Site.UI.Controllers.Api
                 recoverPasswordLink
             }));
 
-            return Ok();
+            return Ok(new { email });
         }
     }
 }

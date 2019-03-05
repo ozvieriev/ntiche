@@ -47,6 +47,7 @@ angular.module('app')
         _state({ url: 'account/index', controller: 'accountIndex', isProtected: true });
         _state({ url: 'account/email-confirmation', controller: 'accountEmailConfirmation' });
         _state({ url: 'account/recover-password', controller: 'accountRecoverPassword' });
+        _state({ url: 'account/reset-password', controller: 'accountResetPassword' });
         _state({ url: 'account/sign-in', controller: 'accountSignIn', params: { returnUrl: null } });
         _state({ url: 'account/sign-up', controller: 'accountSignUp' });
 

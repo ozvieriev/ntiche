@@ -1,6 +1,5 @@
 angular.module('app.auth')
-    .factory('$auth', ['$q', '$state', '$injector', '$authStorage', ($q, $state, $injector, $authStorage) => {
-
+    .factory('$auth', ['$q', '$injector', '$authStorage', ($q, $injector, $authStorage) => {
 
         let _apiHeaders = { 'Content-Type': 'application/x-www-form-urlencoded' };
         let _uri = (method) => {
@@ -24,7 +23,7 @@ angular.module('app.auth')
 
             let deferred = $q.defer();
             let $http = $injector.get("$http");
-            
+
             $http.post(_uri('api/token'), $.param(data), { headers: _apiHeaders, asJson: true })
                 .then((json) => {
 
@@ -40,17 +39,18 @@ angular.module('app.auth')
         service.accountGet = (params) => {
 
             let $http = $injector.get("$http");
+
             return $http.get(_uri('api/account'), {
                 params: params,
                 asJson: true
             });
         };
-        service.emailConfirmation = (emailConfirmationToken, accountId) => {
+        service.emailConfirmation = (token, account) => {
 
             let data = {
                 grant_type: 'password',
-                emailConfirmationToken: emailConfirmationToken,
-                accountId: accountId
+                emailConfirmationToken: token,
+                accountId: account
             };
 
             let $http = $injector.get("$http");
@@ -60,14 +60,28 @@ angular.module('app.auth')
                     headers: _apiHeaders
                 });
         };
-        service.recoverPassword = (params)=>{
+        service.recoverPassword = (params) => {
 
             let $http = $injector.get("$http");
+
             return $http.get(_uri('api/account/recover-password'), {
                 params: params,
                 asJson: true
             });
         };
+        service.resetPassword = (token, account, password) => {
+
+            let $http = $injector.get("$http");
+
+            return $http.post(_uri('api/account/reset-password'),
+                {
+                    resetPasswordToken: token,
+                    accountId: account,
+                    password: password
+                },
+                { asJson: true });
+        };
+
 
         return service;
     }]);

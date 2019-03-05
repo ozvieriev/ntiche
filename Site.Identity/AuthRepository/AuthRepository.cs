@@ -34,11 +34,11 @@ namespace Site.Identity
         public async Task<Uri> GenerateEmailConfirmationTokenLinkAsync(Account account, Uri uri)
         {
             var uriBuilder = new UriBuilder(uri);
-            var emailConfirmationToken = await _userManager.GenerateEmailConfirmationTokenAsync(account.Id);
+            var token = await _userManager.GenerateEmailConfirmationTokenAsync(account.Id);
 
             var query = HttpUtility.ParseQueryString(uriBuilder.Query);
-            query.Add("emailConfirmationToken", emailConfirmationToken);
-            query.Add("accountId", account.Id.ToString("N"));
+            query.Add("token", token);
+            query.Add("account", account.Id.ToString("N"));
 
             uriBuilder.Query = query.ToString();
 
@@ -47,11 +47,11 @@ namespace Site.Identity
         public async Task<Uri> GenerateRecoverPasswordTokenLinkAsync(Account account, Uri uri)
         {
             var uriBuilder = new UriBuilder(uri);
-            var recoverPasswordToken = await _userManager.GeneratePasswordResetTokenAsync(account.Id);
+            var token = await _userManager.GeneratePasswordResetTokenAsync(account.Id);
 
             var query = HttpUtility.ParseQueryString(uriBuilder.Query);
-            query.Add("recoverPasswordToken", recoverPasswordToken);
-            query.Add("accountId", account.Id.ToString("N"));
+            query.Add("token", token);
+            query.Add("account", account.Id.ToString("N"));
 
             uriBuilder.Query = query.ToString();
 
