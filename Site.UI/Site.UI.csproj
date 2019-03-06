@@ -216,11 +216,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\db.mdf" />
-    <Content Include="App_Data\db_log.ldf">
-      <DependentUpon>db.mdf</DependentUpon>
+    <Content Include="App_Data\ntiche.mdf" />
+    <Content Include="App_Data\ntiche_log.ldf">
+      <DependentUpon>ntiche.mdf</DependentUpon>
     </Content>
-    <Content Include="db.sql" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="gulpfile.js" />
@@ -279,20 +278,16 @@
     <None Include="tasks\serve.js" />
     <None Include="tasks\watch.js" />
     <None Include="readme.txt" />
-    <Content Include="sql\drop.sql" />
-    <Content Include="sql\schema.sql" />
-    <Content Include="sql\sp.sql" />
-    <Content Include="sql\table.sql" />
-    <Content Include="src\js\controllers\account\email-confirmation.js" />
-    <Content Include="src\js\controllers\account\index.js" />
-    <Content Include="src\js\controllers\account\reset-password.js" />
-    <Content Include="src\js\directives\navbar.js" />
-    <Content Include="src\js\directives\loading-form.js" />
-    <Content Include="src\js\services\utils.js" />
-    <Content Include="src\ui\views\account\email-confirmation.html" />
-    <Content Include="src\ui\views\account\index.html" />
-    <Content Include="src\ui\views\account\reset-password.html" />
-    <Content Include="src\ui\views\error.html" />
+    <None Include="src\js\controllers\account\email-confirmation.js" />
+    <None Include="src\js\controllers\account\index.js" />
+    <None Include="src\js\controllers\account\reset-password.js" />
+    <None Include="src\js\directives\navbar.js" />
+    <None Include="src\js\directives\loading-form.js" />
+    <None Include="src\js\services\utils.js" />
+    <None Include="src\ui\views\account\email-confirmation.html" />
+    <None Include="src\ui\views\account\index.html" />
+    <None Include="src\ui\views\account\reset-password.html" />
+    <None Include="src\ui\views\error.html" />
     <Content Include="ui\css\app.min.css" />
     <Content Include="ui\css\vendor.min.css" />
     <Content Include="ui\index.html" />
@@ -301,11 +296,15 @@
     <Content Include="ui\partial\footer.html" />
     <Content Include="ui\partial\header.html" />
     <Content Include="ui\views\about.html" />
+    <Content Include="ui\views\account\email-confirmation.html" />
+    <Content Include="ui\views\account\index.html" />
     <Content Include="ui\views\account\recover-password.html" />
+    <Content Include="ui\views\account\reset-password.html" />
     <Content Include="ui\views\account\sign-in.html" />
     <Content Include="ui\views\account\sign-up.html" />
     <Content Include="ui\views\contact-us.html" />
     <Content Include="ui\views\disclaimer.html" />
+    <Content Include="ui\views\error.html" />
     <Content Include="ui\views\index.html" />
     <Content Include="ui\views\learning\nutrition-cancer-related-fatigue.html" />
     <Content Include="ui\views\learning\overview.html" />

@@ -2,14 +2,14 @@ angular.module('app.controllers')
     .controller('accountSignUpController', ['$scope', '$state', '$form', '$auth', ($scope, $state, $form, $auth) => {
 
         $scope.model = {
-            userName: 'MegaZver',
-            password: 'anatole64',
-            firstName: 'Oleksandr',
-            lastName: 'Zvieriev',
-            email: 'ozvieriev@gmail.com',
-            ocupation: 'Web Developer',
-            city: 'Montreal',
-            isOptin: true
+            //userName: 'MegaZver',
+            //password: 'anatole64',
+            //firstName: 'Oleksandr',
+            //lastName: 'Zvieriev',
+            //email: 'ozvieriev@gmail.com',
+            //ocupation: 'Web Developer',
+            //city: 'Montreal',
+            //isOptin: true
         };
 
         $scope.status = null;

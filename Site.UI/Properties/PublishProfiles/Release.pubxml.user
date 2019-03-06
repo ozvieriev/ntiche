@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>c:\publish\neighbor-pharmacy</_PublishTargetUrl>
+    <_PublishTargetUrl>c:\publish\ntiche.com</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="Areas/HelpPage/HelpPage.css">
@@ -78,6 +78,33 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/Antlr3.Runtime.pdb">
       <publishTime>09/10/2013 16:29:20</publishTime>
     </File>
+    <File Include="bin/AutoMapper.dll">
+      <publishTime>11/17/2018 10:14:56</publishTime>
+    </File>
+    <File Include="bin/AutoMapper.pdb">
+      <publishTime>11/17/2018 10:14:56</publishTime>
+    </File>
+    <File Include="bin/CommonServiceLocator.dll">
+      <publishTime>11/11/2017 17:55:42</publishTime>
+    </File>
+    <File Include="bin/CommonServiceLocator.pdb">
+      <publishTime>11/11/2017 17:55:42</publishTime>
+    </File>
+    <File Include="bin/Email.Templates.dll">
+      <publishTime>03/06/2019 14:13:10</publishTime>
+    </File>
+    <File Include="bin/Email.Templates.pdb">
+      <publishTime>03/06/2019 14:13:10</publishTime>
+    </File>
+    <File Include="bin/EmailTemplates/EmailConfirmation.cshtml">
+      <publishTime>03/05/2019 11:42:52</publishTime>
+    </File>
+    <File Include="bin/EmailTemplates/Layout.cshtml">
+      <publishTime>03/04/2019 14:47:38</publishTime>
+    </File>
+    <File Include="bin/EmailTemplates/RecoverPassword.cshtml">
+      <publishTime>03/06/2019 00:10:56</publishTime>
+    </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>10/23/2017 13:15:18</publishTime>
     </File>
@@ -120,8 +147,20 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/Newtonsoft.Json.pdb">
       <publishTime>11/27/2018 17:59:08</publishTime>
     </File>
+    <File Include="bin/NLog.config">
+      <publishTime>03/04/2019 11:10:42</publishTime>
+    </File>
+    <File Include="bin/NLog.dll">
+      <publishTime>11/06/2018 17:07:26</publishTime>
+    </File>
+    <File Include="bin/NLog.Web.dll">
+      <publishTime>01/30/2019 19:56:12</publishTime>
+    </File>
     <File Include="bin/Owin.dll">
       <publishTime>11/13/2012 12:19:34</publishTime>
+    </File>
+    <File Include="bin/RazorEngine.dll">
+      <publishTime>06/16/2017 17:11:22</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>08/08/2018 05:38:48</publishTime>
@@ -271,31 +310,37 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2018 12:18:16</publishTime>
     </File>
     <File Include="bin/Site.Data.Entities.dll">
-      <publishTime>03/01/2019 15:57:07</publishTime>
+      <publishTime>03/06/2019 13:51:08</publishTime>
     </File>
     <File Include="bin/Site.Data.Entities.pdb">
-      <publishTime>03/01/2019 15:57:07</publishTime>
+      <publishTime>03/06/2019 13:51:08</publishTime>
     </File>
     <File Include="bin/Site.Identity.dll">
-      <publishTime>03/01/2019 15:57:07</publishTime>
+      <publishTime>03/06/2019 13:51:08</publishTime>
     </File>
     <File Include="bin/Site.Identity.dll.config">
       <publishTime>03/01/2019 11:30:06</publishTime>
     </File>
     <File Include="bin/Site.Identity.pdb">
-      <publishTime>03/01/2019 15:57:07</publishTime>
+      <publishTime>03/06/2019 13:51:08</publishTime>
     </File>
     <File Include="bin/Site.UI.dll">
-      <publishTime>03/01/2019 16:01:23</publishTime>
+      <publishTime>03/06/2019 14:34:49</publishTime>
     </File>
     <File Include="bin/Site.UI.pdb">
-      <publishTime>03/01/2019 16:01:23</publishTime>
+      <publishTime>03/06/2019 14:34:49</publishTime>
     </File>
     <File Include="bin/System.Diagnostics.DiagnosticSource.dll">
       <publishTime>09/18/2018 19:38:16</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
       <publishTime>11/28/2018 13:00:36</publishTime>
+    </File>
+    <File Include="bin/System.Runtime.CompilerServices.Unsafe.dll">
+      <publishTime>09/18/2018 19:38:10</publishTime>
+    </File>
+    <File Include="bin/System.ValueTuple.dll">
+      <publishTime>05/15/2018 13:29:52</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
       <publishTime>11/28/2018 13:04:24</publishTime>
@@ -324,6 +369,51 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/System.Web.WebPages.Razor.dll">
       <publishTime>11/28/2018 13:04:24</publishTime>
     </File>
+    <File Include="bin/Unity.Abstractions.dll">
+      <publishTime>11/11/2017 17:55:42</publishTime>
+    </File>
+    <File Include="bin/Unity.Abstractions.pdb">
+      <publishTime>11/11/2017 17:55:42</publishTime>
+    </File>
+    <File Include="bin/Unity.Configuration.dll">
+      <publishTime>11/11/2017 17:55:42</publishTime>
+    </File>
+    <File Include="bin/Unity.Configuration.pdb">
+      <publishTime>11/11/2017 17:55:42</publishTime>
+    </File>
+    <File Include="bin/Unity.Container.dll">
+      <publishTime>11/11/2017 17:55:42</publishTime>
+    </File>
+    <File Include="bin/Unity.Container.pdb">
+      <publishTime>11/11/2017 17:55:42</publishTime>
+    </File>
+    <File Include="bin/Unity.Interception.Configuration.dll">
+      <publishTime>11/11/2017 17:55:42</publishTime>
+    </File>
+    <File Include="bin/Unity.Interception.Configuration.pdb">
+      <publishTime>11/11/2017 17:55:42</publishTime>
+    </File>
+    <File Include="bin/Unity.Interception.dll">
+      <publishTime>11/11/2017 17:55:42</publishTime>
+    </File>
+    <File Include="bin/Unity.Interception.pdb">
+      <publishTime>11/11/2017 17:55:42</publishTime>
+    </File>
+    <File Include="bin/Unity.RegistrationByConvention.dll">
+      <publishTime>11/11/2017 17:55:42</publishTime>
+    </File>
+    <File Include="bin/Unity.RegistrationByConvention.pdb">
+      <publishTime>11/11/2017 17:55:42</publishTime>
+    </File>
+    <File Include="bin/Unity.ServiceLocation.dll">
+      <publishTime>11/11/2017 17:55:42</publishTime>
+    </File>
+    <File Include="bin/Unity.ServiceLocation.pdb">
+      <publishTime>11/11/2017 17:55:42</publishTime>
+    </File>
+    <File Include="bin/Unity.WebApi.dll">
+      <publishTime>11/13/2017 20:41:26</publishTime>
+    </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>01/23/2014 13:57:34</publishTime>
     </File>
@@ -335,6 +425,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="css/vendor.min.css">
       <publishTime>03/01/2019 15:19:09</publishTime>
+    </File>
+    <File Include="db.sql">
+      <publishTime>03/06/2019 13:51:07</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>03/01/2019 10:06:06</publishTime>
@@ -358,13 +451,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/01/2019 15:19:09</publishTime>
     </File>
     <File Include="index.html">
-      <publishTime>03/01/2019 15:53:45</publishTime>
+      <publishTime>03/04/2019 16:25:57</publishTime>
     </File>
     <File Include="js/app.min.js">
       <publishTime>03/01/2019 15:19:10</publishTime>
     </File>
     <File Include="js/vendor.min.js">
       <publishTime>03/01/2019 15:19:10</publishTime>
+    </File>
+    <File Include="NLog.config">
+      <publishTime>03/04/2019 11:10:42</publishTime>
     </File>
     <File Include="package-lock.json">
       <publishTime>03/01/2019 15:12:59</publishTime>
@@ -380,6 +476,18 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Scripts/modernizr-2.8.3.js">
       <publishTime>03/01/2019 10:06:11</publishTime>
+    </File>
+    <File Include="sql/drop.sql">
+      <publishTime>03/04/2019 11:59:14</publishTime>
+    </File>
+    <File Include="sql/schema.sql">
+      <publishTime>03/04/2019 11:59:20</publishTime>
+    </File>
+    <File Include="sql/sp.sql">
+      <publishTime>03/04/2019 16:14:41</publishTime>
+    </File>
+    <File Include="sql/table.sql">
+      <publishTime>03/04/2019 13:12:35</publishTime>
     </File>
     <File Include="src/css/app/carousel.css">
       <publishTime>01/21/2019 14:54:07</publishTime>
@@ -429,8 +537,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="src/js/auth/storage.js">
       <publishTime>01/18/2019 09:17:28</publishTime>
     </File>
+    <File Include="src/js/controllers/account/email-confirmation.js">
+      <publishTime>03/06/2019 00:19:25</publishTime>
+    </File>
+    <File Include="src/js/controllers/account/index.js">
+      <publishTime>03/05/2019 11:42:53</publishTime>
+    </File>
     <File Include="src/js/controllers/account/recover-password.js">
       <publishTime>01/21/2019 16:30:17</publishTime>
+    </File>
+    <File Include="src/js/controllers/account/reset-password.js">
+      <publishTime>03/06/2019 00:10:57</publishTime>
     </File>
     <File Include="src/js/controllers/account/sign-in.js">
       <publishTime>01/24/2019 11:09:02</publishTime>
@@ -453,11 +570,20 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="src/js/directives/date.js">
       <publishTime>01/18/2019 14:33:30</publishTime>
     </File>
+    <File Include="src/js/directives/loading-form.js">
+      <publishTime>03/05/2019 11:42:53</publishTime>
+    </File>
+    <File Include="src/js/directives/navbar.js">
+      <publishTime>03/06/2019 09:31:25</publishTime>
+    </File>
     <File Include="src/js/services/api.js">
       <publishTime>01/21/2019 09:52:14</publishTime>
     </File>
     <File Include="src/js/services/form.js">
       <publishTime>01/18/2019 15:16:25</publishTime>
+    </File>
+    <File Include="src/js/services/utils.js">
+      <publishTime>03/04/2019 16:36:57</publishTime>
     </File>
     <File Include="src/ui/partial/footer.html">
       <publishTime>01/28/2019 13:16:08</publishTime>
@@ -468,8 +594,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="src/ui/views/about.html">
       <publishTime>01/28/2019 13:07:08</publishTime>
     </File>
+    <File Include="src/ui/views/account/email-confirmation.html">
+      <publishTime>03/06/2019 00:18:49</publishTime>
+    </File>
+    <File Include="src/ui/views/account/index.html">
+      <publishTime>03/05/2019 11:42:53</publishTime>
+    </File>
     <File Include="src/ui/views/account/recover-password.html">
       <publishTime>01/28/2019 13:07:18</publishTime>
+    </File>
+    <File Include="src/ui/views/account/reset-password.html">
+      <publishTime>03/06/2019 00:10:57</publishTime>
     </File>
     <File Include="src/ui/views/account/sign-in.html">
       <publishTime>01/28/2019 13:07:23</publishTime>
@@ -482,6 +617,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="src/ui/views/disclaimer.html">
       <publishTime>01/28/2019 13:06:55</publishTime>
+    </File>
+    <File Include="src/ui/views/error.html">
+      <publishTime>03/05/2019 11:42:53</publishTime>
     </File>
     <File Include="src/ui/views/index.html">
       <publishTime>01/28/2019 13:06:25</publishTime>
@@ -535,127 +673,139 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/25/2019 11:07:17</publishTime>
     </File>
     <File Include="ui/css/app.min.css">
-      <publishTime>03/01/2019 15:53:50</publishTime>
+      <publishTime>03/06/2019 14:30:51</publishTime>
     </File>
     <File Include="ui/css/vendor.min.css">
-      <publishTime>03/01/2019 15:53:50</publishTime>
+      <publishTime>03/06/2019 14:30:51</publishTime>
     </File>
     <File Include="ui/i18n/global/button/en.json">
-      <publishTime>03/01/2019 15:53:50</publishTime>
+      <publishTime>03/06/2019 14:30:51</publishTime>
     </File>
     <File Include="ui/i18n/global/button/fr.json">
-      <publishTime>03/01/2019 15:53:50</publishTime>
+      <publishTime>03/06/2019 14:30:51</publishTime>
     </File>
     <File Include="ui/i18n/index/en.json">
-      <publishTime>03/01/2019 15:53:50</publishTime>
+      <publishTime>03/06/2019 14:30:51</publishTime>
     </File>
     <File Include="ui/i18n/index/fr.json">
-      <publishTime>03/01/2019 15:53:50</publishTime>
+      <publishTime>03/06/2019 14:30:51</publishTime>
     </File>
     <File Include="ui/index.html">
-      <publishTime>03/01/2019 15:54:28</publishTime>
+      <publishTime>03/06/2019 14:30:51</publishTime>
     </File>
     <File Include="ui/js/app.min.js">
-      <publishTime>03/01/2019 15:53:51</publishTime>
+      <publishTime>03/06/2019 14:34:26</publishTime>
     </File>
     <File Include="ui/js/vendor.min.js">
-      <publishTime>03/01/2019 15:53:51</publishTime>
+      <publishTime>03/06/2019 14:30:51</publishTime>
     </File>
     <File Include="ui/partial/footer.html">
-      <publishTime>03/01/2019 15:54:28</publishTime>
+      <publishTime>03/06/2019 14:30:51</publishTime>
     </File>
     <File Include="ui/partial/header.html">
-      <publishTime>03/01/2019 15:54:28</publishTime>
+      <publishTime>03/06/2019 14:30:51</publishTime>
     </File>
     <File Include="ui/views/about.html">
-      <publishTime>03/01/2019 15:54:28</publishTime>
+      <publishTime>03/06/2019 14:30:51</publishTime>
+    </File>
+    <File Include="ui/views/account/email-confirmation.html">
+      <publishTime>03/06/2019 14:30:51</publishTime>
+    </File>
+    <File Include="ui/views/account/index.html">
+      <publishTime>03/06/2019 14:30:52</publishTime>
     </File>
     <File Include="ui/views/account/recover-password.html">
-      <publishTime>03/01/2019 15:54:28</publishTime>
+      <publishTime>03/06/2019 14:30:52</publishTime>
+    </File>
+    <File Include="ui/views/account/reset-password.html">
+      <publishTime>03/06/2019 14:30:52</publishTime>
     </File>
     <File Include="ui/views/account/sign-in.html">
-      <publishTime>03/01/2019 15:54:28</publishTime>
+      <publishTime>03/06/2019 14:30:52</publishTime>
     </File>
     <File Include="ui/views/account/sign-up.html">
-      <publishTime>03/01/2019 15:54:28</publishTime>
+      <publishTime>03/06/2019 14:30:52</publishTime>
     </File>
     <File Include="ui/views/contact-us.html">
-      <publishTime>03/01/2019 15:54:28</publishTime>
+      <publishTime>03/06/2019 14:30:51</publishTime>
     </File>
     <File Include="ui/views/disclaimer.html">
-      <publishTime>03/01/2019 15:54:28</publishTime>
+      <publishTime>03/06/2019 14:30:51</publishTime>
+    </File>
+    <File Include="ui/views/error.html">
+      <publishTime>03/06/2019 14:30:51</publishTime>
     </File>
     <File Include="ui/views/index.html">
-      <publishTime>03/01/2019 15:54:28</publishTime>
+      <publishTime>03/06/2019 14:30:51</publishTime>
     </File>
     <File Include="ui/views/learning/nutrition-cancer-related-fatigue.html">
-      <publishTime>03/01/2019 15:54:28</publishTime>
+      <publishTime>03/06/2019 14:30:52</publishTime>
     </File>
     <File Include="ui/views/learning/overview.html">
-      <publishTime>03/01/2019 15:54:28</publishTime>
+      <publishTime>03/06/2019 14:30:52</publishTime>
     </File>
     <File Include="ui/views/learning/physical-activity-cancer-related-fatigue.html">
-      <publishTime>03/01/2019 15:54:28</publishTime>
+      <publishTime>03/06/2019 14:30:52</publishTime>
     </File>
     <File Include="ui/views/learning/psychological-wellness-cancer-related-fatigue.html">
-      <publishTime>03/01/2019 15:54:28</publishTime>
+      <publishTime>03/06/2019 14:30:52</publishTime>
     </File>
     <File Include="ui/views/learning/sleep-cancer-related-fatigue.html">
-      <publishTime>03/01/2019 15:54:28</publishTime>
+      <publishTime>03/06/2019 14:30:52</publishTime>
     </File>
     <File Include="ui/views/learning/spirituality-cancer-related-fatigue.html">
-      <publishTime>03/01/2019 15:54:28</publishTime>
+      <publishTime>03/06/2019 14:30:52</publishTime>
     </File>
     <File Include="ui/views/privacy.html">
-      <publishTime>03/01/2019 15:54:28</publishTime>
+      <publishTime>03/06/2019 14:30:51</publishTime>
     </File>
     <File Include="ui/views/resources.html">
-      <publishTime>03/01/2019 15:54:28</publishTime>
+      <publishTime>03/06/2019 14:30:51</publishTime>
     </File>
     <File Include="ui/webfonts/fa-brands-400.eot">
-      <publishTime>03/01/2019 15:53:50</publishTime>
+      <publishTime>03/06/2019 14:30:51</publishTime>
     </File>
     <File Include="ui/webfonts/fa-brands-400.svg">
-      <publishTime>03/01/2019 15:53:51</publishTime>
+      <publishTime>03/06/2019 14:30:52</publishTime>
     </File>
     <File Include="ui/webfonts/fa-brands-400.ttf">
-      <publishTime>03/01/2019 15:53:51</publishTime>
+      <publishTime>03/06/2019 14:30:52</publishTime>
     </File>
     <File Include="ui/webfonts/fa-brands-400.woff">
-      <publishTime>03/01/2019 15:53:51</publishTime>
+      <publishTime>03/06/2019 14:30:52</publishTime>
     </File>
     <File Include="ui/webfonts/fa-brands-400.woff2">
-      <publishTime>03/01/2019 15:53:51</publishTime>
+      <publishTime>03/06/2019 14:30:52</publishTime>
     </File>
     <File Include="ui/webfonts/fa-regular-400.eot">
-      <publishTime>03/01/2019 15:53:51</publishTime>
+      <publishTime>03/06/2019 14:30:52</publishTime>
     </File>
     <File Include="ui/webfonts/fa-regular-400.svg">
-      <publishTime>03/01/2019 15:53:51</publishTime>
+      <publishTime>03/06/2019 14:30:52</publishTime>
     </File>
     <File Include="ui/webfonts/fa-regular-400.ttf">
-      <publishTime>03/01/2019 15:53:51</publishTime>
+      <publishTime>03/06/2019 14:30:52</publishTime>
     </File>
     <File Include="ui/webfonts/fa-regular-400.woff">
-      <publishTime>03/01/2019 15:53:51</publishTime>
+      <publishTime>03/06/2019 14:30:52</publishTime>
     </File>
     <File Include="ui/webfonts/fa-regular-400.woff2">
-      <publishTime>03/01/2019 15:53:51</publishTime>
+      <publishTime>03/06/2019 14:30:52</publishTime>
     </File>
     <File Include="ui/webfonts/fa-solid-900.eot">
-      <publishTime>03/01/2019 15:53:51</publishTime>
+      <publishTime>03/06/2019 14:30:52</publishTime>
     </File>
     <File Include="ui/webfonts/fa-solid-900.svg">
-      <publishTime>03/01/2019 15:53:51</publishTime>
+      <publishTime>03/06/2019 14:30:52</publishTime>
     </File>
     <File Include="ui/webfonts/fa-solid-900.ttf">
-      <publishTime>03/01/2019 15:53:51</publishTime>
+      <publishTime>03/06/2019 14:30:52</publishTime>
     </File>
     <File Include="ui/webfonts/fa-solid-900.woff">
-      <publishTime>03/01/2019 15:53:51</publishTime>
+      <publishTime>03/06/2019 14:30:52</publishTime>
     </File>
     <File Include="ui/webfonts/fa-solid-900.woff2">
-      <publishTime>03/01/2019 15:53:51</publishTime>
+      <publishTime>03/06/2019 14:30:52</publishTime>
     </File>
     <File Include="views/about.html">
       <publishTime>03/01/2019 15:19:09</publishTime>
@@ -718,7 +868,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/01/2019 10:06:06</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/01/2019 15:57:08</publishTime>
+      <publishTime>03/06/2019 14:13:14</publishTime>
     </File>
     <File Include="webfonts/fa-brands-400.eot">
       <publishTime>03/01/2019 15:19:09</publishTime>

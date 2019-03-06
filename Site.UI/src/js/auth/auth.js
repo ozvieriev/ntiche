@@ -4,7 +4,7 @@ angular.module('app.auth')
         let _apiHeaders = { 'Content-Type': 'application/x-www-form-urlencoded' };
         let _uri = (method) => {
 
-            return `http://localhost:37321/${method}`;
+            return `/${method}`;
         };
 
         let service = {};

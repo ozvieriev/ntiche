@@ -37,7 +37,7 @@ namespace Site.UI.Controllers.Api
             }
             var recoverPasswordLink = await _auth.GenerateRecoverPasswordTokenLinkAsync(account, _appSettings.Oauth.RecoverPasswordLink);
 
-            Sender.Send(account.Email, EmailTemplate.RecoverPassword, new Notification(new
+            Sender.Send("Recover password", account.Email, EmailTemplate.RecoverPassword, new Notification(new
             {
                 account.FirstName,
                 account.LastName,

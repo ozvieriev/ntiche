@@ -5,10 +5,8 @@ namespace Email.Templates
 {
     public class Sender
     {
-        public static void Send(string to, EmailTemplate emailTemplate, Notification notification)
+        public static void Send(string subject, string to, EmailTemplate emailTemplate, Notification notification)
         {
-            var subject = "subject";
-
             var razorEmailTemplate = new RazorTemplate(emailTemplate);
             var template = razorEmailTemplate.Compile(notification);
 
@@ -18,7 +16,6 @@ namespace Email.Templates
             using (var message = new MailMessage())
             {
                 message.To.Add(to);
-
                 message.Subject = subject;
                 message.SubjectEncoding = Encoding.UTF8;
                 message.Body = layout.Replace("**Body**", template);

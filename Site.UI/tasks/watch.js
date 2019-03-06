@@ -4,5 +4,4 @@ gulp.task('watch', gulp.parallel(
     'css:app:watch',
     'html:app:watch',
     'js:app:watch',
-    'json:app:watch',
-    'sql:app:watch'));
+    'json:app:watch'));

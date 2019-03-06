@@ -38,7 +38,7 @@ namespace Site.UI.Controllers.Api
 
             var emailConfirmationLink = await _auth.GenerateEmailConfirmationTokenLinkAsync(account, _appSettings.Oauth.EmailConfirmationLink);
 
-            Sender.Send(model.Email, EmailTemplate.EmailConfirmation, new Notification(new
+            Sender.Send("Email confirmation", model.Email, EmailTemplate.EmailConfirmation, new Notification(new
             {
                 model.FirstName,
                 model.LastName,
