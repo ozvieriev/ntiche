@@ -14,5 +14,16 @@ angular.module('app.controllers')
             return;
         }
 
-        $auth.emailConfirmation(params.emailConfirmationToken, params.accountId);
+        $auth.emailConfirmation(params.emailConfirmationToken, params.accountId).then(
+            (response) => {
+
+                $scope.status = 200;
+                $scope.description = 'Your account has been activated.';
+            },
+            (error) => {
+
+                $scope.status = error.status;
+                $scope.description = error.data.error_description;
+            })
+            .finally(() => { $scope.isBusy = false; });
     }]);

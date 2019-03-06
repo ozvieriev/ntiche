@@ -52,6 +52,8 @@ namespace Site.UI.Oauth
                             context.SetError("invalid_grant", "Email confirmation link is incorrect.");
                             return;
                         }
+
+                        await auth.AccountActivateAsync(account.Id);
                     }
                 }
             }
