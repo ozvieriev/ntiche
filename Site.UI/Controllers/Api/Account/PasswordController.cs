@@ -14,7 +14,6 @@ namespace Site.UI.Controllers.Api
     {
         private IAuthRepository _auth;
         private IAppSettings _appSettings;
-        protected static Logger _oauth = LogManager.GetLogger("oauth");
 
         public RecoverPasswordController(IAuthRepository auth, IAppSettings appSettings)
         {
