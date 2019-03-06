@@ -11,8 +11,13 @@ angular.module('app.auth')
 
         service.isAuthenticated = () => {
 
-            return !!$authStorage.getItem();
+            return !!service.identity();
         };
+        service.identity = () => {
+
+            return $authStorage.getItem();
+        };
+
         service.signUp = (data) => {
 
             let $http = $injector.get("$http");

@@ -1,6 +1,7 @@
 angular.module('app.controllers')
-    .controller('partialHeaderController', ['$scope', '$state', ($scope, $state) => {
+    .controller('partialHeaderController', ['$scope', '$state', '$auth', ($scope, $state, $auth) => {
 
+        $scope.$auth = $auth;
         $scope.changeLanguage = (lang) => {
 
             var url = $state.current.url.replace(/^\//g, '');

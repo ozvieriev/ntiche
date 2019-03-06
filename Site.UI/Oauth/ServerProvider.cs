@@ -86,5 +86,17 @@ namespace Site.UI.Oauth
             identity.AddClaims(account);
             context.Validated(new AuthenticationTicket(identity, context.Ticket.Properties));
         }
+
+        public override Task TokenEndpointResponse(OAuthTokenEndpointResponseContext context)
+        {
+            var email = context.Identity.FindFirstValue(ClaimTypes.Email);
+
+            if(!string.IsNullOrEmpty(email))
+                context.AdditionalResponseParameters.Add("email", email);
+
+            context.AdditionalResponseParameters.Add("userName", context.Identity.GetUserName());
+
+            return base.TokenEndpointResponse(context);
+        }
     }
 }
