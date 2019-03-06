@@ -3,6 +3,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security.DataProtection;
 using Site.Data.Entities.Oauth;
 using System;
+using System.IO;
+using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
@@ -34,27 +36,31 @@ namespace Site.Identity
         public async Task<Uri> GenerateEmailConfirmationTokenLinkAsync(Account account, Uri uri)
         {
             var uriBuilder = new UriBuilder(uri);
-            var token = await _userManager.GenerateEmailConfirmationTokenAsync(account.Id);
+            var emailConfirmationLinkPasswordToken = await _userManager.GenerateEmailConfirmationTokenAsync(account.Id);
 
-            var query = HttpUtility.ParseQueryString(uriBuilder.Query);
-            query.Add("token", token);
-            query.Add("account", account.Id.ToString("N"));
+            var bytes = Encoding.UTF8.GetBytes(emailConfirmationLinkPasswordToken);
+            emailConfirmationLinkPasswordToken = Convert.ToBase64String(bytes);
+            emailConfirmationLinkPasswordToken = HttpUtility.UrlEncode(emailConfirmationLinkPasswordToken);
 
-            uriBuilder.Query = query.ToString();
+            var fragment = uriBuilder.Fragment.TrimStart('#');
+            var accountId = account.Id.ToString("N");
 
+            uriBuilder.Fragment = $"{fragment}/{accountId}/{emailConfirmationLinkPasswordToken}";
             return uriBuilder.Uri;
         }
         public async Task<Uri> GenerateRecoverPasswordTokenLinkAsync(Account account, Uri uri)
         {
             var uriBuilder = new UriBuilder(uri);
-            var token = await _userManager.GeneratePasswordResetTokenAsync(account.Id);
+            var recoverPasswordToken = await _userManager.GeneratePasswordResetTokenAsync(account.Id);
 
-            var query = HttpUtility.ParseQueryString(uriBuilder.Query);
-            query.Add("token", token);
-            query.Add("account", account.Id.ToString("N"));
+            var bytes = Encoding.UTF8.GetBytes(recoverPasswordToken);
+            recoverPasswordToken = Convert.ToBase64String(bytes);
+            recoverPasswordToken = HttpUtility.UrlEncode(recoverPasswordToken);
 
-            uriBuilder.Query = query.ToString();
+            var fragment = uriBuilder.Fragment.TrimStart('#');
+            var accountId = account.Id.ToString("N");
 
+            uriBuilder.Fragment = $"{fragment}/{accountId}/{recoverPasswordToken}";
             return uriBuilder.Uri;
         }
 

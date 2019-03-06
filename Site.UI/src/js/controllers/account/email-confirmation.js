@@ -1,13 +1,18 @@
 angular.module('app.controllers')
-    .controller('accountEmailConfirmationController', ['$scope', '$auth', '$utils', ($scope, $auth, $utils) => {
+    .controller('accountEmailConfirmationController', ['$scope', '$auth', '$state', ($scope, $auth, $state) => {
+
+        var params = $state.params;
 
         $scope.status = null;
+        $scope.description = null;
         $scope.isBusy = false;
 
-        let query = $utils.query();
+        if (!params.emailConfirmationToken || !params.accountId) {
 
-        if (!query.token || !query.account)
-            return ($scope.status = 404);
+            $scope.status = 404;
+            $scope.description = 'Email confirmation link is incorrect!';
+            return;
+        }
 
-        $auth.emailConfirmation(query.token, query.account);
+        $auth.emailConfirmation(params.emailConfirmationToken, params.accountId);
     }]);

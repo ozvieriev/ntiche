@@ -24,6 +24,7 @@ namespace Site.Identity
         Task<IdentityResult> AccountCreateAsync(Account account, string password);
         Task<IdentityResult> AccountChangePasswordAsync(Guid accountId, string oldPassword, string newPassword);
         Task<IdentityResult> AccountConfirmEmailAsync(Guid accountId, string emailConfirmationToken);
+        Task<IdentityResult> AccountResetPasswordAsync(Guid accountId, string resetPasswordToken, string password);
 
         /*******************************************SessionToken********************************************/
         //Task<SessionToken> SessionTokenGetAsync(Guid id);

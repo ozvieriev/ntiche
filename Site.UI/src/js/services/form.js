@@ -3,7 +3,7 @@ angular.module('app.services')
 
         var service = {};
 
-        service.submit = (entity, form, callback) => {
+        service.submit = ($scope, form, callback) => {
 
             if (form.$valid !== true) {
 
@@ -13,17 +13,20 @@ angular.module('app.services')
                         value.$setDirty();
                 });
             }
-            if (service.isReady(entity, form) === false)
+            if (service.isReady($scope, form) === false)
                 return;
-            
+
+            $scope.status = null;
+            $scope.error = null;
+
             callback(form);
         };
-        service.isReady = (entity, form) => {
+        service.isReady = ($scope, form) => {
 
-            if (entity.isBusy === true || form.$valid !== true)
+            if ($scope.isBusy === true || form.$valid !== true)
                 return false;
 
-            entity.isBusy = true;
+            $scope.isBusy = true;
 
             return true;
         };

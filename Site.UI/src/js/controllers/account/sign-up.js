@@ -1,29 +1,46 @@
 angular.module('app.controllers')
-    .controller('accountSignUpController', ['$scope', '$auth', ($scope, $auth) => {
+    .controller('accountSignUpController', ['$scope', '$state', '$form', '$auth', ($scope, $state, $form, $auth) => {
 
-        $auth.accountGet({ email: 'ozvieriev@gmail.com' })
-            .then(
-                (response) => { return { isEmailExists: true }; },
-                (error) => {
+        $scope.model = {
+            userName: 'MegaZver',
+            password: 'anatole64',
+            firstName: 'Oleksandr',
+            lastName: 'Zvieriev',
+            email: 'ozvieriev@gmail.com',
+            ocupation: 'Web Developer',
+            city: 'Montreal',
+            isOptin: true
+        };
 
-                    return $auth.accountGet({ userName: 'MegaZver22' })
-                        .then(
-                            () => { return { isUserNameExists: true } },
-                            () => { return {}; })
-                })
-            .then((response) => {
+        $scope.status = null;
+        $scope.description = null;
+        $scope.isBusy = false;
 
-                if (response.isEmailExists) {
+        $scope.submit = (form) => {
 
-                    //show error notification   
-                    //$scope.error = 'User with email address already exists';
-                }
+            $form.submit($scope, form, () => {
 
-                if (response.isUserNameExists) {
+                return $auth.signUp(angular.copy($scope.model))
+                    .then(
+                        () => {
 
-                    //show error notification
-                    //$scope.error = 'User with user name already exists';
-                }
+                            $auth.signIn($scope.model.userName, $scope.model.password)
+                                .then(() => {
+
+                                    if ($state.params.returnUrl)
+                                        $state.go($state.params.returnUrl);
+                                    else
+                                        $state.go('account/index');
+                                });
+
+                        },
+                        (error) => {
+
+                            $scope.status = error.status;
+                            $scope.description = error.data.error_description;
+                        })
+                    .finally(() => { $scope.isBusy = false });
             });
+        };
 
     }]);

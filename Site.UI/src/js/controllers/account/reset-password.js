@@ -1,31 +1,38 @@
 angular.module('app.controllers')
-    .controller('accountResetPasswordController', ['$scope', '$state', '$form', '$utils', '$auth',
-        ($scope, $state, $form, $utils, $auth) => {
+    .controller('accountResetPasswordController', ['$scope', '$state', '$form', '$auth',
+        ($scope, $state, $form, $auth) => {
 
             $scope.model = {};
 
+            var params = $state.params;
+
             $scope.status = null;
+            $scope.description = null;
             $scope.isBusy = false;
 
-            let query = $utils.query();
+            if (!params.resetPasswordToken || !params.accountId) {
 
-            if (!query.token || !query.account)
-                return ($scope.status = 404);
-
+                $scope.status = 404;
+                $scope.description = 'Reset password link is incorrect!';
+                return;
+            }
             $scope.submit = (form) => {
 
-                $scope.status = null;
                 $form.submit($scope, form, () => {
 
-                    // return $auth.recoverPassword({ email: $scope.model.email })
-                    //     .then(() => { $scope.status = 200; }, (error) => {
+                    return $auth.resetPassword(params.resetPasswordToken, params.accountId, $scope.model.password)
+                        .then(
+                            (response) => {
 
-                    //         $scope.status = error.status;
+                                $scope.status = 200;
+                                $scope.description = response.description;
+                            },
+                            (error) => {
 
-                    //         if (error.status !== 404)
-                    //             return $state.go('error');
-                    //     })
-                    //     .finally(() => { $scope.isBusy = false });
+                                $scope.status = error.status;
+                                $scope.description = error.data.error_description;
+                            })
+                        .finally(() => { $scope.isBusy = false });
                 });
             };
 

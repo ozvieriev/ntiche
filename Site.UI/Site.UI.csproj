@@ -195,7 +195,7 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Api\Account\IndexController.cs" />
-    <Compile Include="Controllers\Api\Account\RecoverPasswordController.cs" />
+    <Compile Include="Controllers\Api\Account\PasswordController.cs" />
     <Compile Include="Controllers\Api\Account\RegisterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Core\HttpExceptionResult.cs" />
@@ -204,6 +204,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ResetPasswordViewModel.cs" />
     <Compile Include="Models\RecoverPasswordViewModel.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />
     <Compile Include="Models\ValidateModel.cs" />
@@ -234,7 +235,7 @@
     <None Include="src\css\app\style.css" />
     <None Include="src\index.html" />
     <None Include="src\js\!app.js" />
-    <None Include="src\js\app.http.js" />
+    <None Include="src\js\app.config.js" />
     <None Include="src\js\app.i18n.js" />
     <None Include="src\js\app.router.js" />
     <None Include="src\js\auth\auth.js" />
@@ -281,6 +282,14 @@
     <Content Include="sql\schema.sql" />
     <Content Include="sql\sp.sql" />
     <Content Include="sql\table.sql" />
+    <Content Include="src\js\controllers\account\email-confirmation.js" />
+    <Content Include="src\js\controllers\account\index.js" />
+    <Content Include="src\js\controllers\account\reset-password.js" />
+    <Content Include="src\js\services\utils.js" />
+    <Content Include="src\ui\views\account\email-confirmation.html" />
+    <Content Include="src\ui\views\account\index.html" />
+    <Content Include="src\ui\views\account\reset-password.html" />
+    <Content Include="src\ui\views\error.html" />
     <Content Include="ui\css\app.min.css" />
     <Content Include="ui\css\vendor.min.css" />
     <Content Include="ui\index.html" />

@@ -2,9 +2,12 @@
 <div class="mt-5 row justify-content-center">
   <div class="col-md-8">
     <div class="card">
-      <div class="card-body text-center">
-        <span data-ng-show="status===404" class="text-danger">Email confirmation link is incorrect!</span>
-      </div>
+        <div class="card-body text-center">
+            <div class="alert mb-0" role="alert"
+                 data-ng-show="status"
+                 data-ng-bind="description"
+                 data-ng-class="{'alert-danger': status !==200}"></div>
+        </div>
     </div>
   </div>
 </div>

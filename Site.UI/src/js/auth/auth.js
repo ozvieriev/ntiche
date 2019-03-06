@@ -13,52 +13,47 @@ angular.module('app.auth')
 
             return !!$authStorage.getItem();
         };
-        service.signIn = (userName, password) => {
+        service.signUp = (data) => {
+
+            let $http = $injector.get("$http");
+
+            data.countryIso2 = 'CA';
+
+            return $http.post(_uri('api/account/register'),
+                data,
+                { asJson: true });
+        };
+        service.signIn = (userName, password, emailConfirmationToken, accountId) => {
 
             let data = {
-                grant_type: 'password',
-                userName: userName,
-                password: password
+                grant_type: 'password'
             };
+
+            userName && (data.userName = userName);
+            password && (data.password = password);
+            emailConfirmationToken && (data.emailConfirmationToken = emailConfirmationToken);
+            accountId && (data.accountId = accountId);
 
             let deferred = $q.defer();
             let $http = $injector.get("$http");
 
-            $http.post(_uri('api/token'), $.param(data), { headers: _apiHeaders, asJson: true })
+            $http.post(_uri('api/token'),
+                $.param(data), {
+                    headers: _apiHeaders,
+                    asJson: true
+                })
                 .then((json) => {
 
                     $authStorage.setItem(json);
                     deferred.resolve(json);
 
-                }, (error) => {
-                    deferred.reject(error.data);
-                });
+                }, (error) => { deferred.reject(error); });
 
             return deferred.promise;
         };
-        service.accountGet = (params) => {
+        service.emailConfirmation = (emailConfirmationToken, accountId) => {
 
-            let $http = $injector.get("$http");
-
-            return $http.get(_uri('api/account'), {
-                params: params,
-                asJson: true
-            });
-        };
-        service.emailConfirmation = (token, account) => {
-
-            let data = {
-                grant_type: 'password',
-                emailConfirmationToken: token,
-                accountId: account
-            };
-
-            let $http = $injector.get("$http");
-
-            $http.post(_uri('api/token'),
-                $.param(data), {
-                    headers: _apiHeaders
-                });
+            return service.signIn(null, null, emailConfirmationToken, accountId);
         };
         service.recoverPassword = (params) => {
 
@@ -69,14 +64,14 @@ angular.module('app.auth')
                 asJson: true
             });
         };
-        service.resetPassword = (token, account, password) => {
+        service.resetPassword = (resetPasswordToken, accountId, password) => {
 
             let $http = $injector.get("$http");
 
             return $http.post(_uri('api/account/reset-password'),
                 {
-                    resetPasswordToken: token,
-                    accountId: account,
+                    resetPasswordToken: resetPasswordToken,
+                    accountId: accountId,
                     password: password
                 },
                 { asJson: true });

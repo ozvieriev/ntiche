@@ -31,8 +31,8 @@ namespace Site.UI.Controllers.Api
             account = Mapper.Map(model, account);
 
             var identityResult = await _auth.AccountCreateAsync(account, model.Password);
-            Exception identityResultException = null;
 
+            Exception identityResultException = null;
             if (!identityResult.Validate(ref identityResultException))
                 return Request.HttpExceptionResult(identityResultException);
 
@@ -42,6 +42,7 @@ namespace Site.UI.Controllers.Api
             {
                 model.FirstName,
                 model.LastName,
+                model.UserName,
                 emailConfirmationLink
             }));
 

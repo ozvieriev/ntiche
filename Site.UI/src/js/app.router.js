@@ -26,8 +26,9 @@ angular.module('app')
         var _state = (json) => {
 
             json.name = json.name || json.url;
+            json.htmlUrl = json.htmlUrl || json.url;
             json.params = json.params || {};
-            json.templateUrl = json.templateUrl || `views/${json.url}.html`;
+            json.templateUrl = json.templateUrl || `views/${json.htmlUrl}.html`;
             json.isProtected = !!json.isProtected;
 
             var state = {
@@ -45,9 +46,9 @@ angular.module('app')
         };
 
         _state({ url: 'account/index', controller: 'accountIndex', isProtected: true });
-        _state({ url: 'account/email-confirmation', controller: 'accountEmailConfirmation' });
+        _state({ url: 'account/email-confirmation/:accountId/:emailConfirmationToken', htmlUrl: 'account/email-confirmation', controller: 'accountEmailConfirmation' });
         _state({ url: 'account/recover-password', controller: 'accountRecoverPassword' });
-        _state({ url: 'account/reset-password', controller: 'accountResetPassword' });
+        _state({ url: 'account/reset-password/:accountId/:resetPasswordToken', htmlUrl: 'account/reset-password', controller: 'accountResetPassword' });
         _state({ url: 'account/sign-in', controller: 'accountSignIn', params: { returnUrl: null } });
         _state({ url: 'account/sign-up', controller: 'accountSignUp' });
 

@@ -6,6 +6,7 @@ using Site.Identity;
 using System;
 using System.Collections.Generic;
 using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Site.UI.Oauth
@@ -20,13 +21,13 @@ namespace Site.UI.Oauth
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
             var emailConfirmationToken = string.Empty;
-            var emailConfirmationAccountId = Guid.Empty;
+            var accountId = Guid.Empty;
 
             var formCollection = await context.Request.ReadFormAsync();
             if (!object.Equals(formCollection, null))
             {
-                emailConfirmationToken = formCollection["email_confirmation_token"];
-                Guid.TryParse(formCollection["email_confirmation_accountId"], out emailConfirmationAccountId);
+                emailConfirmationToken = formCollection["emailConfirmationToken"];
+                Guid.TryParse(formCollection["accountId"], out accountId);
             }
             Account account = null;
             using (var auth = new AuthRepository())
@@ -35,12 +36,16 @@ namespace Site.UI.Oauth
                     account = await auth.AccountGetAsync(context.UserName, context.Password);
                 else
                 {
-                    account = await auth.AccountGetAsync(emailConfirmationAccountId);
+                    account = await auth.AccountGetAsync(accountId);
 
                     if (!object.Equals(account, null))
                     {
                         auth.SetDataProtectorProvider(Startup.DataProtectionProvider);
-                        var identityResult = await auth.AccountConfirmEmailAsync(emailConfirmationAccountId, emailConfirmationToken);
+
+                        var bytes = Convert.FromBase64String(emailConfirmationToken);
+                        emailConfirmationToken = Encoding.UTF8.GetString(bytes);
+
+                        var identityResult = await auth.AccountConfirmEmailAsync(accountId, emailConfirmationToken);
 
                         if (!identityResult.Succeeded)
                         {
