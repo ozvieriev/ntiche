@@ -278,6 +278,7 @@
     <None Include="tasks\json.js" />
     <None Include="tasks\serve.js" />
     <None Include="tasks\watch.js" />
+    <None Include="readme.txt" />
     <Content Include="sql\drop.sql" />
     <Content Include="sql\schema.sql" />
     <Content Include="sql\sp.sql" />
