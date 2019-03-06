@@ -1,4 +1,5 @@
 ﻿using Email.Templates;
+using NLog;
 using Site.Identity;
 using Site.UI.Core;
 using Site.UI.Models;
@@ -13,6 +14,7 @@ namespace Site.UI.Controllers.Api
     {
         private IAuthRepository _auth;
         private IAppSettings _appSettings;
+        protected static Logger _oauth = LogManager.GetLogger("oauth");
 
         public RecoverPasswordController(IAuthRepository auth, IAppSettings appSettings)
         {
@@ -35,6 +37,7 @@ namespace Site.UI.Controllers.Api
 
                 return ResponseMessage(response);
             }
+
             var recoverPasswordLink = await _auth.GenerateRecoverPasswordTokenLinkAsync(account, _appSettings.Oauth.RecoverPasswordLink);
 
             Sender.Send("Recover password", account.Email, EmailTemplate.RecoverPassword, new Notification(new
