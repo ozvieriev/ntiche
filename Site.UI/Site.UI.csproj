@@ -285,6 +285,8 @@
     <Content Include="src\js\controllers\account\email-confirmation.js" />
     <Content Include="src\js\controllers\account\index.js" />
     <Content Include="src\js\controllers\account\reset-password.js" />
+    <Content Include="src\js\directives\navbar.js" />
+    <Content Include="src\js\directives\loading-form.js" />
     <Content Include="src\js\services\utils.js" />
     <Content Include="src\ui\views\account\email-confirmation.html" />
     <Content Include="src\ui\views\account\index.html" />
