@@ -80,14 +80,20 @@
     <Compile Include="AuthDbContext.cs" />
     <Compile Include="AuthDbContext.Sql\AuthDbContext.Sql.Account.cs" />
     <Compile Include="AuthDbContext.Sql\AuthDbContext.Sql.cs" />
+    <Compile Include="AuthDbContext.Sql\AuthDbContext.Sql.Exam.cs" />
+    <Compile Include="AuthDbContext.Sql\AuthDbContext.Sql.Role.cs" />
     <Compile Include="AuthDbContext.Sql\AuthDbContext.Sql.SessionToken.cs" />
     <Compile Include="AuthRepository\AuthRepository.Account.cs" />
     <Compile Include="AuthRepository\AuthRepository.cs" />
+    <Compile Include="AuthRepository\AuthRepository.Role.cs" />
     <Compile Include="AuthRepository\AuthRepository.SessionToken.cs" />
     <Compile Include="AuthRepository\IAuthRepository.cs" />
     <Compile Include="IdentityStore.cs" />
     <Compile Include="PasswordHasher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestRepository\TestRepository.Exam.cs" />
+    <Compile Include="TestRepository\TestRepository.cs" />
+    <Compile Include="TestRepository\ITestRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

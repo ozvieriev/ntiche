@@ -47,11 +47,7 @@ namespace Site.UI.Controllers.Api
                 recoverPasswordLink
             }));
 
-            return Ok(new
-            {
-                email,
-                description = "An email has been sent to your account to reset your password."
-            });
+            return Ok(new DescriptionViewModel("An email has been sent to your account to reset your password."));
         }
 
         [HttpPost, Route("reset-password"), ValidateNullModel, ValidateModel]
@@ -76,10 +72,7 @@ namespace Site.UI.Controllers.Api
 
             await _auth.AccountActivateAsync(model.AccountId);
 
-            return Ok(new
-            {
-                description = "Your password has been successfully changed. You can use the new password to sign in."
-            });
+            return Ok(new DescriptionViewModel("Your password has been successfully changed. You can use the new password to sign in."));
         }
     }
 }

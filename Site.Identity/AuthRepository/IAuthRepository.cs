@@ -2,6 +2,7 @@
 using Microsoft.Owin.Security.DataProtection;
 using Site.Data.Entities.Oauth;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Site.Identity
@@ -26,7 +27,11 @@ namespace Site.Identity
         Task<IdentityResult> AccountConfirmEmailAsync(Guid accountId, string emailConfirmationToken);
         Task<IdentityResult> AccountResetPasswordAsync(Guid accountId, string resetPasswordToken, string password);
 
+        /*******************************************Role****************************************************/
+        Task<List<Role>> RoleGetByAccountIdAsync(Guid accountId);
+
         /*******************************************SessionToken********************************************/
+        Task SessionTokenDeleteAsync(Guid id);
         //Task<SessionToken> SessionTokenGetAsync(Guid id);
         //Task SessionTokenInsertAsync(SessionToken token);
     }

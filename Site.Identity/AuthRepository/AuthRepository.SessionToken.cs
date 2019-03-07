@@ -6,6 +6,10 @@ namespace Site.Identity
 {
     public partial class AuthRepository
     {
+        public async Task SessionTokenDeleteAsync(Guid id)
+        {
+            await _context.SessionTokenDeleteAsync(id);
+        }
         public async Task<SessionToken> SessionTokenGetAsync(Guid id)
         {
             return await _context.SessionTokenGetAsync(id);

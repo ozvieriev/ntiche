@@ -195,6 +195,7 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Api\Account\IndexController.cs" />
+    <Compile Include="Controllers\Api\Account\LogoutController.cs" />
     <Compile Include="Controllers\Api\Account\PasswordController.cs" />
     <Compile Include="Controllers\Api\Account\RegisterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -207,6 +208,7 @@
     <Compile Include="Models\ResetPasswordViewModel.cs" />
     <Compile Include="Models\RecoverPasswordViewModel.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />
+    <Compile Include="Models\DescriptionViewModel.cs" />
     <Compile Include="Models\ValidateModel.cs" />
     <Compile Include="Models\ValidateNullModel.cs" />
     <Compile Include="Oauth\ClaimsIdentityHelper.cs" />

@@ -21,7 +21,6 @@ angular.module('app.controllers')
 
                     }, (error) => {
 
-                        debugger
                         $scope.status = error.status;
                         $scope.description = error.data.error_description;
                     })

@@ -7,11 +7,17 @@ namespace Site.Identity
 {
     public partial class AuthDbContext
     {
+        internal async Task SessionTokenDeleteAsync(Guid id)
+        {
+            var sqlParams = new SqlParameter[] { id.ToSql("id") };
+
+            await ExecuteNonQueryAsync("oauth.pSessionTokenDeleteById", sqlParams);
+        }
         internal async Task<SessionToken> SessionTokenGetAsync(Guid id)
         {
             var sqlParams = new SqlParameter[] { id.ToSql("id") };
 
-            return await ExecuteReaderAsync<SessionToken>("[oauth].[pSessionTokenTake]", sqlParams);
+            return await ExecuteReaderAsync<SessionToken>("oauth.pSessionTokenTake", sqlParams);
         }
         internal async Task SessionTokenInsertAsync(SessionToken token)
         {
@@ -24,7 +30,7 @@ namespace Site.Identity
                 token.ProtectedTicket.ToSql("protectedTicket")
             };
 
-            await ExecuteNonQueryAsync("[oauth].[pSessionTokenInsert]", sqlParams);
+            await ExecuteNonQueryAsync("oauth.pSessionTokenInsert", sqlParams);
         }
     }
 }

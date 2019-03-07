@@ -37,7 +37,8 @@
             </ul>
         </div>
         <div data-ng-if="$auth.isAuthenticated()">
-            <span class="navbar-brand" data-ng-bind="$auth.identity().userName"></span>
+            <a class="navbar-brand"  ui-sref="account/index" data-ng-bind="$auth.identity().userName"></a>
+            <button type="button" data-ng-click="logout()">Logout</button>
         </div>
     </div>
 </nav>

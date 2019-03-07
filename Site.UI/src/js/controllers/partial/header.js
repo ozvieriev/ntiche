@@ -10,4 +10,9 @@ angular.module('app.controllers')
 
             $state.go(url, params);
         };
+        $scope.logout = () => {
+
+            $auth.logout();
+            $state.go('index');
+        };
     }]);

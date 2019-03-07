@@ -1,15 +1,15 @@
 angular.module('app.controllers')
-    .controller('accountSignUpController', ['$scope', '$state', '$form', '$auth', ($scope, $state, $form, $auth) => {
+    .controller('accountSignUpController', ['$scope', '$form', '$auth', ($scope, $form, $auth) => {
 
         $scope.model = {
-            //userName: 'MegaZver',
-            //password: 'anatole64',
-            //firstName: 'Oleksandr',
-            //lastName: 'Zvieriev',
-            //email: 'ozvieriev@gmail.com',
-            //ocupation: 'Web Developer',
-            //city: 'Montreal',
-            //isOptin: true
+            userName: 'MegaZver',
+            password: 'anatole64',
+            firstName: 'Oleksandr',
+            lastName: 'Zvieriev',
+            email: 'ozvieriev@gmail.com',
+            ocupation: 'Web Developer',
+            city: 'Montreal',
+            isOptin: true
         };
 
         $scope.status = null;
@@ -22,17 +22,11 @@ angular.module('app.controllers')
 
                 return $auth.signUp(angular.copy($scope.model))
                     .then(
-                        () => {
+                        (response) => {
 
-                            $auth.signIn($scope.model.userName, $scope.model.password)
-                                .then(() => {
-
-                                    if ($state.params.returnUrl)
-                                        $state.go($state.params.returnUrl);
-                                    else
-                                        $state.go('account/index');
-                                });
-
+                            $scope.status = 200;
+                            $scope.status = 200;
+                            $scope.description = response.description;
                         },
                         (error) => {
 

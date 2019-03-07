@@ -46,9 +46,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity.cs" />
+    <Compile Include="Oauth\Role.cs" />
     <Compile Include="Oauth\Account.cs" />
     <Compile Include="Oauth\SessionToken.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test\vExam.cs" />
+    <Compile Include="Test\vAnswer.cs" />
+    <Compile Include="Test\vQuestion.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

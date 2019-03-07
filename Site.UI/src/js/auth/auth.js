@@ -56,6 +56,10 @@ angular.module('app.auth')
 
             return deferred.promise;
         };
+        service.logout = () => {
+
+            $authStorage.removeItem();
+        };
         service.emailConfirmation = (emailConfirmationToken, accountId) => {
 
             return service.signIn(null, null, emailConfirmationToken, accountId);

@@ -1,23 +1,14 @@
 ﻿using RazorEngine;
 using RazorEngine.Templating;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 
 namespace Email.Templates
 {
     public class RazorTemplate
     {
         private EmailTemplate _template;
-        private static string _templateFolder;
-
-        static RazorTemplate()
-        {
-            _templateFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "bin", "EmailTemplates");
-        }
+        private static Type _resourcesType = typeof(Resources);
 
         public RazorTemplate(EmailTemplate template)
         {
@@ -26,16 +17,15 @@ namespace Email.Templates
 
         public string Compile(Notification notification)
         {
-            string templatePath = Path.Combine(_templateFolder, $"{_template}.cshtml");
-
-            return RunCompile(templatePath, notification);
+            return RunCompile($"{_template}.cshtml", notification);
         }
 
         private string RunCompile(string templatePath, Notification notification)
         {
             var templateKey = Enum.GetName(typeof(EmailTemplate), _template);
+            var property = _resourcesType.GetProperty(templateKey, (BindingFlags.Public | BindingFlags.Static));
 
-            var template = File.ReadAllText(templatePath);
+            var template = (string)property.GetValue(null, null);
             var templateSource = new LoadedTemplateSource(template, templatePath);
 
             return Engine.Razor.RunCompile(templateSource, templateKey, typeof(Notification), notification);

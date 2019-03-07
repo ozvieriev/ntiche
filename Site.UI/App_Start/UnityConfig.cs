@@ -12,6 +12,7 @@ namespace Site.UI
 			var container = new UnityContainer();
 
             container.RegisterType<IAuthRepository, AuthRepository>();
+            container.RegisterType<ITestRepository, TestRepository>();
             container.RegisterType<IAppSettings, AppSettings>(); 
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);

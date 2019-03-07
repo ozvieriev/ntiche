@@ -1,7 +1,5 @@
 ﻿using Site.Data.Entities.Oauth;
-using System;
 using System.Data.Entity;
-using System.Threading.Tasks;
 
 namespace Site.Identity
 {
@@ -18,6 +16,7 @@ namespace Site.Identity
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Account>().ToTable("oauth.account");
+            modelBuilder.Entity<Role>().ToTable("oauth.role");
         }
 
         public DbSet<Account> Accounts { get; set; }

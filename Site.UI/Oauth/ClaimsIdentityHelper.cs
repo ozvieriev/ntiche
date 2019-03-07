@@ -1,4 +1,5 @@
 ﻿using Site.Data.Entities.Oauth;
+using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 
@@ -23,6 +24,14 @@ namespace Site.UI.Oauth
             identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, account.Id.ToString("N")));
             identity.AddClaim(new Claim(ClaimTypes.Email, account.Email));
             identity.AddClaim(new Claim(ClaimTypes.Name, account.UserName));
+        }
+
+        public static void AddClaims(this ClaimsIdentity identity, IList<Role> roles)
+        {
+            identity.TryRemoveClaim(ClaimTypes.Role);
+
+            foreach (var role in roles)
+                identity.AddClaim(new Claim(ClaimTypes.Role, role.Name));
         }
     }
 }

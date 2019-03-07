@@ -5,6 +5,7 @@ using Site.Data.Entities.Oauth;
 using Site.Identity;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +31,8 @@ namespace Site.UI.Oauth
                 Guid.TryParse(formCollection["accountId"], out accountId);
             }
             Account account = null;
+            IList<Role> roles = null;
+
             using (var auth = new AuthRepository())
             {
                 if (string.IsNullOrEmpty(emailConfirmationToken))
@@ -53,9 +56,13 @@ namespace Site.UI.Oauth
                             return;
                         }
 
+                        account.IsActivated = true;
                         await auth.AccountActivateAsync(account.Id);
                     }
                 }
+
+                if (!object.Equals(account, null) && account.IsActivated)
+                    roles = await auth.RoleGetByAccountIdAsync(account.Id);
             }
             if (object.Equals(account, null))
             {
@@ -63,10 +70,18 @@ namespace Site.UI.Oauth
                 return;
             }
 
+            if (!account.IsActivated)
+            {
+                context.SetError("invalid_grant", "Your account is not activated. Please verify your email.");
+                return;
+            }
+
             var identity = new ClaimsIdentity(context.Options.AuthenticationType);
             var properties = new Dictionary<string, string> { };
 
             identity.AddClaims(account);
+            identity.AddClaims(roles);
+
             context.Validated(new AuthenticationTicket(identity, new AuthenticationProperties(properties)));
         }
 
@@ -77,13 +92,21 @@ namespace Site.UI.Oauth
 
             Account account = null;
             var accountId = Guid.Parse(identity.GetUserId());
+
+            IList<Role> roles = null;
             using (var auth = new AuthRepository())
+            {
                 account = await auth.AccountGetAsync(accountId);
 
-            if (object.Equals(account, null))
-                return;
+                if (object.Equals(account, null))
+                    return;
+
+                roles = await auth.RoleGetByAccountIdAsync(accountId);
+            }
 
             identity.AddClaims(account);
+            identity.AddClaims(roles);
+
             context.Validated(new AuthenticationTicket(identity, context.Ticket.Properties));
         }
 
@@ -91,10 +114,16 @@ namespace Site.UI.Oauth
         {
             var email = context.Identity.FindFirstValue(ClaimTypes.Email);
 
-            if(!string.IsNullOrEmpty(email))
+            if (!string.IsNullOrEmpty(email))
                 context.AdditionalResponseParameters.Add("email", email);
 
             context.AdditionalResponseParameters.Add("userName", context.Identity.GetUserName());
+
+            var roles = context.Identity
+                .FindAll(ClaimTypes.Role)
+                .Select(claim => claim.Value);
+
+            context.AdditionalResponseParameters.Add("roles", string.Join(",", roles));
 
             return base.TokenEndpointResponse(context);
         }
