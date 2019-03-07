@@ -294,8 +294,8 @@
     <None Include="src\ui\views\account\index.html" />
     <None Include="src\ui\views\account\reset-password.html" />
     <None Include="src\ui\views\error.html" />
-    <Content Include="src\js\controllers\exam\index.js" />
-    <Content Include="src\ui\views\exam\index.html" />
+    <None Include="src\js\controllers\exam\index.js" />
+    <None Include="src\ui\views\exam\index.html" />
     <Content Include="ui\css\app.min.css" />
     <Content Include="ui\css\vendor.min.css" />
     <Content Include="ui\index.html" />

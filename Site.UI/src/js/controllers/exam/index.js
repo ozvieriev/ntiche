@@ -12,13 +12,14 @@ angular.module('app.controllers')
         let viewQuestion = function (json) {
 
             this.id = json.id;
-            this.text = $sce.trustAsHtml(json.question);
+            this.text = $sce.trustAsHtml(json.text);
             this.answers = viewAnswerBuilder.build(json);
+            this.selectedAnswer = null;
         };
         let viewAnswer = function (json) {
 
             this.id = json.id;
-            this.text = $sce.trustAsHtml(json.answer);
+            this.text = $sce.trustAsHtml(json.text);
             this.isCorrect = json.isCorrect;
         };
 

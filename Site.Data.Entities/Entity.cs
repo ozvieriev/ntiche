@@ -3,7 +3,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Site.Data.Entities
 {
-    public abstract class Entity<T>
+    public abstract class BaseEntity
+    {
+
+    }
+
+    public abstract class Entity<T>: BaseEntity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

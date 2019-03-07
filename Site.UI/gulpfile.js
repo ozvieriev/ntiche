@@ -1,4 +1,4 @@
-/// <binding ProjectOpened='default:vs' />
+/// <binding ProjectOpened='!default' />
 const gulp = require('gulp');
 
 require('fs').readdirSync('./tasks/').forEach(function (task) {
