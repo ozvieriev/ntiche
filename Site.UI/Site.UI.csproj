@@ -297,7 +297,7 @@
     <None Include="src\ui\views\error.html" />
     <None Include="src\js\controllers\exam\index.js" />
     <None Include="src\ui\views\exam\index.html" />
-    <Content Include="src\ui\views\admin\exam-results.html" />
+    <None Include="src\ui\views\admin\exam-results.html" />
     <Content Include="ui\css\app.min.css" />
     <Content Include="ui\css\vendor.min.css" />
     <Content Include="ui\index.html" />

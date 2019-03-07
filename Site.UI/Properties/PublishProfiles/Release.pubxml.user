@@ -310,25 +310,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2018 12:18:16</publishTime>
     </File>
     <File Include="bin/Site.Data.Entities.dll">
-      <publishTime>03/07/2019 11:12:06</publishTime>
+      <publishTime>03/07/2019 16:16:15</publishTime>
     </File>
     <File Include="bin/Site.Data.Entities.pdb">
-      <publishTime>03/07/2019 11:12:06</publishTime>
+      <publishTime>03/07/2019 16:16:15</publishTime>
     </File>
     <File Include="bin/Site.Identity.dll">
-      <publishTime>03/07/2019 11:12:06</publishTime>
+      <publishTime>03/07/2019 16:16:15</publishTime>
     </File>
     <File Include="bin/Site.Identity.dll.config">
       <publishTime>03/01/2019 11:30:06</publishTime>
     </File>
     <File Include="bin/Site.Identity.pdb">
-      <publishTime>03/07/2019 11:12:06</publishTime>
+      <publishTime>03/07/2019 16:16:15</publishTime>
     </File>
     <File Include="bin/Site.UI.dll">
-      <publishTime>03/07/2019 11:12:44</publishTime>
+      <publishTime>03/07/2019 16:46:36</publishTime>
     </File>
     <File Include="bin/Site.UI.pdb">
-      <publishTime>03/07/2019 11:12:44</publishTime>
+      <publishTime>03/07/2019 16:46:36</publishTime>
     </File>
     <File Include="bin/System.Diagnostics.DiagnosticSource.dll">
       <publishTime>09/18/2018 19:38:16</publishTime>
@@ -615,6 +615,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="src/ui/views/account/sign-up.html">
       <publishTime>01/28/2019 13:07:29</publishTime>
     </File>
+    <File Include="src/ui/views/admin/exam-results.html">
+      <publishTime>03/07/2019 14:04:08</publishTime>
+    </File>
     <File Include="src/ui/views/contact-us.html">
       <publishTime>01/28/2019 13:07:00</publishTime>
     </File>
@@ -679,142 +682,142 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/25/2019 11:07:17</publishTime>
     </File>
     <File Include="ui/css/app.min.css">
-      <publishTime>03/07/2019 10:06:14</publishTime>
+      <publishTime>03/07/2019 16:45:28</publishTime>
     </File>
     <File Include="ui/css/vendor.min.css">
-      <publishTime>03/07/2019 10:06:14</publishTime>
+      <publishTime>03/07/2019 16:21:39</publishTime>
     </File>
     <File Include="ui/i18n/global/button/en.json">
-      <publishTime>03/07/2019 10:06:14</publishTime>
+      <publishTime>03/07/2019 16:21:41</publishTime>
     </File>
     <File Include="ui/i18n/global/button/fr.json">
-      <publishTime>03/07/2019 10:06:14</publishTime>
+      <publishTime>03/07/2019 16:21:41</publishTime>
     </File>
     <File Include="ui/i18n/index/en.json">
-      <publishTime>03/07/2019 10:06:14</publishTime>
+      <publishTime>03/07/2019 16:21:39</publishTime>
     </File>
     <File Include="ui/i18n/index/fr.json">
-      <publishTime>03/07/2019 10:06:14</publishTime>
+      <publishTime>03/07/2019 16:21:41</publishTime>
     </File>
     <File Include="ui/index.html">
-      <publishTime>03/07/2019 11:12:32</publishTime>
+      <publishTime>03/07/2019 16:43:29</publishTime>
     </File>
     <File Include="ui/js/app.min.js">
-      <publishTime>03/07/2019 11:12:23</publishTime>
+      <publishTime>03/07/2019 16:46:26</publishTime>
     </File>
     <File Include="ui/js/vendor.min.js">
-      <publishTime>03/07/2019 10:06:15</publishTime>
+      <publishTime>03/07/2019 16:21:39</publishTime>
     </File>
     <File Include="ui/partial/footer.html">
-      <publishTime>03/07/2019 11:12:32</publishTime>
+      <publishTime>03/07/2019 16:43:29</publishTime>
     </File>
     <File Include="ui/partial/header.html">
-      <publishTime>03/07/2019 11:12:32</publishTime>
+      <publishTime>03/07/2019 16:43:29</publishTime>
     </File>
     <File Include="ui/views/about.html">
-      <publishTime>03/07/2019 11:12:32</publishTime>
+      <publishTime>03/07/2019 16:43:29</publishTime>
     </File>
     <File Include="ui/views/account/email-confirmation.html">
-      <publishTime>03/07/2019 11:12:32</publishTime>
+      <publishTime>03/07/2019 16:43:29</publishTime>
     </File>
     <File Include="ui/views/account/index.html">
-      <publishTime>03/07/2019 11:12:32</publishTime>
+      <publishTime>03/07/2019 16:43:29</publishTime>
     </File>
     <File Include="ui/views/account/recover-password.html">
-      <publishTime>03/07/2019 11:12:32</publishTime>
+      <publishTime>03/07/2019 16:43:29</publishTime>
     </File>
     <File Include="ui/views/account/reset-password.html">
-      <publishTime>03/07/2019 11:12:32</publishTime>
+      <publishTime>03/07/2019 16:43:29</publishTime>
     </File>
     <File Include="ui/views/account/sign-in.html">
-      <publishTime>03/07/2019 11:12:32</publishTime>
+      <publishTime>03/07/2019 16:43:29</publishTime>
     </File>
     <File Include="ui/views/account/sign-up.html">
-      <publishTime>03/07/2019 11:12:32</publishTime>
+      <publishTime>03/07/2019 16:43:29</publishTime>
     </File>
     <File Include="ui/views/contact-us.html">
-      <publishTime>03/07/2019 11:12:32</publishTime>
+      <publishTime>03/07/2019 16:43:29</publishTime>
     </File>
     <File Include="ui/views/disclaimer.html">
-      <publishTime>03/07/2019 11:12:32</publishTime>
+      <publishTime>03/07/2019 16:43:29</publishTime>
     </File>
     <File Include="ui/views/error.html">
-      <publishTime>03/07/2019 11:12:32</publishTime>
+      <publishTime>03/07/2019 16:43:29</publishTime>
     </File>
     <File Include="ui/views/exam/index.html">
-      <publishTime>03/07/2019 11:12:32</publishTime>
+      <publishTime>03/07/2019 16:43:29</publishTime>
     </File>
     <File Include="ui/views/index.html">
-      <publishTime>03/07/2019 11:12:32</publishTime>
+      <publishTime>03/07/2019 16:43:29</publishTime>
     </File>
     <File Include="ui/views/learning/nutrition-cancer-related-fatigue.html">
-      <publishTime>03/07/2019 11:12:32</publishTime>
+      <publishTime>03/07/2019 16:43:29</publishTime>
     </File>
     <File Include="ui/views/learning/overview.html">
-      <publishTime>03/07/2019 11:12:32</publishTime>
+      <publishTime>03/07/2019 16:43:29</publishTime>
     </File>
     <File Include="ui/views/learning/physical-activity-cancer-related-fatigue.html">
-      <publishTime>03/07/2019 11:12:32</publishTime>
+      <publishTime>03/07/2019 16:43:29</publishTime>
     </File>
     <File Include="ui/views/learning/psychological-wellness-cancer-related-fatigue.html">
-      <publishTime>03/07/2019 11:12:32</publishTime>
+      <publishTime>03/07/2019 16:43:29</publishTime>
     </File>
     <File Include="ui/views/learning/sleep-cancer-related-fatigue.html">
-      <publishTime>03/07/2019 11:12:32</publishTime>
+      <publishTime>03/07/2019 16:43:29</publishTime>
     </File>
     <File Include="ui/views/learning/spirituality-cancer-related-fatigue.html">
-      <publishTime>03/07/2019 11:12:32</publishTime>
+      <publishTime>03/07/2019 16:43:29</publishTime>
     </File>
     <File Include="ui/views/privacy.html">
-      <publishTime>03/07/2019 11:12:32</publishTime>
+      <publishTime>03/07/2019 16:43:29</publishTime>
     </File>
     <File Include="ui/views/resources.html">
-      <publishTime>03/07/2019 11:12:32</publishTime>
+      <publishTime>03/07/2019 16:43:29</publishTime>
     </File>
     <File Include="ui/webfonts/fa-brands-400.eot">
-      <publishTime>03/07/2019 10:06:14</publishTime>
+      <publishTime>03/07/2019 16:21:39</publishTime>
     </File>
     <File Include="ui/webfonts/fa-brands-400.svg">
-      <publishTime>03/07/2019 10:06:15</publishTime>
+      <publishTime>03/07/2019 16:21:41</publishTime>
     </File>
     <File Include="ui/webfonts/fa-brands-400.ttf">
-      <publishTime>03/07/2019 10:06:15</publishTime>
+      <publishTime>03/07/2019 16:21:41</publishTime>
     </File>
     <File Include="ui/webfonts/fa-brands-400.woff">
-      <publishTime>03/07/2019 10:06:15</publishTime>
+      <publishTime>03/07/2019 16:21:41</publishTime>
     </File>
     <File Include="ui/webfonts/fa-brands-400.woff2">
-      <publishTime>03/07/2019 10:06:15</publishTime>
+      <publishTime>03/07/2019 16:21:41</publishTime>
     </File>
     <File Include="ui/webfonts/fa-regular-400.eot">
-      <publishTime>03/07/2019 10:06:15</publishTime>
+      <publishTime>03/07/2019 16:21:41</publishTime>
     </File>
     <File Include="ui/webfonts/fa-regular-400.svg">
-      <publishTime>03/07/2019 10:06:15</publishTime>
+      <publishTime>03/07/2019 16:21:41</publishTime>
     </File>
     <File Include="ui/webfonts/fa-regular-400.ttf">
-      <publishTime>03/07/2019 10:06:15</publishTime>
+      <publishTime>03/07/2019 16:21:41</publishTime>
     </File>
     <File Include="ui/webfonts/fa-regular-400.woff">
-      <publishTime>03/07/2019 10:06:15</publishTime>
+      <publishTime>03/07/2019 16:21:41</publishTime>
     </File>
     <File Include="ui/webfonts/fa-regular-400.woff2">
-      <publishTime>03/07/2019 10:06:15</publishTime>
+      <publishTime>03/07/2019 16:21:41</publishTime>
     </File>
     <File Include="ui/webfonts/fa-solid-900.eot">
-      <publishTime>03/07/2019 10:06:15</publishTime>
+      <publishTime>03/07/2019 16:21:41</publishTime>
     </File>
     <File Include="ui/webfonts/fa-solid-900.svg">
-      <publishTime>03/07/2019 10:06:15</publishTime>
+      <publishTime>03/07/2019 16:21:41</publishTime>
     </File>
     <File Include="ui/webfonts/fa-solid-900.ttf">
-      <publishTime>03/07/2019 10:06:15</publishTime>
+      <publishTime>03/07/2019 16:21:41</publishTime>
     </File>
     <File Include="ui/webfonts/fa-solid-900.woff">
-      <publishTime>03/07/2019 10:06:15</publishTime>
+      <publishTime>03/07/2019 16:21:41</publishTime>
     </File>
     <File Include="ui/webfonts/fa-solid-900.woff2">
-      <publishTime>03/07/2019 10:06:15</publishTime>
+      <publishTime>03/07/2019 16:21:41</publishTime>
     </File>
     <File Include="views/about.html">
       <publishTime>03/01/2019 15:19:09</publishTime>

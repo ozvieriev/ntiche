@@ -8,6 +8,15 @@ body {
         clear: both;
     }
 
+body, html {
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    padding-bottom:64px;
+}
+
 [ng-cloak], [data-ng-cloak] {
     visibility: hidden !important;
 }
@@ -57,25 +66,18 @@ body {
     outline: none;
 }
 
-.border-t {
-    border-top: 1px solid rgba(255,255,255,.5);
-    padding-top: 10px;
-}
-
-.profile a {
+.inline-link-container a {
     color: #fff;
     font-size: 18px;
     display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 @media screen and (min-width: 768px) {
-    .border-t {
-        border-top: 0;
-        padding-top: 0;
-        display: inline;
-    }
 
-    .profile {
+
+    .inline-link-container {
         display: inline-block;
         padding: 0 10px;
     }
@@ -84,7 +86,8 @@ body {
         margin: 0;
         justify-content: flex-end;
     }
-    .lang li{
+
+    .lang li {
         margin: 0;
     }
 }
@@ -103,7 +106,10 @@ body {
 
 
 /*footer */
-.footer{
+.footer {
+    position:relative;
+    z-index:1;
     border-top: 1px solid #ccc;
     padding: 15px 0 0;
+    margin-top:-64px;
 }

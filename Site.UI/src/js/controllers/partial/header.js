@@ -13,6 +13,6 @@ angular.module('app.controllers')
         $scope.logout = () => {
 
             $auth.logout();
-            $state.go('index');
+            $state.go('account/sign-in');
         };
     }]);

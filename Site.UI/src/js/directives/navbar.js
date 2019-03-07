@@ -5,8 +5,8 @@
             restrict: 'A',
 
             link: (scope, element, attrs) => {
-                
-                element.find('li>a').on('click', function () {
+
+                element.find('a').on('click', () => {
                     angular.element('.navbar-collapse').collapse('hide');
                 });
             }
