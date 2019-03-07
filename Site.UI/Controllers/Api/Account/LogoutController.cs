@@ -4,11 +4,11 @@ using System.Web.Http;
 namespace Site.UI.Controllers.Api
 {
     [RoutePrefix("api/account")]
-    public class LogoutController : ApiController
+    public class AccountLogoutController : ApiController
     {
         private IAuthRepository _auth;
 
-        public LogoutController(IAuthRepository auth)
+        public AccountLogoutController(IAuthRepository auth)
         {
             _auth = auth;
         }

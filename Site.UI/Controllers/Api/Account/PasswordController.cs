@@ -10,12 +10,12 @@ using System.Web.Http;
 namespace Site.UI.Controllers.Api
 {
     [RoutePrefix("api/account")]
-    public class RecoverPasswordController : ApiController
+    public class AccountRecoverPasswordController : ApiController
     {
         private IAuthRepository _auth;
         private IAppSettings _appSettings;
 
-        public RecoverPasswordController(IAuthRepository auth, IAppSettings appSettings)
+        public AccountRecoverPasswordController(IAuthRepository auth, IAppSettings appSettings)
         {
             _auth = auth;
             _auth.SetDataProtectorProvider(Startup.DataProtectionProvider);

@@ -11,12 +11,12 @@ using System.Web.Http;
 namespace Site.UI.Controllers.Api
 {
     [RoutePrefix("api/account")]
-    public class RegisterController : ApiController
+    public class AccountRegisterController : ApiController
     {
         private IAuthRepository _auth;
         private IAppSettings _appSettings;
 
-        public RegisterController(IAuthRepository auth, IAppSettings appSettings)
+        public AccountRegisterController(IAuthRepository auth, IAppSettings appSettings)
         {
             _auth = auth;
             _auth.SetDataProtectorProvider(Startup.DataProtectionProvider);

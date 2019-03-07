@@ -1,5 +1,6 @@
 ﻿using Site.Identity;
 using Site.UI.Helpers;
+using System;
 using System.Threading.Tasks;
 using System.Web.Http;
 
@@ -18,10 +19,19 @@ namespace Site.UI.Controllers.Api
         }
 
         [HttpGet, Route(""), Authorize]
-        public async Task<IHttpActionResult> Get()
+        public async Task<IHttpActionResult> Get(string name = "drugs")
         {
             var languageIso2 = Request.Headers.GetLanguageIso2();
-            var vExam = await _test.vExamGetByLanguageIso2Async(languageIso2);
+            var vExam = await _test.vExamGetByNameAsync(name, languageIso2);
+
+            return Ok(vExam);
+        }
+
+        [HttpGet, Route("result"), Authorize]
+        public async Task<IHttpActionResult> GetResult(Guid examResultId)
+        {
+            var languageIso2 = Request.Headers.GetLanguageIso2();
+            var vExam = await _test.vExamGetByExamResultIdAsync(examResultId, languageIso2);
 
             return Ok(vExam);
         }

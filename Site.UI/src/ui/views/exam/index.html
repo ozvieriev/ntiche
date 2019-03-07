@@ -1,10 +1,7 @@
 <div class="mb-3" data-ng-repeat="question in model.questions">
     <label class="mb-0 font-weight-bolder" data-ng-bind-html="::question.text"></label>
     <div class="ml-3">
-        {{question.selectedAnswer}}
         <div class="form-check" data-ng-repeat="answer in question.answers">
-
-
             <input class="form-check-input" type="radio"
                    id="{{::answer.id}}"
                    name="question-{{::question.id}}"
