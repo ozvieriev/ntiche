@@ -17,6 +17,12 @@ angular.module('app.auth')
 
             return $authStorage.getItem();
         };
+        service.accessToken = () => {
+
+            let identity = service.identity();
+
+            return identity ? identity.access_token : null;
+        };
 
         service.signUp = (data) => {
 

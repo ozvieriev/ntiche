@@ -52,6 +52,8 @@ angular.module('app')
         _state({ url: 'account/sign-in', controller: 'accountSignIn', params: { returnUrl: null } });
         _state({ url: 'account/sign-up', controller: 'accountSignUp' });
 
+        _state({ url: 'exam/index', controller: 'examIndex', isProtected: true });
+
         _state({ url: 'learning/nutrition-cancer-related-fatigue', isProtected: true });
         _state({ url: 'learning/overview', isProtected: true });
         _state({ url: 'learning/physical-activity-cancer-related-fatigue', isProtected: true });

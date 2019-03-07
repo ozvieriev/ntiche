@@ -198,6 +198,7 @@
     <Compile Include="Controllers\Api\Account\LogoutController.cs" />
     <Compile Include="Controllers\Api\Account\PasswordController.cs" />
     <Compile Include="Controllers\Api\Account\RegisterController.cs" />
+    <Compile Include="Controllers\Api\Exam\IndexController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Core\HttpExceptionResult.cs" />
     <Compile Include="Core\HttpRequestMessageExtensions.cs" />
@@ -205,6 +206,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Handlers\CancelHandler.cs" />
+    <Compile Include="Handlers\LanguageHandler.cs" />
+    <Compile Include="Helpers\LanguageIso2.cs" />
     <Compile Include="Models\ResetPasswordViewModel.cs" />
     <Compile Include="Models\RecoverPasswordViewModel.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />
@@ -290,6 +294,8 @@
     <None Include="src\ui\views\account\index.html" />
     <None Include="src\ui\views\account\reset-password.html" />
     <None Include="src\ui\views\error.html" />
+    <Content Include="src\js\controllers\exam\index.js" />
+    <Content Include="src\ui\views\exam\index.html" />
     <Content Include="ui\css\app.min.css" />
     <Content Include="ui\css\vendor.min.css" />
     <Content Include="ui\index.html" />
@@ -307,6 +313,7 @@
     <Content Include="ui\views\contact-us.html" />
     <Content Include="ui\views\disclaimer.html" />
     <Content Include="ui\views\error.html" />
+    <Content Include="ui\views\exam\index.html" />
     <Content Include="ui\views\index.html" />
     <Content Include="ui\views\learning\nutrition-cancer-related-fatigue.html" />
     <Content Include="ui\views\learning\overview.html" />

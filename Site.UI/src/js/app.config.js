@@ -1,9 +1,16 @@
 angular.module('app')
     .config(['$httpProvider', ($httpProvider) => {
 
-        $httpProvider.interceptors.push(['$q', '$state', ($q, $state) => {
+        $httpProvider.interceptors.push(['$q', '$translate', '$state', ($q, $translate, $state) => {
 
             let interceptor = {};
+
+            interceptor.request = function (config) {
+
+                config.headers['Accept-Language'] = $translate.use();
+
+                return config;
+            };
 
             interceptor.response = (response) => {
 

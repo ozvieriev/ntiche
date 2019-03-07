@@ -1,0 +1,9 @@
+<div class="mb-3" data-ng-repeat="question in ::model.questions">
+    <label class="mb-0 font-weight-bolder" data-ng-bind-html="::question.text"></label>
+    <div class="ml-3">
+        <div class="form-check" data-ng-repeat="answer in ::question.answers">
+            <input class="form-check-input" type="radio" name="question-{{::question.id}}" id="{{::answer.id}}" />
+            <label class="form-check-label" for="{{::answer.id}}" data-ng-bind-html="::answer.text" data-ng-class="{'alert-success': answer.isCorrect}"></label>
+        </div>
+    </div>
+</div>

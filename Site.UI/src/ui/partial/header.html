@@ -6,7 +6,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
+            <!--<li class="nav-item">
                 <a class="nav-link" ui-sref="index">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
@@ -14,9 +14,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" ui-sref="resources">Resources</a>
-            </li>
-        </ul>
-        <!--<ul class="navbar-nav">
+            </li>-->
             <li class="nav-item">
                 <a class="nav-link" style="cursor: pointer" data-ng-click="changeLanguage('en')">en</a>
             </li>
@@ -24,7 +22,7 @@
                 <a class="nav-link" style="cursor: pointer" data-ng-click="changeLanguage('fr')">fr</a>
             </li>
         </ul>
-        <ng-braille></ng-braille>-->
+        <ng-braille></ng-braille>
 
         <div data-ng-if="!$auth.isAuthenticated()">
             <ul class="navbar-nav">
@@ -37,7 +35,8 @@
             </ul>
         </div>
         <div data-ng-if="$auth.isAuthenticated()">
-            <a class="navbar-brand"  ui-sref="account/index" data-ng-bind="$auth.identity().userName"></a>
+            <a class="navbar-brand" ui-sref="account/index" data-ng-bind="$auth.identity().userName"></a>
+            <a class="navbar-brand" ui-sref="exam/index">Take a test</a>
             <button type="button" data-ng-click="logout()">Logout</button>
         </div>
     </div>

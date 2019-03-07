@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json.Serialization;
+using Site.UI.Handlers;
 using System.Web.Http;
 
 namespace Site.UI
@@ -11,6 +12,9 @@ namespace Site.UI
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+
+            config.MessageHandlers.Add(new LanguageHandler());
+            config.MessageHandlers.Add(new CancelHandler());
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

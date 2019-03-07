@@ -9,4 +9,4 @@ gulp.task('build', gulp.series('clean', gulp.parallel('html', 'css', 'font', 'js
 gulp.task('release', gulp.series('build'));
 // gulp.task('qa', gulp.series('release'));
 gulp.task('default', gulp.series('build', gulp.parallel('watch', 'serve')));
-gulp.task('default:vs', gulp.series('build', gulp.parallel('watch')));
+gulp.task('!default', gulp.series('build', gulp.parallel('watch')));
