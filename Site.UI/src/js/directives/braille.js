@@ -2,7 +2,7 @@
     .directive('ngBraille', ['$window', ($window) => {
 
         var template = [
-            '<ul class="navbar-nav">',
+            '<ul class="navbar-nav braille mb-2">',
             '<li class="nav-item active" data-rem="1.0"><a class="nav-link">A</a></li>',
             '<li class="nav-item" data-rem="1.2"><a class="nav-link">A</a></li>',
             '<li class="nav-item" data-rem="1.5"><a class="nav-link">A</a></li>',

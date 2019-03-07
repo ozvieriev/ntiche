@@ -1,17 +1,23 @@
-body>.container {
-  padding: 60px 15px 0
+body {
+    min-width: 320px;
 }
 
+    body > .container:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
 [ng-cloak], [data-ng-cloak] {
-  visibility: hidden !important;
+    visibility: hidden !important;
 }
 
 .ng-hide {
-  display: none !important;
+    display: none !important;
 }
 
 .ng-show {
-  display: block !important;
+    display: block !important;
 }
 
 
@@ -25,4 +31,79 @@ body>.container {
     padding: 10px;
     padding-bottom: 0px;
     padding-top: 0px;
+}
+
+
+/*header*/
+
+.navbar-nav:not(.sign) {
+    flex-direction: row;
+    -ms-flex-direction: row;
+}
+
+.navbar-collapse {
+    margin-top: 10px;
+}
+/*lang*/
+.lang {
+    text-transform: uppercase;
+}
+
+    .lang li {
+        margin: 0 5px;
+    }
+
+.navbar-toggler, .navbar-toggler:focus {
+    outline: none;
+}
+
+.border-t {
+    border-top: 1px solid rgba(255,255,255,.5);
+    padding-top: 10px;
+}
+
+.profile a {
+    color: #fff;
+    font-size: 18px;
+    display: inline-block;
+}
+
+@media screen and (min-width: 768px) {
+    .border-t {
+        border-top: 0;
+        padding-top: 0;
+        display: inline;
+    }
+
+    .profile {
+        display: inline-block;
+        padding: 0 10px;
+    }
+
+    .navbar-collapse {
+        margin: 0;
+        justify-content: flex-end;
+    }
+    .lang li{
+        margin: 0;
+    }
+}
+
+
+/*braille*/
+.braille {
+    justify-content: flex-end;
+    border-bottom: 1px solid #ccc;
+}
+
+    .braille .nav-link {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+
+
+/*footer */
+.footer{
+    border-top: 1px solid #ccc;
+    padding: 15px 0 0;
 }
