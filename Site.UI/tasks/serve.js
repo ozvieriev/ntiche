@@ -1,12 +1,12 @@
 
-const gulp = require('gulp');
-const browserSync = require('browser-sync').create();
+// const gulp = require('gulp');
+// const browserSync = require('browser-sync').create();
 
-gulp.task('serve', function () {
+// gulp.task('serve', function () {
 
-    browserSync.init({ server: { baseDir: '.' } });
+//     browserSync.init({ server: { baseDir: '.' } });
 
-    gulp
-        .watch(['index.html', 'ui/css/**/*.css', 'ui/js/**/*.js'])
-        .on('change', browserSync.reload);
-});
+//     gulp
+//         .watch(['index.html', 'ui/css/**/*.css', 'ui/js/**/*.js'])
+//         .on('change', browserSync.reload);
+// });

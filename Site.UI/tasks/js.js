@@ -26,7 +26,16 @@ gulp.task('js:app', () => {
 
             if (path.basename(file.path) === 'app.js')
                 del(file.path);
-        }));
+        }))
+        .on('end', () => {
+
+            return gulp.src([
+                'ui/js/vendor.min.js',
+                'ui/js/app.min.js'
+            ])
+                .pipe(concat('app.min.js'))
+                .pipe(gulp.dest('ui/js'));
+        });
 });
 gulp.task('js:vendor', () => {
 
@@ -44,4 +53,4 @@ gulp.task('js:vendor', () => {
 gulp.task('js:app:watch', () => {
     return gulp.watch('src/js/**/*.js', gulp.series('js:app'));
 });
-gulp.task('js', gulp.series(gulp.parallel('js:app', 'js:vendor')));
+gulp.task('js', gulp.series('js:vendor', 'js:app'));

@@ -299,10 +299,10 @@
     <None Include="src\ui\views\exam\index.html" />
     <None Include="src\ui\views\admin\exam-results.html" />
     <Content Include="ui\css\app.min.css" />
-    <Content Include="ui\css\vendor.min.css" />
+    <None Include="ui\css\vendor.min.css" />
     <Content Include="ui\index.html" />
     <Content Include="ui\js\app.min.js" />
-    <Content Include="ui\js\vendor.min.js" />
+    <None Include="ui\js\vendor.min.js" />
     <Content Include="ui\partial\footer.html" />
     <Content Include="ui\partial\header.html" />
     <Content Include="ui\views\about.html" />
