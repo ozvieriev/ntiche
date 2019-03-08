@@ -33,7 +33,7 @@ gulp.task('js:app', () => {
                 'ui/js/vendor.min.js',
                 'ui/js/app.min.js'
             ])
-                .pipe(concat('app.min.js'))
+                .pipe(concat('bundle.min.js'))
                 .pipe(gulp.dest('ui/js'));
         });
 });

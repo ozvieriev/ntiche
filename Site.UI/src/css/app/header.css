@@ -1,0 +1,61 @@
+﻿.navbar-login {
+    width: 305px;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.navbar-login-session {
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.navbar-nav:not(.sign) {
+    flex-direction: row;
+    -ms-flex-direction: row;
+}
+
+.navbar-collapse {
+    margin-top: 10px;
+}
+
+.navbar-lang {
+    text-transform: uppercase;
+}
+
+    .navbar-lang li {
+        margin: 0 5px;
+    }
+
+    .navbar-lang li a{
+        cursor:pointer;
+    }
+
+.navbar-toggler, .navbar-toggler:focus {
+    outline: none;
+}
+
+.inline-link-container {
+    padding:10px;
+}
+
+.inline-link-container a {
+    color: #fff;
+    font-size: 18px;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+
+    .navbar-collapse {
+        margin: 0;
+        justify-content: flex-end;
+    }
+
+    .inline-link-container {
+        display: inline-block;
+        padding: 0 10px;
+    }
+}

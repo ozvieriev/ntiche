@@ -3,6 +3,7 @@ using Site.UI.Helpers;
 using System;
 using System.Threading.Tasks;
 using System.Web.Http;
+using WebApi.OutputCache.V2;
 
 namespace Site.UI.Controllers.Api
 {
@@ -18,10 +19,9 @@ namespace Site.UI.Controllers.Api
             _appSettings = appSettings;
         }
 
-        [HttpGet, Route(""), Authorize]
-        public async Task<IHttpActionResult> Get(string name = "drugs")
+        [HttpGet, Route(""), Authorize, CacheOutput(ClientTimeSpan = 86400, ServerTimeSpan = 86400)]
+        public async Task<IHttpActionResult> Get(string languageIso2, string name = "drugs")
         {
-            var languageIso2 = Request.Headers.GetLanguageIso2();
             var vExam = await _test.vExamGetByNameAsync(name, languageIso2);
 
             return Ok(vExam);

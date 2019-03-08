@@ -17,7 +17,7 @@ gulp.task('css:app', () => {
                 'ui/css/vendor.min.css',
                 'ui/css/app.min.css'
             ])
-                .pipe(concat('app.min.css'))
+                .pipe(concat('bundle.min.css'))
                 .pipe(gulp.dest('ui/css'));
         });
 });

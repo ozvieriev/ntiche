@@ -8,7 +8,6 @@ angular.module('app.controllers')
             $scope.model.questions = viewQuestionBuilder.build(response);
         });
 
-
         let viewQuestion = function (json) {
 
             this.id = json.id;

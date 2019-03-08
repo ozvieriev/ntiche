@@ -15,7 +15,7 @@ angular.module('app', ['app.components', 'app.auth', 'app.services', 'app.contro
             var to = transition.to();
             var stateService = transition.router.stateService;
             var locale = stateService.params.locale || 'en';
-
+            
             if (to.isProtected && !$auth.isAuthenticated()) {
 
                 var params = {
@@ -25,16 +25,8 @@ angular.module('app', ['app.components', 'app.auth', 'app.services', 'app.contro
 
                 return transition.router.stateService.target('account/sign-in', params);
             }
-        });
-
-        $transitions.onSuccess({ to: '**' }, (transition) => {
-
-            var stateService = transition.router.stateService;
-            var locale = stateService.params.locale || 'en';
 
             $translatePartialLoader.addPart('index');
             $translate.use(locale);
         });
     });
-
-//https://github.com/modularcode/modular-admin-angularjs/blob/master/src/_main.js
