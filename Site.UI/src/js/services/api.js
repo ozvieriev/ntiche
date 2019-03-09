@@ -16,6 +16,12 @@
                 asJson: true
             });
         };
+        service.examPost = (answers) => {
+
+            return $http.post(_uri('api/exam'),
+                answers,
+                { asJson: true });
+        };
 
         return service;
     }]);

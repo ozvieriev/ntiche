@@ -7,17 +7,20 @@ namespace Site.UI.Core
 {
     public static class HttpRequestMessageExtensions
     {
-        private static Logger _oauthLogLogger = LogManager.GetLogger("oauth-log");
+        private static Logger _oauthLogger = LogManager.GetLogger("oauth-logger");
 
         public static HttpResponseMessage CreateExceptionResponse(this HttpRequestMessage request,
             Exception exc,
             HttpStatusCode statusCode = HttpStatusCode.BadRequest)
         {
-            var response = request.CreateExceptionResponse(error_description: exc.Message, statusCode: statusCode);
+            var response = request.CreateExceptionResponse(error_description: "Sorry, the server is busy. Please try again later.", statusCode: statusCode);
 
             if (!object.Equals(exc, null))
-                _oauthLogLogger.Error(exc);
+            {
+                _oauthLogger.Error(exc);
 
+                response.Headers.Add("Exc-Message", exc.Message.Replace(Environment.NewLine, string.Empty));
+            }
             return response;
         }
         public static HttpResponseMessage CreateExceptionResponse(this HttpRequestMessage request,

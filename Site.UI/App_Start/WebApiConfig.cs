@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json.Serialization;
 using Site.UI.Handlers;
 using System.Web.Http;
+using System.Web.Http.ExceptionHandling;
 
 namespace Site.UI
 {
@@ -9,6 +10,7 @@ namespace Site.UI
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+            config.Services.Replace(typeof(IExceptionHandler), new OopsExceptionHandler());
 
             // Web API routes
             config.MapHttpAttributeRoutes();

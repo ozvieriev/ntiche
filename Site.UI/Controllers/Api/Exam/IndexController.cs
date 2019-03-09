@@ -1,6 +1,9 @@
-﻿using Site.Identity;
+﻿using Microsoft.AspNet.Identity;
+using Site.Identity;
 using Site.UI.Helpers;
+using Site.UI.Models;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Http;
 using WebApi.OutputCache.V2;
@@ -25,6 +28,15 @@ namespace Site.UI.Controllers.Api
             var vExam = await _test.vExamGetByNameAsync(name, languageIso2);
 
             return Ok(vExam);
+        }
+
+        [HttpPost, Route(""), Authorize]
+        public async Task<IHttpActionResult> PostResult([FromBody] IEnumerable<Guid> answers)
+        {
+            var accountId = Guid.Parse(User.Identity.GetUserId());
+            await _test.ExamResultInsertAsync(accountId, answers);
+
+            return Ok(new DescriptionViewModel("Thank you for your answers. Your test results have been saved."));
         }
 
         [HttpGet, Route("result"), Authorize]

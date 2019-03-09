@@ -205,7 +205,6 @@
     <Compile Include="Controllers\Api\Account\LogoutController.cs" />
     <Compile Include="Controllers\Api\Account\PasswordController.cs" />
     <Compile Include="Controllers\Api\Account\RegisterController.cs" />
-    <Compile Include="Controllers\Api\Exam\ResultController.cs" />
     <Compile Include="Controllers\Api\Exam\IndexController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Core\HttpExceptionResult.cs" />
@@ -216,6 +215,7 @@
     </Compile>
     <Compile Include="Handlers\CancelHandler.cs" />
     <Compile Include="Handlers\LanguageHandler.cs" />
+    <Compile Include="Handlers\OopsExceptionHandler.cs" />
     <Compile Include="Helpers\LanguageIso2.cs" />
     <Compile Include="Models\ResetPasswordViewModel.cs" />
     <Compile Include="Models\RecoverPasswordViewModel.cs" />

@@ -1,6 +1,7 @@
 ﻿using Site.Data.Entities.Test;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity.Infrastructure;
 using System.Data.SqlClient;
 using System.Linq;
@@ -10,13 +11,29 @@ namespace Site.Identity
 {
     public partial class AuthDbContext
     {
+        //create type test.examResultSet as table
+        //(
+        //    [answerId] [uniqueidentifier] NOT NULL
+        //)
+
         public async Task ExamResultInsertAsync(Guid accountId, IEnumerable<Guid> answers)
         {
+            var dataTable = new DataTable();
+            dataTable.Columns.Add("answerId", typeof(Guid));
+
+            foreach (var answer in answers)
+                dataTable.Rows.Add(answer);
+
+            var _answers = dataTable.ToSql("answers");
+            _answers.SqlDbType = SqlDbType.Structured;
+            _answers.TypeName = "test.examResultSet";
+
             var sqlParams = new SqlParameter[]
             {
-                accountId.ToSql("accountId")
+                accountId.ToSql("accountId"),
+                _answers
             };
-
+                       
             await ExecuteNonQueryAsync("test.pExamResultInsert", sqlParams);
         }
 
