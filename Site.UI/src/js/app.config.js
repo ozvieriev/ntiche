@@ -1,7 +1,7 @@
 angular.module('app')
     .config(['$httpProvider', ($httpProvider) => {
 
-        $httpProvider.interceptors.push(['$q', '$translate', '$state', ($q, $translate, $state) => {
+        $httpProvider.interceptors.push(['$q', '$state', ($q, $state) => {
 
             let interceptor = {};
 
@@ -13,7 +13,7 @@ angular.module('app')
                     config.headers['Accept-Language'] = $state.params.locale;
 
                     if (config.params)
-                        config.params.languageIso2 = $state.params.locale
+                        config.params.languageIso2 = $state.params.locale;
                 }
                 return config;
             };

@@ -1,4 +1,3 @@
-
 angular.module('app.components', ['ui.router', 'pascalprecht.translate']);
 angular.module('app.auth', []);
 angular.module('app.services', []);
@@ -7,21 +6,24 @@ angular.module('app.directives', []);
 angular.module('app.filters', []);
 
 angular.module('app', ['app.components', 'app.auth', 'app.services', 'app.controllers', 'app.directives', 'app.filters'])
-    .run(($trace, $transitions, $auth, $translate, $translatePartialLoader) => {
+    .run(($transitions, $translate, $auth) => {
 
-        $trace.enable('TRANSITION');
+        if (location.hash.toLowerCase().startsWith('#!/fr/'))
+            $translate.use('fr');
+
+        //$trace.enable('TRANSITION');
         $transitions.onBefore({ to: '**' }, (transition) => {
 
-            var to = transition.to();
-            var stateService = transition.router.stateService;
-            var locale = stateService.params.locale || 'en';
+            let to = transition.to();
+            if (!to.roles ||
 
-            if (!to.roles || 
-                
                 $auth.isInRoles(to.roles))
                 return;
 
-            var params = {
+            let stateService = transition.router.stateService;
+            let locale = stateService.params.locale || 'en';
+
+            let params = {
                 returnUrl: to.url.replace(/^\//g, ''),
                 locale: locale
             };
@@ -29,11 +31,19 @@ angular.module('app', ['app.components', 'app.auth', 'app.services', 'app.contro
             return transition.router.stateService.target('account/sign-in', params);
         });
 
-        $transitions.onSuccess({ to: '**' }, (transition) => {
+        //$transitions.onSuccess({ to: '**' }, (transition) => {
 
-            let stateService = transition.router.stateService;
-            let locale = stateService.params.locale || 'en';
+        //    let stateService = transition.router.stateService;
+        //    let locale = stateService.params.locale;
 
-            $translate.use(locale);
-        });
+        //    let currentLanguage = $translate.use();
+        //    if (!currentLanguage || currentLanguage !== locale) {
+
+        //        $translate.use(locale).then(() => {
+
+        //            var d = $translate.use();
+        //            $translate.refresh(d);
+        //        });
+        //    }
+        //});
     });
