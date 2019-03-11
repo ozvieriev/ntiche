@@ -207,8 +207,9 @@
     <Compile Include="Controllers\Api\Account\RegisterController.cs" />
     <Compile Include="Controllers\Api\Exam\IndexController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Core\HttpErrorResult.cs" />
     <Compile Include="Core\HttpExceptionResult.cs" />
-    <Compile Include="Core\HttpRequestMessageExtensions.cs" />
+    <Compile Include="Core\HttpExceptionMessageExtension.cs" />
     <Compile Include="Core\IdentityResultHelper.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -217,6 +218,7 @@
     <Compile Include="Handlers\LanguageHandler.cs" />
     <Compile Include="Handlers\OopsExceptionHandler.cs" />
     <Compile Include="Helpers\LanguageIso2.cs" />
+    <Compile Include="Models\ExamPostViewModel.cs" />
     <Compile Include="Models\ResetPasswordViewModel.cs" />
     <Compile Include="Models\RecoverPasswordViewModel.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />
@@ -244,7 +246,10 @@
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="pdf\program.pdf" />
     <None Include="src\css\app\app.css" />
+    <Content Include="src\i18n\en.json" />
+    <Content Include="src\i18n\fr.json" />
     <None Include="src\index.html" />
     <None Include="src\js\!app.js" />
     <None Include="src\js\app.config.js" />
@@ -274,12 +279,6 @@
     <None Include="src\ui\views\contact-us.html" />
     <None Include="src\ui\views\disclaimer.html" />
     <None Include="src\ui\views\index.html" />
-    <None Include="src\ui\views\learning\nutrition-cancer-related-fatigue.html" />
-    <None Include="src\ui\views\learning\overview.html" />
-    <None Include="src\ui\views\learning\physical-activity-cancer-related-fatigue.html" />
-    <None Include="src\ui\views\learning\psychological-wellness-cancer-related-fatigue.html" />
-    <None Include="src\ui\views\learning\sleep-cancer-related-fatigue.html" />
-    <None Include="src\ui\views\learning\spirituality-cancer-related-fatigue.html" />
     <None Include="src\ui\views\privacy.html" />
     <None Include="src\ui\views\resources.html" />
     <None Include="tasks\clean.js" />
@@ -301,14 +300,18 @@
     <None Include="src\ui\views\account\index.html" />
     <None Include="src\ui\views\account\reset-password.html" />
     <None Include="src\ui\views\error.html" />
-    <None Include="src\js\controllers\exam\index.js" />
-    <None Include="src\ui\views\exam\index.html" />
+    <None Include="src\js\controllers\exam\pre-test.js" />
+    <None Include="src\ui\views\exam\pre-test.html" />
     <None Include="src\ui\views\admin\exam-results.html" />
     <None Include="src\css\app\braille.css" />
     <None Include="src\css\app\footer.css" />
     <None Include="src\css\app\header.css" />
     <None Include="ui\css\app.min.css" />
     <None Include="ui\css\vendor.min.css" />
+    <Content Include="src\js\controllers\exam\feedback.js" />
+    <Content Include="src\js\controllers\exam\post-test.js" />
+    <Content Include="src\ui\views\exam\feedback.html" />
+    <Content Include="src\ui\views\exam\post-test.html" />
     <Content Include="ui\css\bundle.min.css" />
     <Content Include="ui\index.html" />
     <None Include="ui\js\app.min.js" />
@@ -323,17 +326,12 @@
     <Content Include="ui\views\account\reset-password.html" />
     <Content Include="ui\views\account\sign-in.html" />
     <Content Include="ui\views\account\sign-up.html" />
+    <Content Include="ui\views\admin\exam-results.html" />
     <Content Include="ui\views\contact-us.html" />
     <Content Include="ui\views\disclaimer.html" />
     <Content Include="ui\views\error.html" />
-    <Content Include="ui\views\exam\index.html" />
+    <Content Include="ui\views\exam\pre-test.html" />
     <Content Include="ui\views\index.html" />
-    <Content Include="ui\views\learning\nutrition-cancer-related-fatigue.html" />
-    <Content Include="ui\views\learning\overview.html" />
-    <Content Include="ui\views\learning\physical-activity-cancer-related-fatigue.html" />
-    <Content Include="ui\views\learning\psychological-wellness-cancer-related-fatigue.html" />
-    <Content Include="ui\views\learning\sleep-cancer-related-fatigue.html" />
-    <Content Include="ui\views\learning\spirituality-cancer-related-fatigue.html" />
     <Content Include="ui\views\privacy.html" />
     <Content Include="ui\views\resources.html" />
     <Content Include="ui\webfonts\fa-brands-400.svg" />
@@ -352,10 +350,6 @@
     <None Include="package-lock.json" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\Release.pubxml" />
-    <None Include="src\i18n\global\button\en.json" />
-    <None Include="src\i18n\global\button\fr.json" />
-    <None Include="src\i18n\index\en.json" />
-    <None Include="src\i18n\index\fr.json" />
     <Content Include="ui\i18n\global\button\en.json" />
     <Content Include="ui\i18n\global\button\fr.json" />
     <Content Include="ui\i18n\index\en.json" />

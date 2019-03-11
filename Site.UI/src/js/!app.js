@@ -25,8 +25,13 @@ angular.module('app', ['app.components', 'app.auth', 'app.services', 'app.contro
 
                 return transition.router.stateService.target('account/sign-in', params);
             }
+        });
 
-            $translatePartialLoader.addPart('index');
+        $transitions.onSuccess({ to: '**' }, (transition) => {
+
+            let stateService = transition.router.stateService;
+            let locale = stateService.params.locale || 'en';
+
             $translate.use(locale);
         });
     });

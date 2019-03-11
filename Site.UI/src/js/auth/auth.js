@@ -1,5 +1,5 @@
 angular.module('app.auth')
-    .factory('$auth', ['$q', '$injector', '$authStorage', ($q, $injector, $authStorage) => {
+    .factory('$auth', ['$q', '$injector', '$authStorage', '$state', ($q, $injector, $authStorage, $state) => {
 
         let _apiHeaders = { 'Content-Type': 'application/x-www-form-urlencoded' };
         let _uri = (method) => {
@@ -23,6 +23,7 @@ angular.module('app.auth')
 
             return identity ? identity.access_token : null;
         };
+ 
 
         service.signUp = (data) => {
 
@@ -34,13 +35,13 @@ angular.module('app.auth')
                 data,
                 { asJson: true });
         };
-        service.signIn = (userName, password, emailConfirmationToken, accountId) => {
+        service.signIn = (email, password, emailConfirmationToken, accountId) => {
 
             let data = {
                 grant_type: 'password'
             };
 
-            userName && (data.userName = userName);
+            email && (data.userName = email);
             password && (data.password = password);
             emailConfirmationToken && (data.emailConfirmationToken = emailConfirmationToken);
             accountId && (data.accountId = accountId);
@@ -62,9 +63,41 @@ angular.module('app.auth')
 
             return deferred.promise;
         };
+
+        service.refreshToken = () => {
+            
+            var deferred = $q.defer();
+
+            let identity = service.identity();
+
+            if (identity) {
+
+                var data = {
+                    grant_type: 'refresh_token',
+                    refresh_token: identity.refresh_token
+                };
+
+                let $http = $injector.get("$http");
+                $http.post(_uri('api/token'), $.param(data), {
+                    headers: _apiHeaders,
+                    asJson: true
+                })
+                    .then((json) => {
+
+                        $authStorage.setItem(json);
+                        deferred.resolve(json);
+
+                    }, (error) => { debugger; deferred.reject(); });
+            }
+            else
+                deferred.reject();
+
+            return deferred.promise;
+        };
         service.logout = () => {
 
             $authStorage.removeItem();
+            $state.go('account/sign-in');
         };
         service.emailConfirmation = (emailConfirmationToken, accountId) => {
 

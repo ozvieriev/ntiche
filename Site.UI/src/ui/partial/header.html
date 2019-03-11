@@ -26,15 +26,9 @@
         </div>
         <div data-ng-show="$auth.isAuthenticated()" class="text-light">
             <div class="inline-link-container">
-                <a ui-sref="account/index">
+                <a ui-sref="account">
                     <i class="far fa-user"></i>
-                    <span data-ng-bind="$auth.identity().userName"></span>
-                </a>
-            </div>
-            <div class="inline-link-container">
-                <a ui-sref="exam/index">
-                    <i class="fas fa-poll-h"></i>
-                    Pre/Post test
+                    My Account
                 </a>
             </div>
             <div class="inline-link-container">

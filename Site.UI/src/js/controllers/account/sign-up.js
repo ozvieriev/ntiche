@@ -8,6 +8,7 @@ angular.module('app.controllers')
             //lastName: 'Zvieriev',
             //email: 'ozvieriev@gmail.com',
             //ocupation: 'Web Developer',
+            //pharmacistLicense: '87538947593',
             //city: 'Montreal',
             //isOptin: true
         };

@@ -26,7 +26,7 @@ namespace Site.UI
                 TokenEndpointPath = new PathString("/api/token"),
                 Provider = new ServerProvider(),
                 RefreshTokenProvider = new RefreshTokenProvider(),
-                AccessTokenExpireTimeSpan = TimeSpan.FromDays(1)
+                AccessTokenExpireTimeSpan = TimeSpan.FromDays(30)
             };
 
             OAuthBearerOptions = new OAuthBearerAuthenticationOptions { };

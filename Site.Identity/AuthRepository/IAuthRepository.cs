@@ -16,9 +16,8 @@ namespace Site.Identity
 
         /*******************************************Account*************************************************/
         Task<Account> AccountGetAsync(Guid accountId);
-        Task<Account> AccountGetAsync(string userName);
-        Task<Account> AccountGetAsync(string userName, string password);
         Task<Account> AccountGetByEmailAsync(string email);
+        Task<Account> AccountGetByEmailAsync(string email, string password);
 
         Task AccountActivateAsync(Guid accountId);
 

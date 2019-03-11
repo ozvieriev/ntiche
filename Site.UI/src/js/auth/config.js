@@ -22,7 +22,8 @@ angular.module('app.auth')
                 switch (rejection.status) {
 
                     case 401:
-                        var deferred = $q.defer();
+                        let deferred = $q.defer();
+
                         $authBuffer.append(config, deferred);
                         $auth.refreshToken().then($authInterceptor.loginConfirmed, $auth.logout);
 

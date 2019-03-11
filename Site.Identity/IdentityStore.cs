@@ -46,7 +46,8 @@ namespace Site.Identity
         }
         public async Task<TUser> FindByNameAsync(string userName)
         {
-            return (TUser)(await _context.AccountGetAsync(userName));
+            throw new Exception();
+            //return (TUser)(await _context.AccountGetAsync(userName));
         }
 
         public async Task UpdateAsync(TUser account)

@@ -13,6 +13,5 @@ angular.module('app.controllers')
         $scope.logout = () => {
 
             $auth.logout();
-            $state.go('account/sign-in');
         };
     }]);

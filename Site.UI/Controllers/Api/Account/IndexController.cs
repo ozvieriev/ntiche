@@ -16,24 +16,12 @@ namespace Site.UI.Controllers.Api
         }
 
         [HttpGet, Route("")]
-        public async Task<IHttpActionResult> Get(string email = null, string userName = null)
+        public async Task<IHttpActionResult> Get(string email = null)
         {
-            Account account = null;
-            if (!string.IsNullOrEmpty(userName))
-            {
-                account = await _auth.AccountGetAsync(userName);
+            var account = await _auth.AccountGetByEmailAsync(email);
 
-                if (!object.Equals(account, null))
-                    return Ok(new { account.UserName });
-            }
-
-            if (!string.IsNullOrEmpty(email))
-            {
-                account = await _auth.AccountGetByEmailAsync(email);
-
-                if (!object.Equals(account, null))
-                    return Ok(new { account.Email });
-            }
+            if (!object.Equals(account, null))
+                return Ok(new { account.Email });
 
             return NotFound();
         }

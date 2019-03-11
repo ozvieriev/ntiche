@@ -27,10 +27,6 @@ namespace Site.Identity
                 var otherAccount = await _manager.FindByEmailAsync(account.Email);
                 if (!object.Equals(otherAccount,null) && otherAccount.Id != account.Id)
                     errors.Add("Select a different email address. An account has already been created with this email address.");
-
-                otherAccount = await _manager.FindByNameAsync(account.UserName);
-                if (!object.Equals(otherAccount, null) && otherAccount.Id != account.Id)
-                    errors.Add("Select a different username. An account has already been created with this user name.");
             }
 
             return errors.Any()

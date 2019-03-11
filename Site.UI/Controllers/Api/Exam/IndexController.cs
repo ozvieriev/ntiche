@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNet.Identity;
 using Site.Identity;
-using Site.UI.Helpers;
 using Site.UI.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Http;
 using WebApi.OutputCache.V2;
@@ -23,29 +23,43 @@ namespace Site.UI.Controllers.Api
         }
 
         [HttpGet, Route(""), Authorize, CacheOutput(ClientTimeSpan = 86400, ServerTimeSpan = 86400)]
-        public async Task<IHttpActionResult> Get(string languageIso2, string name = "drugs")
+        public async Task<IHttpActionResult> Get(string name, string languageIso2)
         {
             var vExam = await _test.vExamGetByNameAsync(name, languageIso2);
 
             return Ok(vExam);
         }
 
-        [HttpPost, Route(""), Authorize]
-        public async Task<IHttpActionResult> PostResult([FromBody] IEnumerable<Guid> answers)
+        [HttpGet, Route("results"), Authorize]
+        public async Task<IHttpActionResult> GetResult(string name = null)
         {
             var accountId = Guid.Parse(User.Identity.GetUserId());
-            await _test.ExamResultInsertAsync(accountId, answers);
+            var vExamResults = await _test.vExamResultByAccountIdAsync(accountId, name: name);
 
-            return Ok(new DescriptionViewModel("Thank you for your answers. Your test results have been saved."));
+            return Ok(vExamResults);
         }
-
-        [HttpGet, Route("result"), Authorize]
-        public async Task<IHttpActionResult> GetResult(Guid examResultId)
+        [HttpPost, Route("{name:regex(pre-test|post-test)}"), Authorize]
+        public async Task<IHttpActionResult> PostResult(string name, [FromBody] IEnumerable<Guid> answers)
         {
-            var languageIso2 = Request.Headers.GetLanguageIso2();
-            var vExam = await _test.vExamGetByExamResultIdAsync(examResultId, languageIso2);
+            var accountId = Guid.Parse(User.Identity.GetUserId());
+            await _test.ExamResultInsertAsync(name, accountId, answers);
 
-            return Ok(vExam);
+            var vExamResults = await _test.vExamResultByAccountIdAsync(accountId, name: name);
+            var vExamResult = vExamResults
+                    .OrderByDescending(entity => entity.CreateDateUtc)
+                    .First();
+
+            return Ok(new ExamPostViewModel("Thank you for your answers. Your test results have been saved.",
+                vExamResult.IsSuccess));
         }
+
+        //[HttpGet, Route("result"), Authorize]
+        //public async Task<IHttpActionResult> GetResult(Guid examResultId)
+        //{
+        //    var languageIso2 = Request.Headers.GetLanguageIso2();
+        //    var vExam = await _test.vExamGetByExamResultIdAsync(examResultId, languageIso2);
+
+        //    return Ok(vExam);
+        //}
     }
 }

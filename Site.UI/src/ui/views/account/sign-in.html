@@ -7,13 +7,13 @@
                 <form name="signInForm" class="pb-3 needs-validation" novalidate data-ng-submit="submit(signInForm)"
                       data-ng-class="{'was-validated': signInForm.$submitted}" data-ng-loading-form>
                     <div class="form-group">
-                        <label for="userName">Username</label>
-                        <input type="text" class="form-control" name="userName" placeholder="Username" data-ng-model="model.userName" maxlength="300" required autofocus />
-                        <div class="invalid-feedback" data-ng-if="signInForm.userName.$error.required">Username is required.</div>
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" id="email" name="email" placeholder="Username" data-ng-model="model.email" maxlength="300" required autofocus />
+                        <div class="invalid-feedback" data-ng-if="signInForm.email.$error.required">Username is required.</div>
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" name="password" placeholder="Password" data-ng-model="model.password" maxlength="300" required />
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-ng-model="model.password" maxlength="300" required />
                         <div class="invalid-feedback" data-ng-if="signInForm.password.$error.required">Password is required.</div>
                     </div>
                     <div class="form-group">

@@ -22,7 +22,7 @@ namespace Site.UI.Models
                         break;
                 }
 
-                actionContext.Response = actionContext.Request.CreateExceptionResponse(error_description: errorDescription);
+                actionContext.Response = actionContext.Request.CreateErrorMessageResponse(error_description: errorDescription);
             }
         }
     }

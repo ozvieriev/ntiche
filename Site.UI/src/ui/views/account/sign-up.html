@@ -1,92 +1,106 @@
-<h3 class="text-center ">Sign Up</h3>
+<h3 class="text-center">Sign Up</h3>
 <div class="mt-5 row justify-content-center">
-    <div class="col-md-12">
+    <div class="col-md-10">
         <div class="card">
             <div class="card-header">Sign Up</div>
             <div class="card-body">
                 <form name="signUpForm" class="pb-3 needs-validation" novalidate data-ng-submit="submit(signUpForm)"
                       data-ng-class="{'was-validated': signUpForm.$submitted}" data-ng-loading-form>
                     <div class="form-row">
-
-                        <div class="form-group col-md-6">
-                            <label for="lastName">Username</label>
-                            <input type="text" class="form-control" name="userName" placeholder="Username" data-ng-model="model.userName" maxlength="300" required />
-                            <div class="invalid-feedback" data-ng-if="signUpForm.userName.$error.required">Username is required.</div>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control" name="password" placeholder="Password" data-ng-model="model.password" maxlength="300" required />
-                            <div class="invalid-feedback" data-ng-if="signUpForm.password.$error.required">Password is required.</div>
-                        </div>
-
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="firstName">First name</label>
-                            <input type="text" class="form-control" name="firstName" placeholder="First name" data-ng-model="model.firstName" maxlength="300" required autofocus />
-                            <div class="invalid-feedback" data-ng-if="signUpForm.firstName.$error.required">First name is required.</div>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="lastName">Last name</label>
-                            <input type="text" class="form-control" name="lastName" placeholder="Last name" data-ng-model="model.lastName" maxlength="300" required />
-                            <div class="invalid-feedback" data-ng-if="signUpForm.lastName.$error.required">Last name is required.</div>
-                        </div>
-                    </div>
-                    <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" name="email" placeholder="Email" data-ng-model="model.email"
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" data-ng-model="model.email"
                                    maxlength="330" required />
 
                             <div class="invalid-feedback" data-ng-if="signUpForm.email.$error.required">Email is required.</div>
                             <div class="invalid-feedback" data-ng-if="signUpForm.email.$error.email">Email is invalid.</div>
                         </div>
                         <div class="form-group col-md-6">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-ng-model="model.password" maxlength="300" required />
+                            <div class="invalid-feedback" data-ng-if="signUpForm.password.$error.required">Password is required.</div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="firstName">First name</label>
+                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First name" data-ng-model="model.firstName" maxlength="300" required autofocus />
+                            <div class="invalid-feedback" data-ng-if="signUpForm.firstName.$error.required">First name is required.</div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="lastName">Last name</label>
+                            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last name" data-ng-model="model.lastName" maxlength="300" required />
+                            <div class="invalid-feedback" data-ng-if="signUpForm.lastName.$error.required">Last name is required.</div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
                             <label for="ocupation">Ocupation</label>
-                            <input type="text" class="form-control" name="ocupation" placeholder="Ocupation" data-ng-model="model.ocupation" maxlength="300" required />
+                            <input type="text" class="form-control" id="ocupation" name="ocupation" placeholder="Ocupation" data-ng-model="model.ocupation" maxlength="300" required />
                             <div class="invalid-feedback" data-ng-if="signUpForm.ocupation.$error.required">Ocupation is required.</div>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
+                            <label for="pharmacistLicense">Pharmacist License</label>
+                            <input type="text" class="form-control" id="pharmacistLicense" name="pharmacistLicense" placeholder="Pharmacist License" data-ng-model="model.pharmacistLicense" maxlength="100" required />
+                            <div class="invalid-feedback" data-ng-if="signUpForm.pharmacistLicense.$error.required">Pharmacist License is required.</div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="pharmacySettingId">Pharmacy setting</label>
+                            <select class="form-control" id="pharmacySettingId" name="pharmacySettingId" data-ng-model="model.pharmacySettingId" data-ng-init="model.pharmacySettingId='1'">
+                                <option value="1">Pharmacy setting 1</option>
+                                <option value="2">Pharmacy setting 2</option>
+                                <option value="3">Pharmacy setting 3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
                             <label for="countryIso2">Country</label>
-                            <select class="form-control" name="countryIso2" data-ng-model="model.countryIso2" data-ng-init="model.countryIso2='CA'">
-                                <option value="CA">Canada</option>
+                            <select class="form-control" id="countryIso2" name="countryIso2" data-ng-model="model.countryIso2" data-ng-init="model.countryIso2='ca'">
+                                <option value="ca">Canada</option>
                             </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="province">Province</label>
-                            <select class="form-control" name="province" data-ng-model="model.province" data-ng-init="model.province='AB'">
-                                <option value="AB">Alberta</option>
-                                <option value="BC">British Columbia</option>
-                                <option value="MB">Manitoba</option>
-                                <option value="NB">New Brunswick</option>
-                                <option value="NL">Newfoundland and Labrador</option>
-                                <option value="NS">Nova Scotia</option>
-                                <option value="ON">Ontario</option>
-                                <option value="PE">Prince Edward Island</option>
-                                <option value="QC">Quebec</option>
-                                <option value="SK">Saskatchewan</option>
-                                <option value="NT">Northwest Territories</option>
-                                <option value="NU">Nunavut</option>
-                                <option value="YT">Yukon</option>
+                            <label for="provinceId">Province</label>
+                            <select class="form-control" id="provinceId" name="provinceId" data-ng-model="model.provinceId" data-ng-init="model.provinceId='ab'">
+                                <option value="ab">Alberta</option>
+                                <option value="bc">British Columbia</option>
+                                <option value="mb">Manitoba</option>
+                                <option value="nb">New Brunswick</option>
+                                <option value="nl">Newfoundland and Labrador</option>
+                                <option value="ns">Nova Scotia</option>
+                                <option value="on">Ontario</option>
+                                <option value="pe">Prince Edward Island</option>
+                                <option value="qc">Quebec</option>
+                                <option value="sk">Saskatchewan</option>
+                                <option value="nt">Northwest Territories</option>
+                                <option value="nu">Nunavut</option>
+                                <option value="yt">Yukon</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="city">City</label>
-                            <input type="text" class="form-control" name="city" placeholder="City" data-ng-model="model.city" maxlength="300" required />
+                            <input type="text" class="form-control" id="city" name="city" placeholder="City" data-ng-model="model.city" maxlength="300" required />
                             <div class="invalid-feedback" data-ng-if="signUpForm.city.$error.required">City is required.</div>
                         </div>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="isOptin" data-ng-model="model.isOptin">
+                        <input class="form-check-input" type="checkbox" id="isOptin" name="isOptin" data-ng-model="model.isOptin" />
                         <label class="form-check-label" for="isOptin">
                             I agree to receive email notifications related to the content of this program.
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-primary mt-1">Sign up</button>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="isAgree" name="isAgree" data-ng-model="model.isAgree" data-ng-required="model.isAgree" />
+                        <label class="form-check-label" for="isAgree">
+                            I agree with Terms and conditions
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-1" data-ng-disabled="!model.isAgree">Sign up</button>
                 </form>
                 <div class="alert mb-0" role="alert"
                      data-ng-show="status"

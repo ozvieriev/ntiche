@@ -14,7 +14,7 @@ namespace Site.UI.Models
                     return;
             }
 
-            actionContext.Response = actionContext.Request.CreateExceptionResponse(error_description: "Model is required.");
+            actionContext.Response = actionContext.Request.CreateErrorMessageResponse(error_description: "Model is required.");
         }
     }
 }

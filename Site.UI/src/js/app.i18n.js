@@ -6,9 +6,9 @@ angular.module('app')
             // // $translateProvider.useLocalStorage();
 
             $translateProvider.useLoader('$translatePartialLoader', {
-                urlTemplate: 'i18n/{part}/{lang}.json'
+                urlTemplate: 'i18n/{lang}.json'
             });
 
             $translateProvider.preferredLanguage('en');
-            $translatePartialLoaderProvider.addPart('global/button');
+            $translatePartialLoaderProvider.addPart('index');
         }]);

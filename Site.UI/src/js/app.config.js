@@ -33,7 +33,7 @@ angular.module('app')
 
                     response.data = response.data || {};
 
-                    if (!response.data.error_description)
+                    if (!response.data.error_description && !response.status === 401)
                         $state.go('error');
 
                     response.data.error_description = response.data.error_description || 'Sorry, the server is busy. Please try again later.';

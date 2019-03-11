@@ -30,7 +30,7 @@ namespace Site.UI.Controllers.Api
 
             if (object.Equals(account, null))
             {
-                var response = Request.CreateExceptionResponse(
+                var response = Request.CreateErrorMessageResponse(
                     error_description: "The account with this email does not exist.",
                     statusCode: System.Net.HttpStatusCode.NotFound);
 
@@ -57,7 +57,7 @@ namespace Site.UI.Controllers.Api
 
             if (object.Equals(account, null))
             {
-                var response = Request.CreateExceptionResponse(
+                var response = Request.CreateErrorMessageResponse(
                     error_description: "The account with this id does not exist.",
                     statusCode: System.Net.HttpStatusCode.NotFound);
 
@@ -68,7 +68,7 @@ namespace Site.UI.Controllers.Api
 
             Exception identityResultException = null;
             if (!identityResult.Validate(ref identityResultException))
-                return Request.HttpExceptionResult(identityResultException);
+                return Request.HttpErrorResult(identityResultException.Message);
 
             await _auth.AccountActivateAsync(model.AccountId);
 

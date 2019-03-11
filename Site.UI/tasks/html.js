@@ -28,15 +28,15 @@ gulp.task('html:app', () => {
         // }))
         // .pipe(concat('index.html'))
         .pipe(gulp.dest('ui'))
-        .on('end', () => {
+        //.on('end', () => {
 
-            return gulp.src([
-                'ui/index.html'
-            ])
-                .pipe(replace('.min.js', `.min.js?version=${Date.now()}`))
-                .pipe(replace('.min.css', `.min.css?version=${Date.now()}`))
-                .pipe(gulp.dest('ui'))
-        });
+        //    return gulp.src([
+        //        'ui/index.html'
+        //    ])
+        //        .pipe(replace('.min.js', `.min.js?version=${Date.now()}`))
+        //        .pipe(replace('.min.css', `.min.css?version=${Date.now()}`))
+        //        .pipe(gulp.dest('ui'))
+        //});
 });
 gulp.task('html:app:watch', () => {
     return gulp.watch('src/**/*.html', gulp.series('html:app'));

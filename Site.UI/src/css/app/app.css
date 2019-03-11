@@ -29,3 +29,9 @@ body, html {
 .ng-show {
     display: block !important;
 }
+
+.form-control-no-validation:valid {
+    background-image: none !important;
+    border-color: #ccc !important;
+    padding-right: 0px !important;
+}

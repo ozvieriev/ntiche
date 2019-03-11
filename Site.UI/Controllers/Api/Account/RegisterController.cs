@@ -34,7 +34,7 @@ namespace Site.UI.Controllers.Api
 
             Exception identityResultException = null;
             if (!identityResult.Validate(ref identityResultException))
-                return Request.HttpExceptionResult(identityResultException);
+                return Request.HttpErrorResult(identityResultException.Message);
 
             var emailConfirmationLink = await _auth.GenerateEmailConfirmationTokenLinkAsync(account, _appSettings.Oauth.EmailConfirmationLink);
 
@@ -42,7 +42,6 @@ namespace Site.UI.Controllers.Api
             {
                 model.FirstName,
                 model.LastName,
-                model.UserName,
                 emailConfirmationLink
             }));
 

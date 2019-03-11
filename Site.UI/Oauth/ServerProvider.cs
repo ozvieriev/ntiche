@@ -36,7 +36,7 @@ namespace Site.UI.Oauth
             using (var auth = new AuthRepository())
             {
                 if (string.IsNullOrEmpty(emailConfirmationToken))
-                    account = await auth.AccountGetAsync(context.UserName, context.Password);
+                    account = await auth.AccountGetByEmailAsync(context.UserName, context.Password);
                 else
                 {
                     account = await auth.AccountGetAsync(accountId);

@@ -45,21 +45,16 @@ angular.module('app')
             $stateProvider.state(json.name, state);
         };
 
-        _state({ url: 'account/index', controller: 'accountIndex', isProtected: true });
+        _state({ url: 'account', htmlUrl: 'account/index', controller: 'accountIndex', isProtected: true });
         _state({ url: 'account/email-confirmation/:accountId/:emailConfirmationToken', htmlUrl: 'account/email-confirmation', controller: 'accountEmailConfirmation' });
         _state({ url: 'account/recover-password', controller: 'accountRecoverPassword' });
         _state({ url: 'account/reset-password/:accountId/:resetPasswordToken', htmlUrl: 'account/reset-password', controller: 'accountResetPassword' });
         _state({ url: 'account/sign-in', controller: 'accountSignIn', params: { returnUrl: null } });
         _state({ url: 'account/sign-up', controller: 'accountSignUp' });
 
-        _state({ url: 'exam/index', controller: 'examIndex', isProtected: true });
-
-        _state({ url: 'learning/nutrition-cancer-related-fatigue', isProtected: true });
-        _state({ url: 'learning/overview', isProtected: true });
-        _state({ url: 'learning/physical-activity-cancer-related-fatigue', isProtected: true });
-        _state({ url: 'learning/psychological-wellness-cancer-related-fatigue', isProtected: true });
-        _state({ url: 'learning/sleep-cancer-related-fatigue', isProtected: true });
-        _state({ url: 'learning/spirituality-cancer-related-fatigue', isProtected: true });
+        _state({ url: 'exam/feedback', controller: 'examFeedback', isProtected: true });
+        _state({ url: 'exam/post-test', controller: 'examPostTest', isProtected: true });
+        _state({ url: 'exam/pre-test', controller: 'examPreTest', isProtected: true });
 
         _state({ url: 'about' });
         _state({ url: 'contact-us' });

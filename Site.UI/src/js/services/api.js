@@ -16,9 +16,15 @@
                 asJson: true
             });
         };
-        service.examPost = (answers) => {
+        service.examResults = () => {
 
-            return $http.post(_uri('api/exam'),
+            return $http.get(_uri('api/exam/results'), {
+                asJson: true
+            });
+        };
+        service.examPost = (name, answers) => {
+
+            return $http.post(_uri(`api/exam/${name}`),
                 answers,
                 { asJson: true });
         };

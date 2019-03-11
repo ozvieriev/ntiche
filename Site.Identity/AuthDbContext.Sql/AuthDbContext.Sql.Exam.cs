@@ -16,7 +16,7 @@ namespace Site.Identity
         //    [answerId] [uniqueidentifier] NOT NULL
         //)
 
-        public async Task ExamResultInsertAsync(Guid accountId, IEnumerable<Guid> answers)
+        public async Task ExamResultInsertAsync(string name, Guid accountId, IEnumerable<Guid> answers)
         {
             var dataTable = new DataTable();
             dataTable.Columns.Add("answerId", typeof(Guid));
@@ -30,10 +30,11 @@ namespace Site.Identity
 
             var sqlParams = new SqlParameter[]
             {
+                name.ToSql("name"),
                 accountId.ToSql("accountId"),
                 _answers
             };
-                       
+
             await ExecuteNonQueryAsync("test.pExamResultInsert", sqlParams);
         }
 
@@ -124,6 +125,15 @@ namespace Site.Identity
 
                 return exam;
             }
+        }
+        internal async Task<List<vExamResult>> vExamResultByAccountIdAsync(Guid accountId, string name = null)
+        {
+            var sqlParams = new SqlParameter[] {
+                name.ToSql("name"),
+                accountId.ToSql("accountId")
+            };
+
+            return await ExecuteReaderCollectionAsync<vExamResult>("[test].[vExamResultGetByAccountId]", sqlParams);
         }
     }
 }

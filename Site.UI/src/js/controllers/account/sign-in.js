@@ -11,13 +11,13 @@ angular.module('app.controllers')
 
             $form.submit($scope, form, () => {
 
-                return $auth.signIn($scope.model.userName, $scope.model.password)
+                return $auth.signIn($scope.model.email, $scope.model.password)
                     .then(() => {
 
                         if ($state.params.returnUrl)
                             $state.go($state.params.returnUrl);
                         else
-                            $state.go('account/index');
+                            $state.go('account');
 
                     }, (error) => {
 

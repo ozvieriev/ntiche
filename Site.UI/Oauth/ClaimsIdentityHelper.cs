@@ -18,12 +18,10 @@ namespace Site.UI.Oauth
         public static void AddClaims(this ClaimsIdentity identity, Account account)
         {
             identity.TryRemoveClaim(ClaimTypes.NameIdentifier);
-            identity.TryRemoveClaim(ClaimTypes.Email);
             identity.TryRemoveClaim(ClaimTypes.Name);
 
             identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, account.Id.ToString("N")));
-            identity.AddClaim(new Claim(ClaimTypes.Email, account.Email));
-            identity.AddClaim(new Claim(ClaimTypes.Name, account.UserName));
+            identity.AddClaim(new Claim(ClaimTypes.Name, account.Email));
         }
 
         public static void AddClaims(this ClaimsIdentity identity, IList<Role> roles)
