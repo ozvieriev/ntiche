@@ -1,5 +1,4 @@
-﻿using Site.Data.Entities.Oauth;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 
 namespace Site.Identity
 {
@@ -15,10 +14,15 @@ namespace Site.Identity
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Account>().ToTable("oauth.account");
-            modelBuilder.Entity<Role>().ToTable("oauth.role");
+            modelBuilder.Entity<Data.Entities.Oauth.Account>().ToTable("oauth.account");
+            modelBuilder.Entity<Data.Entities.Oauth.Role>().ToTable("oauth.role");
+
+
+            modelBuilder.Entity<Data.Entities.Test.Feedback>().ToTable("test.feedback");
         }
 
-        public DbSet<Account> Accounts { get; set; }
+        public DbSet<Data.Entities.Oauth.Account> Accounts { get; set; }
+
+        public DbSet<Data.Entities.Test.Feedback> Feedbacks { get; set; }
     }
 }

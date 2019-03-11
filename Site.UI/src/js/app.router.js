@@ -45,16 +45,18 @@ angular.module('app')
             $stateProvider.state(json.name, state);
         };
 
-        _state({ url: 'account', htmlUrl: 'account/index', controller: 'accountIndex', isProtected: true });
+        _state({ url: 'account', htmlUrl: 'account/index', controller: 'account', roles: [] });
         _state({ url: 'account/email-confirmation/:accountId/:emailConfirmationToken', htmlUrl: 'account/email-confirmation', controller: 'accountEmailConfirmation' });
         _state({ url: 'account/recover-password', controller: 'accountRecoverPassword' });
         _state({ url: 'account/reset-password/:accountId/:resetPasswordToken', htmlUrl: 'account/reset-password', controller: 'accountResetPassword' });
         _state({ url: 'account/sign-in', controller: 'accountSignIn', params: { returnUrl: null } });
         _state({ url: 'account/sign-up', controller: 'accountSignUp' });
 
-        _state({ url: 'exam/feedback', controller: 'examFeedback', isProtected: true });
-        _state({ url: 'exam/post-test', controller: 'examPostTest', isProtected: true });
-        _state({ url: 'exam/pre-test', controller: 'examPreTest', isProtected: true });
+        _state({ url: 'admin/report', controller: 'adminReport', roles: ['admin'] });
+
+        _state({ url: 'exam/feedback', controller: 'examFeedback', roles: [] });
+        _state({ url: 'exam/post-test', controller: 'examPostTest', roles: [] });
+        _state({ url: 'exam/pre-test', controller: 'examPreTest', roles: [] });
 
         _state({ url: 'about' });
         _state({ url: 'contact-us' });

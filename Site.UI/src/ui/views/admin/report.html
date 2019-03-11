@@ -1,0 +1,86 @@
+<h3 class="text-center">Admin report</h3>
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="card">
+            <div class="card-header">
+                Filter
+            </div>
+            <div class="card-body">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="firstName">First name</label>
+                        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First name" data-ng-model="model.accountFirstName" maxlength="300" required autofocus />
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="lastName">Last name</label>
+                        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last name" data-ng-model="model.accountLastName" maxlength="300" required />
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" id="email" name="email" placeholder="Email" data-ng-model="model.accountEmail" maxlength="300" autofocus />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="pharmacistLicense">Pharmacist License</label>
+                        <input type="text" class="form-control" id="pharmacistLicense" name="pharmacistLicense" placeholder="Pharmacist License" data-ng-model="model.accountPharmacistLicense" maxlength="100" required />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="pharmacySettingId">Pharmacy setting</label>
+                        <select class="form-control" id="pharmacySettingId" name="pharmacySettingId" data-ng-model="model.accountPharmacySettingId">
+                            <option value="">Any</option>
+                            <option value="1">Pharmacy setting 1</option>
+                            <option value="2">Pharmacy setting 2</option>
+                            <option value="3">Pharmacy setting 3</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="countryIso2">Country</label>
+                        <select class="form-control" id="countryIso2" name="countryIso2">
+                            <option value="ca">Canada</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="provinceId">Province</label>
+                        <select class="form-control" id="provinceId" name="provinceId" data-ng-model="model.accountProvinceId">
+                            <option value="">Any</option>
+                            <option value="ab">Alberta</option>
+                            <option value="bc">British Columbia</option>
+                            <option value="mb">Manitoba</option>
+                            <option value="nb">New Brunswick</option>
+                            <option value="nl">Newfoundland and Labrador</option>
+                            <option value="ns">Nova Scotia</option>
+                            <option value="on">Ontario</option>
+                            <option value="pe">Prince Edward Island</option>
+                            <option value="qc">Quebec</option>
+                            <option value="sk">Saskatchewan</option>
+                            <option value="nt">Northwest Territories</option>
+                            <option value="nu">Nunavut</option>
+                            <option value="yt">Yukon</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="city">City</label>
+                        <input type="text" class="form-control" id="city" name="city" placeholder="City" data-ng-model="model.accountCity" maxlength="300" required />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="isOptin">Optin</label>
+                        <select class="form-control" id="isOptin" name="isOptin" data-ng-model="model.accountIsOptin">
+                            <option value="">Any</option>
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!--<button type="button" class="btn btn-primary" data-ng-click="downloadExamReport()">Download test report</button>-->
+                <button type="button" class="btn btn-primary" data-ng-click="downloadEvaluationReport()">Download evaluation report</button>
+            </div>
+        </div>
+    </div>
+</div>

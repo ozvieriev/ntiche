@@ -23,7 +23,30 @@ angular.module('app.auth')
 
             return identity ? identity.access_token : null;
         };
- 
+        service.isInRoles = (roles) => {
+
+            var identity = service.identity();
+
+            if (!identity)
+                return false;
+
+            if (!roles || !roles.length)
+                return;
+
+            var identityRoles = (identity.roles || '')
+                .toLowerCase()
+                .split(',');
+
+            for (var index = 0; index < roles.length; index++) {
+
+                let role = roles[index];
+                if (identityRoles.indexOf(role) !== -1)
+                    return true;
+            }
+
+            return false;
+        };
+
 
         service.signUp = (data) => {
 
@@ -65,7 +88,7 @@ angular.module('app.auth')
         };
 
         service.refreshToken = () => {
-            
+
             var deferred = $q.defer();
 
             let identity = service.identity();

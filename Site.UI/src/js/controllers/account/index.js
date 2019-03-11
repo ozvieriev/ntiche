@@ -1,7 +1,10 @@
 angular.module('app.controllers')
-    .controller('accountIndexController', ['$scope', '$state', '$api', ($scope, $state, $api) => {
+    .controller('accountController', ['$scope', '$state', '$api', '$auth', ($scope, $state, $api, $auth) => {
 
-        return $state.go('exam/feedback');
+        //return $state.go('exam/feedback');
+
+        if ($auth.isInRoles(['admin']))
+            return $state.go('admin/report');
 
         $scope.model = {};
 

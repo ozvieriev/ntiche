@@ -1,12 +1,9 @@
 ﻿using AutoMapper;
-using Microsoft.Owin;
-using Microsoft.Owin.Security.DataProtection;
-using Microsoft.Owin.Security.OAuth;
 using Owin;
 using Site.Data.Entities.Oauth;
+using Site.Data.Entities.Test;
+using Site.Identity.Models;
 using Site.UI.Models;
-using Site.UI.Oauth;
-using System;
 
 namespace Site.UI
 {
@@ -17,6 +14,9 @@ namespace Site.UI
             Mapper.Initialize(cfg => {
 
                 cfg.CreateMap<RegisterViewModel, Account>();
+                cfg.CreateMap<FeedbackPostViewModel, Feedback>();
+
+                cfg.CreateMap<FeedbackReportGetViewModel, vFeedbackReportViewModel>();
             });
         }
     }

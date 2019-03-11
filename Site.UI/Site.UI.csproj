@@ -50,6 +50,9 @@
     <Reference Include="CommonServiceLocator, Version=2.0.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.5.2.0\lib\net47\CommonServiceLocator.dll</HintPath>
     </Reference>
+    <Reference Include="CsvHelper, Version=12.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.12.1.2\lib\net45\CsvHelper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -206,6 +209,7 @@
     <Compile Include="Controllers\Api\Account\PasswordController.cs" />
     <Compile Include="Controllers\Api\Account\RegisterController.cs" />
     <Compile Include="Controllers\Api\Exam\IndexController.cs" />
+    <Compile Include="Controllers\Api\Feedback\IndexController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Core\HttpErrorResult.cs" />
     <Compile Include="Core\HttpExceptionResult.cs" />
@@ -218,6 +222,8 @@
     <Compile Include="Handlers\LanguageHandler.cs" />
     <Compile Include="Handlers\OopsExceptionHandler.cs" />
     <Compile Include="Helpers\LanguageIso2.cs" />
+    <Compile Include="Models\FeedbackReportGetViewModel.cs" />
+    <Compile Include="Models\FeedbackPostViewModel.cs" />
     <Compile Include="Models\ExamPostViewModel.cs" />
     <Compile Include="Models\ResetPasswordViewModel.cs" />
     <Compile Include="Models\RecoverPasswordViewModel.cs" />
@@ -302,18 +308,21 @@
     <None Include="src\ui\views\error.html" />
     <None Include="src\js\controllers\exam\pre-test.js" />
     <None Include="src\ui\views\exam\pre-test.html" />
-    <None Include="src\ui\views\admin\exam-results.html" />
+    <None Include="src\ui\views\admin\report.html" />
     <None Include="src\css\app\braille.css" />
     <None Include="src\css\app\footer.css" />
     <None Include="src\css\app\header.css" />
     <None Include="ui\css\app.min.css" />
     <None Include="ui\css\vendor.min.css" />
+    <Content Include="src\js\controllers\admin\report.js" />
     <Content Include="src\js\controllers\exam\feedback.js" />
     <Content Include="src\js\controllers\exam\post-test.js" />
     <Content Include="src\ui\views\exam\feedback.html" />
     <Content Include="src\ui\views\exam\post-test.html" />
     <Content Include="ui\css\bundle.min.css" />
     <Content Include="ui\index.html" />
+    <Content Include="ui\i18n\en.json" />
+    <Content Include="ui\i18n\fr.json" />
     <None Include="ui\js\app.min.js" />
     <None Include="ui\js\vendor.min.js" />
     <Content Include="ui\js\bundle.min.js" />
@@ -350,10 +359,6 @@
     <None Include="package-lock.json" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\Release.pubxml" />
-    <Content Include="ui\i18n\global\button\en.json" />
-    <Content Include="ui\i18n\global\button\fr.json" />
-    <Content Include="ui\i18n\index\en.json" />
-    <Content Include="ui\i18n\index\fr.json" />
     <Content Include="ui\webfonts\fa-brands-400.eot" />
     <Content Include="ui\webfonts\fa-brands-400.ttf" />
     <Content Include="ui\webfonts\fa-brands-400.woff" />

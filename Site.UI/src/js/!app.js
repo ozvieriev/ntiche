@@ -15,16 +15,18 @@ angular.module('app', ['app.components', 'app.auth', 'app.services', 'app.contro
             var to = transition.to();
             var stateService = transition.router.stateService;
             var locale = stateService.params.locale || 'en';
-            
-            if (to.isProtected && !$auth.isAuthenticated()) {
 
-                var params = {
-                    returnUrl: to.url.replace(/^\//g, ''),
-                    locale: locale
-                };
+            if (!to.roles || 
+                
+                $auth.isInRoles(to.roles))
+                return;
 
-                return transition.router.stateService.target('account/sign-in', params);
-            }
+            var params = {
+                returnUrl: to.url.replace(/^\//g, ''),
+                locale: locale
+            };
+
+            return transition.router.stateService.target('account/sign-in', params);
         });
 
         $transitions.onSuccess({ to: '**' }, (transition) => {

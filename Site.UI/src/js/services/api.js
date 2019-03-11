@@ -28,6 +28,12 @@
                 answers,
                 { asJson: true });
         };
+        service.feedbackPost = (data) => {
+
+            return $http.post(_uri('api/feedback'),
+                data,
+                { asJson: true });
+        };
 
         return service;
     }]);

@@ -33,7 +33,20 @@ angular.module('app.controllers')
 
             $form.submit($scope, form, () => {
 
-                
+                debugger;
+                return $api.feedbackPost($scope.model)
+                    .then(
+                        (response) => {
+
+                            $scope.status = 200;
+                            $scope.description = response.description;
+                        },
+                        (error) => {
+
+                            $scope.status = error.status;
+                            $scope.description = error.data.error_description;
+                        })
+                    .finally(() => { $scope.isBusy = false });
             });
         };
     }]);
