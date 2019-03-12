@@ -1,6 +1,15 @@
-﻿<!--<div class="mt-5 mb-5 row justify-content-center">
+﻿<div class="mt-5 mb-5 row justify-content-center">
     <div class="col-md-6">
         <div class="card" data-ng-switch="view">
+            <div data-ng-switch-when="loading">
+
+                <div class="d-flex justify-content-center">
+                    <div class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+
+            </div>
             <div data-ng-switch-when="question">
                 <div class="card-body">
                     Have you read the printed copy of the program?
@@ -25,4 +34,4 @@
             </div>
         </div>
     </div>
-</div>-->
+</div>

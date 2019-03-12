@@ -206,6 +206,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Api\Account\IndexController.cs" />
     <Compile Include="Controllers\Api\Account\LogoutController.cs" />
+    <Compile Include="Controllers\Api\Account\ActivityController.cs" />
     <Compile Include="Controllers\Api\Account\PasswordController.cs" />
     <Compile Include="Controllers\Api\Account\RegisterController.cs" />
     <Compile Include="Controllers\Api\Exam\IndexController.cs" />

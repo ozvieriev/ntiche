@@ -1,6 +1,6 @@
 ﻿angular
     .module('app.services')
-    .factory('$api', ['$http', '$state', function factory($http, $state) {
+    .factory('$api', ['$http', function factory($http) {
 
         let _uri = (method) => {
 
@@ -9,9 +9,9 @@
 
         var service = {};
 
-        service.examResults = () => {
+        service.accoutnActivity = () => {
 
-            return $http.get(_uri('api/exam/results'), {
+            return $http.get(_uri('api/account/activity'), {
                 asJson: true
             });
         };

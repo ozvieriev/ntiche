@@ -8,6 +8,8 @@ namespace Site.Identity
 {
     public interface ITestRepository : IDisposable
     {
+        Task<vAccountActivity> AccountActivityGetAsync(Guid accoundId);
+
         Task<Exam> ExamGetAsync(string name);
         Task<ExamResult> ExamResultInsertAsync(ExamResult entity);
 
