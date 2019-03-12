@@ -6,7 +6,12 @@ angular.module('app.directives', []);
 angular.module('app.filters', []);
 
 angular.module('app', ['app.components', 'app.auth', 'app.services', 'app.controllers', 'app.directives', 'app.filters'])
-    .run(($transitions, $translate, $auth) => {
+    .run(($transitions, $translate, $templateCache, $auth) => {
+
+        let tempaltes = document.querySelectorAll('script[type="text/ng-template"]');
+        angular.forEach(tempaltes, (template) => {
+            $templateCache.put(template.id, template.innerHTML);
+        });
 
         if (location.hash.toLowerCase().startsWith('#!/fr/'))
             $translate.use('fr');

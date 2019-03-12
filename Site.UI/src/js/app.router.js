@@ -15,11 +15,15 @@ angular.module('app')
             abstract: true,
             views: {
                 header: {
+                    cache: false,
                     templateUrl: 'partial/header.html',
                     controller: 'partialHeaderController'
                 },
-                main: { controller: 'appController', },
-                footer: { templateUrl: 'partial/footer.html' }
+                main: { controller: 'appController' },
+                footer: {
+                    cache: false,
+                    templateUrl: 'partial/footer.html'
+                }
             }
         });
 
@@ -34,6 +38,7 @@ angular.module('app')
                 parent: 'app',
                 url: `/${json.url}`,
                 params: json.params,
+                cache: false,
                 templateUrl: json.templateUrl
             };
 

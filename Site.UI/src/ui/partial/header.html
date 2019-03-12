@@ -37,7 +37,7 @@
                     Test
                 </a>
             </div>
-            <div class="inline-link-container" data-ng-if="$auth.isInRoles(['admin'])">
+            <div class="inline-link-container" data-ng-show="$auth.isInRoles(['admin'])">
                 <a ui-sref="admin/report">
                     <i class="fas fa-table"></i>
                     Reports

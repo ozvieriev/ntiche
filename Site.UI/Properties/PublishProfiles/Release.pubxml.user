@@ -9,6 +9,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <_PublishTargetUrl>c:\publish\ntiche.com</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
+    <File Include="App_Data/ntiche.mdf">
+      <publishTime>03/12/2019 15:46:22</publishTime>
+    </File>
+    <File Include="App_Data/ntiche_log.ldf">
+      <publishTime>03/12/2019 15:46:22</publishTime>
+    </File>
     <File Include="Areas/HelpPage/HelpPage.css">
       <publishTime>03/01/2019 10:07:56</publishTime>
     </File>
@@ -328,10 +334,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/12/2019 14:41:07</publishTime>
     </File>
     <File Include="bin/Site.UI.dll">
-      <publishTime>03/12/2019 14:44:04</publishTime>
+      <publishTime>03/12/2019 15:47:42</publishTime>
     </File>
     <File Include="bin/Site.UI.pdb">
-      <publishTime>03/12/2019 14:44:04</publishTime>
+      <publishTime>03/12/2019 15:47:42</publishTime>
     </File>
     <File Include="bin/System.Diagnostics.DiagnosticSource.dll">
       <publishTime>09/18/2018 19:38:16</publishTime>
@@ -730,16 +736,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/08/2019 13:19:48</publishTime>
     </File>
     <File Include="ui/css/bundle.min.css">
-      <publishTime>03/12/2019 14:43:59</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/css/vendor.min.css">
       <publishTime>03/08/2019 10:35:16</publishTime>
     </File>
     <File Include="ui/i18n/en.json">
-      <publishTime>03/12/2019 14:39:50</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/i18n/fr.json">
-      <publishTime>03/12/2019 14:39:50</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/i18n/global/button/en.json">
       <publishTime>03/08/2019 23:27:31</publishTime>
@@ -754,70 +760,70 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/08/2019 23:27:31</publishTime>
     </File>
     <File Include="ui/index.html">
-      <publishTime>03/12/2019 14:39:50</publishTime>
+      <publishTime>03/12/2019 15:47:24</publishTime>
     </File>
     <File Include="ui/js/app.min.js">
       <publishTime>03/08/2019 13:12:13</publishTime>
     </File>
     <File Include="ui/js/bundle.min.js">
-      <publishTime>03/12/2019 14:42:50</publishTime>
+      <publishTime>03/12/2019 15:39:22</publishTime>
     </File>
     <File Include="ui/js/vendor.min.js">
       <publishTime>03/08/2019 10:35:16</publishTime>
     </File>
     <File Include="ui/partial/footer.html">
-      <publishTime>03/12/2019 14:39:50</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/partial/header.html">
-      <publishTime>03/12/2019 14:39:50</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/views/about.html">
-      <publishTime>03/12/2019 14:39:50</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/views/account/email-confirmation.html">
-      <publishTime>03/12/2019 14:39:50</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/views/account/index.html">
-      <publishTime>03/12/2019 14:39:50</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/views/account/recover-password.html">
-      <publishTime>03/12/2019 14:39:51</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/views/account/reset-password.html">
-      <publishTime>03/12/2019 14:39:51</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/views/account/sign-in.html">
-      <publishTime>03/12/2019 14:39:51</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/views/account/sign-up.html">
-      <publishTime>03/12/2019 14:39:51</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/views/admin/report.html">
-      <publishTime>03/12/2019 14:39:51</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/views/contact-us.html">
-      <publishTime>03/12/2019 14:39:50</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/views/disclaimer.html">
-      <publishTime>03/12/2019 14:39:50</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/views/error.html">
-      <publishTime>03/12/2019 14:39:50</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/views/exam/feedback.html">
-      <publishTime>03/12/2019 14:39:51</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/views/exam/index.html">
-      <publishTime>03/12/2019 14:39:51</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/views/exam/post-test.html">
-      <publishTime>03/12/2019 14:39:51</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/views/exam/pre-test.html">
-      <publishTime>03/12/2019 14:39:51</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/views/index.html">
-      <publishTime>03/12/2019 14:39:50</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/views/learning/nutrition-cancer-related-fatigue.html">
       <publishTime>03/08/2019 23:27:31</publishTime>
@@ -838,55 +844,55 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/08/2019 23:27:31</publishTime>
     </File>
     <File Include="ui/views/privacy.html">
-      <publishTime>03/12/2019 14:39:50</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/views/resources.html">
-      <publishTime>03/12/2019 14:39:50</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/webfonts/fa-brands-400.eot">
-      <publishTime>03/12/2019 14:39:50</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/webfonts/fa-brands-400.svg">
-      <publishTime>03/12/2019 14:39:51</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/webfonts/fa-brands-400.ttf">
-      <publishTime>03/12/2019 14:39:51</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/webfonts/fa-brands-400.woff">
-      <publishTime>03/12/2019 14:39:51</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/webfonts/fa-brands-400.woff2">
-      <publishTime>03/12/2019 14:39:51</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/webfonts/fa-regular-400.eot">
-      <publishTime>03/12/2019 14:39:51</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/webfonts/fa-regular-400.svg">
-      <publishTime>03/12/2019 14:39:51</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/webfonts/fa-regular-400.ttf">
-      <publishTime>03/12/2019 14:39:51</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/webfonts/fa-regular-400.woff">
-      <publishTime>03/12/2019 14:39:51</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/webfonts/fa-regular-400.woff2">
-      <publishTime>03/12/2019 14:39:51</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/webfonts/fa-solid-900.eot">
-      <publishTime>03/12/2019 14:39:51</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/webfonts/fa-solid-900.svg">
-      <publishTime>03/12/2019 14:39:51</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/webfonts/fa-solid-900.ttf">
-      <publishTime>03/12/2019 14:39:51</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/webfonts/fa-solid-900.woff">
-      <publishTime>03/12/2019 14:39:51</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="ui/webfonts/fa-solid-900.woff2">
-      <publishTime>03/12/2019 14:39:52</publishTime>
+      <publishTime>03/12/2019 15:07:05</publishTime>
     </File>
     <File Include="views/about.html">
       <publishTime>03/01/2019 15:19:09</publishTime>

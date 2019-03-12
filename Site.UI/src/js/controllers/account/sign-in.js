@@ -23,8 +23,9 @@ angular.module('app.controllers')
 
                         $scope.status = error.status;
                         $scope.description = error.data.error_description;
-                    })
-                    .finally(() => { $scope.isBusy = false });
+
+                        $scope.isBusy = false;
+                    });
             });
         };
     }]);
