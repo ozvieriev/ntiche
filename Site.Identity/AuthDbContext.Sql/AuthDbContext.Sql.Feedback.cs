@@ -8,7 +8,6 @@ namespace Site.Identity
 {
     public partial class AuthDbContext
     {
-
         internal async Task<List<vFeedbackReport>> FeedbackReportAsync(vFeedbackReportViewModel model = null)
         {
             model = model ?? new vFeedbackReportViewModel();

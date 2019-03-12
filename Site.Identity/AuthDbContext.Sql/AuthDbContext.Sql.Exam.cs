@@ -1,4 +1,5 @@
 ﻿using Site.Data.Entities.Test;
+using Site.Identity.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,129 +12,52 @@ namespace Site.Identity
 {
     public partial class AuthDbContext
     {
-        //create type test.examResultSet as table
-        //(
-        //    [answerId] [uniqueidentifier] NOT NULL
-        //)
-
-        public async Task ExamResultInsertAsync(string name, Guid accountId, IEnumerable<Guid> answers)
+        internal async Task<Exam> ExamGetAsync(string name)
         {
-            var dataTable = new DataTable();
-            dataTable.Columns.Add("answerId", typeof(Guid));
+            var sqlParams = new SqlParameter[] {
+                name.ToSql("name")
+            };
 
-            foreach (var answer in answers)
-                dataTable.Rows.Add(answer);
-
-            var _answers = dataTable.ToSql("answers");
-            _answers.SqlDbType = SqlDbType.Structured;
-            _answers.TypeName = "test.examResultSet";
-
+            return await ExecuteReaderAsync<Exam>("[test].[pExamGetByName]", sqlParams);
+        }
+        public async Task ExamResultInsertAsync(vExamResultViewModel model)
+        {
             var sqlParams = new SqlParameter[]
             {
-                name.ToSql("name"),
-                accountId.ToSql("accountId"),
-                _answers
+                model.ExamName.ToSql("name"),
+                model.AccountId.ToSql("accountId"),
+                model.Answer0.ToSql("answer0"),
+                model.Answer1.ToSql("answer1"),
+                model.Answer2.ToSql("answer2"),
+                model.Answer3.ToSql("answer3"),
+                model.Answer4.ToSql("answer4"),
+                model.Answer5.ToSql("answer5"),
+                model.Answer6.ToSql("answer6"),
+                model.PercentCorrect.ToSql("percentCorrect")
             };
 
             await ExecuteNonQueryAsync("test.pExamResultInsert", sqlParams);
         }
 
-        internal async Task<vExam> vExamGetByNameAsync(string name, string languageIso2)
+        internal async Task<List<vExamResultReport>> ExamResultReportAsync(vExamResultReportViewModel model = null)
         {
-            var sqlParams = new SqlParameter[]
-            {
-                name.ToSql("name"),
-                languageIso2.ToSql("languageIso2")
-            };
+            model = model ?? new vExamResultReportViewModel();
 
-            using (var cmd = Database.Connection.CreateCommand())
-            {
-                cmd.CommandText = sqlParams.CommandText("test.vExamGetByName");
-
-                cmd.Parameters.AddRange(sqlParams);
-
-                await Database.Connection.OpenAsync();
-
-                var reader = await cmd.ExecuteReaderAsync();
-
-                var questions = ((IObjectContextAdapter)this)
-                    .ObjectContext
-                    .Translate<vQuestion>(reader)
-                    .ToList();
-
-                var exam = new vExam { Questions = questions };
-                if (await reader.NextResultAsync())
-                {
-                    var answers = ((IObjectContextAdapter)this)
-                        .ObjectContext
-                        .Translate<vAnswer>(reader)
-                        .ToList();
-
-                    foreach (var question in questions)
-                    {
-                        question.Answers = answers
-                            .Where(answer => answer.QuestionId == question.Id)
-                            .ToList();
-                    }
-                }
-
-                Database.Connection.Close();
-
-                return exam;
-            }
-        }
-        internal async Task<vExam> vExamGetByExamResultIdAsync(Guid examResultId, string languageIso2)
-        {
-            var sqlParams = new SqlParameter[]
-            {
-                examResultId.ToSql("examResultId"),
-                languageIso2.ToSql("languageIso2")
-            };
-
-            using (var cmd = Database.Connection.CreateCommand())
-            {
-                cmd.CommandText = sqlParams.CommandText("test.vExamGetByExamResultId");
-
-                cmd.Parameters.AddRange(sqlParams);
-
-                await Database.Connection.OpenAsync();
-
-                var reader = await cmd.ExecuteReaderAsync();
-
-                var questions = ((IObjectContextAdapter)this)
-                    .ObjectContext
-                    .Translate<vQuestion>(reader)
-                    .ToList();
-
-                var exam = new vExam { Questions = questions };
-                if (await reader.NextResultAsync())
-                {
-                    var answers = ((IObjectContextAdapter)this)
-                        .ObjectContext
-                        .Translate<vAnswer>(reader)
-                        .ToList();
-
-                    foreach (var question in questions)
-                    {
-                        question.Answers = answers
-                            .Where(answer => answer.QuestionId == question.Id)
-                            .ToList();
-                    }
-                }
-
-                Database.Connection.Close();
-
-                return exam;
-            }
-        }
-        internal async Task<List<vExamResult>> vExamResultByAccountIdAsync(Guid accountId, string name = null)
-        {
             var sqlParams = new SqlParameter[] {
-                name.ToSql("name"),
-                accountId.ToSql("accountId")
+                model.AccountFirstName.ToSql("accountFirstName"),
+                model.AccountLastName.ToSql("accountLastName"),
+                model.AccountPharmacistLicense.ToSql("accountPharmacistLicense"),
+                model.AccountPharmacySettingId.ToSql("accountPharmacySettingId"),
+                model.AccountProvinceId.ToSql("accountProvinceId"),
+                model.AccountEmail.ToSql("accountEmail"),
+                model.AccountCity.ToSql("accountCity"),
+                //model.AccountIsActivated.ToSql("accountIsActivated"),
+                model.AccountIsOptin.ToSql("accountIsOptin"),
+                model.AccountFromUtc.ToSql("accountFromUtc"),
+                model.AccountToUtc.ToSql("accountToUtc"),
             };
 
-            return await ExecuteReaderCollectionAsync<vExamResult>("[test].[vExamResultGetByAccountId]", sqlParams);
+            return await ExecuteReaderCollectionAsync<vExamResultReport>("test.vExamResultReport", sqlParams);
         }
     }
 }

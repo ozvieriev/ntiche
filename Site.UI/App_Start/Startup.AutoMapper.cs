@@ -14,9 +14,12 @@ namespace Site.UI
             Mapper.Initialize(cfg => {
 
                 cfg.CreateMap<RegisterViewModel, Account>();
+
+                cfg.CreateMap<ExamPostViewModel, ExamResult>();
                 cfg.CreateMap<FeedbackPostViewModel, Feedback>();
 
                 cfg.CreateMap<FeedbackReportGetViewModel, vFeedbackReportViewModel>();
+                cfg.CreateMap<ExamPostViewModel, vExamResultViewModel>();
             });
         }
     }

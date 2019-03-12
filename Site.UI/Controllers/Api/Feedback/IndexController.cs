@@ -46,27 +46,27 @@ namespace Site.UI.Controllers.Api
 
             dbModel = Mapper.Map(model, dbModel);
 
-            var feedbacks = await _test.FeedbackReportAsync(dbModel);
+            var report = await _test.FeedbackReportAsync(dbModel);
 
             var response = new HttpResponseMessage(HttpStatusCode.OK);
 
-            response.Content = GetFeedbacksContent(feedbacks);
+            response.Content = GetContent(report);
             response.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
             {
-                FileName = $"{feedbacks.Count}-feedbacks.csv"
+                FileName = $"{report.Count}-feedbacks.csv"
             };
 
             return response;
         }
 
-        private StringContent GetFeedbacksContent(IEnumerable<vFeedbackReport> feedbacks)
+        private StringContent GetContent(IEnumerable<vFeedbackReport> report)
         {
             using (var memoryStream = new MemoryStream())
             using (var streamReader = new StreamReader(memoryStream))
             using (var streamWriter = new StreamWriter(memoryStream))
             {
-                var feedbackWriter = new FeedbackCsvWriter();
-                feedbackWriter.Write(streamWriter, feedbacks);
+                var csvWriter = new FeedbackCsvWriter();
+                csvWriter.Write(streamWriter, report);
                 streamWriter.Flush();
                 memoryStream.Position = 0;
 
@@ -79,13 +79,13 @@ namespace Site.UI.Controllers.Api
         {
             public FeedbackCsvWriter() { }
 
-            public void Write(StreamWriter stream, IEnumerable<vFeedbackReport> feedbacks)
+            public void Write(StreamWriter stream, IEnumerable<vFeedbackReport> report)
             {
                 var csvSerializer = new CsvSerializer(stream);
                 var writer = new CsvWriter(csvSerializer);
 
                 writer.Configuration.RegisterClassMap<FeedbackCsvClassMap>();
-                writer.WriteRecords(feedbacks);
+                writer.WriteRecords(report);
             }
         }
 

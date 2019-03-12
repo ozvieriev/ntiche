@@ -60,8 +60,6 @@ angular.module('app.controllers')
             questions: viewQuestionBuilder.build($dict.questions())
         };
 
-        
-
         $scope.status = null;
         $scope.description = null;
         $scope.isBusy = false;
@@ -70,24 +68,17 @@ angular.module('app.controllers')
         $scope.view = 'questioner';
         $scope.isAllSelected = false;
 
-        //$api.exam(_exam)
-        //    .then((response) => {
-
-        //        $scope.model.questions = viewQuestionBuilder.build(response);
-        //    })
-        //    .finally(() => { });
-
         $scope.onSelect = () => {
 
-            //if (!$scope.model.questions)
-            //    return;
+            if ($scope.isAllSelected)
+                return;
 
-            //for (var index = 0; index < $scope.model.questions.length; index++) {
+            let questions = $scope.model.questions;
+            for (let index = 0; index < questions.length; index++) {
 
-            //    var question = $scope.model.questions[index];
-            //    if (!question.selectedAnswer)
-            //        return ($scope.isAllSelected = false);
-            //}
+                if (!questions[index].selectedAnswer)
+                    return;
+            }
 
             $scope.isAllSelected = true;
         };
@@ -95,15 +86,21 @@ angular.module('app.controllers')
 
             $form.submit($scope, form, () => {
 
-                let answers = [];
-                for (var index = 0; index < $scope.model.questions.length; index++) {
+                let answers = {};
+                let correctAnswers = 0;
+                let questions = $scope.model.questions;
+                for (let index = 0; index < questions.length; index++) {
 
-                    let question = $scope.model.questions[index];
-                    question.selectedAnswer && answers.push(question.selectedAnswer);
+                    let question = questions[index];
+                    let selectedAnswer = question.selectedAnswer;
+
+                    if (selectedAnswer.isCorrect)
+                        correctAnswers++;
+
+                    answers[`answer${index}`] = question.answers.indexOf(selectedAnswer);
                 }
 
-                if (!answers.length)
-                    return;
+                answers.percentCorrect = Math.round((correctAnswers / questions.length) * 100);
 
                 return $api.examPost(_exam, answers)
                     .then(
@@ -122,5 +119,5 @@ angular.module('app.controllers')
             });
         };
 
-        
+
     }]);

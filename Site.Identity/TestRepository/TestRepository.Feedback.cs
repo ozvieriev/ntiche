@@ -7,13 +7,13 @@ namespace Site.Identity
 {
     public partial class TestRepository
     {
-        public async Task<Feedback> FeedbackInsertAsync(Feedback feedback)
+        public async Task<Feedback> FeedbackInsertAsync(Feedback entity)
         {
-            _context.Feedbacks.Add(feedback);
+            _context.Feedbacks.Add(entity);
 
             var saveChangesAsync = await _context.SaveChangesAsync();
 
-            return feedback;
+            return entity;
         }
 
         public async Task<List<vFeedbackReport>> FeedbackReportAsync(vFeedbackReportViewModel model = null)

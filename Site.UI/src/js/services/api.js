@@ -9,13 +9,6 @@
 
         var service = {};
 
-        service.exam = (name) => {
-
-            return $http.get(_uri('api/exam'), {
-                params: { name: name || 'drugs' },
-                asJson: true
-            });
-        };
         service.examResults = () => {
 
             return $http.get(_uri('api/exam/results'), {

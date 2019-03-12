@@ -222,9 +222,10 @@
     <Compile Include="Handlers\LanguageHandler.cs" />
     <Compile Include="Handlers\OopsExceptionHandler.cs" />
     <Compile Include="Helpers\LanguageIso2.cs" />
+    <Compile Include="Models\ExamPostViewModel.cs" />
+    <Compile Include="Models\ExamResultReportGetViewModel.cs" />
     <Compile Include="Models\FeedbackReportGetViewModel.cs" />
     <Compile Include="Models\FeedbackPostViewModel.cs" />
-    <Compile Include="Models\ExamPostViewModel.cs" />
     <Compile Include="Models\ResetPasswordViewModel.cs" />
     <Compile Include="Models\RecoverPasswordViewModel.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />

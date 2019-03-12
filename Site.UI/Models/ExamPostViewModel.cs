@@ -1,13 +1,15 @@
 ﻿namespace Site.UI.Models
 {
-    public class ExamPostViewModel : DescriptionViewModel
+    public class ExamPostViewModel
     {
-        public ExamPostViewModel(string description, bool isSuccess)
-            : base(description)
-        {
-            IsSuccess = isSuccess;
-        }
+        public byte Answer0 { get; set; }
+        public byte Answer1 { get; set; }
+        public byte Answer2 { get; set; }
+        public byte Answer3 { get; set; }
+        public byte Answer4 { get; set; }
+        public byte Answer5 { get; set; }
+        public byte Answer6 { get; set; }
 
-        public bool IsSuccess { get; set; }
+        public byte PercentCorrect { get; set; }
     }
 }
