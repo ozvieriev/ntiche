@@ -55,7 +55,6 @@
     <Compile Include="Test\vExamResultReport.cs" />
     <Compile Include="Test\vFeedbackReport.cs" />
     <Compile Include="Test\Feedback.cs" />
-    <Compile Include="Test\vExamResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

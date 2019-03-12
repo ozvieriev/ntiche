@@ -1,29 +1,26 @@
 <h3 class="text-center">Admin report</h3>
-<div class="row justify-content-center">
+<div class="mt-5 row justify-content-center">
     <div class="col-md-10">
         <div class="card">
-            <div class="card-header">
-                Filter
-            </div>
             <div class="card-body">
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="firstName">First name</label>
-                        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First name" data-ng-model="model.accountFirstName" maxlength="300" required autofocus />
+                        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First name" data-ng-model="model.accountFirstName" maxlength="300" />
                     </div>
                     <div class="form-group col-md-4">
                         <label for="lastName">Last name</label>
-                        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last name" data-ng-model="model.accountLastName" maxlength="300" required />
+                        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last name" data-ng-model="model.accountLastName" maxlength="300" />
                     </div>
                     <div class="form-group col-md-4">
                         <label for="email">Email</label>
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Email" data-ng-model="model.accountEmail" maxlength="300" autofocus />
+                        <input type="text" class="form-control" id="email" name="email" placeholder="Email" data-ng-model="model.accountEmail" maxlength="300" />
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="pharmacistLicense">Pharmacist License</label>
-                        <input type="text" class="form-control" id="pharmacistLicense" name="pharmacistLicense" placeholder="Pharmacist License" data-ng-model="model.accountPharmacistLicense" maxlength="100" required />
+                        <input type="text" class="form-control" id="pharmacistLicense" name="pharmacistLicense" placeholder="Pharmacist License" data-ng-model="model.accountPharmacistLicense" maxlength="100" />
                     </div>
                     <div class="form-group col-md-6">
                         <label for="pharmacySettingId">Pharmacy setting</label>
@@ -64,7 +61,7 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label for="city">City</label>
-                        <input type="text" class="form-control" id="city" name="city" placeholder="City" data-ng-model="model.accountCity" maxlength="300" required />
+                        <input type="text" class="form-control" id="city" name="city" placeholder="City" data-ng-model="model.accountCity" maxlength="300" />
                     </div>
                 </div>
                 <div class="form-row">
@@ -77,9 +74,29 @@
                         </select>
                     </div>
                 </div>
-
-                <!--<button type="button" class="btn btn-primary" data-ng-click="downloadExamReport()">Download test report</button>-->
                 <button type="button" class="btn btn-primary" data-ng-click="downloadEvaluationReport()">Download evaluation report</button>
+
+                <div class="form-row mt-3 pt-2 border-top">
+                    <div class="form-group col-md-4">
+                        <label for="examName">Test</label>
+                        <select class="form-control" id="examName" name="examName" data-ng-model="model.examName">
+                            <option value="">Any</option>
+                            <option value="pre-test">Pre test</option>
+                            <option value="post-test">Post test</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="isExamPassed">Result</label>
+                        <select class="form-control" id="isExamPassed" name="isExamPassed" data-ng-model="model.isExamPassed">
+                            <option value="">Any</option>
+                            <option value="true">Success</option>
+                            <option value="false">Failed</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary" data-ng-click="downloadExamReport()">Download test report</button>
             </div>
         </div>
     </div>

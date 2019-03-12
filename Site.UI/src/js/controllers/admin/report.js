@@ -5,7 +5,7 @@ angular.module('app.controllers')
         
         $scope.downloadExamReport = () => {
 
-            
+            window.open(`/api/exam/report/?${$.param($scope.model)}`, '_blank');
         };
         $scope.downloadEvaluationReport = () => {
 
