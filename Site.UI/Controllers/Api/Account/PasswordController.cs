@@ -1,5 +1,4 @@
 ﻿using Email.Templates;
-using NLog;
 using Site.Identity;
 using Site.UI.Core;
 using Site.UI.Models;
@@ -14,13 +13,16 @@ namespace Site.UI.Controllers.Api
     {
         private IAuthRepository _auth;
         private IAppSettings _appSettings;
+        private ILasyEmailSender _lasyEmailSender;
 
-        public AccountRecoverPasswordController(IAuthRepository auth, IAppSettings appSettings)
+        public AccountRecoverPasswordController(IAuthRepository auth, IAppSettings appSettings, ILasyEmailSender lasyEmailSender)
         {
             _auth = auth;
             _auth.SetDataProtectorProvider(Startup.DataProtectionProvider);
 
             _appSettings = appSettings;
+
+            _lasyEmailSender = lasyEmailSender;
         }
 
         [HttpGet, Route("recover-password")]
@@ -38,14 +40,14 @@ namespace Site.UI.Controllers.Api
             }
 
             var recoverPasswordLink = await _auth.GenerateRecoverPasswordTokenLinkAsync(account, _appSettings.Oauth.RecoverPasswordLink);
-
-            Sender.Send("Recover password", account.Email, EmailTemplate.RecoverPassword, new Notification(new
+            var lazyEmailViewModel = new LasyEmailViewModel("Recover password", account.Email, EmailTemplate.RecoverPassword, new Notification(new
             {
                 account.FirstName,
                 account.LastName,
                 account.UserName,
                 recoverPasswordLink
             }));
+            _lasyEmailSender.Send(lazyEmailViewModel);
 
             return Ok(new DescriptionViewModel("An email has been sent to your account to reset your password."));
         }

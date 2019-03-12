@@ -15,13 +15,16 @@ namespace Site.UI.Controllers.Api
     {
         private IAuthRepository _auth;
         private IAppSettings _appSettings;
+        private ILasyEmailSender _lasyEmailSender;
 
-        public AccountRegisterController(IAuthRepository auth, IAppSettings appSettings)
+        public AccountRegisterController(IAuthRepository auth, IAppSettings appSettings, ILasyEmailSender lasyEmailSender)
         {
             _auth = auth;
             _auth.SetDataProtectorProvider(Startup.DataProtectionProvider);
 
             _appSettings = appSettings;
+
+            _lasyEmailSender = lasyEmailSender;
         }
 
         [HttpPost, Route("register"), ValidateNullModel, ValidateModel]
@@ -37,13 +40,14 @@ namespace Site.UI.Controllers.Api
                 return Request.HttpErrorResult(identityResultException.Message);
 
             var emailConfirmationLink = await _auth.GenerateEmailConfirmationTokenLinkAsync(account, _appSettings.Oauth.EmailConfirmationLink);
-
-            Sender.Send("Email confirmation", model.Email, EmailTemplate.EmailConfirmation, new Notification(new
+            var lasyEmailViewModel = new LasyEmailViewModel("Email confirmation", model.Email, EmailTemplate.EmailConfirmation, new Notification(new
             {
                 model.FirstName,
                 model.LastName,
                 emailConfirmationLink
             }));
+
+            _lasyEmailSender.Send(lasyEmailViewModel);
 
             return Ok(new DescriptionViewModel("Please click on the link has just been sent to your email account to verify your email and continue the registration process."));
         }

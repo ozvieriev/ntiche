@@ -215,6 +215,7 @@
     <Compile Include="Core\HttpExceptionResult.cs" />
     <Compile Include="Core\HttpExceptionMessageExtension.cs" />
     <Compile Include="Core\IdentityResultHelper.cs" />
+    <Compile Include="Core\LasyEmailSender.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

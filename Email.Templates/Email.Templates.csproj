@@ -61,7 +61,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Sender.cs" />
+    <Compile Include="EmailSender.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="EmailTemplates\EmailConfirmation.cshtml" />
