@@ -14,6 +14,6 @@ namespace Site.Data.Entities.Oauth
         public string ProtectedTicket { get; set; }
 
         [DataType(DataType.DateTime)]
-        public DateTime CreateDateUtc { get; set; }
+        public DateTime CreateDate { get; set; }
     }
 }

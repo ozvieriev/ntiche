@@ -31,8 +31,10 @@ namespace Site.Identity
                 model.AccountCity.ToSql("accountCity"),
                 //model.AccountIsActivated.ToSql("accountIsActivated"),
                 model.AccountIsOptin.ToSql("accountIsOptin"),
-                model.AccountFromUtc.ToSql("accountFromUtc"),
-                model.AccountToUtc.ToSql("accountToUtc"),
+                model.AccountFrom.ToSql("accountFrom"),
+                model.AccountTo.ToSql("accountTo"),
+                model.ExamName.ToSql("examName"),
+                model.ExamResultIsSuccess.ToSql("examResultIsSuccess"),
             };
 
             return await ExecuteReaderCollectionAsync<vExamResultReport>("test.vExamResultReport", sqlParams);

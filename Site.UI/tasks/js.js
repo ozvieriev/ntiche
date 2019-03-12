@@ -44,6 +44,7 @@ gulp.task('js:vendor', () => {
         'node_modules/bootstrap/dist/js/bootstrap.min.js',
         'node_modules/angular/angular.min.js',
         'node_modules/angular-ui-router/release/angular-ui-router.min.js',
+        'node_modules/angularjs-datepicker/dist/angular-datepicker.min.js',
         'node_modules/angular-translate/dist/angular-translate.min.js',
         'node_modules/angular-translate/dist/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js'
         //'node_modules/angular-translate/dist/angular-translate-loader-partial/angular-translate-loader-partial.min.js'

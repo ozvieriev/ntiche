@@ -22,8 +22,8 @@ namespace Site.Identity
                 model.AccountCity.ToSql("accountCity"),
                 //model.AccountIsActivated.ToSql("accountIsActivated"),
                 model.AccountIsOptin.ToSql("accountIsOptin"),
-                model.AccountFromUtc.ToSql("accountFromUtc"),
-                model.AccountToUtc.ToSql("accountToUtc"),
+                model.AccountFrom.ToSql("accountFrom"),
+                model.AccountTo.ToSql("accountTo"),
             };
 
             return await ExecuteReaderCollectionAsync<vFeedbackReport>("test.vFeedbackReport", sqlParams);

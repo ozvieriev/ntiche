@@ -32,6 +32,18 @@
                 </a>
             </div>
             <div class="inline-link-container">
+                <a ui-sref="exam">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Test
+                </a>
+            </div>
+            <div class="inline-link-container" data-ng-if="$auth.isInRoles(['admin'])">
+                <a ui-sref="admin/report">
+                    <i class="fas fa-table"></i>
+                    Reports
+                </a>
+            </div>
+            <div class="inline-link-container">
                 <a data-ng-click="logout()">
                     <i class="fas fa-sign-out-alt"></i>
                     Logout

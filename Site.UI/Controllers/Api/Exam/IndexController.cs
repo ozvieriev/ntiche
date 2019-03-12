@@ -25,6 +25,13 @@ namespace Site.UI.Controllers.Api
         private ITestRepository _test;
         private IAppSettings _appSettings;
 
+        private DateTime ToTime(long seconds)
+        {
+            return new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)
+                .AddSeconds(seconds)
+                .ToLocalTime();
+        }
+
         public ExamController(ITestRepository test, IAppSettings appSettings)
         {
             _test = test;
@@ -34,9 +41,17 @@ namespace Site.UI.Controllers.Api
         [HttpGet, Route("report")]
         public async Task<HttpResponseMessage> GetExamReport([FromUri] ExamResultReportGetViewModel model)
         {
+            model = model ?? new ExamResultReportGetViewModel();
+
             var dbModel = new vExamResultReportViewModel { };
 
             dbModel = Mapper.Map(model, dbModel);
+
+            if (model.AccountFrom.HasValue)
+                dbModel.AccountFrom = ToTime(model.AccountFrom.Value);
+
+            if (model.AccountTo.HasValue)
+                dbModel.AccountTo = ToTime(model.AccountTo.Value);
 
             var report = await _test.ExamResultReportAsync(dbModel);
 
@@ -108,7 +123,19 @@ namespace Site.UI.Controllers.Api
                 Map(m => m.AccoutnProvinceName).Name("Province");
                 Map(m => m.AccountCity).Name("City");
                 Map(m => m.AccountIsOptin).Name("Optin").TypeConverter<CsvBooleanConverter>();
-                Map(m => m.AccountCreateDateUtc).Name("Create Date(Utc)");
+                Map(m => m.AccountCreateDate).Name("Create Date");
+
+                Map(m => m.ExamName).Name("Test");
+                Map(m => m.HumanExamResultAnswer0).Name("Q1");
+                Map(m => m.HumanExamResultAnswer1).Name("Q2");
+                Map(m => m.HumanExamResultAnswer2).Name("Q3");
+                Map(m => m.HumanExamResultAnswer3).Name("Q4");
+                Map(m => m.HumanExamResultAnswer4).Name("Q5");
+                Map(m => m.HumanExamResultAnswer5).Name("Q6");
+                Map(m => m.HumanExamResultAnswer6).Name("Q7");
+
+                Map(m => m.ExamResultPercentCorrect).Name("Result %");
+                Map(m => m.ExamResultCreateDate).Name("Create Date");
             }
         }
 

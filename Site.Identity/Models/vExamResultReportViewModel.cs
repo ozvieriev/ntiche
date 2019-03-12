@@ -13,7 +13,10 @@ namespace Site.Identity.Models
         public string AccountCity { get; set; }
         //public bool? AccountIsActivated { get; set; }
         public bool? AccountIsOptin { get; set; }
-        public DateTime? AccountFromUtc { get; set; }
-        public DateTime? AccountToUtc { get; set; }
+        public DateTime? AccountFrom { get; set; }
+        public DateTime? AccountTo { get; set; }
+
+        public string ExamName { get; set; }
+        public bool? ExamResultIsSuccess { get; set; }
     }
 }

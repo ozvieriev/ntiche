@@ -1,8 +1,22 @@
-<h3 class="text-center">Admin report</h3>
-<div class="mt-5 row justify-content-center">
+<h3 class="text-center">Reports</h3>
+<div class="mt-5 mb-5 row justify-content-center">
     <div class="col-md-10">
         <div class="card">
             <div class="card-body">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="createDate">From</label>
+                        <datepicker date-format="MM/dd/yyyy" date-mobile ="true">
+                            <input class="form-control" data-ng-model="model.accountFrom" type="text" readonly/>
+                        </datepicker>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="createDate">To</label>
+                        <datepicker date-format="MM/dd/yyyy" datepicker-mobile="false">
+                            <input class="form-control" data-ng-model="model.accountTo" type="text" readonly/>
+                        </datepicker>
+                    </div>
+                </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="firstName">First name</label>
@@ -86,14 +100,12 @@
                         </select>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="isExamPassed">Result</label>
-                        <select class="form-control" id="isExamPassed" name="isExamPassed" data-ng-model="model.isExamPassed">
+                        <label for="examResultIsSuccess">Result</label>
+                        <select class="form-control" id="examResultIsSuccess" name="examResultIsSuccess" data-ng-model="model.examResultIsSuccess">
                             <option value="">Any</option>
                             <option value="true">Success</option>
                             <option value="false">Failed</option>
                         </select>
-                    </div>
-                    <div class="form-group col-md-4">
                     </div>
                 </div>
                 <button type="button" class="btn btn-primary" data-ng-click="downloadExamReport()">Download test report</button>

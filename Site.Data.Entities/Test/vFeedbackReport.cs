@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Site.Data.Entities.Test
 {
@@ -15,7 +16,7 @@ namespace Site.Data.Entities.Test
         public string AccountCity { get; set; }
         //public bool AccountIsActivated { get; set; }
         public bool AccountIsOptin { get; set; }
-        public DateTime AccountCreateDateUtc { get; set; }
+        public DateTime AccountCreateDate { get; set; }
 
         public byte FeedbackEnhancedRating { get; set; }
         public byte FeedbackOverallLearningObjectives1Before { get; set; }
@@ -34,6 +35,36 @@ namespace Site.Data.Entities.Test
         public string FeedbackChangesComments { get; set; }
         public string FeedbackTopicsComments { get; set; }
         public string FeedbackAdditionalComments { get; set; }
-        public DateTime FeedbackCreateDateUtc { get; set; }
+        public DateTime FeedbackCreateDate { get; set; }
+
+        [NotMapped]
+        public int HumanFeedbackEnhancedRating { get { return FeedbackEnhancedRating + 1; } }
+
+        [NotMapped]
+        public int HumanFeedbackOverallLearningObjectives1Before { get { return FeedbackOverallLearningObjectives1Before + 1; } }
+
+        [NotMapped]
+        public int HumanFeedbackOverallLearningObjectives1After { get { return FeedbackOverallLearningObjectives1After + 1; } }
+
+        [NotMapped]
+        public int HumanFeedbackOverallLearningObjectives1Relevance { get { return FeedbackOverallLearningObjectives1Relevance + 1; } }
+
+        [NotMapped]
+        public int HumanFeedbackOverallLearningObjectives2Before { get { return FeedbackOverallLearningObjectives2Before + 1; } }
+
+        [NotMapped]
+        public int HumanFeedbackOverallLearningObjectives2After { get { return FeedbackOverallLearningObjectives2After + 1; } }
+
+        [NotMapped]
+        public int HumanFeedbackOverallLearningObjectives2Relevance { get { return FeedbackOverallLearningObjectives2Relevance + 1; } }
+
+        [NotMapped]
+        public int HumanFeedbackOverallLearningObjectives3Before { get { return FeedbackOverallLearningObjectives3Before + 1; } }
+
+        [NotMapped]
+        public int HumanFeedbackOverallLearningObjectives3After { get { return FeedbackOverallLearningObjectives3After + 1; } }
+
+        [NotMapped]
+        public int HumanFeedbackOverallLearningObjectives3Relevance { get { return FeedbackOverallLearningObjectives3Relevance + 1; } }
     }
 }

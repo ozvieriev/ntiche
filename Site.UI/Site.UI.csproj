@@ -317,8 +317,10 @@
     <None Include="ui\css\vendor.min.css" />
     <Content Include="src\js\controllers\admin\report.js" />
     <Content Include="src\js\controllers\exam\feedback.js" />
+    <Content Include="src\js\controllers\exam\index.js" />
     <Content Include="src\js\controllers\exam\post-test.js" />
     <Content Include="src\js\services\dict.js" />
+    <Content Include="src\ui\views\exam\index.html" />
     <Content Include="src\ui\views\exam\feedback.html" />
     <Content Include="src\ui\views\exam\post-test.html" />
     <Content Include="ui\css\bundle.min.css" />

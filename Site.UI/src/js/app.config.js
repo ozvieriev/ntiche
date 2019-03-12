@@ -7,14 +7,9 @@ angular.module('app')
 
             interceptor.request = function (config) {
 
-                var params = $state.params;
-                if ($state.params && $state.params.locale) {
-
+                if ($state.params && $state.params.locale)
                     config.headers['Accept-Language'] = $state.params.locale;
 
-                    if (config.params)
-                        config.params.languageIso2 = $state.params.locale;
-                }
                 return config;
             };
 

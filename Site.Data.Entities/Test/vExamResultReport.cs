@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Site.Data.Entities.Test
 {
@@ -15,7 +16,7 @@ namespace Site.Data.Entities.Test
         public string AccountCity { get; set; }
         //public bool AccountIsActivated { get; set; }
         public bool AccountIsOptin { get; set; }
-        public DateTime AccountCreateDateUtc { get; set; }
+        public DateTime AccountCreateDate { get; set; }
 
         public string ExamName { get; set; }
 
@@ -27,6 +28,27 @@ namespace Site.Data.Entities.Test
         public byte ExamResultAnswer5 { get; set; }
         public byte ExamResultAnswer6 { get; set; }
         public byte ExamResultPercentCorrect { get; set; }
-        public DateTime ExamResultCreateDateUtc { get; set; }
+        public DateTime ExamResultCreateDate { get; set; }
+
+        [NotMapped]
+        public int HumanExamResultAnswer0 { get { return ExamResultAnswer0 + 1; } }
+
+        [NotMapped]
+        public int HumanExamResultAnswer1 { get { return ExamResultAnswer1 + 1; } }
+
+        [NotMapped]
+        public int HumanExamResultAnswer2 { get { return ExamResultAnswer2 + 1; } }
+
+        [NotMapped]
+        public int HumanExamResultAnswer3 { get { return ExamResultAnswer3 + 1; } }
+
+        [NotMapped]
+        public int HumanExamResultAnswer4 { get { return ExamResultAnswer4 + 1; } }
+
+        [NotMapped]
+        public int HumanExamResultAnswer5 { get { return ExamResultAnswer5 + 1; } }
+
+        [NotMapped]
+        public int HumanExamResultAnswer6 { get { return ExamResultAnswer6 + 1; } }
     }
 }

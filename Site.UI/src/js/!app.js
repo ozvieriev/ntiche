@@ -1,4 +1,4 @@
-angular.module('app.components', ['ui.router', 'pascalprecht.translate']);
+angular.module('app.components', ['ui.router', '720kb.datepicker', 'pascalprecht.translate']);
 angular.module('app.auth', []);
 angular.module('app.services', []);
 angular.module('app.controllers', []);
@@ -15,9 +15,7 @@ angular.module('app', ['app.components', 'app.auth', 'app.services', 'app.contro
         $transitions.onBefore({ to: '**' }, (transition) => {
 
             let to = transition.to();
-            if (!to.roles ||
-
-                $auth.isInRoles(to.roles))
+            if (!to.roles || $auth.isInRoles(to.roles))
                 return;
 
             let stateService = transition.router.stateService;
@@ -30,20 +28,4 @@ angular.module('app', ['app.components', 'app.auth', 'app.services', 'app.contro
 
             return transition.router.stateService.target('account/sign-in', params);
         });
-
-        //$transitions.onSuccess({ to: '**' }, (transition) => {
-
-        //    let stateService = transition.router.stateService;
-        //    let locale = stateService.params.locale;
-
-        //    let currentLanguage = $translate.use();
-        //    if (!currentLanguage || currentLanguage !== locale) {
-
-        //        $translate.use(locale).then(() => {
-
-        //            var d = $translate.use();
-        //            $translate.refresh(d);
-        //        });
-        //    }
-        //});
     });

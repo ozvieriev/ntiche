@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Site.UI.Models
+﻿namespace Site.UI.Models
 {
     public class FeedbackReportGetViewModel
     {
@@ -13,7 +11,7 @@ namespace Site.UI.Models
         public string AccountCity { get; set; }
         //public bool? AccountIsActivated { get; set; }
         public bool? AccountIsOptin { get; set; }
-        public DateTime? AccountFromUtc { get; set; }
-        public DateTime? AccountToUtc { get; set; }
+        public int? AccountFrom { get; set; }
+        public int? AccountTo { get; set; }
     }
 }

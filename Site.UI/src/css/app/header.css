@@ -1,4 +1,8 @@
-﻿.navbar-login {
+﻿header{
+    opacity:0.1
+}
+
+.navbar-login {
     width: 305px;
     padding: 10px;
     padding-bottom: 0px;

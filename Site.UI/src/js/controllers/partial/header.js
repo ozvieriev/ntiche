@@ -2,6 +2,7 @@ angular.module('app.controllers')
     .controller('partialHeaderController', ['$scope', '$state', '$auth', '$translate', ($scope, $state, $auth, $translate) => {
 
         $scope.$auth = $auth;
+
         $scope.changeLanguage = (lang) => {
 
             $translate.use(lang).then(() => {

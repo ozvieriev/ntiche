@@ -54,7 +54,7 @@ angular.module('app.controllers')
             return answers;
         };
 
-        const _exam = 'pre-test';
+        const _exam = 'post-test';
 
         $scope.model = {
             questions: viewQuestionBuilder.build($dict.questions())
@@ -118,6 +118,4 @@ angular.module('app.controllers')
                     .finally(() => { $scope.isBusy = false });
             });
         };
-
-
     }]);

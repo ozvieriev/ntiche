@@ -29,18 +29,19 @@ angular.module('app')
             json.htmlUrl = json.htmlUrl || json.url;
             json.params = json.params || {};
             json.templateUrl = json.templateUrl || `views/${json.htmlUrl}.html`;
-            json.isProtected = !!json.isProtected;
 
             var state = {
                 parent: 'app',
                 url: `/${json.url}`,
                 params: json.params,
-                templateUrl: json.templateUrl,
-                isProtected: json.isProtected
+                templateUrl: json.templateUrl
             };
 
             if (json.controller)
                 state.controller = `${json.controller}Controller`;
+
+            if (json.roles)
+                state.roles = json.roles;
 
             $stateProvider.state(json.name, state);
         };
@@ -56,6 +57,7 @@ angular.module('app')
 
         _state({ url: 'exam/feedback', controller: 'examFeedback', roles: [] });
         _state({ url: 'exam/post-test', controller: 'examPostTest', roles: [] });
+        _state({ url: 'exam', htmlUrl: 'exam/index', controller: 'exam', roles: [] });
         _state({ url: 'exam/pre-test', controller: 'examPreTest', roles: [] });
 
         _state({ url: 'about' });

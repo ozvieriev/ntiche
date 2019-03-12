@@ -43,6 +43,6 @@ namespace Site.Data.Entities.Oauth
         public bool IsActivated { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed), DataType(DataType.DateTime)]
-        public DateTime CreateDateUtc { get; set; }
+        public DateTime CreateDate { get; set; }
     }
 }

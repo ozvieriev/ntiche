@@ -11,6 +11,7 @@
     "angular": "^1.7.5",
     "angular-translate": "2.18.1",
     "angular-ui-router": "^1.0.20",
+    "angularjs-datepicker": "2.1.23",
     "bootstrap": "^4.2.1",
     "del": "^3.0.0",
     "font-awesome-5-css": "5.4.1",

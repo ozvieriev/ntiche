@@ -5,23 +5,23 @@ angular.module('app.controllers')
 
         $scope.getRatings = () => {
 
-            return [1, 2, 3, 4, 5];
+            return [0, 1, 2, 3, 4];
         };
         $scope.getRatingsYesNo = () => {
 
             return [
                 { text: 'Yes', value: true },
-                { text: 'No', value: false },
+                { text: 'No', value: false }
             ]
         };
         $scope.getProgramRatings = () => {
 
             return [
-                { text: 'Poor', value: 1 },
-                { text: 'Below Average', value: 2 },
-                { text: 'Average', value: 3 },
-                { text: 'Above Average', value: 4 },
-                { text: 'Excellent', value: 5 },
+                { text: 'Poor', value: 0 },
+                { text: 'Below Average', value: 1 },
+                { text: 'Average', value: 2 },
+                { text: 'Above Average', value: 3 },
+                { text: 'Excellent', value: 4 },
             ];
         };
 
@@ -33,7 +33,6 @@ angular.module('app.controllers')
 
             $form.submit($scope, form, () => {
 
-                debugger;
                 return $api.feedbackPost($scope.model)
                     .then(
                         (response) => {

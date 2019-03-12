@@ -36,6 +36,6 @@ namespace Site.Data.Entities.Test
         public string AdditionalComments { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed), DataType(DataType.DateTime)]
-        public DateTime CreateDateUtc { get; set; }
+        public DateTime CreateDate { get; set; }
     }
 }

@@ -24,6 +24,13 @@ namespace Site.UI.Controllers.Api
     {
         private ITestRepository _test;
 
+        private DateTime ToTime(long seconds)
+        {
+            return new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)
+                .AddSeconds(seconds)
+                .ToLocalTime();
+        }
+
         public FeedbackController(ITestRepository test)
         {
             _test = test;
@@ -42,9 +49,18 @@ namespace Site.UI.Controllers.Api
         [HttpGet, Route("report")]
         public async Task<HttpResponseMessage> GetFeedbackReport([FromUri] FeedbackReportGetViewModel model)
         {
+            model = model ?? new FeedbackReportGetViewModel();
+
             var dbModel = new vFeedbackReportViewModel { };
 
             dbModel = Mapper.Map(model, dbModel);
+
+            if (model.AccountFrom.HasValue)
+                dbModel.AccountFrom = ToTime(model.AccountFrom.Value);
+
+            if (model.AccountTo.HasValue)
+                dbModel.AccountTo = ToTime(model.AccountTo.Value);
+
 
             var report = await _test.FeedbackReportAsync(dbModel);
 
@@ -103,9 +119,9 @@ namespace Site.UI.Controllers.Api
                 Map(m => m.AccoutnProvinceName).Name("Province");
                 Map(m => m.AccountCity).Name("City");
                 Map(m => m.AccountIsOptin).Name("Optin").TypeConverter<CsvBooleanConverter>();
-                Map(m => m.AccountCreateDateUtc).Name("Create Date(Utc)");
+                Map(m => m.AccountCreateDate).Name("Create Date");
 
-                Map(m => m.FeedbackEnhancedRating).Name("Q1");
+                Map(m => m.HumanFeedbackEnhancedRating).Name("Q1");
                 Map(m => m.FeedbackOverallLearningObjectives1Before).Name("Q2 1.Before");
                 Map(m => m.FeedbackOverallLearningObjectives1After).Name("Q2 1.After");
                 Map(m => m.FeedbackOverallLearningObjectives1Relevance).Name("Q2 1.Relevance");
@@ -122,7 +138,7 @@ namespace Site.UI.Controllers.Api
                 Map(m => m.FeedbackChangesComments).Name("Q6 Comments");
                 Map(m => m.FeedbackTopicsComments).Name("Q7 Comments");
                 Map(m => m.FeedbackAdditionalComments).Name("Q8 Comments");
-                Map(m => m.FeedbackCreateDateUtc).Name("Create Date(Utc)");
+                Map(m => m.FeedbackCreateDate).Name("Create Date");
             }
         }
 

@@ -25,7 +25,8 @@ gulp.task('css:vendor', () => {
 
     return gulp.src([
         'node_modules/bootstrap/dist/css/bootstrap.min.css',
-        'node_modules/font-awesome-5-css/css/all.min.css'/*,
+        'node_modules/font-awesome-5-css/css/all.min.css',
+        'node_modules/angularjs-datepicker/dist/angular-datepicker.css'/*,
         'node_modules/balloon-css/balloon.min.css',*/
     ])
         .pipe(concat('vendor.min.css'))

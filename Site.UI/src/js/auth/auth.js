@@ -27,11 +27,11 @@ angular.module('app.auth')
 
             var identity = service.identity();
 
-            if (!identity)
+            if (roles && !identity)
                 return false;
 
-            if (!roles || !roles.length)
-                return;
+            if (!roles.length)
+                return true;
 
             var identityRoles = (identity.roles || '')
                 .toLowerCase()
