@@ -56,8 +56,11 @@ namespace Site.UI.Oauth
                             return;
                         }
 
-                        account.IsActivated = true;
-                        await auth.AccountActivateAsync(account.Id);
+                        if (!account.IsActivated)
+                        {
+                            account.IsActivated = true;
+                            await auth.AccountActivateAsync(account.Id);
+                        }
                     }
                 }
 

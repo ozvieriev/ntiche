@@ -1,13 +1,18 @@
-<h3 class="text-center ">Email confirmation</h3>
-<div class="mt-5 row justify-content-center">
-  <div class="col-md-8">
-    <div class="card">
-        <div class="card-body text-center">
-            <div class="alert mb-0" role="alert"
-                 data-ng-show="status"
-                 data-ng-bind="description"
-                 data-ng-class="{'alert-success': status===200, 'alert-danger': status !==200}"></div>
+<div data-ng-switch="view">
+    <div data-ng-switch-when="loading" class="spinner"></div>
+    <div data-ng-switch-when="done">
+        <h3 class="text-center ">Email confirmation</h3>
+        <div class="mt-5 mb-5 row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <div class="alert mb-0" role="alert"
+                             data-ng-show="status"
+                             data-ng-bind="description"
+                             data-ng-class="{'alert-success': status===200, 'alert-danger': status !==200}"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-  </div>
 </div>

@@ -20,24 +20,19 @@ gulp.task('html:app', () => {
 
             var relativePath = this.file.path.substr(this.file.base.length + 1);
 
-            if (relativePath === 'index.html')
-                return content;
+            if (relativePath === 'index.html') {
 
+                content = content.replace('.min.js', `.min.js?version=${Date.now()}`);
+                content = content.replace('.min.css', `.min.css?version=${Date.now()}`);
+
+                return content;
+            }
             relativePath = relativePath.replace(/\\/gi, '/');
 
             return `<script type="text/ng-template" id="${relativePath}">${content}</script>`;
         }))
         .pipe(concat('index.html'))
         .pipe(gulp.dest('ui'));
-    //.on('end', () => {
-
-    //    return gulp.src([
-    //        'ui/index.html'
-    //    ])
-    //        .pipe(replace('.min.js', `.min.js?version=${Date.now()}`))
-    //        .pipe(replace('.min.css', `.min.css?version=${Date.now()}`))
-    //        .pipe(gulp.dest('ui'))
-    //});
 });
 gulp.task('html:app:watch', () => {
     return gulp.watch('src/**/*.html', gulp.series('html:app'));

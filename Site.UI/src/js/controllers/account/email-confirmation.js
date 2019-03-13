@@ -1,11 +1,12 @@
 angular.module('app.controllers')
-    .controller('accountEmailConfirmationController', ['$scope', '$auth', '$state', ($scope, $auth, $state) => {
+    .controller('accountEmailConfirmationController', ['$scope', '$auth', '$state', '$timeout', ($scope, $auth, $state, $timeout) => {
 
-        var params = $state.params;
+        let params = $state.params;
 
         $scope.status = null;
         $scope.description = null;
         $scope.isBusy = false;
+        $scope.view = null;
 
         if (!params.emailConfirmationToken || !params.accountId) {
 
@@ -14,6 +15,7 @@ angular.module('app.controllers')
             return;
         }
 
+        $scope.isBusy = true;
         $auth.emailConfirmation(params.emailConfirmationToken, params.accountId).then(
             (response) => {
 
@@ -25,5 +27,21 @@ angular.module('app.controllers')
                 $scope.status = error.status;
                 $scope.description = error.data.error_description;
             })
-            .finally(() => { $scope.isBusy = false; });
+            .finally(() => {
+
+                $scope.isBusy = false;
+                $scope.view = 'done';
+            });
+
+        let timer = $timeout(() => {
+
+            if ($scope.isBusy)
+                $scope.view = 'loading';
+
+        }, 1000);
+
+        $scope.$on('$destroy', () => {
+
+            $timeout.cancel(timer);
+        });
     }]);
