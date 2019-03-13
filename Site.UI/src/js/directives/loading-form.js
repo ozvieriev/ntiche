@@ -8,15 +8,37 @@
             },
             link: (scope, element, attrs) => {
 
-                let $submit = element.find('[type="submit"]');
+                let $submit = element.find('[type="submit"]:first');
 
-                $submit.addClass('btn btn-primary');
+
+                $submit
+                    .addClass('btn btn-primary')
+                    .prepend('<span class="spinner-border spinner-border-sm mr-2 ng-hide"></span>');
+
+                let $span = $submit.find('span:first');
 
                 let watcher = scope.$watch('$parent.isBusy', (isBusy) => {
 
+
                     isBusy ?
-                        $submit.addClass('btn-light') :
-                        $submit.removeClass('btn-light');
+                        element
+                            .attr('disabled', 'disabled') :
+
+                        element
+                            .removeAttr('disabled');
+
+                    isBusy ?
+                        $submit
+                            .addClass('btn-light')
+                            .attr('disabled', 'disabled'):
+                        
+                        $submit
+                            .removeClass('btn-light')
+                            .removeAttr('disabled');
+
+                    isBusy ?
+                        $span.removeClass('ng-hide') :
+                        $span.addClass('ng-hide');
                 });
 
                 scope.$on('$destroy', watcher);

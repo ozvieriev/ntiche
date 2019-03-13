@@ -60,7 +60,7 @@ angular.module('app')
 
         _state({ url: 'admin/report', controller: 'adminReport', roles: ['admin'] });
 
-        _state({ url: 'exam/feedback', controller: 'examFeedback', roles: [] });
+        _state({ url: 'exam/feedback', controller: 'examFeedback', roles: [], params: { examResultId: null } });
         _state({ url: 'exam/post-test', controller: 'examPostTest', roles: [] });
         _state({ url: 'exam', htmlUrl: 'exam/index', controller: 'exam', roles: [] });
         _state({ url: 'exam/pre-test', controller: 'examPreTest', roles: [] });

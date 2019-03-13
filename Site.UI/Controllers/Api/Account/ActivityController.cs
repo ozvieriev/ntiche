@@ -16,7 +16,7 @@ namespace Site.UI.Controllers.Api
             _test = test;
         }
 
-        [HttpGet, Route("activity")]
+        [HttpGet, Route("activity"), Authorize]
         public async Task<IHttpActionResult> Activity()
         {
             var accountId = Guid.Parse(User.Identity.GetUserId());

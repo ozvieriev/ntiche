@@ -225,8 +225,9 @@
     <Compile Include="Handlers\LanguageHandler.cs" />
     <Compile Include="Handlers\OopsExceptionHandler.cs" />
     <Compile Include="Helpers\LanguageIso2.cs" />
+    <Compile Include="Models\ExamPostResponseViewModel.cs" />
     <Compile Include="Models\ExamPostViewModel.cs" />
-    <Compile Include="Models\ExamResultReportGetViewModel.cs" />
+    <Compile Include="Models\ExamResultReportViewModel.cs" />
     <Compile Include="Models\FeedbackReportGetViewModel.cs" />
     <Compile Include="Models\FeedbackPostViewModel.cs" />
     <Compile Include="Models\ResetPasswordViewModel.cs" />
@@ -326,6 +327,7 @@
     <None Include="src\ui\views\exam\index.html" />
     <None Include="src\ui\views\exam\feedback.html" />
     <None Include="src\ui\views\exam\post-test.html" />
+    <Content Include="src\css\app\spinner.css" />
     <Content Include="ui\css\bundle.min.css" />
     <Content Include="ui\i18n\en.json" />
     <Content Include="ui\i18n\fr.json" />

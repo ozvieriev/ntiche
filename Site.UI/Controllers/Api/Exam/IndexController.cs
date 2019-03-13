@@ -39,9 +39,9 @@ namespace Site.UI.Controllers.Api
         }
 
         [HttpGet, Route("report")]
-        public async Task<HttpResponseMessage> GetExamReport([FromUri] ExamResultReportGetViewModel model)
+        public async Task<HttpResponseMessage> GetExamReport([FromUri] ExamResultReportViewModel model)
         {
-            model = model ?? new ExamResultReportGetViewModel();
+            model = model ?? new ExamResultReportViewModel();
 
             var dbModel = new vExamResultReportViewModel { };
 
@@ -71,12 +71,23 @@ namespace Site.UI.Controllers.Api
         {
             var exam = await _test.ExamGetAsync(name);
             var accountId = Guid.Parse(User.Identity.GetUserId());
-            
+
             var entity = new ExamResult { AccountId = accountId, ExamId = exam.Id };
             entity = Mapper.Map(model, entity);
-            entity = await _test.ExamResultInsertAsync(entity);            
+            entity.IsSuccess = entity.PercentCorrect >= 70;
 
-            return Ok(new DescriptionViewModel("Thank you for your answers. Your test results have been saved."));
+            entity = await _test.ExamResultInsertAsync(entity);
+
+            var response = new ExamPostResponseViewModel("Thank you for your answers. Your test results have been saved.")
+            {
+                ExamResultId = entity.Id,
+                IsSuccess = entity.IsSuccess
+            };
+
+            if ("post-test".Equals(name, StringComparison.InvariantCultureIgnoreCase))
+                response.TotalFeedbacks = await _test.FeedbackCountGetAsync(accountId);
+
+            return Ok(response);
         }
 
         private StringContent GetContent(IEnumerable<vExamResultReport> report)

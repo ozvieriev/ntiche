@@ -18,6 +18,7 @@ namespace Site.Data.Entities.Test
         public byte Answer6 { get; set; }
 
         public byte PercentCorrect { get; set; }
+        public bool IsSuccess { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed), DataType(DataType.DateTime)]
         public DateTime CreateDate { get; set; }

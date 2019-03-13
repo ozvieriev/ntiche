@@ -1,5 +1,6 @@
 ﻿using Site.Data.Entities.Test;
 using Site.Identity.Models;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -7,6 +8,11 @@ namespace Site.Identity
 {
     public partial class TestRepository
     {
+        public async Task<int> FeedbackCountGetAsync(Guid accountId)
+        {
+            return await _context.FeedbackCountGetAsync(accountId);
+        }
+
         public async Task<Feedback> FeedbackInsertAsync(Feedback entity)
         {
             _context.Feedbacks.Add(entity);

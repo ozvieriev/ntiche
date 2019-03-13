@@ -1,70 +1,16 @@
 angular.module('app.controllers')
-    .controller('examPreTestController', ['$scope', '$sce', '$form', '$api', '$dict', '$filter', ($scope, $sce, $form, $api, $dict, $filter) => {
-
-        let viewQuestion = function (json) {
-
-            let text = json.text;
-
-            text && (text = $filter('translate')(text));
-
-            this.text = $sce.trustAsHtml(text);
-            this.answers = viewAnswerBuilder.build(json);
-            this.selectedAnswer = null;
-        };
-        let viewAnswer = function (json) {
-
-            let text = json.text;
-
-            text && (text = $filter('translate')(text));
-
-            this.text = $sce.trustAsHtml(text);
-            this.isCorrect = json.isCorrect;
-        };
-
-        let viewQuestionBuilder = function () { };
-        viewQuestionBuilder.build = (questions) => {
-
-            let result = [];
-
-            if (questions) {
-
-                for (let index = 0; index < questions.length; ++index) {
-
-                    let question = questions[index];
-                    result.push(new viewQuestion(question));
-                }
-            }
-            return result;
-        };
-
-        let viewAnswerBuilder = function () { };
-        viewAnswerBuilder.build = (json) => {
-
-            let answers = [];
-
-            if (json.answers) {
-
-                for (let index = 0; index < json.answers.length; ++index) {
-
-                    let answer = json.answers[index];
-                    answers.push(new viewAnswer(answer));
-                }
-            }
-
-            return answers;
-        };
+    .controller('examPreTestController', ['$scope', '$form', '$api', '$dict', ($scope, $form, $api, $dict) => {
 
         const _exam = 'pre-test';
 
         $scope.model = {
-            questions: viewQuestionBuilder.build($dict.questions())
+            questions: $dict.questions()
         };
 
         $scope.status = null;
         $scope.description = null;
         $scope.isBusy = false;
 
-        $scope.$sce = $sce;
         $scope.view = 'questioner';
         $scope.isAllSelected = false;
 
@@ -86,7 +32,7 @@ angular.module('app.controllers')
 
             $form.submit($scope, form, () => {
 
-                let answers = {};
+                let json = {};
                 let correctAnswers = 0;
                 let questions = $scope.model.questions;
                 for (let index = 0; index < questions.length; index++) {
@@ -97,12 +43,12 @@ angular.module('app.controllers')
                     if (selectedAnswer.isCorrect)
                         correctAnswers++;
 
-                    answers[`answer${index}`] = question.answers.indexOf(selectedAnswer);
+                    json[`answer${index}`] = question.answers.indexOf(selectedAnswer);
                 }
 
-                answers.percentCorrect = Math.round((correctAnswers / questions.length) * 100);
+                json.percentCorrect = Math.round((correctAnswers / questions.length) * 100);
 
-                return $api.examPost(_exam, answers)
+                return $api.examPost(_exam, json)
                     .then(
                         (response) => {
 

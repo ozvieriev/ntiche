@@ -1,9 +1,7 @@
 angular.module('app.services')
-    .factory('$dict', () => {
+    .factory('$dict', ['$sce', '$filter', ($sce, $filter) => {
 
-        var service = {};
-
-        service.questions = () => {
+        let _questions = (() => {
 
             return [
                 {
@@ -70,8 +68,66 @@ angular.module('app.services')
                     ]
                 }
             ];
+        });
+        let service = {};
+        
+        let viewQuestion = function (json) {
 
+            let text = json.text;
+
+            text && (text = $filter('translate')(text));
+
+            this.text = $sce.trustAsHtml(text);
+            this.answers = viewAnswerBuilder.build(json);
+            this.selectedAnswer = null;
+        };
+        let viewAnswer = function (json) {
+
+            let text = json.text;
+
+            text && (text = $filter('translate')(text));
+
+            this.text = $sce.trustAsHtml(text);
+            this.isCorrect = json.isCorrect;
+        };
+
+        let viewQuestionBuilder = function () { };
+        viewQuestionBuilder.build = (questions) => {
+
+            let result = [];
+
+            if (questions) {
+
+                for (let index = 0; index < questions.length; ++index) {
+
+                    let question = questions[index];
+                    result.push(new viewQuestion(question));
+                }
+            }
+            return result;
+        };
+
+        let viewAnswerBuilder = function () { };
+        viewAnswerBuilder.build = (json) => {
+
+            let answers = [];
+
+            if (json.answers) {
+
+                for (let index = 0; index < json.answers.length; ++index) {
+
+                    let answer = json.answers[index];
+                    answers.push(new viewAnswer(answer));
+                }
+            }
+
+            return answers;
+        };
+
+        service.questions = () => {
+
+            return viewQuestionBuilder.build(_questions());
         };
 
         return service;
-    });
+    }]);

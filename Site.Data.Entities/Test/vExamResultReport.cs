@@ -28,6 +28,7 @@ namespace Site.Data.Entities.Test
         public byte ExamResultAnswer5 { get; set; }
         public byte ExamResultAnswer6 { get; set; }
         public byte ExamResultPercentCorrect { get; set; }
+        public bool ExamResultIsSuccess { get; set; }
         public DateTime ExamResultCreateDate { get; set; }
 
         [NotMapped]

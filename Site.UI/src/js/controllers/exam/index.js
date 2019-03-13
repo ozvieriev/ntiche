@@ -1,6 +1,8 @@
 angular.module('app.controllers')
     .controller('examController', ['$scope', '$state', '$api', '$timeout', ($scope, $state, $api, $timeout) => {
 
+        let _isDestroyed = false;
+
         $scope.model = {};
 
         $scope.status = null;
@@ -19,6 +21,12 @@ angular.module('app.controllers')
             }
 
             $state.go('exam/post-test');
+        }, () => {
+
+            if (_isDestroyed)
+                return;
+
+            $state.go('error');
         });
 
         let timer = $timeout(() => {
@@ -29,6 +37,8 @@ angular.module('app.controllers')
         }, 1000);
 
         $scope.$on('$destroy', () => {
+
+            _isDestroyed = true;
 
             $timeout.cancel(timer);
         });

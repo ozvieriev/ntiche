@@ -16,6 +16,7 @@ namespace Site.UI
                 cfg.CreateMap<RegisterViewModel, Account>();
 
                 cfg.CreateMap<ExamPostViewModel, ExamResult>();
+                
                 cfg.CreateMap<FeedbackPostViewModel, Feedback>();
 
                 cfg.CreateMap<FeedbackReportGetViewModel, vFeedbackReportViewModel>();

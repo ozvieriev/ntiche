@@ -2,10 +2,10 @@
 <div class="mt-5 mb-5 row justify-content-center">
     <div class="col-md-10">
         <div class="card" data-ng-switch="view">
-            <div data-ng-switch-when="questioner">
+            <div data-ng-switch-default>
                 <div class="card-body">
                     <form name="examForm" class="needs-validation" data-ng-submit="submit(examForm)" data-ng-loading-form>
-                        <dl data-ng-repeat="question in ::model.questions">
+                        <dl data-ng-repeat="question in ::model.questions" data-ng-disabled="isBusy">
                             <dt>
                                 <span data-ng-bind="::$index+1"></span>.
                                 <span data-ng-bind-html="::question.text"></span>
@@ -19,6 +19,7 @@
                                            data-ng-model="question.selectedAnswer"
                                            data-ng-change="onSelect()" />
 
+                                    {{answer.isCorrect}}
                                     <label class="form-check-label" for="question-{{::$parent.$index}}-answer-{{::$index}}">
                                         <span data-ng-bind="::$index+1"></span>.
                                         <span data-ng-bind-html="::answer.text"></span>
@@ -26,22 +27,35 @@
                                 </div>
                             </dd>
                         </dl>
-                        <button type="submit" class="btn btn-primary pull-right" data-ng-if="isAllSelected">Submit</button>
+                        <button type="submit" class="btn btn-primary" data-ng-show="isAllSelected">Submit</button>
                     </form>
                 </div>
-                <div class="card-footer">
-                    <div class="alert mb-0" role="alert"
-                         data-ng-show="status"
-                         data-ng-bind="description"
-                         data-ng-class="{'alert-danger': status !==200}"></div>
+                <div class="card-footer" data-ng-show="status && status !==200">
+                    <div class="alert alert-danger mb-0" role="alert" data-ng-bind="description"></div>
                 </div>
             </div>
-            <div data-ng-switch-when="done">
+            <div data-ng-switch-when="done-success">
                 <div class="card-body">
-                    <div class="alert" role="alert"
-                         data-ng-show="status"
-                         data-ng-bind="description"
-                         data-ng-class="{'alert-success': status===200}"></div>
+                    <div class="alert alert-success mb-2" role="alert">
+                        You have pass the test!
+                    </div>
+                    <button class="btn btn-primary" data-ng-click="downloadCertificate()">Download certificate</button>
+                </div>
+            </div>
+            <div data-ng-switch-when="done-feedback">
+                <div class="card-body">
+                    <div class="alert alert-danger mb-2" role="alert">
+                        You have pass the test! If you would like to download your certificate - please do evaluation
+                    </div>
+                    <button class="btn btn-primary" data-ng-click="feedback()">Evaluation</button>
+                </div>
+            </div>
+            <div data-ng-switch-when="done-fail">
+                <div class="card-body">
+                    <div class="alert alert-danger mb-2" role="alert">
+                        Unfortunately you didn't pass the test.
+                    </div>
+                    <button class="btn btn-primary" ui-sref="exam/post-test" ui-sref-opts="{reload: true, notify: true}">Try again</button>
                 </div>
             </div>
         </div>

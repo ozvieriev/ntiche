@@ -1,9 +1,17 @@
 angular.module('app.controllers')
     .controller('adminReportController', ['$scope', '$auth', '$state', ($scope, $auth, $state) => {
 
+        let tomorrow = new Date();
+        tomorrow.setDate(new Date().getDate() + 1);
+
+        var accountTo =
+            ('0' + (tomorrow.getMonth() + 1)).slice(-2) + '/'
+            +('0' + tomorrow.getDate()).slice(-2) + '/'           
+            + tomorrow.getFullYear();
+
         $scope.model = {
-            accountFrom: null,
-            accountTo: null
+            accountFrom: '3/1/2019',
+            accountTo: accountTo
         };
 
         let _getModel = () => {

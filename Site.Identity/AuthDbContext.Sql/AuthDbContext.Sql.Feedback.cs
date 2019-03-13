@@ -1,5 +1,6 @@
 ﻿using Site.Data.Entities.Test;
 using Site.Identity.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
@@ -8,6 +9,15 @@ namespace Site.Identity
 {
     public partial class AuthDbContext
     {
+        internal async Task<int> FeedbackCountGetAsync(Guid accountId)
+        {
+            var sqlParams = new SqlParameter[] {
+                accountId.ToSql("accountId")
+            };
+
+            return await ExecuteReaderAsync<int>("test.pFeedbackCountGetByAccountId", sqlParams);
+        }
+
         internal async Task<List<vFeedbackReport>> FeedbackReportAsync(vFeedbackReportViewModel model = null)
         {
             model = model ?? new vFeedbackReportViewModel();
