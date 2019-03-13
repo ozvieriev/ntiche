@@ -250,6 +250,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="gulpfile.js" />
+    <Content Include="html\letter-of-attendance-en.html" />
     <Content Include="index.html" />
     <Content Include="NLog.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
