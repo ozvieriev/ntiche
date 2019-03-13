@@ -19,7 +19,6 @@
                                            data-ng-model="question.selectedAnswer"
                                            data-ng-change="onSelect()" />
 
-                                    {{answer.isCorrect}}
                                     <label class="form-check-label" for="question-{{::$parent.$index}}-answer-{{::$index}}">
                                         <span data-ng-bind="::$index+1"></span>.
                                         <span data-ng-bind-html="::answer.text"></span>

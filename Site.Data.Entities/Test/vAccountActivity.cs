@@ -8,6 +8,6 @@ namespace Site.Data.Entities.Test
         public int TotalPostTests { get; set; }
         public int TotalFeedbacks { get; set; }
         public Guid? BestPostExamResultId { get; set; }
-        public bool BestPostExamResultIsSuccess { get; set; }
+        public bool? BestPostExamResultIsSuccess { get; set; }
     }
 }

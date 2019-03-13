@@ -19,7 +19,6 @@
 
                 let watcher = scope.$watch('$parent.isBusy', (isBusy) => {
 
-
                     isBusy ?
                         element
                             .attr('disabled', 'disabled') :
@@ -29,12 +28,10 @@
 
                     isBusy ?
                         $submit
-                            .addClass('btn-light')
-                            .attr('disabled', 'disabled'):
+                            .addClass('btn-light'):
                         
                         $submit
-                            .removeClass('btn-light')
-                            .removeAttr('disabled');
+                            .removeClass('btn-light');
 
                     isBusy ?
                         $span.removeClass('ng-hide') :
