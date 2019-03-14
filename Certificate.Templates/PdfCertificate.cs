@@ -41,6 +41,9 @@ namespace Certificate.Templates
             converter.Options.WebPageWidth = 1024;
             converter.Options.WebPageHeight = 0;
             converter.Options.PdfCompressionLevel = PdfCompressionLevel.Best;
+            converter.Options.SecurityOptions.CanEditContent = false;
+            converter.Options.SecurityOptions.OwnerPassword = "ntiche";
+                 
 
             var pdfDocument = converter.ConvertHtmlString(builder.ToString());
             var bytes = pdfDocument.Save();
