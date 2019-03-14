@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Pattern.EF6", "R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Email.Templates", "Email.Templates\Email.Templates.csproj", "{1F13E28F-EE2E-4C14-A0F9-D5837F62BD65}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Certificate.Templates", "Certificate.Templates\Certificate.Templates.csproj", "{6A0B3B30-7FD7-4C13-BBF7-AC88752CDBAA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{1F13E28F-EE2E-4C14-A0F9-D5837F62BD65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F13E28F-EE2E-4C14-A0F9-D5837F62BD65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F13E28F-EE2E-4C14-A0F9-D5837F62BD65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A0B3B30-7FD7-4C13-BBF7-AC88752CDBAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A0B3B30-7FD7-4C13-BBF7-AC88752CDBAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A0B3B30-7FD7-4C13-BBF7-AC88752CDBAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A0B3B30-7FD7-4C13-BBF7-AC88752CDBAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

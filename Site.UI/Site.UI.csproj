@@ -209,6 +209,7 @@
     <Compile Include="Controllers\Api\Account\ActivityController.cs" />
     <Compile Include="Controllers\Api\Account\PasswordController.cs" />
     <Compile Include="Controllers\Api\Account\RegisterController.cs" />
+    <Compile Include="Controllers\Api\Exam\DownloadController.cs" />
     <Compile Include="Controllers\Api\Exam\IndexController.cs" />
     <Compile Include="Controllers\Api\Feedback\IndexController.cs" />
     <Compile Include="Controllers\Api\Ping\IndexController.cs" />
@@ -250,7 +251,6 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="gulpfile.js" />
-    <Content Include="html\letter-of-attendance-en.html" />
     <Content Include="index.html" />
     <Content Include="NLog.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -366,6 +366,10 @@
     <Content Include="ui\webfonts\fa-solid-900.woff2" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Certificate.Templates\Certificate.Templates.csproj">
+      <Project>{6A0B3B30-7FD7-4C13-BBF7-AC88752CDBAA}</Project>
+      <Name>Certificate.Templates</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Email.Templates\Email.Templates.csproj">
       <Project>{1f13e28f-ee2e-4c14-a0f9-d5837f62bd65}</Project>
       <Name>Email.Templates</Name>
