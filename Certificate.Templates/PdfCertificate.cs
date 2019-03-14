@@ -22,10 +22,10 @@ namespace Certificate.Templates
 
             var converter = new HtmlToPdf();
 
-            converter.Options.PdfPageSize = (PdfPageSize)Enum.Parse(typeof(PdfPageSize), "A4", true);
-            converter.Options.PdfPageOrientation = (PdfPageOrientation)Enum.Parse(typeof(PdfPageOrientation), "Portrait", true);
+            converter.Options.PdfPageSize = PdfPageSize.A4;
+            converter.Options.PdfPageOrientation = PdfPageOrientation.Portrait;
             converter.Options.WebPageWidth = 1024;
-            converter.Options.WebPageHeight = 0;
+            converter.Options.WebPageHeight = 800;
             converter.Options.PdfCompressionLevel = PdfCompressionLevel.Best;
             converter.Options.SecurityOptions.CanEditContent = false;
             converter.Options.SecurityOptions.OwnerPassword = "ntiche";
