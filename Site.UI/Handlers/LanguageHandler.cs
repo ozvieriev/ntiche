@@ -21,7 +21,33 @@ namespace Site.UI.Handlers
             _cultures.Add("fr", new CultureInfo("fr-FR"));
         }
 
-        private CultureInfo CultureInfo(HttpRequestMessage request)
+        private static string GetQueryString(HttpRequestMessage request, string key)
+        {
+            var queryStrings = request.GetQueryNameValuePairs();
+            if (object.Equals(queryStrings, null))
+                return null;
+
+            var match = queryStrings.FirstOrDefault(kv => string.Compare(kv.Key, key, true) == 0);
+            if (string.IsNullOrEmpty(match.Value))
+                return null;
+
+            return match.Value;
+        }
+
+        private CultureInfo QueryCultureInfo(HttpRequestMessage request)
+        {
+            var lang = GetQueryString(request, "lang");
+
+            if (string.IsNullOrEmpty(lang))
+                return null;
+
+            if (_cultures.ContainsKey(lang))
+                return _cultures[lang];
+
+            return null;
+        }
+
+        private CultureInfo HeaderCultureInfo(HttpRequestMessage request)
         {
             foreach (var lang in request.Headers.AcceptLanguage)
             {
@@ -33,15 +59,19 @@ namespace Site.UI.Handlers
                     return _cultures[language];
             }
 
-            return _cultures.First().Value;
+            return null;
         }
 
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            var culture = CultureInfo(request);
+            var culture = QueryCultureInfo(request) ??
+                HeaderCultureInfo(request) ??
+                _cultures.First().Value;
 
             request.Headers.AcceptLanguage.Clear();
             request.Headers.AcceptLanguage.Add(new StringWithQualityHeaderValue(culture.Name));
+
+            Thread.CurrentThread.CurrentUICulture = culture;
 
             return await base.SendAsync(request, cancellationToken);
         }

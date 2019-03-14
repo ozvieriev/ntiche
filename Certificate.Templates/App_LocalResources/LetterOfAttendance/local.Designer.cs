@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Certificate.Templates.CertificateTemplates.LetterOfAttendance {
+namespace Certificate.Templates.App_LocalResources.LetterOfAttendance {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace Certificate.Templates.CertificateTemplates.LetterOfAttendance {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    internal class local {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
+        internal local() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Certificate.Templates.CertificateTemplates.LetterOfAttendance {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Certificate.Templates.CertificateTemplates.LetterOfAttendance.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Certificate.Templates.App_LocalResources.LetterOfAttendance.local", typeof(local).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -72,45 +72,21 @@ namespace Certificate.Templates.CertificateTemplates.LetterOfAttendance {
         ///    &lt;div class=&quot;wrapper&quot;&gt;
         ///        &lt;header&gt;
         ///            &lt;h1&gt;
+        ///                EN
         ///                Critical Dose drug considerations
         ///            &lt;/h1&gt;
         ///            &lt;h3&gt;for Post-Transplant Patients&lt;/h3&gt;
         ///        &lt;/header&gt;
-        ///    &lt;/div&gt;
-        ///    &lt;footer class=&quot;footer&quot;&gt;&lt;/footer&gt;
-        ///&lt;/body&gt;
-        ///&lt;/html&gt;.
+        ///
+        ///        &lt;p&gt;
+        ///            Participated in the program: &lt;accountFullName&gt;
+        ///        &lt;/p&gt;
+        ///        &lt;p&gt;
+        ///            License #: &lt;accountPha [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string en {
+        internal static string html {
             get {
-                return ResourceManager.GetString("en", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
-        ///&lt;html&gt;
-        ///&lt;head&gt;
-        ///    &lt;meta charset=&quot;utf-8&quot; /&gt;
-        ///    &lt;title&gt;&lt;/title&gt;
-        ///    &lt;link href=&apos;css/style.css&apos; rel=&apos;stylesheet&apos; /&gt;
-        ///&lt;/head&gt;
-        ///&lt;body&gt;
-        ///    &lt;div class=&quot;wrapper&quot;&gt;
-        ///        &lt;header&gt;
-        ///            &lt;h1&gt;
-        ///                Critical Dose drug considerations
-        ///            &lt;/h1&gt;
-        ///            &lt;h3&gt;for Post-Transplant Patients&lt;/h3&gt;
-        ///        &lt;/header&gt;
-        ///    &lt;/div&gt;
-        ///    &lt;footer class=&quot;footer&quot;&gt;&lt;/footer&gt;
-        ///&lt;/body&gt;
-        ///&lt;/html&gt;.
-        /// </summary>
-        internal static string fr {
-            get {
-                return ResourceManager.GetString("fr", resourceCulture);
+                return ResourceManager.GetString("html", resourceCulture);
             }
         }
         

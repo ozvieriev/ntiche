@@ -1,8 +1,5 @@
-﻿using Certificate.Templates.CertificateTemplates.LetterOfAttendance;
-using SelectPdf;
+﻿using SelectPdf;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 namespace Certificate.Templates
@@ -10,22 +7,11 @@ namespace Certificate.Templates
     public static class PdfCertificate
     {
         private static readonly string LinkCssStyle = "<link href='css/style.css' rel='stylesheet' />";
-        private static readonly string CssStyle = $"<style type'text/css'>{Resources.style}</style>";
+        private static readonly string CssStyle = $"<style type'text/css'>{App_LocalResources.LetterOfAttendance.local.style}</style>";
 
-        private static readonly Dictionary<string, string> _htmlTemplates;
-
-        static PdfCertificate()
+        public static byte[] CreatePdf(CertificateTemplate certificateTemplate, Notification notification)
         {
-            _htmlTemplates = new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase);
-            _htmlTemplates.Add("en", Resources.en);
-            _htmlTemplates.Add("fr", Resources.fr);
-        }
-
-        public static byte[] CreatePdf(CertificateTemplate certificateTemplate, Notification notification, string languageIso2 = "en")
-        {
-            var htmlTemplate = _htmlTemplates.ContainsKey(languageIso2) ?
-                _htmlTemplates[languageIso2] :
-                _htmlTemplates.First().Value;
+            var htmlTemplate = App_LocalResources.LetterOfAttendance.local.html;
 
             var builder = new StringBuilder(htmlTemplate);
             builder.Replace(LinkCssStyle, CssStyle);

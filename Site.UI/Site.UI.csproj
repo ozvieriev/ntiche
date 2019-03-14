@@ -225,7 +225,6 @@
     <Compile Include="Handlers\CancelHandler.cs" />
     <Compile Include="Handlers\LanguageHandler.cs" />
     <Compile Include="Handlers\OopsExceptionHandler.cs" />
-    <Compile Include="Helpers\LanguageIso2.cs" />
     <Compile Include="Models\ExamPostResponseViewModel.cs" />
     <Compile Include="Models\ExamPostViewModel.cs" />
     <Compile Include="Models\ExamResultReportViewModel.cs" />

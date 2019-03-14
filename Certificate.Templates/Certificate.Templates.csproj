@@ -44,10 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CertificateTemplates\LetterOfAttendance\Resources.Designer.cs">
+    <Compile Include="App_LocalResources\LetterOfAttendance\local.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
+      <DependentUpon>local.resx</DependentUpon>
     </Compile>
     <Compile Include="Notification.cs" />
     <Compile Include="PdfCertificate.cs" />
@@ -66,9 +66,10 @@
     <Content Include="CertificateTemplates\LetterOfAttendance\images\logo.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CertificateTemplates\LetterOfAttendance\Resources.resx">
+    <EmbeddedResource Include="App_LocalResources\LetterOfAttendance\local.fr.resx" />
+    <EmbeddedResource Include="App_LocalResources\LetterOfAttendance\local.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <LastGenOutput>local.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
