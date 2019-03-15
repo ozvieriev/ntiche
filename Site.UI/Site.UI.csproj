@@ -214,6 +214,9 @@
     <Compile Include="Controllers\Api\Feedback\IndexController.cs" />
     <Compile Include="Controllers\Api\Ping\IndexController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Core\CertificateGenerator.cs" />
+    <Compile Include="Core\Csv\CsvDateTimeConverter.cs" />
+    <Compile Include="Core\Csv\CsvBooleanConverter.cs" />
     <Compile Include="Core\HttpErrorResult.cs" />
     <Compile Include="Core\HttpExceptionResult.cs" />
     <Compile Include="Core\HttpExceptionMessageExtension.cs" />
@@ -328,6 +331,8 @@
     <None Include="src\ui\views\exam\feedback.html" />
     <None Include="src\ui\views\exam\post-test.html" />
     <None Include="src\css\app\spinner.css" />
+    <Content Include="src\js\controllers\exam\post-test-success.js" />
+    <Content Include="src\ui\views\exam\post-test-success.html" />
     <Content Include="ui\css\bundle.min.css" />
     <Content Include="ui\i18n\en.json" />
     <Content Include="ui\i18n\fr.json" />

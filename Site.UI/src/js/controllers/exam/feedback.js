@@ -1,51 +1,55 @@
 angular.module('app.controllers')
-    .controller('examFeedbackController', ['$scope', '$sce', '$form', '$api', ($scope, $sce, $form, $api) => {
+    .controller('examFeedbackController', ['$scope', '$form', '$api', '$state',
+        ($scope, $form, $api, $state) => {
 
-        $scope.model = {};
+            let params = $state.params;
+            if (!params.examResultId)
+                return $state.go('exam');
 
-        $scope.getRatings = () => {
+            $scope.model = {};
 
-            return [0, 1, 2, 3, 4];
-        };
-        $scope.getRatingsYesNo = () => {
+            $scope.getRatings = () => {
 
-            return [
-                { text: 'Yes', value: true },
-                { text: 'No', value: false }
-            ]
-        };
-        $scope.getProgramRatings = () => {
+                return [0, 1, 2, 3, 4];
+            };
+            $scope.getRatingsYesNo = () => {
 
-            return [
-                { text: 'Poor', value: 0 },
-                { text: 'Below Average', value: 1 },
-                { text: 'Average', value: 2 },
-                { text: 'Above Average', value: 3 },
-                { text: 'Excellent', value: 4 },
-            ];
-        };
+                return [
+                    { text: 'Yes', value: true },
+                    { text: 'No', value: false }
+                ]
+            };
+            $scope.getProgramRatings = () => {
 
-        $scope.status = null;
-        $scope.description = null;
-        $scope.isBusy = false;
+                return [
+                    { text: 'Poor', value: 0 },
+                    { text: 'Below Average', value: 1 },
+                    { text: 'Average', value: 2 },
+                    { text: 'Above Average', value: 3 },
+                    { text: 'Excellent', value: 4 },
+                ];
+            };
 
-        $scope.submit = (form) => {
+            $scope.status = null;
+            $scope.description = null;
+            $scope.isBusy = false;
 
-            $form.submit($scope, form, () => {
+            $scope.submit = (form) => {
 
-                return $api.feedbackPost($scope.model)
-                    .then(
-                        (response) => {
+                $form.submit($scope, form, () => {
 
-                            $scope.status = 200;
-                            $scope.description = response.description;
-                        },
-                        (error) => {
+                    return $api.feedbackPost($scope.model)
+                        .then(
+                            (response) => {
 
-                            $scope.status = error.status;
-                            $scope.description = error.data.error_description;
-                        })
-                    .finally(() => { $scope.isBusy = false });
-            });
-        };
-    }]);
+                                return $state.go(`exam/post-test-success`, { examResultId: params.examResultId });
+                            },
+                            (error) => {
+
+                                $scope.status = error.status;
+                                $scope.description = error.data.error_description;
+                            })
+                        .finally(() => { $scope.isBusy = false });
+                });
+            };
+        }]);

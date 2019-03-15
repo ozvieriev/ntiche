@@ -33,23 +33,7 @@
                     <div class="alert alert-danger mb-0" role="alert" data-ng-bind="description"></div>
                 </div>
             </div>
-            <div data-ng-switch-when="done-success">
-                <div class="card-body">
-                    <div class="alert alert-success mb-2" role="alert">
-                        You have pass the test!
-                    </div>
-                    <button class="btn btn-primary" data-ng-click="downloadCertificate()">Download certificate</button>
-                </div>
-            </div>
-            <div data-ng-switch-when="done-feedback">
-                <div class="card-body">
-                    <div class="alert alert-danger mb-2" role="alert">
-                        You have pass the test! If you would like to download your certificate - please do evaluation
-                    </div>
-                    <button class="btn btn-primary" data-ng-click="feedback()">Evaluation</button>
-                </div>
-            </div>
-            <div data-ng-switch-when="done-fail">
+            <div data-ng-switch-when="fail">
                 <div class="card-body">
                     <div class="alert alert-danger mb-2" role="alert">
                         Unfortunately you didn't pass the test.

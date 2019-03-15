@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
 using CsvHelper;
 using CsvHelper.Configuration;
-using CsvHelper.TypeConversion;
 using Microsoft.AspNet.Identity;
 using Site.Data.Entities.Test;
 using Site.Identity;
 using Site.Identity.Models;
+using Site.UI.Core.Csv;
 using Site.UI.Models;
 using System;
 using System.Collections.Generic;
@@ -119,7 +119,7 @@ namespace Site.UI.Controllers.Api
                 Map(m => m.AccoutnProvinceName).Name("Province");
                 Map(m => m.AccountCity).Name("City");
                 Map(m => m.AccountIsOptin).Name("Optin").TypeConverter<CsvBooleanConverter>();
-                Map(m => m.AccountCreateDate).Name("Create Date");
+                Map(m => m.AccountCreateDate).Name("Create Date").TypeConverter<CsvDateTimeConverter>();
 
                 Map(m => m.HumanFeedbackEnhancedRating).Name("Q1");
                 Map(m => m.FeedbackOverallLearningObjectives1Before).Name("Q2 1.Before");
@@ -138,18 +138,7 @@ namespace Site.UI.Controllers.Api
                 Map(m => m.FeedbackChangesComments).Name("Q6 Comments");
                 Map(m => m.FeedbackTopicsComments).Name("Q7 Comments");
                 Map(m => m.FeedbackAdditionalComments).Name("Q8 Comments");
-                Map(m => m.FeedbackCreateDate).Name("Create Date");
-            }
-        }
-
-        private class CsvBooleanConverter : DefaultTypeConverter
-        {
-            public override string ConvertToString(object value, IWriterRow row, MemberMapData memberMapData)
-            {
-                if (value == null)
-                    return string.Empty;
-
-                return (bool)value ? "yes" : "no";
+                Map(m => m.FeedbackCreateDate).Name("Create Date").TypeConverter<CsvDateTimeConverter>();
             }
         }
     }

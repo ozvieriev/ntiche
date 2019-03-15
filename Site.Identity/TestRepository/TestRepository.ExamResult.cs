@@ -1,5 +1,6 @@
 ﻿using Site.Data.Entities.Test;
 using Site.Identity.Models;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -16,6 +17,10 @@ namespace Site.Identity
             return entity;
         }
 
+        public async Task<vExamResult> ExamResultGetAsync(Guid examResultId)
+        {
+            return await _context.ExamResultGetAsync(examResultId);
+        }
         public async Task<List<vExamResultReport>> ExamResultReportAsync(vExamResultReportViewModel model = null)
         {
             return await _context.ExamResultReportAsync(model);

@@ -1,21 +1,10 @@
-﻿using AutoMapper;
-using Certificate.Templates;
-using CsvHelper;
-using CsvHelper.Configuration;
-using CsvHelper.TypeConversion;
-using Microsoft.AspNet.Identity;
-using Site.Data.Entities.Oauth;
-using Site.Data.Entities.Test;
-using Site.Identity;
-using Site.Identity.Models;
-using Site.UI.Models;
+﻿using Site.Identity;
+using Site.UI.Core;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
 
@@ -33,29 +22,21 @@ namespace Site.UI.Controllers.Api
             _appSettings = appSettings;
         }
 
-        [HttpGet, Route("download")]
-        public async Task<HttpResponseMessage> DownloadGet()
+        [HttpGet, Route("post-test/download")]
+        public async Task<HttpResponseMessage> PostTestDownloadGet(Guid examResultId)
         {
-            var account = new Account
-            {
-                FirstName = "Oleksandr",
-                LastName = "Zvieriev",
-                PharmacistLicense = "-"
-            };
+            var examResult = await _test.ExamResultGetAsync(examResultId);
+            if (object.Equals(examResult, null) || !examResult.ExamResultIsSuccess)
+                return new HttpResponseMessage(HttpStatusCode.NotFound);
 
-            var bytes = PdfCertificate.CreatePdf(CertificateTemplate.LetterOfAttendance, new Notification(new
-            {
-                accountFullName = $"{account.FirstName} {account.LastName}",
-                accountPharmacistLicense = account.PharmacistLicense,
-                examResultCreateDate = DateTime.Now.ToShortDateString()
-            }));
+            var bytes = CertificateGenerator.LetterOfAttendance(examResult);
             var memoryStream = new MemoryStream(bytes);
 
             var response = new HttpResponseMessage(HttpStatusCode.OK);
             response.Content = new StreamContent(memoryStream);
             response.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
             {
-                FileName = $"{account.FirstName} {account.LastName}.pdf"
+                FileName = $"{examResult.AccountFirstName} {examResult.AccountLastName}.pdf"
             };
             response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/pdf");
 

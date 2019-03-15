@@ -46,39 +46,51 @@ h1 {
     font: bold 40px/1.3 calibri;
     margin: 0;
 }
-h2{
+
+h2 {
     background: #a9d2e8;
     padding: 3px;
     text-align: center;
     font: bold 36px/1.2 calibri, Arial;
     margin: 0 0 30px;
 }
+
 h3 {
     font: 300 30px/1.3 calibri;
     letter-spacing: 2.5px;
     margin: 0;
 }
 
-h4{
+body.fr h3 {
+    font-size: 26px;
+}
+
+h4 {
     font: bold 11px/1.2 Arial;
     margin: 0 0 20px;
 }
 
 /*main*/
-main{
+main {
     margin: 120px 45px 0;
 }
 
-.info{
+.info {
     overflow: hidden;
     padding: 0 0 250px;
 }
 
-.info > div{
-    float: left;
-    padding: 0 60px;
-    width: 346px;
+    .info > div {
+        float: left;
+        padding: 0 60px;
+        width: 346px;
+    }
+
+body.fr .info > div {
+    padding: 0 53px;
+    width: 360px;
 }
+
 .underlined {
     border-bottom: 2px solid #000;
     overflow: hidden;
@@ -87,42 +99,44 @@ main{
     font: 300 18px/1.2 Arial;
 }
 
-.title{
+.title {
     font: bold 20px/1.2 calibri;
 }
-.field{
+
+.field {
     overflow: hidden;
     padding: 0 0 10px;
 }
-.field .title{
-    float: left;
-    padding: 6px 10px 0 0;
-}
-.field .text{
-    font: 300 18px/1.2 Arial;
-    padding: 8px 0;
-}
 
-.note{
+    .field .title {
+        float: left;
+        padding: 6px 10px 0 0;
+    }
+
+    .field .text {
+        font: 300 18px/1.2 Arial;
+        padding: 8px 0;
+    }
+
+.note {
     font: 14px/1.2 calibri, arial;
     text-align: center;
-
 }
 
 /*footer*/
-footer{
+footer {
     padding: 0 45px;
     margin: 310px auto 0;
     max-width: 934px;
-
 }
-.footer-top{
+
+.footer-top {
     border: 1px solid #a5a5a5;
     font: 12px/1.2 Arial;
     padding: 10px 10px 20px;
 }
 
-.footer-bottom{
+.footer-bottom {
     text-align: center;
     font: italic 14px/1.2 Arial;
     color: #8b8b8b;

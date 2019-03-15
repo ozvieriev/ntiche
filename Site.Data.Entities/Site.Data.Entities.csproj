@@ -51,6 +51,7 @@
     <Compile Include="Oauth\SessionToken.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test\Exam.cs" />
+    <Compile Include="Test\vExamResult.cs" />
     <Compile Include="Test\ExamResult.cs" />
     <Compile Include="Test\vAccountActivity.cs" />
     <Compile Include="Test\vExamResultReport.cs" />

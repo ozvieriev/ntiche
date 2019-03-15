@@ -13,6 +13,7 @@ namespace Site.Identity
 
         Task<Exam> ExamGetAsync(string name);
         Task<ExamResult> ExamResultInsertAsync(ExamResult entity);
+        Task<vExamResult> ExamResultGetAsync(Guid examResultId);
 
         Task<Feedback> FeedbackInsertAsync(Feedback feedback);
         Task<List<vFeedbackReport>> FeedbackReportAsync(vFeedbackReportViewModel model = null);

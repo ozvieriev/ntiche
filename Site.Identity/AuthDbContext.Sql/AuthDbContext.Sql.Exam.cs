@@ -1,5 +1,6 @@
 ﻿using Site.Data.Entities.Test;
 using Site.Identity.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
@@ -8,6 +9,14 @@ namespace Site.Identity
 {
     public partial class AuthDbContext
     {
+        internal async Task<vExamResult> ExamResultGetAsync(Guid examResultId)
+        {
+            var sqlParams = new SqlParameter[] {
+                examResultId.ToSql("id")
+            };
+
+            return await ExecuteReaderAsync<vExamResult>("[test].[vExamResultById]", sqlParams);
+        }
         internal async Task<Exam> ExamGetAsync(string name)
         {
             var sqlParams = new SqlParameter[] {

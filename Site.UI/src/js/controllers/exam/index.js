@@ -13,7 +13,13 @@ angular.module('app.controllers')
         $api.accoutnActivity().then((response) => {
 
             $scope.isBusy = false;
+            if (response.bestPostExamResultIsSuccess && response.bestPostExamResultId) {
 
+                if (response.totalFeedbacks)
+                    return $state.go(`exam/post-test-success`, { examResultId: response.bestPostExamResultId });
+
+                return $state.go(`exam/feedback`, { examResultId: response.bestPostExamResultId });
+            }
             if (!response.totalPreTests) {
 
                 $scope.view = 'question';
