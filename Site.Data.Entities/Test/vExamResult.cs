@@ -6,6 +6,7 @@ namespace Site.Data.Entities.Test
     {
         public string AccountFirstName { get; set; }
         public string AccountLastName { get; set; }
+        public string AccountEmail { get; set; }
         public string AccountPharmacistLicense { get; set; }
 
         public bool ExamResultIsSuccess { get; set; }

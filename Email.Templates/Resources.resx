@@ -124,6 +124,9 @@
   <data name="Layout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>emailtemplates\layout.cshtml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="PostTestCertificate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>emailtemplates\posttestcertificate.cshtml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="RecoverPassword" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>emailtemplates\recoverpassword.cshtml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>

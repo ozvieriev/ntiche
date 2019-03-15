@@ -5,7 +5,7 @@ namespace Email.Templates
 {
     public class EmailSender
     {
-        public static void Send(string subject, string to, EmailTemplate emailTemplate, Notification notification)
+        public static void Send(string subject, string to, EmailTemplate emailTemplate, Notification notification, Attachment attachement = null)
         {
             var razorEmailTemplate = new RazorTemplate(emailTemplate);
             var template = razorEmailTemplate.Compile(notification);
@@ -21,6 +21,9 @@ namespace Email.Templates
                 message.Body = layout.Replace("**Body**", template);
                 message.IsBodyHtml = true;
                 message.BodyEncoding = Encoding.UTF8;
+
+                if (!object.Equals(attachement, null))
+                    message.Attachments.Add(attachement);
 
                 using (var client = new SmtpClient())
                     client.Send(message);

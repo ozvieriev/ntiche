@@ -209,7 +209,7 @@
     <Compile Include="Controllers\Api\Account\ActivityController.cs" />
     <Compile Include="Controllers\Api\Account\PasswordController.cs" />
     <Compile Include="Controllers\Api\Account\RegisterController.cs" />
-    <Compile Include="Controllers\Api\Exam\DownloadController.cs" />
+    <Compile Include="Controllers\Api\Exam\ResultController.cs" />
     <Compile Include="Controllers\Api\Exam\IndexController.cs" />
     <Compile Include="Controllers\Api\Feedback\IndexController.cs" />
     <Compile Include="Controllers\Api\Ping\IndexController.cs" />
@@ -230,6 +230,7 @@
     <Compile Include="Handlers\OopsExceptionHandler.cs" />
     <Compile Include="Models\ExamPostResponseViewModel.cs" />
     <Compile Include="Models\ExamPostViewModel.cs" />
+    <Compile Include="Models\ExamResultViewModel.cs" />
     <Compile Include="Models\ExamResultReportViewModel.cs" />
     <Compile Include="Models\FeedbackReportGetViewModel.cs" />
     <Compile Include="Models\FeedbackPostViewModel.cs" />

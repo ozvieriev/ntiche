@@ -1,6 +1,6 @@
 angular.module('app.controllers')
-    .controller('examPostTestSuccessController', ['$scope', '$state', '$api', '$translate',
-        ($scope, $state, $api, $translate) => {
+    .controller('examPostTestSuccessController', ['$scope', '$state', '$api', '$form', '$translate',
+        ($scope, $state, $api, $form, $translate) => {
 
             let params = $state.params;
             if (!params.examResultId)
@@ -10,7 +10,7 @@ angular.module('app.controllers')
 
             $scope.status = null;
             $scope.description = null;
-            $scope.isBusy = true;
+            $scope.isBusy = false;
 
             $scope.download = () => {
 
@@ -21,7 +21,23 @@ angular.module('app.controllers')
 
                 window.open(`/api/exam/post-test/download/?${queryString}`, '_blank');
             };
-            $scope.send = () => {
+            $scope.submit = (form) => {
 
+                $form.submit($scope, form, () => {
+
+                    return $api.examPostTestSend({ examResultId: params.examResultId })
+                        .then(
+                            (response) => {
+
+                                $scope.status = 200;
+                                $scope.description = response.description;
+                            },
+                            (error) => {
+
+                                $scope.status = error.status;
+                                $scope.description = error.data.error_description;
+                            })
+                        .finally(() => { $scope.isBusy = false });
+                });
             };
         }]);

@@ -2,6 +2,8 @@
 using NLog;
 using System;
 using System.Collections.Concurrent;
+using System.IO;
+using System.Net.Mail;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -30,7 +32,26 @@ namespace Site.UI.Core
                     {
                         LasyEmailViewModel model;
                         if (_lasyEmailViewModels.TryDequeue(out model))
-                            EmailSender.Send(model.Subject, model.To, model.EmailTemplate, model.Notification);
+                        {
+                            Attachment attachment = null;
+                            MemoryStream memoryStream = null;
+                            
+                            try
+                            {
+                                if (!object.Equals(model.Attachment, null))
+                                {
+                                    memoryStream = new MemoryStream(model.Attachment.Content);
+                                    attachment = new Attachment(memoryStream, model.Attachment.FileName);
+                                }
+                                EmailSender.Send(model.Subject, model.To, model.EmailTemplate, model.Notification, attachment);
+                            }
+                            catch (Exception exc) { _oauthLoggerEmail.Error(exc); }
+                            finally
+                            {
+                                if (!object.Equals(memoryStream, null))
+                                    memoryStream.Dispose();
+                            }
+                        }
                     }
 
                     catch (Exception exc) { _oauthLoggerEmail.Error(exc); }
@@ -47,18 +68,32 @@ namespace Site.UI.Core
     }
     public class LasyEmailViewModel
     {
-        public LasyEmailViewModel(string subject, string to, EmailTemplate emailTemplate, Notification notification)
+        public LasyEmailViewModel(string subject, string to, EmailTemplate emailTemplate, Notification notification,
+            LasyEmailAttachment attachment = null)
         {
             Subject = subject;
             To = to;
 
             EmailTemplate = emailTemplate;
             Notification = notification;
+            Attachment = attachment;
         }
 
         public string Subject { get; private set; }
         public string To { get; private set; }
         public EmailTemplate EmailTemplate { get; private set; }
         public Notification Notification { get; private set; }
+        public LasyEmailAttachment Attachment { get; private set; }
+    }
+    public class LasyEmailAttachment
+    {
+        public LasyEmailAttachment(string fileName, byte[] content)
+        {
+            FileName = fileName;
+            Content = content;
+        }
+
+        public string FileName { get; private set; }
+        public byte[] Content { get; private set; }
     }
 }

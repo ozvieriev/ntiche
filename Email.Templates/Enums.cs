@@ -4,6 +4,7 @@
     {
         EmailConfirmation,
         Layout,
+        PostTestCertificate,
         RecoverPassword
     }
 }
