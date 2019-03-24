@@ -1,10 +1,13 @@
 angular.module('app.controllers')
-    .controller('examPreTestController', ['$scope', '$form', '$api', '$dict', ($scope, $form, $api, $dict) => {
+    .controller('examPreTestController', ['$scope', '$form', '$api', '$state', '$dict', ($scope, $form, $api, $state, $dict) => {
 
         const _exam = 'pre-test';
 
+        let params = $state.params;
+
         $scope.model = {
-            questions: $dict.questions()
+            questions: $dict.questions(),
+            newsletterLink: `/pdf/newsletter-${params.locale}.pdf`
         };
 
         $scope.status = null;

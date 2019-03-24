@@ -113,8 +113,8 @@ namespace Site.UI.Controllers.Api
                 Map(m => m.AccountLastName).Name("Last name");
                 Map(m => m.AccountEmail).Name("Email");
                 Map(m => m.AccountPharmacistLicense).Name("Pharmacist license");
-                Map(m => m.AccountPharmacySettingName).Name("Pharmacy setting");
-                Map(m => m.AccountOcupation).Name("Ocupation");
+                Map(m => m.AccountPharmacySetting).Name("Pharmacy setting");
+                Map(m => m.AccountSpecialty).Name("Specialty");
                 Map(m => m.AccountCountryName).Name("Country");
                 Map(m => m.AccoutnProvinceName).Name("Province");
                 Map(m => m.AccountCity).Name("City");

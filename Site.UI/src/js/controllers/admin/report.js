@@ -6,13 +6,20 @@ angular.module('app.controllers')
 
         var accountTo =
             ('0' + (tomorrow.getMonth() + 1)).slice(-2) + '/'
-            +('0' + tomorrow.getDate()).slice(-2) + '/'           
+            + ('0' + tomorrow.getDate()).slice(-2) + '/'
             + tomorrow.getFullYear();
 
         $scope.model = {
             accountFrom: '3/1/2019',
             accountTo: accountTo
         };
+
+        $scope.pharmacySettings = [
+            { name: 'Any' },
+            { id: 1, name: 'Hospital Pharmacy' },
+            { id: 2, name: 'Community Pharmacy' },
+            { id: 3, name: 'Other (please specify)' }
+        ];
 
         let _getModel = () => {
 
@@ -24,7 +31,7 @@ angular.module('app.controllers')
             delete model.accountFrom;
             delete model.accountTo;
 
-            from && (model.accountFrom = from/1000);
+            from && (model.accountFrom = from / 1000);
             to && (model.accountTo = to / 1000);
 
             return model;
@@ -38,4 +45,9 @@ angular.module('app.controllers')
 
             window.open(`/api/feedback/report/?${$.param(_getModel())}`, '_blank');
         };
+
+        $scope.$watch('pharmacySetting', newValue => {
+
+            $scope.model.accountPharmacySettingId = newValue.id;
+        });
     }]);

@@ -19,10 +19,13 @@ namespace Site.UI.Models
         [Required, MaxLength(100)]
         public string PharmacistLicense { get; set; }
 
+        [MaxLength(300)]
+        public string PharmacySetting { get; set; }
         public int PharmacySettingId { get; set; }
 
-        [Required, MaxLength(300)]
-        public string Ocupation { get; set; }
+        [MaxLength(300)]
+        public string Specialty { get; set; }
+        public int SpecialtyId { get; set; }
 
         [Required, MaxLength(300)]
         public string CountryIso2 { get; set; }

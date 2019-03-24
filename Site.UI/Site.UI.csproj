@@ -247,6 +247,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="sql.sql" />
     <Content Include="App_Data\ntiche.mdf" />
     <Content Include="App_Data\ntiche_log.ldf">
       <DependentUpon>ntiche.mdf</DependentUpon>
@@ -261,7 +262,8 @@
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="pdf\program.pdf" />
+    <Content Include="pdf\newsletter-en.pdf" />
+    <Content Include="pdf\newsletter-fr.pdf" />
     <None Include="src\css\app\app.css" />
     <None Include="src\i18n\en.json" />
     <None Include="src\i18n\fr.json" />
