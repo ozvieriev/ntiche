@@ -67,12 +67,12 @@ angular.module('app')
         _state({ url: 'exam/pre-test', controller: 'examPreTest', roles: [] });
 
         _state({ url: 'about' });
-        _state({ url: 'contact-us' });
-        _state({ url: 'disclaimer' });
         _state({ url: 'error' });
         _state({ url: 'index', controller: 'index' });
         _state({ url: 'privacy' });
         _state({ url: 'resources' });
+        _state({ url: 'support' });
+        _state({ url: 'terms' });
     });
 
 //https://github.com/modularcode/modular-admin-angularjs/blob/master/src/_main.js

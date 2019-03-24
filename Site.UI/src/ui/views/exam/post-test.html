@@ -26,7 +26,7 @@
                                 </div>
                             </dd>
                         </dl>
-                        <button type="submit" class="btn btn-primary" data-ng-show="isAllSelected">Submit</button>
+                        <button type="submit" class="btn btn-info" data-ng-show="isAllSelected">Submit</button>
                     </form>
                 </div>
                 <div class="card-footer" data-ng-show="status && status !==200">
@@ -38,7 +38,7 @@
                     <div class="alert alert-danger mb-2" role="alert">
                         Unfortunately you didn't pass the test.
                     </div>
-                    <button class="btn btn-primary" ui-sref="exam/post-test" ui-sref-opts="{reload: true, notify: true}">Try again</button>
+                    <button class="btn btn-info" ui-sref="exam/post-test" ui-sref-opts="{reload: true, notify: true}">Try again</button>
                 </div>
             </div>
         </div>

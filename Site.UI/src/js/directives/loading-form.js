@@ -12,7 +12,7 @@
 
 
                 $submit
-                    .addClass('btn btn-primary')
+                    .addClass('btn btn-info')
                     .prepend('<span class="spinner-border spinner-border-sm mr-2 ng-hide"></span>');
 
                 let $span = $submit.find('span:first');

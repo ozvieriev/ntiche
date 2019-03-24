@@ -26,7 +26,7 @@
                                 </div>
                             </dd>
                         </dl>
-                        <button type="submit" class="btn btn-primary pull-right" data-ng-show="isAllSelected">Submit</button>
+                        <button type="submit" class="btn btn-info pull-right" data-ng-show="isAllSelected">Submit</button>
                     </form>
                 </div>
                 <div class="card-footer" data-ng-show="status && status !==200">
@@ -39,8 +39,8 @@
                     <div class="alert alert-success" role="alert"
                          data-ng-bind="description"></div>
 
-                    <a href="{{::model.newsletterLink}}" target="_blank" class="btn btn-primary">Download pdf file</a>
-                    <a ui-sref="exam/post-test" class="btn btn-primary">Take Post test</a>
+                    <a href="{{::model.newsletterLink}}" target="_blank" class="btn btn-info">Download pdf file</a>
+                    <a ui-sref="exam/post-test" class="btn btn-info">Take Post test</a>
                 </div>
             </div>
         </div>
