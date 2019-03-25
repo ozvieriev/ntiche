@@ -48,6 +48,6 @@ angular.module('app.controllers')
 
         $scope.$watch('pharmacySetting', newValue => {
 
-            $scope.model.accountPharmacySettingId = newValue.id;
+            $scope.model.accountPharmacySettingId = newValue.id || null;
         });
     }]);

@@ -247,7 +247,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="sql.sql" />
     <Content Include="App_Data\ntiche.mdf" />
     <Content Include="App_Data\ntiche_log.ldf">
       <DependentUpon>ntiche.mdf</DependentUpon>
@@ -336,15 +335,15 @@
     <None Include="src\css\app\spinner.css" />
     <None Include="src\js\controllers\exam\post-test-success.js" />
     <None Include="src\ui\views\exam\post-test-success.html" />
-    <Content Include="src\css\app\theme.css" />
-    <Content Include="src\css\flag-icon.css" />
-    <Content Include="src\images\logo-399x293.jpg" />
-    <Content Include="src\images\logo.jpg" />
-    <Content Include="src\images\logo.min.jpg" />
-    <Content Include="src\svg\flag-icon\fr.svg" />
-    <Content Include="src\svg\flag-icon\gb.svg" />
-    <Content Include="tasks\svg.js" />
-    <Content Include="tasks\images.js" />
+    <None Include="src\css\app\theme.css" />
+    <None Include="src\css\flag-icon.css" />
+    <None Include="src\images\logo-399x293.jpg" />
+    <None Include="src\images\logo.jpg" />
+    <None Include="src\images\logo.min.jpg" />
+    <None Include="src\svg\flag-icon\fr.svg" />
+    <None Include="src\svg\flag-icon\gb.svg" />
+    <None Include="tasks\svg.js" />
+    <None Include="tasks\images.js" />
     <Content Include="ui\css\bundle.min.css" />
     <Content Include="ui\i18n\en.json" />
     <Content Include="ui\i18n\fr.json" />
