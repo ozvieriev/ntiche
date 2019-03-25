@@ -18,8 +18,10 @@ angular.module('app.controllers')
             { name: 'Any' },
             { id: 1, name: 'Hospital Pharmacy' },
             { id: 2, name: 'Community Pharmacy' },
-            { id: 3, name: 'Other (please specify)' }
+            { id: 3, name: 'Other' }
         ];
+        
+        $scope.pharmacySetting = $scope.pharmacySettings[0];
 
         let _getModel = () => {
 
@@ -48,6 +50,6 @@ angular.module('app.controllers')
 
         $scope.$watch('pharmacySetting', newValue => {
 
-            $scope.model.accountPharmacySettingId = newValue.id || null;
+            $scope.model.accountPharmacySettingId = newValue.id;
         });
     }]);
