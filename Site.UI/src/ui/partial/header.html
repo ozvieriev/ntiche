@@ -1,11 +1,13 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-ntiche fixed-top" data-ng-navbar>
-    <a class="navbar-brand" ui-sref="index">Ntiche</a>
+    <div class="logo">
+        <img src="images/logo-399x293.jpg" width="40" height="30">
+    </div>
+    <a class="navbar-brand ml-3" ui-sref="index">Ntiche</a>
     <ul class="navbar-nav mr-auto navbar-lang">
-        <li class="nav-item">
-            <a class="nav-link" data-ng-click="changeLanguage('en')">en</a>
-        </li>
-        <li class="nav-item" >
-            <a class="nav-link" data-ng-click="changeLanguage('fr')">fr</a>
+        <li class="nav-item" data-ng-repeat="(key, value) in ::languages">
+            <a class="nav-link p-0" data-ng-click="changeLanguage(key)">
+                <span class="flag-icon {{::value.icon}}"> </span>
+            </a>
         </li>
     </ul>
     <button class="navbar-toggler" type="button"

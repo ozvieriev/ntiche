@@ -10,10 +10,10 @@ body {
 
 body, html {
     height: 100%;
-    background-image: url('../images/logo.min.jpg');
-    background-size: 200px;
-    background-repeat: no-repeat;
-    background-position: right 56px;
+}
+
+h3 {
+    color: #488cbd !important;
 }
 
 .wrapper {
@@ -36,6 +36,6 @@ body, html {
 
 .form-control-no-validation:valid {
     background-image: none !important;
-    border-color: #ccc !important;
+    border-color: #88bddc !important;
     padding-right: 0px !important;
 }

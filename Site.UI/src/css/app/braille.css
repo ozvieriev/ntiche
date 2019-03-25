@@ -1,6 +1,6 @@
 ﻿.braille {
-    /*justify-content: flex-end;*/
-    border-bottom: 1px solid #c10e2e;
+    justify-content: flex-end;
+    border-bottom: 1px solid #488cbd;
 }
 
     .braille .nav-link {

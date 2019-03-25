@@ -6,7 +6,7 @@ const cleanCSS = require('gulp-clean-css');
 gulp.task('css:app', () => {
 
     return gulp.src([
-        'src/css/app/**/*.css'
+        'src/css/**/*.css'
     ])
         .pipe(concat('app.min.css'))
         .pipe(cleanCSS())

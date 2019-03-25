@@ -34,7 +34,7 @@
                         liCollection.removeClass('active');
                         liCollection.eq(index).addClass('active');
 
-                        angular.element('body').css({
+                        angular.element('html').css({
                             'font-size': `${rem}rem`
                         });
                     });

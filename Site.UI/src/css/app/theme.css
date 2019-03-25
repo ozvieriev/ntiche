@@ -1,16 +1,23 @@
-﻿
-a {
-    color: #940036
-}
-
-nav.bg-ntiche {
+﻿nav.bg-ntiche {
     background-color: #488cbd
 }
+
 
 .card-header {
     color: #fff;
     background-color: #488cbd;
     font-weight: 600;
+}
+.card {
+    border-color: #88bddc
+}
+
+.card-footer {
+    background-color: rgba(136, 189, 220, 0.3)
+}
+
+.form-control {
+    border-color: #88bddc
 }
 
 /**/
