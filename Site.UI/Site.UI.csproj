@@ -214,7 +214,7 @@
     <Compile Include="Controllers\Api\Feedback\IndexController.cs" />
     <Compile Include="Controllers\Api\Ping\IndexController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Core\CertificateGenerator.cs" />
+    <Compile Include="Core\LasyCertificateGenerator.cs" />
     <Compile Include="Core\Csv\CsvDateTimeConverter.cs" />
     <Compile Include="Core\Csv\CsvBooleanConverter.cs" />
     <Compile Include="Core\HttpErrorResult.cs" />

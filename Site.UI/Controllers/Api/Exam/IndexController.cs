@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
+using Certificate.Templates;
 using CsvHelper;
 using CsvHelper.Configuration;
 using Microsoft.AspNet.Identity;
 using Site.Data.Entities.Test;
 using Site.Identity;
 using Site.Identity.Models;
+using Site.UI.Core;
 using Site.UI.Core.Csv;
 using Site.UI.Models;
 using System;
@@ -24,6 +26,7 @@ namespace Site.UI.Controllers.Api
     {
         private ITestRepository _test;
         private IAppSettings _appSettings;
+        private ILasyCertificateGenerator _lasyCertificateGenerator;
 
         private DateTime ToTime(long seconds)
         {
@@ -32,10 +35,11 @@ namespace Site.UI.Controllers.Api
                 .ToLocalTime();
         }
 
-        public ExamController(ITestRepository test, IAppSettings appSettings)
+        public ExamController(ITestRepository test, IAppSettings appSettings, LasyCertificateGenerator lasyCertificateGenerator)
         {
             _test = test;
             _appSettings = appSettings;
+            _lasyCertificateGenerator = lasyCertificateGenerator;
         }
 
         [HttpGet, Route("report")]
@@ -85,8 +89,14 @@ namespace Site.UI.Controllers.Api
             };
 
             if ("post-test".Equals(name, StringComparison.InvariantCultureIgnoreCase))
+            {
                 response.TotalFeedbacks = await _test.FeedbackCountGetAsync(accountId);
 
+                var examResult = await _test.ExamResultGetAsync(entity.Id);
+
+                if (!object.Equals(examResult, null))
+                    _lasyCertificateGenerator.Save(new LasyCertificateGeneratorViewModel(examResult, CertificateTemplate.LetterOfAttendance));
+            }
             return Ok(response);
         }
 

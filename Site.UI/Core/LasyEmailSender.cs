@@ -34,22 +34,22 @@ namespace Site.UI.Core
                         if (_lasyEmailViewModels.TryDequeue(out model))
                         {
                             Attachment attachment = null;
-                            MemoryStream memoryStream = null;
-                            
+                            FileStream fileStream = null;
+
                             try
                             {
                                 if (!object.Equals(model.Attachment, null))
                                 {
-                                    memoryStream = new MemoryStream(model.Attachment.Content);
-                                    attachment = new Attachment(memoryStream, model.Attachment.FileName);
+                                    fileStream = File.OpenRead(model.Attachment.FileInfo.FullName);
+                                    attachment = new Attachment(fileStream, model.Attachment.FileName);
                                 }
                                 EmailSender.Send(model.Subject, model.To, model.EmailTemplate, model.Notification, attachment);
                             }
                             catch (Exception exc) { _oauthLoggerEmail.Error(exc); }
                             finally
                             {
-                                if (!object.Equals(memoryStream, null))
-                                    memoryStream.Dispose();
+                                if (!object.Equals(fileStream, null))
+                                    fileStream.Dispose();
                             }
                         }
                     }
@@ -85,15 +85,16 @@ namespace Site.UI.Core
         public Notification Notification { get; private set; }
         public LasyEmailAttachment Attachment { get; private set; }
     }
+
     public class LasyEmailAttachment
     {
-        public LasyEmailAttachment(string fileName, byte[] content)
+        public LasyEmailAttachment(string fileName, FileInfo fileInfo)
         {
             FileName = fileName;
-            Content = content;
+            FileInfo = fileInfo;
         }
 
         public string FileName { get; private set; }
-        public byte[] Content { get; private set; }
+        public FileInfo FileInfo { get; private set; }
     }
 }

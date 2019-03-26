@@ -2,7 +2,7 @@
 
 namespace Site.Data.Entities.Test
 {
-    public class vExamResult : BaseEntity
+    public class vExamResult : Entity<Guid>
     {
         public string AccountFirstName { get; set; }
         public string AccountLastName { get; set; }

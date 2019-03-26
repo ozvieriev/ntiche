@@ -16,6 +16,7 @@ namespace Site.UI
             container.RegisterType<ITestRepository, TestRepository>();
             container.RegisterType<IAppSettings, AppSettings>();
             container.RegisterType<ILasyEmailSender, LasyEmailSender>();
+            container.RegisterType<ILasyCertificateGenerator, LasyCertificateGenerator>();
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }

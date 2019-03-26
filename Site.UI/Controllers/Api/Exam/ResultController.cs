@@ -1,4 +1,5 @@
-﻿using Email.Templates;
+﻿using Certificate.Templates;
+using Email.Templates;
 using Site.Identity;
 using Site.UI.Core;
 using Site.UI.Models;
@@ -18,12 +19,14 @@ namespace Site.UI.Controllers.Api
         private ITestRepository _test;
         private IAppSettings _appSettings;
         private ILasyEmailSender _lasyEmailSender;
+        private ILasyCertificateGenerator _lasyCertificateGenerator;
 
-        public ExamResultController(ITestRepository test, IAppSettings appSettings, ILasyEmailSender lasyEmailSender)
+        public ExamResultController(ITestRepository test, IAppSettings appSettings, ILasyEmailSender lasyEmailSender, ILasyCertificateGenerator lasyCertificateGenerator)
         {
             _test = test;
             _appSettings = appSettings;
             _lasyEmailSender = lasyEmailSender;
+            _lasyCertificateGenerator = lasyCertificateGenerator;
         }
 
         [HttpGet, Route("post-test/download")]
@@ -33,11 +36,12 @@ namespace Site.UI.Controllers.Api
             if (object.Equals(examResult, null) || !examResult.ExamResultIsSuccess || !"post-test".Equals(examResult.ExamName))
                 return new HttpResponseMessage(HttpStatusCode.NotFound);
 
-            var bytes = CertificateGenerator.LetterOfAttendance(examResult);
-            var memoryStream = new MemoryStream(bytes);
+            var lasyCertificateGeneratorViewModel = new LasyCertificateGeneratorViewModel(examResult, CertificateTemplate.LetterOfAttendance);
+            var certificate = _lasyCertificateGenerator.GetCertificate(lasyCertificateGeneratorViewModel);
+            var bytes = File.ReadAllBytes(certificate.FullName);
 
             var response = new HttpResponseMessage(HttpStatusCode.OK);
-            response.Content = new StreamContent(memoryStream);
+            response.Content = new ByteArrayContent(bytes);
             response.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
             {
                 FileName = $"{examResult.AccountFirstName} {examResult.AccountLastName}.pdf"
@@ -54,11 +58,12 @@ namespace Site.UI.Controllers.Api
             if (object.Equals(examResult, null) || !examResult.ExamResultIsSuccess || !"post-test".Equals(examResult.ExamName))
                 return NotFound();
 
-            var bytes = CertificateGenerator.LetterOfAttendance(examResult);
-            var attachment = new LasyEmailAttachment($"{examResult.AccountFirstName} {examResult.AccountLastName}.pdf", bytes);
+            var lasyCertificateGeneratorViewModel = new LasyCertificateGeneratorViewModel(examResult, CertificateTemplate.LetterOfAttendance);
+            var certificate = _lasyCertificateGenerator.GetCertificate(lasyCertificateGeneratorViewModel);
+            var attachment = new LasyEmailAttachment($"{examResult.AccountFirstName} {examResult.AccountLastName}.pdf", certificate);
 
             var lasyEmailViewModel = new LasyEmailViewModel("Congratulations", examResult.AccountEmail, EmailTemplate.PostTestCertificate,
-                new Notification(new
+                new Email.Templates.Notification(new
                 {
                     firstName = examResult.AccountFirstName,
                     lastName = examResult.AccountLastName
