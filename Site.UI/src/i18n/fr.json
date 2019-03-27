@@ -1,4 +1,68 @@
 {
+  "Email": "Courriel",
+  "Password": "Mot de passe",
+  "First Name": "Prénom",
+  "Last Name": "Nom",
+  "Specialty": "Spécialité",
+  "Pharmacy setting": "Cadre de pharmacie",
+  "Pharmacist License": "Numéro de licence de pharmacien",
+  "Country": "Pays",
+  "City": "Ville",
+
+  "Sign Up": "S'inscrire",
+  "signUp.header1": "Cette plateforme d'apprentissage est à des fins éducatives et s'adresse uniquement aux professionnels de la santé.",
+  "signUp.header2": "En vous inscrivant sur cette plateforme, vous confirmez que vous êtes un professionnel de la santé et que toutes les informations fournies dans votre inscription sont vraies et correctes.",
+  "signUp.optin": "J'accepte de recevoir des notifications par courrier électronique relatives au contenu de ce programme.",
+  "signUp.terms": "Je suis d'accord avec les termes et conditions.",
+
+  "Sign In": "Se connecter",
+
+  "Forgot your password?": "Mot de passe oublié?",
+  "You can reset the password for your account profile by entering your e-mail address.": "Vous pouvez réinitialiser le mot de passe pour votre profil de compte en entrant votre adresse électronique.",
+
+  "account.header": "Considérations relatives aux médicaments à dose critique chez les patients ayant subi une greffe",
+  "account.ph1": "Introduction",
+  "account.pp1": "Ce programme a pour but de fournir aux pharmaciens canadiens les connaissances et les outils dont ils ont besoin pour prendre des décisions éclairées lorsqu’ils envisagent la substitution de médicaments à dose critique, également appelés médicaments à index thérapeutique étroit, chez un patient à la suite d’une transplantation.",
+
+  "account.ph2": "Objectifs d’apprentissage",
+  "account.pp2l1": "À l’issue de ce programme les participants seront en mesure de:",
+  "account.pp2l2": "Définir les médicaments à dose critique, également appelés médicaments à index thérapeutique étroit.",
+  "account.pp2l3": "Déterminer les considérations relatives aux substitutions entre différentes préparations d’immunosuppresseurs en fonction des données pharmacocinétiques et des résultats obtenus par les patients, y compris le nom de marque, les préparations ultérieures et les préparations à libération immédiate ou prolongée.",
+  "account.pp2l4": "Décrire les principales considérations et les mesures appropriées pour la gestion des changements potentiels dans la préparation d’un immunosuppresseur après une transplantation.",
+
+  "account.ph3": "Énoncés d’agrément",
+  "account.pp3": "Cette activité de formation continue est accréditée par l’Ordre des pharmaciens du Québec. Numéro d’accréditation de l’Ordre des pharmaciens du Québec : 5506 Nombre d’heures admissible : 1,00 h (1 UFC) Le Conseil canadien de l'éducation continue en pharmacie a octroyé 1.0 crédits de formation continue pour ce programme. Numéro CCCEP : 1480-2019-2661-I-P. (Période d’accréditation : 12 décembre 2018 – 12 décembre 2019)",
+
+  "account.ph4": "Comité scientifique",
+  "account.pp4l1": "Transplantologue:",
+  "account.pp4l2": "<b>Dr Ramesh Prasad</b>, MBBS, M.Sc., MA, Ph. D, FRCPC, FACP, FASN, FASH, FAST (Ontario)",
+  "account.pp4l3": "Pharmaciens:",
+  "account.pp4l4": "<b>Jennifer Harrison</b> (directrice) B. Pharm., M.Sc. (Ontario)",
+  "account.pp4l5": "<b>Christian Coursol</b> B. Pharm., M.Sc. (Québec)",
+  "account.pp4l6": "<b>Élisabeth Gélinas-Lemay</b> B. Pharm., M.Sc. (Québec)",
+
+  "account.ph5": "Divulgations du comité scientifique",
+  "account.pp5l1": "<b>Ramesh Prasad</b> MBBS, M.Sc., MA, Ph. D, FRCPC, FACP, FASN, FASH, FAST",
+  "account.pp5l2": "Membre d’un conseil consultatif ou d’un comité de cette nature pour une organisation commerciale : Astellas Canada",
+  "account.pp5l3": "A participé à la recherche ou à des essais cliniques subventionnés par une organisation commerciale ou utilisant des produits développés/commercialisés par une organisation commerciale : Investigateur pour des essais cliniques Astellas Canada",
+  "account.pp5l4": "<b>Jennifer Harrison</b> B. Pharm., M.Sc.",
+  "account.pp5l5": "Membre d’un conseil consultatif ou d’un comité de cette nature pour une organisation commerciale : Sanofi Canada",
+  "account.pp5l6": "<b>Christian Coursol</b> B. Pharm., M.Sc.",
+  "account.pp5l7": "Membre d’un conseil consultatif ou d’un comité de cette nature pour une organisation commerciale : Astellas Canada",
+  "account.pp5l8": "<b>Élisabeth Gélinas-Lemay</b> B. Pharm., M.Sc.",
+  "account.pp5l9": "Aucun conflit",
+
+  "account.ph6": "Divulgation du soutien commercial",
+  "account.pp6": "Ce programme a bénéficié du soutien financier d’Astellas Pharma Canada Inc. sous la forme d’une subvention à l’éducation.<br />Ce programme a bénéficié du soutien non financier d’Astellas Pharma Canada Inc. sous la forme de soutien logistique.",
+
+  "account.ph7": "Auditoire cible",
+  "account.pp7": "Pharmaciens",
+
+  "footer.copyright": "Copyright &copy; 2019 Tous droits réservés.",
+  "footer.privacy": "Politique de confidentialité & sécurité",
+  "footer.terms": "Termes & conditions",
+  "footer.support": "Support technique",
+
   "Evaluation": "Évaluation",
   "This program content enhanced your knowledge. Scale 1 to 5 (1 = strongly disagree, 5 = strongly agree)": "Le contenu de ce programme m’a permis d’améliorer mes connaissances, sur une échelle de 1 à 5 (1 = entièrement en désaccord, 5 = entièrement d’accord)",
   "For each of the statements below, please assess your pre- and post-program familiarity, and the relevance to your practice. Scale 1 to 4 (1 = quite unfamiliar, 4 = quite familiar)": "Pour chacun des énoncés ci-dessous, veuillez indiquer votre degré de connaissance avant et après le programme, sur une échelle de 1 à 4 (1 = sujet peu connu, 4 = sujet bien connu)",

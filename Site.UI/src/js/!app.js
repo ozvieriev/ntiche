@@ -16,6 +16,9 @@ angular.module('app', ['app.components', 'app.auth', 'app.services', 'app.contro
         if (location.hash.toLowerCase().startsWith('#!/fr/'))
             $translate.use('fr');
 
+        if (location.hash.toLowerCase().startsWith('#!/en/'))
+            $translate.use('en');
+
         //$trace.enable('TRANSITION');
         $transitions.onBefore({ to: '**' }, (transition) => {
 

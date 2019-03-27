@@ -39,3 +39,7 @@ h3 {
     border-color: #88bddc !important;
     padding-right: 0px !important;
 }
+
+.accordion .card-header {
+    cursor: pointer !important;
+}

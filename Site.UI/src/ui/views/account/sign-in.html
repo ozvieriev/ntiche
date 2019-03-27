@@ -1,19 +1,19 @@
-<h3 class="text-center ">Sign In</h3>
+<h3 class="text-center" translate="Sign In"></h3>
 <div class="mt-5 row justify-content-center">
     <div class="col-md-8">
         <div class="card">
-            <div class="card-header">Sign In</div>
+            <div class="card-header" translate="Sign In"></div>
             <div class="card-body">
                 <form name="signInForm" class="pb-3 needs-validation" novalidate data-ng-submit="submit(signInForm)"
                       data-ng-class="{'was-validated': signInForm.$submitted}" data-ng-loading-form>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Email" data-ng-model="model.email" maxlength="300" required autofocus />
+                        <label for="email" translate="Email"></label>
+                        <input type="text" class="form-control" id="email" name="email" placeholder="{{'Email'|translate}}" data-ng-model="model.email" maxlength="300" required autofocus />
                         <div class="invalid-feedback" data-ng-if="signInForm.email.$error.required">Email is required.</div>
                     </div>
                     <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-ng-model="model.password" maxlength="300" required />
+                        <label for="password" translate="Password"></label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="{{'Password'|translate}}" data-ng-model="model.password" maxlength="300" required />
                         <div class="invalid-feedback" data-ng-if="signInForm.password.$error.required">Password is required.</div>
                     </div>
                     <div class="form-group">
@@ -22,7 +22,7 @@
                     <div class="form-group">
                         <a ui-sref="account/sign-up">Don't have an account? Sign up!</a>
                     </div>
-                    <button type="submit">Sign in</button>
+                    <button type="submit">{{'Sign In'|translate}}</button>
                 </form>
                 <div class="alert mb-0" role="alert"
                      data-ng-show="status"
