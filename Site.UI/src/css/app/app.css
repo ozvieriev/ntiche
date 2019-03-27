@@ -1,12 +1,42 @@
 body {
     min-width: 320px;
+    background-image: url('../images/logo-399x293.jpg');
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: 3rem;
+    background-size: 15% auto;
 }
 
-    body > .container:after {
-        content: '';
-        display: block;
-        clear: both;
+
+@media screen and (max-width: 1400px) {
+    body {
+        background-size: 20% auto
     }
+}
+
+@media screen and (max-width: 1200px) {
+    body {
+        background-size: 25% auto
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    body {
+        background-size: 30% auto
+    }
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        background-size: 35% auto
+    }
+}
+
+body > .container:after {
+    content: '';
+    display: block;
+    clear: both;
+}
 
 body, html {
     height: 100%;
@@ -18,7 +48,7 @@ h3 {
 
 .wrapper {
     min-height: 100%;
-    padding: 60px 0 100px;
+    padding: 3rem 0 100px;
     /*margin-bottom:64px;*/
 }
 

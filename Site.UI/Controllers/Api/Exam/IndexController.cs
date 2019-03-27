@@ -90,7 +90,10 @@ namespace Site.UI.Controllers.Api
 
             if ("post-test".Equals(name, StringComparison.InvariantCultureIgnoreCase))
             {
-                response.TotalFeedbacks = await _test.FeedbackCountGetAsync(accountId);
+                var accoutnActivity = await _test.AccountActivityGetAsync(accountId);
+
+                response.TotalFeedbacks = accoutnActivity.TotalFeedbacks;
+                response.TotalFailedPostTests = accoutnActivity.TotalFailedPostTests;
 
                 var examResult = await _test.ExamResultGetAsync(entity.Id);
 

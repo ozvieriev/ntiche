@@ -11,6 +11,7 @@ namespace Site.UI.Models
         }
         public Guid ExamResultId { get; set; }
         public int? TotalFeedbacks { get; set; }
+        public int? TotalFailedPostTests { get; set; }
         public bool IsSuccess { get; set; }
     }
 }

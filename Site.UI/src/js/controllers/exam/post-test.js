@@ -4,6 +4,8 @@ angular.module('app.controllers')
 
             const _exam = 'post-test';
 
+            let params = $state.params;
+
             $scope.model = {
                 questions: $dict.questions()
             };
@@ -13,6 +15,7 @@ angular.module('app.controllers')
             $scope.isBusy = false;
 
             $scope.view = null;
+            $scope.newsletterLink = null;
             $scope.isAllSelected = false;
 
             $scope.onSelect = () => {
@@ -57,8 +60,15 @@ angular.module('app.controllers')
                                 $scope.status = 200;
                                 $scope.description = response.description;
 
-                                if (!response.isSuccess)
-                                    return ($scope.view = 'fail');
+                                if (!response.isSuccess) {
+
+                                    $scope.view = 'fail';
+
+                                    if (response.totalFailedPostTests >= 2)
+                                        $scope.model.newsletterLink = `/pdf/newsletter-${params.locale}.pdf`;
+
+                                    return;
+                                }
 
                                 if (response.TotalFeedbacks)
                                     return $state.go(`exam/post-test-success`, { examResultId: response.examResultId });

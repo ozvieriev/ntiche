@@ -38,7 +38,9 @@
                     <div class="alert alert-danger mb-2" role="alert">
                         Unfortunately you didn't pass the test.
                     </div>
+                    <a  class="btn btn-info" href="{{::model.newsletterLink}}" target="_blank" data-ng-if="model.newsletterLink">Download pdf file</a>
                     <button class="btn btn-info" ui-sref="exam/post-test" ui-sref-opts="{reload: true, notify: true}">Try again</button>
+                    
                 </div>
             </div>
         </div>

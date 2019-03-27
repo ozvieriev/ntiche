@@ -22,8 +22,10 @@ gulp.task('html:app', () => {
 
             if (relativePath === 'index.html') {
 
-                content = content.replace('.min.js', `.min.js?version=${Date.now()}`);
-                content = content.replace('.min.css', `.min.css?version=${Date.now()}`);
+                var version = Date.now();
+
+                content = content.replace('.min.js', `.min.js?version=${version}`);
+                content = content.replace('.min.css', `.min.css?version=${version}`);
 
                 return content;
             }
