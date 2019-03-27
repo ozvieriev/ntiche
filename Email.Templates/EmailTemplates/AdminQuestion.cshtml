@@ -1,17 +1,8 @@
 ﻿@model Email.Templates.Notification
 
 <p>
-    Dear @Model["firstName"] @Model["lastName"],
+    Customer @Model["firstName"] @Model["lastName"](@Model["email"]) asks:
 </p>
 <p>
-    Your user name is @Model["userName"]
-</p>
-<p>
-    We have received a password reset request for the account associated with this email.
-    If you made this request, please click the link below to reset your password.
-</p>
-<p>
-    <a href="@Model["recoverPasswordLink"]" target="_blank">
-        Click here to reset your password
-    </a>
+    @Model["question"]
 </p>

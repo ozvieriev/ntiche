@@ -1,5 +1,6 @@
 ﻿using Certificate.Templates;
 using Email.Templates;
+using Microsoft.AspNet.Identity;
 using Site.Identity;
 using Site.UI.Core;
 using Site.UI.Models;
@@ -16,13 +17,15 @@ namespace Site.UI.Controllers.Api
     [RoutePrefix("api/exam")]
     public class ExamResultController : ApiController
     {
+        private IAuthRepository _auth;
         private ITestRepository _test;
         private IAppSettings _appSettings;
         private ILasyEmailSender _lasyEmailSender;
         private ILasyCertificateGenerator _lasyCertificateGenerator;
 
-        public ExamResultController(ITestRepository test, IAppSettings appSettings, ILasyEmailSender lasyEmailSender, ILasyCertificateGenerator lasyCertificateGenerator)
+        public ExamResultController(IAuthRepository auth, ITestRepository test, IAppSettings appSettings, ILasyEmailSender lasyEmailSender, ILasyCertificateGenerator lasyCertificateGenerator)
         {
+            _auth = auth;
             _test = test;
             _appSettings = appSettings;
             _lasyEmailSender = lasyEmailSender;
@@ -72,6 +75,27 @@ namespace Site.UI.Controllers.Api
             _lasyEmailSender.Send(lasyEmailViewModel);
 
             return Ok(new DescriptionViewModel("An email has been sent to your account."));
+        }
+
+        [HttpPost, Route("post-test/question"), Authorize]
+        public async Task<IHttpActionResult> PostTestQuestionPost([FromBody]string question = null)
+        {
+            var accountId = Guid.Parse(User.Identity.GetUserId());
+            var account = await _auth.AccountGetAsync(accountId);
+
+            var subject = $"[Request question]";
+            var lasyEmailViewModel = new LasyEmailViewModel(subject, _appSettings.Email.Admin, EmailTemplate.AdminQuestion,
+                new Email.Templates.Notification(new
+                {
+                    account.FirstName,
+                    account.LastName,
+                    account.Email,
+                    question
+                }));
+
+            _lasyEmailSender.Send(lasyEmailViewModel);
+
+            return Ok(new DescriptionViewModel("A question has been saved. You will contact you as soon as possible."));
         }
     }
 }
