@@ -16,6 +16,12 @@
   "Community Pharmacy": "Pharmacie Communautaire",
   "Other (please specify)": "Autre (SVP spécifier)",
   "Result": "Résultat",
+  "Download": "Télécharger",
+  "Send": "Envoyer",
+  "Submit": "Soumettre",
+  "Submit a question": "Soumettre une question",
+  "Lost your password?": "Oublié votre mot de passe?",
+  "Don't have an account? Sign up!": "Pas de compte? Enregistrez-vous!",
 
   "Alberta": "L'Alberta",
   "British Columbia": "La Colombie-Britannique",
@@ -55,7 +61,7 @@
   "account.pp2l4": "Décrire les principales considérations et les mesures appropriées pour la gestion des changements potentiels dans la préparation d’un immunosuppresseur après une transplantation.",
 
   "account.ph3": "Énoncés d’agrément",
-  "account.pp3": "Cette activité de formation continue est accréditée par l’Ordre des pharmaciens du Québec. Numéro d’accréditation de l’Ordre des pharmaciens du Québec : 5506 Nombre d’heures admissible : 1,00 h (1 UFC) Le Conseil canadien de l'éducation continue en pharmacie a octroyé 1.0 crédits de formation continue pour ce programme. Numéro CCCEP : 1480-2019-2661-I-P. (Période d’accréditation : 12 décembre 2018 – 12 décembre 2019)",
+  "account.pp3": "Cette activité de formation continue est accréditée par l’Ordre des pharmaciens du Québec.<br/>Numéro d’accréditation de l’Ordre des pharmaciens du Québec : 5506<br/>Nombre d’heures admissible : 1,00 h (1 UFC)<br/><br/>Le Conseil canadien de l'éducation continue en pharmacie a octroyé 1.0 crédits de formation continue pour ce programme.<br/>Numéro CCCEP : 1480-2019-2661-I-P.<br/>(Période d’accréditation : 12 décembre 2018 – 12 décembre 2019)",
 
   "account.ph4": "Comité scientifique",
   "account.pp4l1": "Transplantologue:",
@@ -149,5 +155,8 @@
   "Prescribability refers to the confidence in safety/efficacy of bioequivalence when prescribing a drug to a naïve patient": "La prescriptibilité désigne la confiance dans l’innocuité/l’efficacité de la bioéquivalence lors de la prescription d’un médicament à un patient n’ayant jamais été traité auparavant",
   "Switchability refers to the appropriate transfer of a patient from one drug product formulation to another and may require dose adjustment": "La substituabilité désigne le transfert approprié d’un patient d’une préparation pharmacologique à une autre et peut nécessiter un ajustement de la dose",
   "Switchability refers to the confidence in safety/efficacy of bioequivalence when prescribing a drug to a naïve patient": "La substituabilité désigne la confiance dans l’innocuité/l’efficacité de la bioéquivalence lors de la prescription d’un médicament à un patient n’ayant jamais été traité auparavant",
-  "Switchability is not currently part of Health Canada requirements for generic interchangeability": "La substituabilité ne fait pas actuellement partie des exigences de Santé Canada en matière d’interchangeabilité des médicaments génériques"
+  "Switchability is not currently part of Health Canada requirements for generic interchangeability": "La substituabilité ne fait pas actuellement partie des exigences de Santé Canada en matière d’interchangeabilité des médicaments génériques",
+
+  "You have passed the test!": "Vous avez passé le test!",
+  "Please let us know if you have any questions.": "SVP nous laisser savoir si vous avez des questions."
 }

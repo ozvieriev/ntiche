@@ -2,20 +2,6 @@
     opacity:0.1
 }*/
 
-.logo {
-}
-
-    .logo > img {
-        border-radius: 15%;
-
-        padding: .1rem;
-        background-color: #fff;
-        border: 1px solid #dee2e6;
-        border-radius: .25rem;
-        max-width: 100%;
-        height: auto;
-    }
-
 .navbar-login {
     width: 305px;
     padding: 10px;

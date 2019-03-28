@@ -6,8 +6,8 @@
             <div class="card-body pb-1">
                 <div class="form-group">
                     <form name="examResultForm" class="needs-validation" data-ng-submit="submit(examResultForm)" data-ng-loading-form>
-                        <button class="btn btn-info" data-ng-click="download()">Download</button>
-                        <button type="submit" class="btn btn-info ml-1">Send</button>
+                        <button class="btn btn-info" data-ng-click="download()" translate="Download"></button>
+                        <button type="submit" class="btn btn-info ml-1" translate="Send"></button>
                     </form>
                     <div class="alert mt-2 mb-0" role="alert"
                          data-ng-show="status"
@@ -25,7 +25,7 @@
                         <textarea class="form-control" rows="3" id="question" name="question" data-ng-model="model.question" maxlength="5000" required></textarea>
                         <div class="invalid-feedback" data-ng-if="examPostTestQuestionForm.question.$error.required">Question is required.</div>
                     </div>
-                    <button type="submit">Submit a question</button>
+                    <button type="submit" translate="Submit a question"></button>
                 </form>
                 <div class="alert mt-2 mb-0" role="alert"
                      data-ng-show="status"

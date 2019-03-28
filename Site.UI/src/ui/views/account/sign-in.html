@@ -17,12 +17,12 @@
                         <div class="invalid-feedback" data-ng-if="signInForm.password.$error.required">Password is required.</div>
                     </div>
                     <div class="form-group">
-                        <a ui-sref="account/recover-password">Lost your password?</a>
+                        <a ui-sref="account/recover-password" translate="Lost your password?"></a>
                     </div>
                     <div class="form-group">
-                        <a ui-sref="account/sign-up">Don't have an account? Sign up!</a>
+                        <a ui-sref="account/sign-up" translate="Don't have an account? Sign up!"></a>
                     </div>
-                    <button type="submit">{{'Sign In'|translate}}</button>
+                    <button type="submit" translate="Sign In"></button>
                 </form>
                 <div class="alert mb-0" role="alert"
                      data-ng-show="status"
