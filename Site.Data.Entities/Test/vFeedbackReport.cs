@@ -30,7 +30,7 @@ namespace Site.Data.Entities.Test
         public byte FeedbackOverallLearningObjectives3Relevance { get; set; }
         public byte FeedbackProgramRating { get; set; }
         public bool FeedbackIsAppreciateDelivery { get; set; }
-        public bool FeedbackIsPerceiveDegree { get; set; }
+        public bool? FeedbackIsPerceiveDegree { get; set; }
         public string FeedbackPerceiveDegreeComments { get; set; }
         public string FeedbackChangesComments { get; set; }
         public string FeedbackTopicsComments { get; set; }

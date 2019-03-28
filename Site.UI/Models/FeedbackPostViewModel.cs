@@ -22,7 +22,7 @@ namespace Site.UI.Models
         public byte ProgramRating { get; set; }
 
         public bool IsAppreciateDelivery { get; set; }
-        public bool IsPerceiveDegree { get; set; }
+        public bool? IsPerceiveDegree { get; set; }
 
         [Required, MaxLength(4000)]
         public string PerceiveDegreeComments { get; set; }
@@ -33,7 +33,7 @@ namespace Site.UI.Models
         [Required, MaxLength(4000)]
         public string TopicsComments { get; set; }
 
-        [Required, MaxLength(4000)]
+        [MaxLength(4000)]
         public string AdditionalComments { get; set; }
     }
 }
