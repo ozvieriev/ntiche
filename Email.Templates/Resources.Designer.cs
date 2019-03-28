@@ -58,7 +58,15 @@ namespace Email.Templates {
             set {
                 resourceCulture = value;
             }
-        }        
+        }
+
+        public static string PostTestQuestion
+        {
+            get
+            {
+                return ResourceManager.GetString("PostTestQuestion", resourceCulture);
+            }
+        }
 
         public static string EmailConfirmation {
             get {
@@ -72,10 +80,8 @@ namespace Email.Templates {
             }
         }
 
-        public static string PostTestCertificate
-        {
-            get
-            {
+        public static string PostTestCertificate {
+            get {
                 return ResourceManager.GetString("PostTestCertificate", resourceCulture);
             }
         }

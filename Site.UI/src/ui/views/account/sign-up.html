@@ -1,10 +1,14 @@
 <h3 class="text-center" translate="Sign Up"></h3>
-<div class="mt-5 row justify-content-center">
+<div class="mt-5 mb-5 row justify-content-center">
     <div class="col-md-10">
-        <p class="text-justify" translate="signUp.header1" translate-default></p>
-        <p class="text-justify" translate="signUp.header2" translate-default></p>
-
         <div class="card">
+            <div class="card-body">
+                <p class="text-justify" translate="signUp.header1" translate-default></p>
+                <p class="text-justify" translate="signUp.header2" translate-default></p>
+            </div>
+        </div>
+
+        <div class="card mt-3">
             <div class="card-header" translate="Sign Up"></div>
             <div class="card-body">
                 <form name="signUpForm" class="pb-3 needs-validation" novalidate data-ng-submit="submit(signUpForm)"
@@ -39,11 +43,12 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="specialtyId" translate="Specialty"></label>
-                            <select class="form-control form-control-no-validation" id="specialtyId" name="specialtyId"
-                                    data-ng-options="specialty.name for specialty in specialties track by specialty.id"
-                                    data-ng-model="specialty"></select>
+                            <select class="form-control form-control-no-validation" id="specialtyId" name="specialtyId" data-ng-model="model.specialtyId" data-ng-init="model.specialtyId='1'">
+                                <option value="1" translate="Pharmacist"></option>
+                                <option value="2" translate="Other (please specify)"></option>
+                            </select>
                         </div>
-                        <div class="form-group col-md-6" data-ng-if="model.specialtyId===2">
+                        <div class="form-group col-md-6" data-ng-if="model.specialtyId==='2'">
                             <label for="specialty" translate="Specialty"></label>
                             <input type="text" class="form-control" id="specialty" name="specialty" data-ng-model="model.specialty" maxlength="300" required />
                             <div class="invalid-feedback" data-ng-if="signUpForm.specialty.$error.required">Specialty is required.</div>
@@ -52,11 +57,13 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="pharmacySettingId" translate="Pharmacy setting"></label>
-                            <select class="form-control form-control-no-validation" id="pharmacySettingId" name="pharmacySettingId"
-                                    data-ng-options="pharmacySetting.name for pharmacySetting in pharmacySettings track by pharmacySetting.id"
-                                    data-ng-model="pharmacySetting"></select>
+                            <select class="form-control form-control-no-validation" id="pharmacySettingId" name="pharmacySettingId" data-ng-model="model.pharmacySettingId" data-ng-init="model.pharmacySettingId='1'">
+                                <option value="1" translate="Hospital Pharmacy"></option>
+                                <option value="2" translate="Community Pharmacy"></option>
+                                <option value="3" translate="Other (please specify)"></option>
+                            </select>
                         </div>
-                        <div class="form-group col-md-6" data-ng-if="model.pharmacySettingId===3">
+                        <div class="form-group col-md-6" data-ng-if="model.pharmacySettingId==='3'">
                             <label for="pharmacySetting" translate="Pharmacy setting"></label>
 
                             <input type="text" class="form-control" id="pharmacySetting" name="pharmacySetting" placeholder="{{'Pharmacy setting'|translate}}" data-ng-model="model.pharmacySetting" maxlength="300" required />
@@ -83,19 +90,19 @@
                         <div class="form-group col-md-6">
                             <label for="provinceId" translate="Province"></label>
                             <select class="form-control form-control-no-validation" id="provinceId" name="provinceId" data-ng-model="model.provinceId" data-ng-init="model.provinceId='ab'">
-                                <option value="ab">Alberta</option>
-                                <option value="bc">British Columbia</option>
-                                <option value="mb">Manitoba</option>
-                                <option value="nb">New Brunswick</option>
-                                <option value="nl">Newfoundland and Labrador</option>
-                                <option value="ns">Nova Scotia</option>
-                                <option value="on">Ontario</option>
-                                <option value="pe">Prince Edward Island</option>
-                                <option value="qc">Quebec</option>
-                                <option value="sk">Saskatchewan</option>
-                                <option value="nt">Northwest Territories</option>
-                                <option value="nu">Nunavut</option>
-                                <option value="yt">Yukon</option>
+                                <option value="ab" translate="Alberta"></option>
+                                <option value="bc" translate="British Columbia"></option>
+                                <option value="mb" translate="Manitoba"></option>
+                                <option value="nb" translate="New Brunswick"></option>
+                                <option value="nl" translate="Newfoundland and Labrador"></option>
+                                <option value="ns" translate="Nova Scotia"></option>
+                                <option value="on" translate="Ontario"></option>
+                                <option value="pe" translate="Prince Edward Island"></option>
+                                <option value="qc" translate="Quebec"></option>
+                                <option value="sk" translate="Saskatchewan"></option>
+                                <option value="nt" translate="Northwest Territories"></option>
+                                <option value="nu" translate="Nunavut"></option>
+                                <option value="yt" translate="Yukon"></option>
                             </select>
                         </div>
                     </div>

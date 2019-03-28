@@ -229,6 +229,7 @@
     <Compile Include="Handlers\LanguageHandler.cs" />
     <Compile Include="Handlers\OopsExceptionHandler.cs" />
     <Compile Include="Models\ExamPostResponseViewModel.cs" />
+    <Compile Include="Models\ExamPostTestQuestionViewModel.cs" />
     <Compile Include="Models\ExamPostViewModel.cs" />
     <Compile Include="Models\ExamResultViewModel.cs" />
     <Compile Include="Models\ExamResultReportViewModel.cs" />
@@ -344,6 +345,7 @@
     <None Include="src\svg\flag-icon\gb.svg" />
     <None Include="tasks\svg.js" />
     <None Include="tasks\images.js" />
+    <None Include="src\js\controllers\exam\post-test-question.js" />
     <Content Include="ui\css\bundle.min.css" />
     <Content Include="ui\i18n\en.json" />
     <Content Include="ui\i18n\fr.json" />

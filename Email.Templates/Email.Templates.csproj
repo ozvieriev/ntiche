@@ -79,7 +79,7 @@
   <ItemGroup>
     <None Include="EmailTemplates\Layout.cshtml" />
     <None Include="EmailTemplates\PostTestCertificate.cshtml" />
-    <None Include="EmailTemplates\AdminQuestion.cshtml" />
+    <None Include="EmailTemplates\PostTestQuestion.cshtml" />
     <None Include="EmailTemplates\RecoverPassword.cshtml" />
     <None Include="packages.config" />
   </ItemGroup>

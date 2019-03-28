@@ -2,7 +2,7 @@
 {
     public enum EmailTemplate
     {
-        AdminQuestion,
+        PostTestQuestion,
         EmailConfirmation,
         Layout,
         PostTestCertificate,

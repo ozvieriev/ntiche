@@ -27,6 +27,12 @@
                 data,
                 { asJson: true });
         };
+        service.examPostTestQuestion = (data) => {
+
+            return $http.post(_uri(`api/exam/post-test/question`),
+                data,
+                { asJson: true });
+        };
         service.feedbackPost = (data) => {
 
             return $http.post(_uri('api/feedback'),

@@ -1,18 +1,33 @@
-﻿<h3 class="text-center">Congratulations</h3>
+﻿<h3 class="text-center" translate="Congratulations!"></h3>
 <div class="mt-5 mb-5 row justify-content-center">
-    <div class="col-md-6">
+    <div class="col-md-8">
         <div class="card">
-            <div class="card-body text-center">
-                <h4>You have passed the test!</h4>
-                <div class="form-group mt-3">
-                    <div class="row justify-content-center">
+            <div class="card-header" translate="You have passed the test!"></div>
+            <div class="card-body pb-1">
+                <div class="form-group">
+                    <form name="examResultForm" class="needs-validation" data-ng-submit="submit(examResultForm)" data-ng-loading-form>
                         <button class="btn btn-info" data-ng-click="download()">Download</button>
-                        <form name="examResultForm" class="needs-validation" data-ng-submit="submit(examResultForm)" data-ng-loading-form>
-                            <button type="submit" class="btn btn-info ml-4">Send</button>
-                        </form>
-                    </div>
+                        <button type="submit" class="btn btn-info ml-1">Send</button>
+                    </form>
+                    <div class="alert mt-2 mb-0" role="alert"
+                         data-ng-show="status"
+                         data-ng-bind="description"
+                         data-ng-class="{'alert-success': status===200, 'alert-danger': status !==200}"></div>
                 </div>
-                <div class="alert mb-0" role="alert"
+            </div>
+        </div>
+        <div class="card mt-3" data-ng-controller="examPostTestQuestionController">
+            <div class="card-header" translate="Please let us know if you have any questions."></div>
+            <div class="card-body">
+                <form name="examPostTestQuestionForm" class="needs-validation" novalidate data-ng-submit="submit(examPostTestQuestionForm)"
+                      data-ng-class="{'was-validated': examPostTestQuestionForm.$submitted}" data-ng-loading-form>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="3" id="question" name="question" data-ng-model="model.question" maxlength="5000" required></textarea>
+                        <div class="invalid-feedback" data-ng-if="examPostTestQuestionForm.question.$error.required">Question is required.</div>
+                    </div>
+                    <button type="submit">Submit a question</button>
+                </form>
+                <div class="alert mt-2 mb-0" role="alert"
                      data-ng-show="status"
                      data-ng-bind="description"
                      data-ng-class="{'alert-success': status===200, 'alert-danger': status !==200}"></div>

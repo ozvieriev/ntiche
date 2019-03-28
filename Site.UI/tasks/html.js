@@ -26,7 +26,8 @@ gulp.task('html:app', () => {
 
                 content = content.replace('.min.js', `.min.js?version=${version}`);
                 content = content.replace('.min.css', `.min.css?version=${version}`);
-
+                content = content.replace('CURRENT-VERSION-BUILD', version);
+                
                 return content;
             }
             relativePath = relativePath.replace(/\\/gi, '/');

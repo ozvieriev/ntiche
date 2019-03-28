@@ -1,4 +1,6 @@
 {
+  "From": "De",
+  "To": "À",
   "Email": "Courriel",
   "Password": "Mot de passe",
   "First Name": "Prénom",
@@ -8,6 +10,26 @@
   "Pharmacist License": "Numéro de licence de pharmacien",
   "Country": "Pays",
   "City": "Ville",
+  "Any": "Tout",
+  "Pharmacist": "Pharmacien",
+  "Hospital Pharmacy": "Pharmacie hospitalière",
+  "Community Pharmacy": "Pharmacie Communautaire",
+  "Other (please specify)": "Autre (SVP spécifier)",
+  "Result": "Résultat",
+
+  "Alberta": "L'Alberta",
+  "British Columbia": "La Colombie-Britannique",
+  "Manitoba": "Le Manitoba",
+  "New Brunswick": "Le Nouveau-Brunswick",
+  "Newfoundland and Labrador": "La Terre-Neuve-et-Labrador",
+  "Nova Scotia": "La Nouvelle-Écosse",
+  "Ontario": "L'Ontario",
+  "Prince Edward Island": "Île-du-Prince-Édouard",
+  "Quebec": "Le Québec",
+  "Saskatchewan": "La Saskatchewan",
+  "Northwest Territories": "Les Territoires du Nord-Ouest",
+  "Nunavut": "Le Nunavut",
+  "Yukon": "Le Yukon",
 
   "Sign Up": "S'inscrire",
   "signUp.header1": "Cette plateforme d'apprentissage est à des fins éducatives et s'adresse uniquement aux professionnels de la santé.",
@@ -16,6 +38,8 @@
   "signUp.terms": "Je suis d'accord avec les termes et conditions.",
 
   "Sign In": "Se connecter",
+  "Report": "Rapport",
+  "Logout": "Se déconnecter",
 
   "Forgot your password?": "Mot de passe oublié?",
   "You can reset the password for your account profile by entering your e-mail address.": "Vous pouvez réinitialiser le mot de passe pour votre profil de compte en entrant votre adresse électronique.",
@@ -57,6 +81,9 @@
 
   "account.ph7": "Auditoire cible",
   "account.pp7": "Pharmaciens",
+
+  "Congratulations!": "Félicitations!",
+
 
   "footer.copyright": "Copyright &copy; 2019 Tous droits réservés.",
   "footer.privacy": "Politique de confidentialité & sécurité",

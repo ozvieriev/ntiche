@@ -5,83 +5,86 @@
             <div class="card-body">
                 <div class="form-row">
                     <div class="form-group col-md-4">
-                        <label for="createDate">From</label>
+                        <label for="createDate" translate="From"></label>
                         <datepicker date-format="MM/dd/yyyy" datepicker-mobile="true">
-                            <input class="form-control" data-ng-model="model.accountFrom" type="text" readonly/>
+                            <input class="form-control" data-ng-model="model.accountFrom" type="text" readonly />
                         </datepicker>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="createDate">To</label>
+                        <label for="createDate" translate="To"></label>
                         <datepicker date-format="MM/dd/yyyy" datepicker-mobile="false">
-                            <input class="form-control" data-ng-model="model.accountTo" type="text" readonly/>
+                            <input class="form-control" data-ng-model="model.accountTo" type="text" readonly />
                         </datepicker>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
-                        <label for="firstName">First name</label>
-                        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First name" data-ng-model="model.accountFirstName" maxlength="300" />
+                        <label for="firstName" translate="First Name"></label>
+                        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="{{'First Name'|translate}}" data-ng-model="model.accountFirstName" maxlength="300" />
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="lastName">Last name</label>
-                        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last name" data-ng-model="model.accountLastName" maxlength="300" />
+                        <label for="lastName" translate="Last Name"></label>
+                        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="{{'Last Name'|translate}}" data-ng-model="model.accountLastName" maxlength="300" />
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="email">Email</label>
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Email" data-ng-model="model.accountEmail" maxlength="300" />
+                        <label for="email" translate="Email"></label>
+                        <input type="text" class="form-control" id="email" name="email" placeholder="{{'Email'|translate}}" data-ng-model="model.accountEmail" maxlength="300" />
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="pharmacistLicense">Pharmacist License</label>
-                        <input type="text" class="form-control" id="pharmacistLicense" name="pharmacistLicense" placeholder="Pharmacist License" data-ng-model="model.accountPharmacistLicense" maxlength="100" />
+                        <label for="pharmacistLicense" translate="Pharmacist License"></label>
+                        <input type="text" class="form-control" id="pharmacistLicense" name="pharmacistLicense" placeholder="{{'Pharmacist License'|translate}}" data-ng-model="model.accountPharmacistLicense" maxlength="100" />
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="pharmacySettingId">Pharmacy setting</label>
-                        <select class="form-control form-control-no-validation" id="pharmacySettingId" name="pharmacySettingId"
-                                data-ng-options="pharmacySetting.name for pharmacySetting in ::pharmacySettings track by pharmacySetting.id"
-                                data-ng-model="pharmacySetting"></select>
+                        <label for="pharmacySettingId" translate="Pharmacy setting"></label>
+                        <select class="form-control form-control-no-validation" id="pharmacySettingId" name="pharmacySettingId" data-ng-model="model.accountPharmacySettingId">
+                            <option value="" translate="Any"></option>
+                            <option value="1" translate="Hospital Pharmacy"></option>
+                            <option value="2" translate="Community Pharmacy"></option>
+                            <option value="3" translate="Other (please specify)"></option>
+                        </select>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-4">
-                        <label for="countryIso2">Country</label>
+                        <label for="countryIso2" translate="Country"></label>
                         <select class="form-control" id="countryIso2" name="countryIso2">
                             <option value="ca">Canada</option>
                         </select>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="provinceId">Province</label>
+                        <label for="provinceId" translate="Province"></label>
                         <select class="form-control" id="provinceId" name="provinceId" data-ng-model="model.accountProvinceId">
-                            <option value="">Any</option>
-                            <option value="ab">Alberta</option>
-                            <option value="bc">British Columbia</option>
-                            <option value="mb">Manitoba</option>
-                            <option value="nb">New Brunswick</option>
-                            <option value="nl">Newfoundland and Labrador</option>
-                            <option value="ns">Nova Scotia</option>
-                            <option value="on">Ontario</option>
-                            <option value="pe">Prince Edward Island</option>
-                            <option value="qc">Quebec</option>
-                            <option value="sk">Saskatchewan</option>
-                            <option value="nt">Northwest Territories</option>
-                            <option value="nu">Nunavut</option>
-                            <option value="yt">Yukon</option>
+                            <option value="" translate="Any"></option>
+                            <option value="ab" translate="Alberta"></option>
+                            <option value="bc" translate="British Columbia"></option>
+                            <option value="mb" translate="Manitoba"></option>
+                            <option value="nb" translate="New Brunswick"></option>
+                            <option value="nl" translate="Newfoundland and Labrador"></option>
+                            <option value="ns" translate="Nova Scotia"></option>
+                            <option value="on" translate="Ontario"></option>
+                            <option value="pe" translate="Prince Edward Island"></option>
+                            <option value="qc" translate="Quebec"></option>
+                            <option value="sk" translate="Saskatchewan"></option>
+                            <option value="nt" translate="Northwest Territories"></option>
+                            <option value="nu" translate="Nunavut"></option>
+                            <option value="yt" translate="Yukon"></option>
                         </select>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="city">City</label>
-                        <input type="text" class="form-control" id="city" name="city" placeholder="City" data-ng-model="model.accountCity" maxlength="300" />
+                        <label for="city" translate="City"></label>
+                        <input type="text" class="form-control" id="city" name="city" placeholder="{{'City'|translate}}" data-ng-model="model.accountCity" maxlength="300" />
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="isOptin">Optin</label>
                         <select class="form-control" id="isOptin" name="isOptin" data-ng-model="model.accountIsOptin">
-                            <option value="">Any</option>
-                            <option value="true">Yes</option>
-                            <option value="false">No</option>
+                            <option value="" translate="Any"></option>
+                            <option value="true" translate="Yes"></option>
+                            <option value="false" translate="No"></option>
                         </select>
                     </div>
                 </div>
@@ -91,15 +94,15 @@
                     <div class="form-group col-md-4">
                         <label for="examName">Test</label>
                         <select class="form-control" id="examName" name="examName" data-ng-model="model.examName">
-                            <option value="">Any</option>
+                            <option value="" translate="Any"></option>
                             <option value="pre-test">Pre test</option>
                             <option value="post-test">Post test</option>
                         </select>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="examResultIsSuccess">Result</label>
+                        <label for="examResultIsSuccess" translate="Result"></label>
                         <select class="form-control" id="examResultIsSuccess" name="examResultIsSuccess" data-ng-model="model.examResultIsSuccess">
-                            <option value="">Any</option>
+                            <option value="" translate="Any"></option>
                             <option value="true">Success</option>
                             <option value="false">Failed</option>
                         </select>

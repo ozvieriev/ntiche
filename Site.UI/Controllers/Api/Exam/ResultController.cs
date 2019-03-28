@@ -77,20 +77,20 @@ namespace Site.UI.Controllers.Api
             return Ok(new DescriptionViewModel("An email has been sent to your account."));
         }
 
-        [HttpPost, Route("post-test/question"), Authorize]
-        public async Task<IHttpActionResult> PostTestQuestionPost([FromBody]string question = null)
+        [HttpPost, Route("post-test/question"), Authorize, ValidateModel, ValidateNullModel]
+        public async Task<IHttpActionResult> PostTestQuestionPost(ExamPostTestQuestionViewModel model)
         {
             var accountId = Guid.Parse(User.Identity.GetUserId());
             var account = await _auth.AccountGetAsync(accountId);
 
-            var subject = $"[Request question]";
-            var lasyEmailViewModel = new LasyEmailViewModel(subject, _appSettings.Email.Admin, EmailTemplate.AdminQuestion,
+            var subject = $"[ntiche request]";
+            var lasyEmailViewModel = new LasyEmailViewModel(subject, _appSettings.Email.Admin, EmailTemplate.PostTestQuestion,
                 new Email.Templates.Notification(new
                 {
                     account.FirstName,
                     account.LastName,
                     account.Email,
-                    question
+                    model.Question
                 }));
 
             _lasyEmailSender.Send(lasyEmailViewModel);

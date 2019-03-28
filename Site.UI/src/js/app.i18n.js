@@ -12,7 +12,7 @@ angular.module('app')
             //$translateProvider.preferredLanguage('en');
             //$translateProvider.fallbackLanguage('en');
 
-            //$translatePartialLoaderProvider.addPart('index');
+            //
 
             $translateProvider.registerAvailableLanguageKeys(['en', 'fr'], {
                 'en': 'en',
@@ -22,7 +22,7 @@ angular.module('app')
             $translateProvider
                 .useStaticFilesLoader({
                     prefix: 'i18n/',
-                    suffix: '.json'
+                    suffix: `.json?version=${(window.currentVersionBuild || '')}`
                 });
 
             //$translateProvider.preferredLanguage('en');

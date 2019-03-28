@@ -14,15 +14,6 @@ angular.module('app.controllers')
             accountTo: accountTo
         };
 
-        $scope.pharmacySettings = [
-            { name: 'Any' },
-            { id: 1, name: 'Hospital Pharmacy' },
-            { id: 2, name: 'Community Pharmacy' },
-            { id: 3, name: 'Other' }
-        ];
-        
-        $scope.pharmacySetting = $scope.pharmacySettings[0];
-
         let _getModel = () => {
 
             let model = angular.copy($scope.model);
