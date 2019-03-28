@@ -24,7 +24,7 @@ namespace Site.UI.Models
         public bool IsAppreciateDelivery { get; set; }
         public bool? IsPerceiveDegree { get; set; }
 
-        [Required, MaxLength(4000)]
+        [MaxLength(4000)]
         public string PerceiveDegreeComments { get; set; }
 
         [Required, MaxLength(4000)]
