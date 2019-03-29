@@ -1,8 +1,10 @@
 ﻿{
   "signUp.header1": "This learning platform is for educational purposes and is intended for healthcare professionals only.",
   "signUp.header2": "By registering to this platform, you confirm that you are a healthcare professional and that all information provided in your registration is true and correct.",
-  "signUp.optin": "I agree to receive email notifications related to the content of this program.",
-  "signUp.terms": "I agree with Terms and conditions.",
+  "signUp.optin": "I agree to receive email notifications related to the content of this program",
+  "signUp.terms1": "I agree with",
+  "signUp.terms2": "Terms and conditions",
+
 
   "account.header": "Critical Dose Drug Considerations for Post-Transplant Patients",
   "account.ph1": "Introduction",
@@ -42,8 +44,5 @@
   "account.ph7": "Target audience",
   "account.pp7": "Pharmacists",
 
-  "footer.copyright": "Copyright &copy; 2019 All rights reserved.",
-  "footer.privacy": "Privacy Policy &amp; Data Security",
-  "footer.terms": "Terms &amp; Conditions",
-  "footer.support": "Support"
+  "footer.copyright": "Copyright &copy; 2019 All rights reserved."
 }

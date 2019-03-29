@@ -1,4 +1,4 @@
-﻿<h3 class="text-center ">Pre test</h3>
+﻿<h3 class="text-center" translate="Pre test"></h3>
 <div class="mt-5 mb-5 row justify-content-center">
     <div class="col-md-10">
         <div class="card" data-ng-switch="view">
@@ -37,10 +37,10 @@
             <div data-ng-switch-when="done">
                 <div class="card-body">
                     <div class="alert alert-success" role="alert"
-                         data-ng-bind="description"></div>
+                         translate="{{description}}"></div>
 
-                    <a href="{{::model.newsletterLink}}" target="_blank" class="btn btn-info">Download pdf file</a>
-                    <a ui-sref="exam/post-test" class="btn btn-info">Take Post test</a>
+                    <a href="{{::model.newsletterLink}}" target="_blank" class="btn btn-info" translate="Download Program PDF"></a>
+                    <a ui-sref="exam/post-test" class="btn btn-info" translate="Take Post test"></a>
                 </div>
             </div>
         </div>

@@ -38,6 +38,11 @@ angular.module('app.controllers')
 
             window.open(`/api/feedback/report/?${$.param(_getModel())}`, '_blank');
         };
+        $scope.downloadReports = () => {
+
+            $scope.downloadExamReport();
+            $scope.downloadEvaluationReport();
+        };
 
         $scope.$watch('pharmacySetting', newValue => {
 

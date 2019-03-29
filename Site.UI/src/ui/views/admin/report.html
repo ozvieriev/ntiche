@@ -95,8 +95,8 @@
                         <label for="examName">Test</label>
                         <select class="form-control" id="examName" name="examName" data-ng-model="model.examName">
                             <option value="" translate="Any"></option>
-                            <option value="pre-test">Pre test</option>
-                            <option value="post-test">Post test</option>
+                            <option value="pre-test" translate="Pre test"></option>
+                            <option value="post-test" translate="Post test"></option>
                         </select>
                     </div>
                     <div class="form-group col-md-4">
@@ -109,6 +109,9 @@
                     </div>
                 </div>
                 <button type="button" class="btn btn-info" data-ng-click="downloadExamReport()">Download test report</button>
+                <div class="mt-2">
+                    <button type="button" class="btn btn-danger" data-ng-click="downloadReports()">Download all reports</button>
+                </div>
             </div>
         </div>
     </div>
