@@ -20,6 +20,7 @@ namespace Site.UI
                 cfg.CreateMap<FeedbackPostViewModel, Feedback>();
 
                 cfg.CreateMap<FeedbackReportGetViewModel, vFeedbackReportViewModel>();
+                cfg.CreateMap<ExamQuestionReportGetViewModel, vExamQuestionReportViewModel>();
                 cfg.CreateMap<ExamPostViewModel, vExamResultViewModel>();
             });
         }

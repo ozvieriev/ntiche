@@ -48,5 +48,26 @@ namespace Site.Identity
 
             return await ExecuteReaderCollectionAsync<vExamResultReport>("test.vExamResultReport", sqlParams);
         }
+
+        internal async Task<List<vExamQuestionReport>> ExamQuestionReportAsync(vExamQuestionReportViewModel model = null)
+        {
+            model = model ?? new vExamQuestionReportViewModel();
+
+            var sqlParams = new SqlParameter[] {
+                model.AccountFirstName.ToSql("accountFirstName"),
+                model.AccountLastName.ToSql("accountLastName"),
+                model.AccountPharmacistLicense.ToSql("accountPharmacistLicense"),
+                model.AccountPharmacySettingId.ToSql("accountPharmacySettingId"),
+                model.AccountProvinceId.ToSql("accountProvinceId"),
+                model.AccountEmail.ToSql("accountEmail"),
+                model.AccountCity.ToSql("accountCity"),
+                //model.AccountIsActivated.ToSql("accountIsActivated"),
+                model.AccountIsOptin.ToSql("accountIsOptin"),
+                model.AccountFrom.ToSql("accountFrom"),
+                model.AccountTo.ToSql("accountTo")
+            };
+
+            return await ExecuteReaderCollectionAsync<vExamQuestionReport>("test.vExamQuestionReport", sqlParams);
+        }
     }
 }

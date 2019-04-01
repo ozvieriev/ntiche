@@ -51,10 +51,12 @@
     <Compile Include="Oauth\SessionToken.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test\Exam.cs" />
+    <Compile Include="Test\ExamQuestion.cs" />
     <Compile Include="Test\vExamResult.cs" />
     <Compile Include="Test\ExamResult.cs" />
     <Compile Include="Test\vAccountActivity.cs" />
     <Compile Include="Test\vExamResultReport.cs" />
+    <Compile Include="Test\vExamQuestionReport.cs" />
     <Compile Include="Test\vFeedbackReport.cs" />
     <Compile Include="Test\Feedback.cs" />
   </ItemGroup>

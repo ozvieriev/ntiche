@@ -34,6 +34,10 @@ angular.module('app.controllers')
 
             window.open(`/api/exam/report/?${$.param(_getModel())}`, '_blank');
         };
+        $scope.downloadExamQuestionReport = () => {
+
+            window.open(`/api/exam/question/report/?${$.param(_getModel())}`, '_blank');
+        };
         $scope.downloadEvaluationReport = () => {
 
             window.open(`/api/feedback/report/?${$.param(_getModel())}`, '_blank');
@@ -41,6 +45,7 @@ angular.module('app.controllers')
         $scope.downloadReports = () => {
 
             $scope.downloadExamReport();
+            $scope.downloadExamQuestionReport();
             $scope.downloadEvaluationReport();
         };
 

@@ -93,11 +93,13 @@
     <Compile Include="IdentityStore.cs" />
     <Compile Include="Models\vExamResultViewModel.cs" />
     <Compile Include="Models\vExamResultReportViewModel.cs" />
+    <Compile Include="Models\vExamQuestionReportViewModel.cs" />
     <Compile Include="Models\vFeedbackReportViewModel.cs" />
     <Compile Include="PasswordHasher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestRepository\TestRepository.AccountActivity.cs" />
     <Compile Include="TestRepository\TestRepository.Exam.cs" />
+    <Compile Include="TestRepository\TestRepository.ExamQuestion.cs" />
     <Compile Include="TestRepository\TestRepository.Feedback.cs" />
     <Compile Include="TestRepository\TestRepository.ExamResult.cs" />
     <Compile Include="TestRepository\TestRepository.cs" />

@@ -1,7 +1,9 @@
-﻿using Certificate.Templates;
+﻿using AutoMapper;
+using Certificate.Templates;
 using Email.Templates;
 using Microsoft.AspNet.Identity;
 using Site.Identity;
+using Site.Identity.Models;
 using Site.UI.Core;
 using Site.UI.Models;
 using System;
@@ -77,11 +79,18 @@ namespace Site.UI.Controllers.Api
             return Ok(new DescriptionViewModel("An email has been sent to your account."));
         }
 
-        [HttpPost, Route("post-test/question"), Authorize, ValidateModel, ValidateNullModel]
-        public async Task<IHttpActionResult> PostTestQuestionPost(ExamPostTestQuestionViewModel model)
+        [HttpPost, Route("{name:regex(post-test)}/question"), Authorize, ValidateModel, ValidateNullModel]
+        public async Task<IHttpActionResult> QuestionPost(string name, ExamPostTestQuestionViewModel model)
         {
+            var exam = await _test.ExamGetAsync(name);
             var accountId = Guid.Parse(User.Identity.GetUserId());
             var account = await _auth.AccountGetAsync(accountId);
+
+            await _test.ExamQuestionInsertAsync(new Data.Entities.Test.ExamQuestion {
+                AccountId = accountId,
+                ExamId = exam.Id,
+                Question = model.Question
+            });
 
             var subject = $"[ntiche request]";
             var lasyEmailViewModel = new LasyEmailViewModel(subject, _appSettings.Email.Admin, EmailTemplate.PostTestQuestion,

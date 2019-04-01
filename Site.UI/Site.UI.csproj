@@ -233,6 +233,7 @@
     <Compile Include="Models\ExamPostViewModel.cs" />
     <Compile Include="Models\ExamResultViewModel.cs" />
     <Compile Include="Models\ExamResultReportViewModel.cs" />
+    <Compile Include="Models\ExamQuestionReportGetViewModel.cs" />
     <Compile Include="Models\FeedbackReportGetViewModel.cs" />
     <Compile Include="Models\FeedbackPostViewModel.cs" />
     <Compile Include="Models\ResetPasswordViewModel.cs" />

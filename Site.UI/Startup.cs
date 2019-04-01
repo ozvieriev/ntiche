@@ -1,7 +1,5 @@
 ﻿using Microsoft.Owin;
 using Owin;
-using System;
-using System.Web;
 
 [assembly: OwinStartup(typeof(Site.UI.Startup))]
 namespace Site.UI

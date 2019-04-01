@@ -103,6 +103,50 @@ namespace Site.UI.Controllers.Api
             return Ok(response);
         }
 
+        [HttpGet, Route("question/report")]
+        public async Task<HttpResponseMessage> GetExamQuestionReport([FromUri] ExamQuestionReportGetViewModel model)
+        {
+            model = model ?? new ExamQuestionReportGetViewModel();
+
+            var dbModel = new vExamQuestionReportViewModel { };
+
+            dbModel = Mapper.Map(model, dbModel);
+
+            if (model.AccountFrom.HasValue)
+                dbModel.AccountFrom = ToTime(model.AccountFrom.Value);
+
+            if (model.AccountTo.HasValue)
+                dbModel.AccountTo = ToTime(model.AccountTo.Value);
+
+
+            var report = await _test.ExamQuestionReportAsync(dbModel);
+
+            var response = new HttpResponseMessage(HttpStatusCode.OK);
+
+            response.Content = GetContent(report);
+            response.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
+            {
+                FileName = $"{report.Count}-questions.csv"
+            };
+
+            return response;
+        }
+
+        private StringContent GetContent(IEnumerable<vExamQuestionReport> report)
+        {
+            using (var memoryStream = new MemoryStream())
+            using (var streamReader = new StreamReader(memoryStream))
+            using (var streamWriter = new StreamWriter(memoryStream))
+            {
+                var csvWriter = new ExamQuestionReportCsvWriter();
+                csvWriter.Write(streamWriter, report);
+                streamWriter.Flush();
+                memoryStream.Position = 0;
+
+                string csv = streamReader.ReadToEnd();
+                return new StringContent(csv, Encoding.UTF8, "text/csv");
+            }
+        }
         private StringContent GetContent(IEnumerable<vExamResultReport> report)
         {
             using (var memoryStream = new MemoryStream())
@@ -119,6 +163,40 @@ namespace Site.UI.Controllers.Api
             }
         }
 
+        private class ExamQuestionReportCsvWriter
+        {
+            public ExamQuestionReportCsvWriter() { }
+
+            public void Write(StreamWriter stream, IEnumerable<vExamQuestionReport> report)
+            {
+                var csvSerializer = new CsvSerializer(stream);
+                var writer = new CsvWriter(csvSerializer);
+
+                writer.Configuration.RegisterClassMap<ExamResultCsvClassMap>();
+                writer.WriteRecords(report);
+            }
+        }
+        private class ExamQuestionCsvClassMap : ClassMap<vExamQuestionReport>
+        {
+            public ExamQuestionCsvClassMap()
+            {
+                Map(m => m.AccountFirstName).Name("First name");
+                Map(m => m.AccountLastName).Name("Last name");
+                Map(m => m.AccountEmail).Name("Email");
+                Map(m => m.AccountPharmacistLicense).Name("Pharmacist license");
+                Map(m => m.AccountPharmacySetting).Name("Pharmacy setting");
+                Map(m => m.AccountSpecialty).Name("Specialty");
+                Map(m => m.AccountCountryName).Name("Country");
+                Map(m => m.AccoutnProvinceName).Name("Province");
+                Map(m => m.AccountCity).Name("City");
+                Map(m => m.AccountIsOptin).Name("Optin").TypeConverter<CsvBooleanConverter>();
+                Map(m => m.AccountCreateDate).Name("Create Date").TypeConverter<CsvDateTimeConverter>();
+
+                Map(m => m.ExamQuestion).Name("Question");
+                Map(m => m.ExamQuestionCreateDate).Name("Create Date").TypeConverter<CsvDateTimeConverter>();
+            }
+        }
+
         private class ExamResultReportCsvWriter
         {
             public ExamResultReportCsvWriter() { }
@@ -132,7 +210,6 @@ namespace Site.UI.Controllers.Api
                 writer.WriteRecords(report);
             }
         }
-
         private class ExamResultCsvClassMap : ClassMap<vExamResultReport>
         {
             public ExamResultCsvClassMap()
