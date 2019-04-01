@@ -66,6 +66,8 @@ angular.module('app')
         _state({ url: 'exam', htmlUrl: 'exam/index', controller: 'exam', roles: [] });
         _state({ url: 'exam/pre-test', controller: 'examPreTest', roles: [] });
 
+        _state({ url: 'webinar', htmlUrl: 'webinar/index', controller: 'webinar', roles: [] });
+
         _state({ url: 'about' });
         _state({ url: 'error' });
         _state({ url: 'index', controller: 'index' });

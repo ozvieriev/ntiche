@@ -105,3 +105,11 @@ body, html {
 .accordion .card-header {
     cursor: pointer !important;
 }
+
+
+/*ads*/
+.ads a {
+    background: #C7D9F1;
+    display: block;
+    padding: 0.5rem;
+}
