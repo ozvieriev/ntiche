@@ -13,7 +13,9 @@ angular.module('app', ['app.components', 'app.auth', 'app.services', 'app.contro
             $templateCache.put(template.id, template.innerHTML);
         });
 
-        if (location.hash.toLowerCase().startsWith('#!/fr/'))
+        let locationHash = location.hash.toLowerCase();
+
+        if (locationHash.indexOf('#!/fr/') === 0)
             $translate.use('fr'); else
             $translate.use('en');
 
