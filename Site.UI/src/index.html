@@ -8,6 +8,7 @@
     <meta http-equiv="pragma" content="no-cache" />
     <meta http-equiv="expires" content="0" />
     <title>Ntiche</title>
+    
 </head>
 
 <body data-ng-cloak>
@@ -22,6 +23,13 @@
 
     <script type="text/javascript">
         window.currentVersionBuild = 'CURRENT-VERSION-BUILD';
+
+        if (!String.prototype.startsWith) {
+            String.prototype.startsWith = function (searchString, position) {
+                position = position || 0;
+                return this.indexOf(searchString, position) === position;
+            };
+        }
     </script>
     <script src="js/bundle.min.js" async></script>
     <link rel="stylesheet" href="css/bundle.min.css" async />
