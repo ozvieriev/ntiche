@@ -13,7 +13,7 @@ angular.module('app')
             //$translateProvider.fallbackLanguage('en');
 
             //
-
+            $translateProvider.useSanitizeValueStrategy(null);
             $translateProvider.registerAvailableLanguageKeys(['en', 'fr'], {
                 'en': 'en',
                 'fr': 'fr'
