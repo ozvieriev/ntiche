@@ -1,8 +1,8 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-ntiche fixed-top" data-ng-navbar>    
+<nav class="navbar navbar-expand-md navbar-dark bg-ntiche fixed-top" data-ng-navbar>
     <h5 class="mb-0">
         <a class="navbar-brand ml-3" ui-sref="index">NTICHE</a>
     </h5>
-        <ul class="navbar-nav mr-auto navbar-lang">
+    <ul class="navbar-nav mr-auto navbar-lang">
         <li class="nav-item" data-ng-repeat="(key, value) in ::languages">
             <a class="nav-link p-0" data-ng-click="changeLanguage(key)">
                 <span class="flag-icon {{::value.icon}}"> </span>
@@ -21,7 +21,7 @@
                     <a class="nav-link" ui-sref="account/sign-up" translate="Sign Up"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" ui-sref="account/sign-in"  translate="Sign In"></a>
+                    <a class="nav-link" ui-sref="account/sign-in" translate="Sign In"></a>
                 </li>
             </ul>
         </div>
@@ -29,7 +29,7 @@
             <div class="inline-link-container">
                 <a ui-sref="account">
                     <i class="far fa-user"></i>
-                    Program
+                    <span translate="Program"></span>
                 </a>
             </div>
             <div class="inline-link-container">
