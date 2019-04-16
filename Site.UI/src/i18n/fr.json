@@ -92,6 +92,10 @@
   "account.ph7": "Auditoire cible",
   "account.pp7": "Pharmaciens",
 
+  "support.p1": "Merci d’avoir utilisé",
+  "support.p2": "Si vous rencontrez des problèmes techniques avec le site Web, que vous vous connectiez à votre profil ou à une fonctionnalité quelconque, veuillez contacter <a href='mailto:support@NTICHE.com' target='_blank'>support@NTICHE.com</a>. Votre demande sera traitée dans les 48 heures et un technicien vous contactera pour le support technique.",
+  "support.p3": "Si vous souhaitez obtenir des informations supplémentaires sur les programmes disponibles ou leur contenu, veuillez contacter <a href='mailto:sbelanger@icpdhm.com' target='_blank'>sbelanger@icpdhm.com</a>.",
+
   "Congratulations!": "Félicitations!",
 
 

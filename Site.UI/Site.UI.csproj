@@ -349,6 +349,7 @@
     <None Include="src\js\controllers\exam\post-test-question.js" />
     <None Include="src\js\controllers\webinar\index.js" />
     <None Include="src\ui\views\webinar\index.html" />
+    <Content Include="src\js\controllers\support.js" />
     <Content Include="ui\css\bundle.min.css" />
     <Content Include="ui\i18n\en.json" />
     <Content Include="ui\i18n\fr.json" />

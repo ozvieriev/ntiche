@@ -73,7 +73,7 @@ angular.module('app')
         _state({ url: 'index', controller: 'index' });
         _state({ url: 'privacy' });
         _state({ url: 'resources' });
-        _state({ url: 'support' });
+        _state({ url: 'support', controller: 'support' });
         _state({ url: 'terms' });
     });
 

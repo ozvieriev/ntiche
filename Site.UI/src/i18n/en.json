@@ -44,5 +44,9 @@
   "account.ph7": "Target audience",
   "account.pp7": "Pharmacists",
 
+  "support.p1": "Thank you for using",
+  "support.p2": "If you encounter any technical problems with the website, signing in/out of your profile or any features, please contact <a href='mailto:support@NTICHE.com' target='_blank'>support@NTICHE.com</a>. Your request will be processed within 48 hours and a technician will reach out to you for technical support.",
+  "support.p3": "If you are looking to obtain additional information with respect to available programs or content, please contact <a href='mailto:sbelanger@icpdhm.com' target='_blank'>sbelanger@icpdhm.com</a>",
+
   "footer.copyright": "Copyright &copy; 2019 All rights reserved."
 }
