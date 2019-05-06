@@ -32,6 +32,20 @@ angular.module('app.controllers')
 
                 $scope.isAllSelected = true;
             };
+            $scope.answerCssClass = ((question, answer) => {
+
+                if (!answer.isCorrect && question.selectedAnswer == answer)
+                    return 'alert-danger';
+
+                if (answer.isCorrect && question.selectedAnswer == answer)
+                    return 'alert-success';
+
+                if (!question.selectedAnswer.isCorrect && answer.isCorrect)
+                    return 'alert-success';
+            });
+
+            $scope.totalFeedbacks = 0;
+            $scope.examResultId = null;
 
             $scope.submit = (form) => {
 
@@ -70,10 +84,9 @@ angular.module('app.controllers')
                                     return;
                                 }
 
-                                if (response.TotalFeedbacks)
-                                    return $state.go(`exam/post-test-success`, { examResultId: response.examResultId });
-
-                                return $state.go(`exam/feedback`, { examResultId: response.examResultId });
+                                $scope.totalFeedbacks = response.totalFeedbacks;
+                                $scope.examResultId = response.examResultId;
+                                $scope.view = 'success';
                             },
                             (error) => {
 
@@ -82,5 +95,12 @@ angular.module('app.controllers')
                             })
                         .finally(() => { $scope.isBusy = false });
                 });
+            };
+            $scope.next = () => {
+
+                if ($scope.totalFeedbacks)
+                    return $state.go(`exam/post-test-success`, { examResultId: $scope.examResultId });
+
+                return $state.go(`exam/feedback`, { examResultId: $scope.examResultId });
             };
         }]);

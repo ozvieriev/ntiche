@@ -12,6 +12,7 @@
                             </dt>
                             <dd class="ml-3">
                                 <div class="form-check" data-ng-repeat="answer in question.answers">
+
                                     <input class="form-check-input" type="radio"
                                            id="question-{{::$parent.$index}}-answer-{{::$index}}"
                                            name="question-{{::$parent.$index}}"
@@ -33,12 +34,37 @@
                     <div class="alert alert-danger mb-0" role="alert" data-ng-bind="description"></div>
                 </div>
             </div>
+            <div data-ng-switch-when="success">
+                <div class="card-body">
+                    <dl data-ng-repeat="question in model.questions" data-ng-disabled="isBusy">
+                        <dt>
+                            <span data-ng-bind="::$index+1"></span>.
+                            <span data-ng-bind-html="::question.text"></span>
+                        </dt>
+                        <dd class="ml-3">
+                            <div class="form-check" data-ng-repeat="answer in question.answers">
+                                <input class="form-check-input" type="radio"
+                                       id="question-{{::$parent.$index}}-answer-{{::$index}}"
+                                       name="question-{{::$parent.$index}}"
+                                       data-ng-value="answer"
+                                       data-ng-model="question.selectedAnswer"
+                                       disabled />
+
+                                <label class="form-check-label" for="question-{{::$parent.$index}}-answer-{{::$index}}" data-ng-class="answerCssClass(question, answer)">
+                                    <span data-ng-bind="::$index+1"></span>.
+                                    <span data-ng-bind-html="::answer.text"></span>
+                                </label>
+                            </div>
+                        </dd>
+                    </dl>
+                    <a class="btn btn-info" data-ng-click="next()" translate="Next"></a>
+                </div>
+            </div>
             <div data-ng-switch-when="fail">
                 <div class="card-body">
                     <div class="alert alert-danger mb-2" role="alert" translate="Unfortunately you didn't pass the test."></div>
-                    <a  class="btn btn-info" href="{{::model.newsletterLink}}" target="_blank" data-ng-if="model.newsletterLink" translate="Download Program PDF"></a>
+                    <a class="btn btn-info" href="{{::model.newsletterLink}}" target="_blank" data-ng-if="model.newsletterLink" translate="Download Program PDF"></a>
                     <button class="btn btn-info" ui-sref="exam/post-test" ui-sref-opts="{reload: true, notify: true}" translate="Try again"></button>
-                    
                 </div>
             </div>
         </div>
