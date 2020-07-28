@@ -8,9 +8,15 @@ angular.module('app.controllers')
 
             $scope.model = {};
 
-            $scope.getRatings = () => {
+            $scope.getRatings = (max) => {
 
-                return [0, 1, 2, 3, 4];
+                max = max || 4;
+
+                var ratings = [];
+                for (var index = 0; index < max; index++)
+                    ratings.push(index);
+
+                return ratings;
             };
             $scope.getRatingsYesNo = () => {
 
