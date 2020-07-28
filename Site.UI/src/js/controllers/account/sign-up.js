@@ -1,5 +1,5 @@
 angular.module('app.controllers')
-    .controller('accountSignUpController', ['$scope', '$form', '$auth', ($scope, $form, $auth) => {
+    .controller('accountSignUpController', ['$scope', '$form', '$auth', '$translate', ($scope, $form, $auth, $translate) => {
 
         $scope.model = {
             //userName: 'MegaZver',
@@ -34,12 +34,19 @@ angular.module('app.controllers')
 
                             $scope.status = 200;
                             $scope.status = 200;
-                            $scope.description = response.description;
+
+                            $translate(response.description)
+                                .then(
+                                    (description) => { $scope.description = description; },
+                                    (description) => { $scope.description = description; });
                         },
                         (error) => {
 
                             $scope.status = error.status;
-                            $scope.description = error.data.error_description;
+                            $translate(error.data.error_description)
+                                .then(
+                                    (errorDescription) => { $scope.description = errorDescription; },
+                                    (errorDescription) => { $scope.description = errorDescription; });
                         })
                     .finally(() => { $scope.isBusy = false });
             });
@@ -47,7 +54,7 @@ angular.module('app.controllers')
         $scope.$watch('model.specialtyId', newValue => {
 
             if (newValue !== '2')
-                $scope.model.specialty = null;                
+                $scope.model.specialty = null;
         });
         $scope.$watch('model.pharmacySettingId', newValue => {
 
