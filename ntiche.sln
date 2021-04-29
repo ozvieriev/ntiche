@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.329
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Site.UI", "Site.UI\Site.UI.csproj", "{8A52F9DA-5FF0-4154-BD46-CD5CBA113782}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Email.Templates", "Email.Templates\Email.Templates.csproj", "{1F13E28F-EE2E-4C14-A0F9-D5837F62BD65}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Certificate.Templates", "Certificate.Templates\Certificate.Templates.csproj", "{6A0B3B30-7FD7-4C13-BBF7-AC88752CDBAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PasswordHash", "PasswordHash\PasswordHash.csproj", "{34CDEF85-A857-47FC-9071-48D950DF1DA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{6A0B3B30-7FD7-4C13-BBF7-AC88752CDBAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A0B3B30-7FD7-4C13-BBF7-AC88752CDBAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A0B3B30-7FD7-4C13-BBF7-AC88752CDBAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34CDEF85-A857-47FC-9071-48D950DF1DA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34CDEF85-A857-47FC-9071-48D950DF1DA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34CDEF85-A857-47FC-9071-48D950DF1DA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34CDEF85-A857-47FC-9071-48D950DF1DA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
