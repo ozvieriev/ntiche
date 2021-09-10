@@ -131,13 +131,14 @@ namespace Site.UI.Controllers.Api
                 Map(m => m.FeedbackOverallLearningObjectives3Before).Name("Q2 3.Before");
                 Map(m => m.FeedbackOverallLearningObjectives3After).Name("Q2 3.After");
                 Map(m => m.FeedbackOverallLearningObjectives3Relevance).Name("Q2 3.Relevance");
-                Map(m => m.FeedbackProgramRating).Name("Q3");
+                Map(m => m.FeedBackMeetStatedLearningObjectives).Name("Q3");
+                Map(m => m.FeedbackProgramRating).Name("Q4");
                 Map(m => m.FeedbackIsAppreciateDelivery).Name("Q4").TypeConverter<CsvBooleanConverter>();
                 Map(m => m.FeedbackIsPerceiveDegree).Name("Q5").TypeConverter<CsvBooleanConverter>();
-                Map(m => m.FeedbackPerceiveDegreeComments).Name("Q5 Comments");
-                Map(m => m.FeedbackChangesComments).Name("Q6 Comments");
-                Map(m => m.FeedbackTopicsComments).Name("Q7 Comments");
-                Map(m => m.FeedbackAdditionalComments).Name("Q8 Comments");
+                Map(m => m.FeedbackPerceiveDegreeComments).Name("Q6 Comments");
+                Map(m => m.FeedbackChangesComments).Name("Q7 Comments");
+                Map(m => m.FeedbackTopicsComments).Name("Q8 Comments");
+                Map(m => m.FeedbackAdditionalComments).Name("Q9 Comments");
                 Map(m => m.FeedbackCreateDate).Name("Create Date").TypeConverter<CsvDateTimeConverter>();
             }
         }

@@ -363,11 +363,6 @@
     <Content Include="ui\webfonts\fa-brands-400.svg" />
     <Content Include="ui\webfonts\fa-regular-400.svg" />
     <Content Include="ui\webfonts\fa-solid-900.svg" />
-    <None Include="video\elisabeth-gelinas-lemay-fr.mp4" />
-    <None Include="video\jennifer-harrison-en.mp4">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <Content Include="video\christian-coursol-en.mp4" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -389,7 +384,9 @@
     <Content Include="ui\webfonts\fa-solid-900.woff" />
     <Content Include="ui\webfonts\fa-solid-900.woff2" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="video\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="package.json" />
     <None Include="package-lock.json" />

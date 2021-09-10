@@ -98,6 +98,22 @@
                             </div>
                         </li>
                         <li>
+                            <span translate="Did the program meet the stated learning objectives? Scale 1 to 5 (1 = Strongly disagree to 5 = Strongly agree)"></span>
+                            <div class="form-group" data-ng-init="programRatings=getProgramRatings()">                                
+                                <div class="form-check-inline" data-ng-repeat="meetStatedLearningObjectives in ::getRatings(5)">
+                                    <input class="form-check-input" type="radio"
+                                           id="meetStatedLearningObjectives-{{::meetStatedLearningObjectives}}"
+                                           name="meetStatedLearningObjectives"
+                                           data-ng-value="::meetStatedLearningObjectives"
+                                           data-ng-model="model.meetStatedLearningObjectives"
+                                           data-ng-required="!model.meetStatedLearningObjectives" />
+                                    <label class="form-check-label" for="meetStatedLearningObjectives-{{::meetStatedLearningObjectives}}">
+                                        <span data-ng-bind="::$index+1"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
                             <span translate="Overall, I would rate this program as (please check)"></span>:
                             <div class="form-group" data-ng-init="programRatings=getProgramRatings()">
                                 <div class="form-check-inline" data-ng-repeat="programRating in ::programRatings">
@@ -152,7 +168,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control form-control-no-validation" placeholder="{{'Comments'|translate}}" data-ng-model="model.perceiveDegreeComments" maxlength="4000"/>
+                                <input type="text" class="form-control form-control-no-validation" placeholder="{{'Comments'|translate}}" data-ng-model="model.perceiveDegreeComments" maxlength="4000" />
 
                             </div>
                         </li>

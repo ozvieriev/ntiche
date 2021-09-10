@@ -22,6 +22,9 @@ namespace Site.UI.Models
         public byte ProgramRating { get; set; }
 
         public bool IsAppreciateDelivery { get; set; }
+
+        public byte? MeetStatedLearningObjectives { get; set; }
+
         public bool? IsPerceiveDegree { get; set; }
 
         [MaxLength(4000)]
