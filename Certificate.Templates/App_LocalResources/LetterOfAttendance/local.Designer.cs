@@ -19,7 +19,7 @@ namespace Certificate.Templates.App_LocalResources.LetterOfAttendance {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class local {
@@ -71,18 +71,16 @@ namespace Certificate.Templates.App_LocalResources.LetterOfAttendance {
         ///&lt;body&gt;
         ///    &lt;div class=&quot;wrapper&quot;&gt;
         ///        &lt;header&gt;
-        ///            &lt;h1&gt;
-        ///                EN
-        ///                Critical Dose drug considerations
-        ///            &lt;/h1&gt;
+        ///            &lt;h1&gt;Critical Dose drug considerations&lt;/h1&gt;
         ///            &lt;h3&gt;for Post-Transplant Patients&lt;/h3&gt;
         ///        &lt;/header&gt;
         ///
-        ///        &lt;p&gt;
-        ///            Participated in the program: &lt;accountFullName&gt;
-        ///        &lt;/p&gt;
-        ///        &lt;p&gt;
-        ///            License #: &lt;accountPha [rest of string was truncated]&quot;;.
+        ///        &lt;main&gt;
+        ///            &lt;h2&gt;Letter of Attendance&lt;/h2&gt;
+        ///
+        ///            &lt;div class=&quot;info&quot;&gt;
+        ///                &lt;div class=&quot;left&quot;&gt;
+        ///                    &lt;div class=&quot;underlined&quot;&gt;&lt;accountFullN [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string html {
             get {
@@ -92,8 +90,8 @@ namespace Certificate.Templates.App_LocalResources.LetterOfAttendance {
         
         /// <summary>
         ///   Looks up a localized string similar to @font-face {
-        ///    font-family: nevis;
-        ///    src: url(&apos;data:font/truetype;charset=utf-8;base64,AAEAAAAMAIAAAwBAT1MvMkEluHAAAAFIAAAAVmNtYXCa+7t1AAADbAAAAuZnYXNw//8AAwAAL7wAAAAIZ2x5Zg0etIwAAAc8AAAhqGhlYWTt2DRcAAAAzAAAADZoaGVhDsQGkQAAAQQAAAAkaG10eAloIsUAAAGgAAABzGtlcm4ALgASAAAo5AAAABhsb2Nh6EvwKgAABlQAAADobWF4cAB5AEYAAAEoAAAAIG5hbWWlIsEVAAAo/AAABa1wb3N0gp2GPAAALqwAAAENAAEAAAABAADS4VUrXw889QALCAAAAAAAw2fAVgAAAADEESlN/0D+UggAB2wAAQAGAAEAAAAAAAAAAQAABz7+TgBDCI3/QP9CCAAAAQAAAAAAAAAAAAAAAAAAAHMAAQAAAHMARgAFAAAAAAAAAAA [rest of string was truncated]&quot;;.
+        ///    font-family: сalibri;
+        ///    src: url(&apos;data:font/truetype;charset=utf-8;base64,AAEAAAAVAQAABABQRFNJR68djRoABUaIAAAbWEVCRFQxOa4XAAQb6AAAT5xFQkxDfDVvAAAEa4QAABXgR0RFRgAmBGYABIFkAAAAHkdQT1NBxCNUAASBhAAArOJHU1VC8tALsQAFLmgAABggT1MvMmxocrgAAAHYAAAAYGNtYXByRtvZAAATvAAACORjdnQgr5O3+QAAScgAAAUKZnBnbfb2TQwAABygAAAJGmdhc3AAHAAjAAQb2AAAABBnbHlmSKzgogAAYFwAAmGYaGVhZOInFUAAAAFcAAAANmhoZWENrgs8AAABlAAAACRobXR4LWXg6AAAAjgAABGEa2VybnHfjMsAAsH0AAFLqmxvY2EE0SjcAABO1AAAEYhtYXhwKAEDDQAAAbgAAAAgbmFtZSZkUe4ABA2gA [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string style {
             get {

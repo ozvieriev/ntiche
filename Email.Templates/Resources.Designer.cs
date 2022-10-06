@@ -19,7 +19,7 @@ namespace Email.Templates {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -59,33 +59,109 @@ namespace Email.Templates {
                 resourceCulture = value;
             }
         }
-
-        public static string PostTestQuestion
-        {
-            get
-            {
-                return ResourceManager.GetString("PostTestQuestion", resourceCulture);
-            }
-        }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @model Email.Templates.Notification
+        ///
+        ///&lt;p&gt;
+        ///    Dear @Model[&quot;firstName&quot;] @Model[&quot;lastName&quot;],
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Congratulations! You’re just a few steps away from activating your account.
+        ///    Click the link below to confirm your email address.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    &lt;a href=&quot;@Model[&quot;emailConfirmationLink&quot;]&quot; target=&quot;_blank&quot;&gt;
+        ///        Verify my account
+        ///    &lt;/a&gt;
+        ///&lt;/p&gt;.
+        /// </summary>
         public static string EmailConfirmation {
             get {
                 return ResourceManager.GetString("EmailConfirmation", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 
+        ///&lt;!doctype html&gt;
+        ///&lt;html&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
+        ///    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
+        ///    &lt;title&gt;Simple Transactional Email&lt;/title&gt;
+        ///    &lt;style&gt;
+        ///
+        ///        @@media only screen and (max-width: 620px) {
+        ///            table[class=body] h1 {
+        ///                font-size: 28px !important;
+        ///                margin-bottom: 10px !important;
+        ///            }
+        ///
+        ///            table[class=body] p,
+        ///            table[class=body] ul,
+        ///            tab [rest of string was truncated]&quot;;.
+        /// </summary>
         public static string Layout {
             get {
                 return ResourceManager.GetString("Layout", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @model Email.Templates.Notification
+        ///
+        ///&lt;p&gt;
+        ///    Dear @Model[&quot;firstName&quot;] @Model[&quot;lastName&quot;],
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Congratulations!
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    You have passed the test. In the attachement you will find your certificate.
+        ///&lt;/p&gt;.
+        /// </summary>
         public static string PostTestCertificate {
             get {
                 return ResourceManager.GetString("PostTestCertificate", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @model Email.Templates.Notification
+        ///
+        ///&lt;p&gt;
+        ///    Customer @Model[&quot;firstName&quot;] @Model[&quot;lastName&quot;] (@Model[&quot;email&quot;]) asks:
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    @Model[&quot;question&quot;]
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string PostTestQuestion {
+            get {
+                return ResourceManager.GetString("PostTestQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @model Email.Templates.Notification
+        ///
+        ///&lt;p&gt;
+        ///    Dear @Model[&quot;firstName&quot;] @Model[&quot;lastName&quot;],
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Your user name is @Model[&quot;userName&quot;]
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    We have received a password reset request for the account associated with this email.
+        ///    If you made this request, please click the link below to reset your password.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    &lt;a href=&quot;@Model[&quot;recoverPasswordLink&quot;]&quot; target=&quot;_blank&quot;&gt;
+        ///        Click here to reset your password
+        ///    &lt;/a&gt;
+        ///&lt;/p&gt;.
+        /// </summary>
         public static string RecoverPassword {
             get {
                 return ResourceManager.GetString("RecoverPassword", resourceCulture);
