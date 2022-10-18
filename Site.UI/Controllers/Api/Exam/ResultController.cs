@@ -1,9 +1,7 @@
-﻿using AutoMapper;
-using Certificate.Templates;
+﻿using Certificate.Templates;
 using Email.Templates;
 using Microsoft.AspNet.Identity;
 using Site.Identity;
-using Site.Identity.Models;
 using Site.UI.Core;
 using Site.UI.Models;
 using System;

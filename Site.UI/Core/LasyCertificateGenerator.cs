@@ -80,7 +80,7 @@ namespace Site.UI.Core
             var id = examResult.Id.ToString("N");
             var folder = id.Substring(0, 2);
 
-            return HostingEnvironment.MapPath($"~/pdf/{examResult.ExamName}/{folder}/{id}.pdf");
+            return HostingEnvironment.MapPath($"~/pdf/{examResult.ExamName}/{folder}/{id}-{Thread.CurrentThread.CurrentUICulture.Name}.pdf");
         }
     }
 
