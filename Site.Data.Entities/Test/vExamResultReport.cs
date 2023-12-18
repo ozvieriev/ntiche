@@ -25,8 +25,8 @@ namespace Site.Data.Entities.Test
         public byte ExamResultAnswer2 { get; set; }
         public byte ExamResultAnswer3 { get; set; }
         public byte ExamResultAnswer4 { get; set; }
-        public byte ExamResultAnswer5 { get; set; }
-        public byte ExamResultAnswer6 { get; set; }
+        //public byte ExamResultAnswer5 { get; set; }
+        //public byte ExamResultAnswer6 { get; set; }
         public byte ExamResultPercentCorrect { get; set; }
         public bool ExamResultIsSuccess { get; set; }
         public DateTime ExamResultCreateDate { get; set; }
@@ -46,10 +46,10 @@ namespace Site.Data.Entities.Test
         [NotMapped]
         public int HumanExamResultAnswer4 { get { return ExamResultAnswer4 + 1; } }
 
-        [NotMapped]
-        public int HumanExamResultAnswer5 { get { return ExamResultAnswer5 + 1; } }
+        //[NotMapped]
+        //public int HumanExamResultAnswer5 { get { return ExamResultAnswer5 + 1; } }
 
-        [NotMapped]
-        public int HumanExamResultAnswer6 { get { return ExamResultAnswer6 + 1; } }
+        //[NotMapped]
+        //public int HumanExamResultAnswer6 { get { return ExamResultAnswer6 + 1; } }
     }
 }

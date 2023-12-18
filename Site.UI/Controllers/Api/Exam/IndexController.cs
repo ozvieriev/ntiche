@@ -78,7 +78,7 @@ namespace Site.UI.Controllers.Api
 
             var entity = new ExamResult { AccountId = accountId, ExamId = exam.Id };
             entity = Mapper.Map(model, entity);
-            entity.IsSuccess = entity.PercentCorrect >= 70;
+            entity.IsSuccess = true;//entity.PercentCorrect >= 70;
 
             entity = await _test.ExamResultInsertAsync(entity);
 
@@ -232,8 +232,8 @@ namespace Site.UI.Controllers.Api
                 Map(m => m.HumanExamResultAnswer2).Name("Q3");
                 Map(m => m.HumanExamResultAnswer3).Name("Q4");
                 Map(m => m.HumanExamResultAnswer4).Name("Q5");
-                Map(m => m.HumanExamResultAnswer5).Name("Q6");
-                Map(m => m.HumanExamResultAnswer6).Name("Q7");
+                //Map(m => m.HumanExamResultAnswer5).Name("Q6");
+                //Map(m => m.HumanExamResultAnswer6).Name("Q7");
 
                 Map(m => m.ExamResultPercentCorrect).Name("Result %");
                 Map(m => m.ExamResultCreateDate).Name("Create Date").TypeConverter<CsvDateTimeConverter>();

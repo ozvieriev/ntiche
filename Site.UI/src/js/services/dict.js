@@ -5,66 +5,48 @@ angular.module('app.services')
 
             return [
                 {
-                    text: 'Which of the following is not considered a Critical Dose Drug by Health Canada?',
+                    text: 'Medication errors affect how many patients annually (based on a recent US publication)?',
                     answers: [
+                        { text: '1 million' },
+                        { text: '3 million' },
+                        { text: '5 million' },
+                        { text: '7 million', isCorrect: true }
+                    ]
+                },
+                {
+                    text: 'Which of the following statements regarding medications errors described with tacrolimus is <u>false</u>?',
+                    answers: [
+                        { text: 'Compounding 10-fold error (e.g. 0.5 mg vs. 5 mg)' },
+                        { text: 'Formulation mix-up (e.g. extended- and regular-release)' },
+                        { text: 'Monitoring C2 (as opposed to C0) vs. trough levels', isCorrect: true },
+                        { text: 'Requiring multiple strengths to provide desired dose (e.g. patient confusion, not all strengths stocked and dispensed at the same time)' }
+                    ]
+                },
+                {
+                    text: 'Which of the following medications had the highest percentage of incidents involving anti-rejection medications according to the Institute for Safe Medication Practices (ISMP) in Canada in 2022?',
+                    answers: [
+                        { text: 'Mycophenolate mofetil' },
+                        { text: 'Tacrolimus', isCorrect: true },
                         { text: 'Cyclosporine' },
-                        { text: 'Mycophenolate Mofetil', isCorrect: true },
-                        { text: 'Sirolimus' },
-                        { text: 'Tacrolimus' }
+                        { text: 'Mycophenolate sodium' }
                     ]
                 },
                 {
-                    text: 'Which of the following statements is <u>true</u> regarding Critical Dose Drugs?',
+                    text: 'What percentage of medication errors are thought to occur due to inadequate reconciliation at admission, transfer, and discharge of a patient?',
                     answers: [
-                        { text: 'Critical dose drugs have a relatively large therapeutic index' },
-                        { text: 'Critical dose drugs are drugs for which comparatively large differences in dose or concentration can lead to therapeutic failures' },
-                        { text: 'Critical dose drugs are drugs for which comparatively small differences in dose or concentration can lead to potentially serious adverse reactions or therapeutic failures', isCorrect: true },
-                        { text: 'Critical dose drugs are biologic medical products that are almost an identical copy of the original innovator product' }
+                        { text: '<10%' },
+                        { text: '<20%' },
+                        { text: '>30%' },
+                        { text: '>40%', isCorrect: true }
                     ]
                 },
                 {
-                    text: 'Which of the following statements from the Canadian Society of Transplantation recommendations on generic immunosuppression in solid organ transplant recipients is <u>false</u>?',
+                    text: 'Which of the following statements is <u>false</u>?',
                     answers: [
-                        { text: 'Generic immunosuppression use should be approached with caution' },
-                        { text: 'Close monitoring is essential when initiating therapy and with any change in critical dose drug product' },
-                        { text: 'Patient education regarding generic medications and generic substitution is essential' },
-                        { text: 'Generic immunosuppressive formulations in pediatric solid organ transplant recipients is recommended', isCorrect: true }
-                    ]
-                },
-                {
-                    text: 'Which of the following statements is <u>true</u> regarding bioequivalence or alternative formulations (generics)?',
-                    answers: [
-                        { text: 'Bioequivalence needs to be shown from a single generic to the innovator formulation, but not from one generic to another generic', isCorrect: true },
-                        { text: 'Bioequivalence needs to be shown from a single generic to the innovator formulation, and also from one generic to another generic' },
-                        { text: 'For critical dose drugs, the ratio of area under the curve (AUC) for generic vs. innovator formulations should be within the limits of 80-125% in order to be deemed bioequivalent' },
-                        { text: 'Bioequivalence is based on the rate and extent of absorption of a drug into the systemic circulation' }
-                    ]
-                },
-                {
-                    text: 'Which of the following statements is <u>false</u> regarding intrapatient variability (IPV) in pharmacokinetics?',
-                    answers: [
-                        { text: 'Intrapatient variability refers to variability within an individual over time' },
-                        { text: 'Intrapatient variability refers to variability from one individual to another individual', isCorrect: true },
-                        { text: 'High intrapatient variability with critical dose immunosuppressant drugs may put a patient at risk of over- or under-immunosuppression' },
-                        { text: 'High intrapatient variability in immunosuppressant drug exposure is associated with poorer outcomes in solid organ transplant recipients' }
-                    ]
-                },
-                {
-                    text: 'Which of the following is <b>not considered a key factor</b> in specific target concentrations for therapeutic drug monitoring for narrow therapeutic index drugs?',
-                    answers: [
-                        { text: 'Transplanted organ' },
-                        { text: 'Risk of rejection (immunologic risk)' },
-                        { text: 'Gender', isCorrect: true },
-                        { text: 'Time post-transplant' }
-                    ]
-                },
-                {
-                    text: 'Which of the following statements regarding prescribability and switchability of alternative formulations is <u>false</u>?',
-                    answers: [
-                        { text: 'Prescribability refers to the confidence in safety/efficacy of bioequivalence when prescribing a drug to a naïve patient' },
-                        { text: 'Switchability refers to the appropriate transfer of a patient from one drug product formulation to another and may require dose adjustment' },
-                        { text: 'Switchability refers to the confidence in safety/efficacy of bioequivalence when prescribing a drug to a naïve patient', isCorrect: true },
-                        { text: 'Switchability is not currently part of Health Canada requirements for generic interchangeability' }
+                        { text: 'Polypharmacy is associated with higher quality of life in stable kidney transplant recipients', isCorrect: true },
+                        { text: 'Cost-related non-adherence may lead to intentional medication errors' },
+                        { text: 'The prevalence of potentially inappropriate drug combinations increases with the number of physicians providing medical care' },
+                        { text: 'Poor patient numeracy skills may lead to medication errors' }
                     ]
                 }
             ];
