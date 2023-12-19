@@ -60,6 +60,7 @@
     <Content Include="CertificateTemplates\LetterOfAttendance\fonts\nevis.ttf" />
     <Content Include="CertificateTemplates\LetterOfAttendance\fonts\sanitrixiesans.ttf" />
     <Content Include="CertificateTemplates\LetterOfAttendance\css\style.css" />
+    <Content Include="CertificateTemplates\LetterOfAttendance\images\logo2.png" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

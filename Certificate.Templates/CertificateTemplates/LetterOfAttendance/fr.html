@@ -5,38 +5,59 @@
     <title></title>
     <link href='css/style.css' rel='stylesheet' />
 </head>
-<body class="fr">
+<body>
     <div class="wrapper">
         <header>
-            <h1>Considérations relatives aux médicaments</h1>
-            <h3>à dose critique chez les patients ayant subi une greffe</h3>
+            <h1>Mitigating Medication Errors Post-Transplant</h1>
         </header>
 
         <main>
-            <h2>Attestation de réussite</h2>
+            <h2>Letter of Attendance</h2>
 
             <div class="info">
                 <div class="left">
-                    <div class="underlined"><accountFullName></div>
-                    <div class="title">a assisté au programme ci-haut mentionné</div>
+                    <div class="field">
+                        <div class="underlined w-100">
+                            <span><accountFullName></span>
+                        </div>
+                        <div class="title">Participated in the program.</div>
+                    </div>
+                    <div class="field">
+                        <div class="title">Participant License #:</div>
+                        <div class="underlined w-50">
+                            <span><accountPharmacistLicense></span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="right">
                     <div class="field">
-                        <div class="title">No de licence:</div>
-                        <div class="underlined"><accountPharmacistLicense></div>
+                        <div class="title">Date of program:</div>
+                        <div class="underlined w-50"><span><accountPharmacistLicense></span></div>
+                    </div>
+                    <div class="field" style="margin-top:30px;">
+                        <div class="title">Program duration:</div>
+                        <div class="underlined w-50"><span>1.5 hours</span></div>
                     </div>
                     <div class="field">
-                        <div class="title">Date du programme:</div>
-                        <div class="text"><examResultCreateDate></div>
+                        <div class="title">Location:</div>
+                        <div class="underlined w-50"><span></span></div>
                     </div>
                     <div class="field">
-                        <div class="title">Durée du programme:</div>
-                        <div class="text">1.5 heure</div>
+                        <div class="title">Speaker(s):</div>
+                        <div class="underlined w-50" style="height:50px"></div>
                     </div>
-                    <div class="field">
-                        <div class="title">Lieu :</div>
-                        <div class="text">En ligne</div>
+                </div>
+            </div>
+
+            <div style="margin:0 20px;">
+                <div class="field">
+                    <div class="title">Program provider:</div>
+                    <div class="underlined info w-100">
+                        <span>International Centre for Professional Development in Health and Medicine (ICPDHM)</span>
+                    </div>
+                    <div class="underlined info w-100">
+                        <span>Please direct any correspondence to ICPDHM (www.icpdhm.com) – 1-877-685-1888</span>
                     </div>
                 </div>
             </div>
@@ -44,23 +65,15 @@
     </div>
     <footer class="footer">
         <div class="footer-top">
-            <h4>Énoncés d’agrément:</h4>
-            <p>
-                Cette activité de formation continue est accréditée par l’Ordre des pharmaciens du Québec.<br />
-                Numéro d’accréditation de l’Ordre des pharmaciens du Québec : 10769<br />
-                ombre d’heures admissible : 1 h et 30 min (1.5 UFC)
-            </p>
-            <p>
+            <span class="title">Accreditation:</span>
+            <div style="display:flex;">
                 <div class="footer-ico"></div>
-                Le Conseil canadien de l'éducation continue en pharmacie a octroyé 1.5 crédits de formation continue pour ce programme.<br />
-                Numéro CCCEP : 1480-2021-3285-I-P.<br />
-                (Période d’accréditation : 19 août 2021 – 30 septembre 2023)
-            </p>
-        </div>
-
-        <div class="footer-bottom">
-            Ce programme a été produit grâce au soutien financier de Astellas Pharma Canada<br />
-            sous forme de subvention à l’éducation.
+                <div>
+                    The Canadian Council on Continuing Education in Pharmacy has accredited this program for 1.00 CEUs.<br />
+                    CCCEP # 1480-2023- 3732-I-P.<br />
+                    (Accreditation period: January 15, 2024 – January 15, 2025)
+                </div>
+            </div>
         </div>
     </footer>
 </body>
