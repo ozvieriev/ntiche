@@ -8,7 +8,6 @@ namespace Site.Data.Entities.Test
     {
         public Guid AccountId { get; set; }
 
-        public byte EnhancedRating { get; set; }
         public byte OverallLearningObjectives1Before { get; set; }
         public byte OverallLearningObjectives1After { get; set; }
         public byte OverallLearningObjectives1Relevance { get; set; }
@@ -21,20 +20,19 @@ namespace Site.Data.Entities.Test
         public byte ProgramRating { get; set; }
         public byte ProgramRatingEducational { get; set; }
 
-        public bool IsAppreciateDelivery { get; set; }
-
         public byte? MeetStatedLearningObjectives { get; set; }
+
+        public bool IsSufficientTime { get; set; }
 
         public bool? IsPerceiveDegree { get; set; }
 
         [MaxLength(4000)]
         public string PerceiveDegreeComments { get; set; }
 
+        public bool IsDisclosureStatement { get; set; }        
+
         [Required, MaxLength(4000)]
         public string ChangesComments { get; set; }
-
-        [MaxLength(4000)]
-        public string TopicsComments { get; set; }
 
         [MaxLength(4000)]
         public string AdditionalComments { get; set; }

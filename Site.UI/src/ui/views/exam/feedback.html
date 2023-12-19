@@ -79,7 +79,7 @@
                         </li>
                         <li>
                             <span translate="Did the program meet the stated learning objectives? Scale 1 to 4 (1 = Strongly disagree to 4 = Strongly agree)"></span>
-                            <div class="form-group" data-ng-init="programRatings=getProgramRatings()">
+                            <div class="form-group">
                                 <div class="form-check-inline" data-ng-repeat="meetStatedLearningObjectives in ::getRatings(4)">
                                     <input class="form-check-input" type="radio"
                                            id="meetStatedLearningObjectives-{{::meetStatedLearningObjectives}}"
@@ -148,8 +148,7 @@
                             </div>
                         </li>
                         <li>
-                            <span translate="Please rate the following aspects of the program (please check)"></span>:
-                            
+                            <span translate="Please rate the following aspects of the program (please check)"></span>:                            
                             <div>
                                 <span>Clarity of Presentation(s)</span>
                                 <div class="form-group" data-ng-init="programRatings=getProgramRatings()">

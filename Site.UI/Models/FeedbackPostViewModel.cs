@@ -9,7 +9,6 @@ namespace Site.UI.Models
         {
         }
 
-        public byte EnhancedRating { get; set; }
         public byte OverallLearningObjectives1Before { get; set; }
         public byte OverallLearningObjectives1After { get; set; }
         public byte OverallLearningObjectives1Relevance { get; set; }
@@ -26,16 +25,17 @@ namespace Site.UI.Models
 
         public byte? MeetStatedLearningObjectives { get; set; }
 
+        public bool IsSufficientTime { get; set; }
+
         public bool? IsPerceiveDegree { get; set; }
+
+        public bool IsDisclosureStatement { get; set; }
 
         [MaxLength(4000)]
         public string PerceiveDegreeComments { get; set; }
 
         [Required, MaxLength(4000)]
         public string ChangesComments { get; set; }
-
-        [MaxLength(4000)]
-        public string TopicsComments { get; set; }
 
         [MaxLength(4000)]
         public string AdditionalComments { get; set; }

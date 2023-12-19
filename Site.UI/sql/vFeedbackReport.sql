@@ -36,7 +36,6 @@ begin
 		account.isOptin as accountIsOptin,
 		account.createDate as accountCreateDate,
 
-		feedback.enhancedRating as feedbackEnhancedRating,
 		feedback.overallLearningObjectives1Before as feedbackOverallLearningObjectives1Before,
         feedback.overallLearningObjectives1After as feedbackOverallLearningObjectives1After,
         feedback.overallLearningObjectives1Relevance as feedbackOverallLearningObjectives1Relevance,
@@ -49,12 +48,12 @@ begin
 
 		feedback.programRating as feedbackProgramRating,
 		feedback.programRatingEducational as feedbackProgramRatingEducational,
-		feedback.isAppreciateDelivery as feedbackIsAppreciateDelivery,
 		feedback.isPerceiveDegree as feedbackIsPerceiveDegree,
 		feedback.meetStatedLearningObjectives as feedbackMeetStatedLearningObjectives,
+		feedback.isSufficientTime as feedbackIsSufficientTime,
 		feedback.perceiveDegreeComments as feedbackPerceiveDegreeComments,
+		feedback.isDisclosureStatement as feedbackIsDisclosureStatement,
 		feedback.changesComments as feedbackChangesComments,
-		feedback.topicsComments as feedbackTopicsComments,
 		feedback.additionalComments as feedbackAdditionalComments,
 		feedback.createDate as feedbackCreateDate
 

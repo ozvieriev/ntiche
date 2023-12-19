@@ -18,7 +18,6 @@ namespace Site.Data.Entities.Test
         public bool AccountIsOptin { get; set; }
         public DateTime AccountCreateDate { get; set; }
 
-        public byte FeedbackEnhancedRating { get; set; }
         public byte FeedbackOverallLearningObjectives1Before { get; set; }
         public byte FeedbackOverallLearningObjectives1After { get; set; }
         public byte FeedbackOverallLearningObjectives1Relevance { get; set; }
@@ -31,16 +30,14 @@ namespace Site.Data.Entities.Test
         public byte FeedbackProgramRating { get; set; }
         public byte FeedbackProgramRatingEducational { get; set; }
         public byte? FeedBackMeetStatedLearningObjectives { get; set; }
+        public bool FeedbackIsSufficientTime { get; set; }
         public bool FeedbackIsAppreciateDelivery { get; set; }
         public bool? FeedbackIsPerceiveDegree { get; set; }
         public string FeedbackPerceiveDegreeComments { get; set; }
+        public bool FeedbackIsDisclosureStatement { get; set; }
         public string FeedbackChangesComments { get; set; }
-        public string FeedbackTopicsComments { get; set; }
         public string FeedbackAdditionalComments { get; set; }
         public DateTime FeedbackCreateDate { get; set; }
-
-        [NotMapped]
-        public int HumanFeedbackEnhancedRating { get { return FeedbackEnhancedRating + 1; } }
 
         [NotMapped]
         public int HumanFeedbackOverallLearningObjectives1Before { get { return FeedbackOverallLearningObjectives1Before + 1; } }
