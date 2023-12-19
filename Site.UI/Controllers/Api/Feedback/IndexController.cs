@@ -121,23 +121,23 @@ namespace Site.UI.Controllers.Api
                 Map(m => m.AccountIsOptin).Name("Optin").TypeConverter<CsvBooleanConverter>();
                 Map(m => m.AccountCreateDate).Name("Create Date").TypeConverter<CsvDateTimeConverter>();
 
-                Map(m => m.FeedbackOverallLearningObjectives1Before).Name("Q1 1.Before");
-                Map(m => m.FeedbackOverallLearningObjectives1After).Name("Q1 1.After");
-                Map(m => m.FeedbackOverallLearningObjectives1Relevance).Name("Q1 1.Relevance");
-                Map(m => m.FeedbackOverallLearningObjectives2Before).Name("Q1 2.Before");
-                Map(m => m.FeedbackOverallLearningObjectives2After).Name("Q1 2.After");
-                Map(m => m.FeedbackOverallLearningObjectives2Relevance).Name(" Q1 2.Relevance");
-                Map(m => m.FeedbackOverallLearningObjectives3Before).Name("Q1 3.Before");
-                Map(m => m.FeedbackOverallLearningObjectives3After).Name("Q1 3.After");
-                Map(m => m.FeedbackOverallLearningObjectives3Relevance).Name("Q1 3.Relevance");
-                Map(m => m.FeedBackMeetStatedLearningObjectives).Name("Q2");
+                Map(m => m.HumanFeedbackOverallLearningObjectives1Before).Name("Q1 1.Before");
+                Map(m => m.HumanFeedbackOverallLearningObjectives1After).Name("Q1 1.After");
+                Map(m => m.HumanFeedbackOverallLearningObjectives1Relevance).Name("Q1 1.Relevance");
+                Map(m => m.HumanFeedbackOverallLearningObjectives2Before).Name("Q1 2.Before");
+                Map(m => m.HumanFeedbackOverallLearningObjectives2After).Name("Q1 2.After");
+                Map(m => m.HumanFeedbackOverallLearningObjectives2Relevance).Name(" Q1 2.Relevance");
+                Map(m => m.HumanFeedbackOverallLearningObjectives3Before).Name("Q1 3.Before");
+                Map(m => m.HumanFeedbackOverallLearningObjectives3After).Name("Q1 3.After");
+                Map(m => m.HumanFeedbackOverallLearningObjectives3Relevance).Name("Q1 3.Relevance");
+                Map(m => m.HumanFeedBackMeetStatedLearningObjectives).Name("Q2");
                 Map(m => m.FeedbackIsSufficientTime).Name("Q3").TypeConverter<CsvBooleanConverter>();
                 Map(m => m.FeedbackIsPerceiveDegree).Name("Q4").TypeConverter<CsvBooleanConverter>();
                 Map(m => m.FeedbackPerceiveDegreeComments).Name("Q4 Comments");
                 Map(m => m.FeedbackIsDisclosureStatement).Name("Q5").TypeConverter<CsvBooleanConverter>();
 
-                Map(m => m.FeedbackProgramRating).Name("Q6 Clarity of Presentation(s)");
-                Map(m => m.FeedbackProgramRatingEducational).Name("Q6 Educational value to you");
+                Map(m => m.HumanFeedbackProgramRating).Name("Q6 Clarity of Presentation(s)");
+                Map(m => m.HumanFeedbackProgramRatingEducational).Name("Q6 Educational value to you");
                 Map(m => m.FeedbackChangesComments).Name("Q7 Comments");
                 Map(m => m.FeedbackAdditionalComments).Name("Q8 Comments");
                 Map(m => m.FeedbackCreateDate).Name("Create Date").TypeConverter<CsvDateTimeConverter>();

@@ -68,5 +68,11 @@ namespace Site.Data.Entities.Test
 
         [NotMapped]
         public int HumanFeedBackMeetStatedLearningObjectives { get { return FeedBackMeetStatedLearningObjectives.HasValue ? FeedBackMeetStatedLearningObjectives.Value + 1 : 0; } }
+
+        [NotMapped]
+        public int HumanFeedbackProgramRating { get { return FeedbackProgramRating + 1; } }
+
+        [NotMapped]
+        public int HumanFeedbackProgramRatingEducational { get { return FeedbackProgramRatingEducational + 1; } }
     }
 }
