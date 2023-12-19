@@ -23,7 +23,7 @@ angular.module('app.services')
                     ]
                 },
                 {
-                    text: 'Which of the following medications had the highest percentage of incidents involving anti-rejection medications according to the Institute for Safe Medication Practices (ISMP) in Canada in 2022?',
+                    text: 'Which of the following medications had the highest percentage of incidents involving anti-rejection medications according to the Institute for Safe Medication Practices (ISMP) in Canada in 2024?',
                     answers: [
                         { text: 'Mycophenolate mofetil' },
                         { text: 'Tacrolimus', isCorrect: true },
