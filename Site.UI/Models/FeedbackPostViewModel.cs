@@ -20,6 +20,7 @@ namespace Site.UI.Models
         public byte OverallLearningObjectives3After { get; set; }
         public byte OverallLearningObjectives3Relevance { get; set; }
         public byte ProgramRating { get; set; }
+        public byte ProgramRatingEducational { get; set; }
 
         public bool IsAppreciateDelivery { get; set; }
 
@@ -33,7 +34,7 @@ namespace Site.UI.Models
         [Required, MaxLength(4000)]
         public string ChangesComments { get; set; }
 
-        [Required, MaxLength(4000)]
+        [MaxLength(4000)]
         public string TopicsComments { get; set; }
 
         [MaxLength(4000)]

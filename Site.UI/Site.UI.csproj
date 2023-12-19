@@ -257,6 +257,8 @@
     <Content Include="Global.asax" />
     <None Include="gulpfile.js" />
     <Content Include="index.html" />
+    <Content Include="sql\vFeedbackReport.sql" />
+    <Content Include="sql\table.sql" />
     <Content Include="NLog.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

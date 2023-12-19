@@ -29,10 +29,9 @@ angular.module('app.controllers')
 
                 return [
                     { text: 'Poor', value: 0 },
-                    { text: 'Below Average', value: 1 },
-                    { text: 'Average', value: 2 },
-                    { text: 'Above Average', value: 3 },
-                    { text: 'Excellent', value: 4 },
+                    { text: 'Satisfactory', value: 1 },
+                    { text: 'Very Good', value: 2 },
+                    { text: 'Excellent', value: 3 }
                 ];
             };
 
