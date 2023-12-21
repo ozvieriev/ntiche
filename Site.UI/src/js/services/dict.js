@@ -7,10 +7,10 @@ angular.module('app.services')
                 {
                     text: 'Medication errors affect how many patients annually (based on a recent US publication)?',
                     answers: [
-                        { text: '1 million' },
-                        { text: '3 million' },
-                        { text: '5 million' },
-                        { text: '7 million', isCorrect: true }
+                        { text: 'One million' },
+                        { text: 'Three million' },
+                        { text: 'Five million' },
+                        { text: 'Seven million', isCorrect: true }
                     ]
                 },
                 {
