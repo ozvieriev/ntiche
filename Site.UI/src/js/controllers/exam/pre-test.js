@@ -55,9 +55,7 @@ angular.module('app.controllers')
                     .then(
                         (response) => {
 
-                            $scope.status = 200;
-                            $scope.description = response.description;
-                            $scope.view = 'done';
+                            $state.go('exam');
                         },
                         (error) => {
 

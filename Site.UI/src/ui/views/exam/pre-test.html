@@ -42,15 +42,6 @@
                          data-ng-bind="description"></div>
                 </div>
             </div>
-            <div data-ng-switch-when="done">
-                <div class="card-body">
-                    <div class="alert alert-success" role="alert"
-                         translate="{{description}}"></div>
-
-                    <a href="{{::model.newsletterLink}}" target="_blank" class="btn btn-info" translate="Download Program PDF"></a>
-                    <a ui-sref="exam/post-test" class="btn btn-info" translate="Take Post test"></a>
-                </div>
-            </div>
         </div>
     </div>
 </div>

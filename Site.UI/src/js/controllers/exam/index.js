@@ -24,10 +24,8 @@ angular.module('app.controllers')
 
                 return $state.go(`exam/feedback`, { examResultId: response.bestPostExamResultId });
             }
-            else {
-                $scope.view = 'question';
-                return;
-            }
+
+            $scope.view = 'question';
         }, () => {
 
             if (_isDestroyed)
