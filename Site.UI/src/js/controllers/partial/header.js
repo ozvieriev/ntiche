@@ -6,7 +6,7 @@ angular.module('app.controllers')
         $scope.currentLanguage = $state.params.locale;
         $scope.languages = {
             en: { icon: 'flag-icon-gb' },
-            fr: { icon: 'flag-icon-fr' }
+            //fr: { icon: 'flag-icon-fr' }
         };
 
         delete $scope.languages[$scope.currentLanguage];

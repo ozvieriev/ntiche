@@ -100,6 +100,7 @@ namespace Site.UI.Controllers.Api
                 if (!object.Equals(examResult, null))
                     _lasyCertificateGenerator.Save(new LasyCertificateGeneratorViewModel(examResult, CertificateTemplate.LetterOfAttendance));
             }
+
             return Ok(response);
         }
 

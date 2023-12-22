@@ -31,7 +31,6 @@ namespace Certificate.Templates
 
             var pdfDocument = converter.ConvertHtmlString(htmlBuilder.ToString());
             pdfDocument.Save(filePath);
-
             pdfDocument.Close();
         }
     }
