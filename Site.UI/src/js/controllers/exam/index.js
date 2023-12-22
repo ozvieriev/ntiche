@@ -13,6 +13,10 @@ angular.module('app.controllers')
         $api.accoutnActivity().then((response) => {
 
             $scope.isBusy = false;
+
+            if (!response.totalPreTests)
+                return $state.go('exam/pre-test');
+
             if (response.bestPostExamResultIsSuccess && response.bestPostExamResultId) {
 
                 if (response.totalFeedbacks)
@@ -20,13 +24,10 @@ angular.module('app.controllers')
 
                 return $state.go(`exam/feedback`, { examResultId: response.bestPostExamResultId });
             }
-            if (!response.totalPreTests) {
-
+            else {
                 $scope.view = 'question';
                 return;
             }
-
-            $state.go('exam/post-test');
         }, () => {
 
             if (_isDestroyed)
