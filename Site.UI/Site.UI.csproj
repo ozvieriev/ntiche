@@ -209,6 +209,11 @@
     <Compile Include="Controllers\Api\Account\ActivityController.cs" />
     <Compile Include="Controllers\Api\Account\PasswordController.cs" />
     <Compile Include="Controllers\Api\Account\RegisterController.cs" />
+    <Compile Include="Controllers\Api\Exam\HtmlResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HtmlResource.resx</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\Api\Exam\ResultController.cs" />
     <Compile Include="Controllers\Api\Exam\IndexController.cs" />
     <Compile Include="Controllers\Api\Feedback\IndexController.cs" />
@@ -253,6 +258,7 @@
     <Content Include="App_Data\ntiche_log.ldf">
       <DependentUpon>ntiche.mdf</DependentUpon>
     </Content>
+    <Content Include="Controllers\Api\Exam\index.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="gulpfile.js" />
@@ -412,6 +418,12 @@
       <Project>{8E6198A7-3287-4341-A325-CD435ADECFE1}</Project>
       <Name>Site.Identity</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controllers\Api\Exam\HtmlResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>HtmlResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -2,6 +2,7 @@
 using Email.Templates;
 using Microsoft.AspNet.Identity;
 using Site.Identity;
+using Site.UI.Controllers.Api.Exam;
 using Site.UI.Core;
 using Site.UI.Models;
 using System;
@@ -9,6 +10,7 @@ using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
 
@@ -35,23 +37,44 @@ namespace Site.UI.Controllers.Api
         [HttpGet, Route("post-test/download")]
         public async Task<HttpResponseMessage> PostTestDownloadGet(Guid examResultId)
         {
-            var examResult = await _test.ExamResultGetAsync(examResultId);
-            if (object.Equals(examResult, null) || !examResult.ExamResultIsSuccess || !"post-test".Equals(examResult.ExamName))
-                return new HttpResponseMessage(HttpStatusCode.NotFound);
-
-            var lasyCertificateGeneratorViewModel = new LasyCertificateGeneratorViewModel(examResult, CertificateTemplate.LetterOfAttendance);
-            var certificate = _lasyCertificateGenerator.GetCertificate(lasyCertificateGeneratorViewModel);
-            var bytes = File.ReadAllBytes(certificate.FullName);
-
-            var response = new HttpResponseMessage(HttpStatusCode.OK);
-            response.Content = new ByteArrayContent(bytes);
-            response.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
+            try
             {
-                FileName = $"{examResult.AccountFirstName} {examResult.AccountLastName}.pdf"
-            };
-            response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/pdf");
+                var examResult = await _test.ExamResultGetAsync(examResultId);
 
-            return response;
+                if (object.Equals(examResult, null) || !examResult.ExamResultIsSuccess || !"post-test".Equals(examResult.ExamName))
+                    return new HttpResponseMessage(HttpStatusCode.NotFound);
+
+                var lasyCertificateGeneratorViewModel = new LasyCertificateGeneratorViewModel(examResult, CertificateTemplate.LetterOfAttendance);
+                var certificate = _lasyCertificateGenerator.GetCertificate(lasyCertificateGeneratorViewModel);
+                var bytes = File.ReadAllBytes(certificate.FullName);
+
+                var response = new HttpResponseMessage(HttpStatusCode.OK);
+                response.Content = new ByteArrayContent(bytes);
+                response.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
+                {
+                    FileName = $"{examResult.AccountFirstName} {examResult.AccountLastName}.pdf"
+                };
+                response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/pdf");
+
+                return response;
+            }
+            catch (Exception)
+            {
+                var html = HtmlResource.index;
+                var message = "If certificate doesn’t download in the next 15 seconds, <a href='javascript:window.location.reload()'>please try again</a>.";
+
+                if (Thread.CurrentThread.CurrentUICulture.Name == "fr")
+                    message = "Si le certificat n’est pas téléchargé dans les prochaines 15 secondes, <a href='javascript:window.location.reload()'>SVP essayer de nouveau</a>.";
+
+                html = html.Replace("{message}", message);
+
+                var response = new HttpResponseMessage(HttpStatusCode.OK);
+
+                response.Content = new StringContent(html);
+                response.Content.Headers.ContentType = new MediaTypeHeaderValue("text/html");
+
+                return response;
+            }
         }
 
         [HttpPost, Route("post-test/send"), Authorize, ValidateModel, ValidateNullModel]
@@ -84,7 +107,8 @@ namespace Site.UI.Controllers.Api
             var accountId = Guid.Parse(User.Identity.GetUserId());
             var account = await _auth.AccountGetAsync(accountId);
 
-            await _test.ExamQuestionInsertAsync(new Data.Entities.Test.ExamQuestion {
+            await _test.ExamQuestionInsertAsync(new Data.Entities.Test.ExamQuestion
+            {
                 AccountId = accountId,
                 ExamId = exam.Id,
                 Question = model.Question
