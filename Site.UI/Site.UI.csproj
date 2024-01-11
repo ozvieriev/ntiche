@@ -258,7 +258,7 @@
     <Content Include="App_Data\ntiche_log.ldf">
       <DependentUpon>ntiche.mdf</DependentUpon>
     </Content>
-    <Content Include="Controllers\Api\Exam\index.html" />
+    <None Include="Controllers\Api\Exam\index.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="gulpfile.js" />
