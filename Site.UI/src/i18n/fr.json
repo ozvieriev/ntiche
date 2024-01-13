@@ -55,7 +55,7 @@
   "Forgot your password?": "Mot de passe oublié?",
   "You can reset the password for your account profile by entering your e-mail address.": "Vous pouvez réinitialiser le mot de passe pour votre profil de compte en entrant votre adresse électronique.",
 
-  "account.header": "Considérations relatives aux médicaments à dose critique chez les patients ayant subi une greffe",
+  "account.header": "Limiter les erreurs de médication après la greffe",
   "account.ph1": "Introduction",
   "account.pp1": "Les erreurs de médication sont fréquentes tant à l'hôpital qu'en milieu ambulatoire. Elles sont la troisième cause de consultations externes et sont responsables de 5 à 41 % des admissions à l'hôpital. La polypharmacie est fréquente chez les patients en post-transplantation et peut augmenter le risque de problèmes liés aux médicaments, entraînant un risque plus élevé de morbidité et de mortalité. Ce programme sensibilisera les pharmaciens au rôle clé qu'ils jouent dans la limitation des erreurs de médication et mettra l'accent sur les facteurs courants propres aux médicaments, aux patients et aux cliniciens qui peuvent conduire à des erreurs de médication.",
 
@@ -71,8 +71,8 @@
   "account.ph4": "Comité de planification scientifique",
   "account.pp4l1": "<b>Cathy Burger, B. Sc. Pharm., ACPR, pharmacienne</b>",
   "account.pp4l2": "Spécialiste en pharmacothérapie, coordonnatrice du programme de résidence et de transplantation rénale<br/>Centre St. Joseph&#39;s Healthcare, Hamilton (Ontario)",
-  "account.pp4l3": "<b>Marie-Josée Deschênes</b>",
-  "account.pp4l4": "Pharmacienne spécialisée",
+  "account.pp4l3": "<b>Marie-Josée Deschênes, B.Pharm, M.Sc.</b>",
+  "account.pp4l4": "Pharmacienne clinicienne spécialisée - Néphrologie / Transplantation",
   "account.pp4l5": "L’Hôpital d’Ottawa, Ottawa(Ontario)",
   "account.pp4l6": "",
 
@@ -80,7 +80,7 @@
   "account.pp5l1": "<b>Cathy Burger, B. Sc. Pharm., ACPR, pharmacienne</b>",
   "account.pp5l2": "Membre du conseil consultatif d&#39;une entité commerciale ou d&#39;un comité similaire : Paladin",
   "account.pp5l3": "Honoraires de consultant/conférencier : Astellas et Paladin",
-  "account.pp5l4": "<b>Marie-Josée Deschênes</b>",
+  "account.pp5l4": "<b>Marie-Josée Deschênes, B.Pharm, M.Sc.</b>",
   "account.pp5l5": "Aucun conflict",
 
   "account.ph6": "Divulgation du soutien commercial",
