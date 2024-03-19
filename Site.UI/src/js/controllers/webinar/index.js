@@ -2,7 +2,7 @@
     .controller('webinarController', ['$scope', '$state', ($scope, $state) => {
 
         $scope.videos = [
-            { title: 'Presented by Jennifer Harrison, BScPhm, MSc - Oct 27, 12:47 PM', src: 'https://www.ntiche.com/video/medical-errors-en.mp4' }
+            { title: 'Presented by Jennifer Harrison, BScPhm, MSc - Oct 27, 12:47 PM', src: '/video/medical-errors-en.mp4' }
         ];
         $scope.speakers = [
             {
@@ -19,7 +19,7 @@
         if ($state.params.locale === 'fr') {
 
             $scope.videos = [
-                { title: 'Présenté par Élisabeth Gélinas-Lemay, BPharm, MSc', src: 'https://www.ntiche.com/video/medical-errors-fr.mp4' }
+                { title: 'Présenté par Élisabeth Gélinas-Lemay, BPharm, MSc', src: '/video/medical-errors-fr.mp4' }
             ];
 
             $scope.speakers = [
