@@ -113,3 +113,14 @@ body, html {
     display: block;
     padding: 0.5rem;
 }
+
+
+.webinar-speaker img {
+    width: 30%;
+}
+
+@media (min-width: 768px) {
+    .webinar-speaker img {
+        width: 100%;
+    }
+}

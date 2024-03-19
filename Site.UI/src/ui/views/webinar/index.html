@@ -1,8 +1,11 @@
 ﻿<h3 class="text-center" translate="Webinar"></h3>
 
-<!--<div class="card mt-5"  data-ng-repeat="video in ::videos">
-    <div class="card-header" data-ng-bind="::video.title"></div>
+<div class="card mt-5"  data-ng-repeat="video in ::videos">
     <div class="card-body p-0" data-ng-include="'webinar-video'"></div>
+</div>
+
+<div class="card my-5" data-ng-repeat="speaker in ::speakers">
+    <div class="card-body" data-ng-include="'webinar-speaker'"></div>
 </div>
 
 <script type="text/ng-template" id="webinar-video">
@@ -10,4 +13,25 @@
         <source src="{{::video.src}}" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-</script>-->
+</script>
+
+<script type="text/ng-template" id="webinar-speaker">
+    <div class="row no-gutters webinar-speaker">
+        <div class="col-md-3">
+            <img src="{{::speaker.img}}" alt="{{::speaker.name}}">
+        </div>
+        <div class="col-md-9">
+            <div class="card-body px-0 px-md-4 py-0">
+                <p class="card-text" data-ng-bind="::speaker.memo"></p>
+                <h5 class="card-title" data-ng-bind="::speaker.name"></h5>
+                <div class="card-text" data-ng-bind="::speaker.title"></div>
+                <div class="card-text" data-ng-bind="::speaker.subTitle"></div>
+                <div class="card-text" data-ng-bind="::speaker.address"></div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="card-body px-0" data-ng-bind="::speaker.info">
+            </div>
+        </div>
+    </div>
+</script>

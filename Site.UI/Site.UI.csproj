@@ -17,7 +17,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44328</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -209,6 +209,11 @@
     <Compile Include="Controllers\Api\Account\ActivityController.cs" />
     <Compile Include="Controllers\Api\Account\PasswordController.cs" />
     <Compile Include="Controllers\Api\Account\RegisterController.cs" />
+    <Compile Include="Controllers\Api\Exam\HtmlResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HtmlResource.resx</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\Api\Exam\ResultController.cs" />
     <Compile Include="Controllers\Api\Exam\IndexController.cs" />
     <Compile Include="Controllers\Api\Feedback\IndexController.cs" />
@@ -253,6 +258,7 @@
     <Content Include="App_Data\ntiche_log.ldf">
       <DependentUpon>ntiche.mdf</DependentUpon>
     </Content>
+    <None Include="Controllers\Api\Exam\index.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="gulpfile.js" />
@@ -413,6 +419,12 @@
       <Name>Site.Identity</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controllers\Api\Exam\HtmlResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>HtmlResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -431,7 +443,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>37321</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:37321/</IISUrl>
+          <IISUrl>http://localhost:37322</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:37322</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
